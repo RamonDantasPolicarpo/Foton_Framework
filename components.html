@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fóton Framework - Componentes</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="foton_framework.css">
+</head>
+
+<body>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <button class="mobile-menu-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+
+    <div class="docs-layout-wrapper">
+
+        <nav class="docs-sidebar" id="docsSidebar">
+            <a href="index.html" class="docs-logo">
+                <img src="vector/Logo.svg" width="45" height="45" viewBox="0 0 24 24" fill="none">
+                Fóton
+            </a>
+
+            <div class="docs-menu-category">Visão Geral</div>
+            <a href="index.html" class="docs-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Início &
+                Demo</a>
+
+            <div class="docs-menu-category">Documentação</div>
+            <a href="intro.html" class="docs-link">Introdução</a>
+            <a href="download.html" class="docs-link">Download</a>
+            <a href="custom.html" class="docs-link">Customização</a>
+            <a href="layout.html" class="docs-link">Layout & Grid</a>
+
+            <div class="docs-menu-category">Componentes</div>
+            <a href="forms.html" class="docs-link">Formulários</a>
+            <a href="components.html" class="docs-link active">Biblioteca UI</a>
+            <a href="creative.html" class="docs-link">Composições Criativas</a>
+        </nav>
+
+        <main class="docs-content">
+            <div id="tab-components" class="tab-view">
+                <h1 class="doc-title">Biblioteca de Componentes</h1>
+                <p class="doc-subtitle">Todos os elementos visuais disponíveis.</p>
+
+                <h3>Ações Principais</h3>
+                <div class="preview-box" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+                    <button class="btn btn-gradient">Gradient Action</button>
+                    <button class="btn btn-primary">Primary (Gray)</button>
+                    <button class="btn btn-dark">Dark Button</button>
+                </div>
+                <div class="code-block">
+                    &lt;!-- Gradient (Destaque máximo) --&gt;
+                    &lt;button class="btn btn-gradient"&gt;Gradient Action&lt;/button&gt;
+
+                    &lt;!-- Primary (Neutro/Secundário) --&gt;
+                    &lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+
+                    &lt;!-- Dark (Fundo Escuro) --&gt;
+                    &lt;button class="btn btn-dark"&gt;Dark Button&lt;/button&gt;
+                </div>
+
+                <h3>Estados & Feedback</h3>
+                <div class="preview-box" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+                    <button class="btn btn-success">Success</button>
+                    <button class="btn btn-warning">Warning</button>
+                    <button class="btn btn-danger">Danger</button>
+                    <button class="btn btn-info">Info</button>
+                </div>
+                <div class="code-block">
+                    &lt;!-- Success (Verde) --&gt;
+                    &lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+
+                    &lt;!-- Warning (Amarelo) --&gt;
+                    &lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;
+
+                    &lt;!-- Danger (Vermelho) --&gt;
+                    &lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+
+                    &lt;!-- Info (Azul) --&gt;
+                    &lt;button class="btn btn-info"&gt;Info&lt;/button&gt;
+                </div>
+
+                <h3>Estilo Outline (Alternativo)</h3>
+                <div class="preview-box" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+                    <button class="btn btn-outline-success">Success Alt</button>
+                    <button class="btn btn-outline-warning">Warning Alt</button>
+                    <button class="btn btn-outline-danger">Danger Alt</button>
+                    <button class="btn btn-outline-info">Info Alt</button>
+                </div>
+                <div class="code-block">
+                    &lt;!-- Success Outline --&gt;
+                    &lt;button class="btn btn-outline-success"&gt;Success Alt&lt;/button&gt;
+
+                    &lt;!-- Warning Outline --&gt;
+                    &lt;button class="btn btn-outline-warning"&gt;Warning Alt&lt;/button&gt;
+
+                    &lt;!-- Danger Outline --&gt;
+                    &lt;button class="btn btn-outline-danger"&gt;Danger Alt&lt;/button&gt;
+
+                    &lt;!-- Info Outline --&gt;
+                    &lt;button class="btn btn-outline-info"&gt;Info Alt&lt;/button&gt;
+                </div>
+
+                <h3>Links & Tamanhos</h3>
+                <div class="preview-box" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+                    <a href="#" class="btn btn-sm btn-link">Small Link</a>
+                </div>
+                <div class="code-block">
+                    &lt;!-- Small Link (Tamanho Reduzido) --&gt;
+                    &lt;a href="#" class="btn btn-sm btn-link"&gt;Small Link&lt;/a&gt;
+                </div>
+
+                <h3>Cards de Categoria</h3>
+                <div class="preview-box"
+                    style="background: #f9f9f9; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                    <!-- Standard -->
+                    <div class="card-feature">
+                        <span><i class="fa-solid fa-layer-group"></i></span>
+                        <h1>Padrão</h1>
+                        <p>Centralizado com fundo suave.</p>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;div class="card-feature"&gt;
+                    &lt;span&gt;&lt;i class="fa-solid fa-layer-group"&gt;&lt;/i&gt;&lt;/span&gt;
+                    &lt;h1&gt;Título&lt;/h1&gt;
+                    &lt;p&gt;Texto...&lt;/p&gt;
+                    &lt;/div&gt;
+                </div>
+
+                <h3>Cards de Preço</h3>
+                <div class="preview-box"
+                    style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: flex-start;">
+                    <!-- Standard -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>Básico</h3>
+                            <div class="price">0</div>
+                            <ul>
+                                <li>Acesso limitado</li>
+                                <li>Suporte por email</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-primary">Começar</a>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;div class="card"&gt;
+                    &lt;div class="card-body"&gt;
+                    &lt;h3&gt;Básico&lt;/h3&gt;
+                    &lt;div class="price"&gt;0&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;a href="#" class="btn btn-primary"&gt;Começar&lt;/a&gt;
+                    &lt;/div&gt;
+                </div>
+
+                <h3>Notificações & Social Proof</h3>
+                <div class="preview-box" style="background: #eee; padding: 3rem;">
+                    <!-- Like -->
+                    <div class="notification-card">
+                        <div
+                            style="width: 30px; height: 30px; background: #e33f5f; border-radius: 5px; display:flex; align-items:center; justify-content:center; color:white;">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 14px;">Novo Like</div>
+                            <div style="font-size: 12px; color: #666;">@usuario curtiu sua foto.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;div class="notification-card"&gt;
+                    &lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-heart"&gt;&lt;/i&gt;&lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;div class="title"&gt;Título&lt;/div&gt;
+                    &lt;div class="desc"&gt;Descrição&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="foton_scripts.js"></script>
+</body>
+
+</html>

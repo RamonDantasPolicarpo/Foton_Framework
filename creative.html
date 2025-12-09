@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fóton Framework - [Nome da Página]</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="foton_framework.css">
+</head>
+
+<body>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <button class="mobile-menu-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+
+    <div class="docs-layout-wrapper">
+
+        <nav class="docs-sidebar" id="docsSidebar">
+            <a href="index.html" class="docs-logo">
+                <img src="vector/Logo.svg" width="45" height="45" viewBox="0 0 24 24" fill="none">
+                Fóton
+            </a>
+
+            <div class="docs-menu-category">Visão Geral</div>
+            <a href="index.html" class="docs-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Início &
+                Demo</a>
+
+            <div class="docs-menu-category">Documentação</div>
+            <a href="intro.html" class="docs-link">Introdução</a>
+            <a href="download.html" class="docs-link">Download</a>
+            <a href="custom.html" class="docs-link">Customização</a>
+            <a href="layout.html" class="docs-link">Layout & Grid</a>
+
+            <div class="docs-menu-category">Componentes</div>
+            <a href="forms.html" class="docs-link">Formulários</a>
+            <a href="components.html" class="docs-link">Biblioteca UI</a>
+            <a href="creative.html" class="docs-link active">Composições Criativas</a>
+        </nav>
+
+        <main class="docs-content">
+            <div id="tab-creative" class="tab-view">
+                <h1 class="doc-title">Composições Criativas</h1>
+                <p class="doc-subtitle">Exemplos avançados combinando múltiplos componentes.</p>
+
+                <h3>1. Card de Newsletter</h3>
+                <div class="preview-box" style="background: #f0f0f8; display: flex; justify-content: center;">
+                    <div class="card" style="align-items: center; text-align: center; width: 100%; max-width: 500px;">
+                        <div class="card-body">
+                            <h3>Newsletter</h3>
+                            <p style="color: #666; margin-bottom: 20px;">Receba as novidades semanalmente.</p>
+                        </div>
+                        <div class="input-group" style="width: 100%;">
+                            <input type="text" class="input-field" placeholder="Seu melhor e-mail">
+                            <button class="btn btn-gradient">Assinar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;div class="card" style="align-items: center; text-align: center;"&gt;
+                    &lt;div class="card-body"&gt;
+                    &lt;h3&gt;Newsletter&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;div class="input-group"&gt;...&lt;/div&gt;
+                    &lt;/div&gt;
+                </div>
+
+                <h3>2. Banner de Download de App</h3>
+                <div class="preview-box">
+                    <div class="cta-card"
+                        style="position: static; margin: 0; transform: none; box-shadow: none; padding: 40px;">
+                        <div>
+                            <h2 class="section-title" style="font-size: 24px;">Baixe o App</h2>
+                            <p style="color: #a0a0a0;">Disponível para iOS e Android.</p>
+                        </div>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <button class="btn btn-primary" style="background: white; color: #1d1e25;"><i
+                                    class="fa-brands fa-apple" style="margin-right: 5px;"></i> iOS</button>
+                            <button class="btn btn-primary" style="background: white; color: #1d1e25;"><i
+                                    class="fa-brands fa-google-play" style="margin-right: 5px;"></i> Android</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="foton_scripts.js"></script>
+</body>
+
+</html>

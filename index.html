@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fóton Framework - Início</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="foton_framework.css">
+</head>
+
+<body>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <button class="mobile-menu-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+
+    <div class="docs-layout-wrapper">
+
+        <!-- BARRA LATERAL (MENU) -->
+        <nav class="docs-sidebar" id="docsSidebar">
+            <a href="index.html" class="docs-logo">
+                <img src="vector/Logo.svg" width="45" height="45" viewBox="0 0 24 24" fill="none">
+                Fóton
+            </a>
+
+            <div class="docs-menu-category">Visão Geral</div>
+            <!-- Note o "active" aqui na Home -->
+            <a href="index.html" class="docs-link active"><i class="fa-solid fa-house" style="margin-right: 8px;"></i>
+                Início & Demo</a>
+
+            <div class="docs-menu-category">Documentação</div>
+            <a href="intro.html" class="docs-link">Introdução</a>
+            <a href="download.html" class="docs-link">Download</a>
+            <a href="custom.html" class="docs-link">Customização</a>
+            <a href="layout.html" class="docs-link">Layout & Grid</a>
+
+            <div class="docs-menu-category">Componentes</div>
+            <a href="forms.html" class="docs-link">Formulários</a>
+            <a href="components.html" class="docs-link">Biblioteca UI</a>
+            <a href="creative.html" class="docs-link">Composições Criativas</a>
+        </nav>
+
+        <!-- ÁREA DE CONTEÚDO -->
+        <main class="docs-content">
+            <div class="page-fade-in">
+
+                <!-- CONTEÚDO DA HOME -->
+                <div class="home-hero container-pr">
+                    <div>
+                        <h1>Fóton Framework.</h1>
+                        <p>A solução leve e moderna para criar Landing Pages de alta conversão. Navegue pela
+                            documentação ou veja a demonstração ao vivo abaixo.</p>
+                        <div class="home-actions">
+                            <a href="intro.html" class="btn btn-gradient">Documentação</a>
+                            <button class="btn btn-primary" onclick="downloadCSS()">Download CSS</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="vector/Logo.svg" alt="Logo Fóton Framework" width="150px">
+                    </div>
+                </div>
+
+                <div
+                    style="margin-bottom: 10px; font-weight: 700; color: #999; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">
+                    Preview em Tempo Real
+                </div>
+
+                <!-- MOCKUP DO BROWSER (Mantido igual) -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <div class="browser-dot red"></div>
+                            <div class="browser-dot yellow"></div>
+                            <div class="browser-dot green"></div>
+                        </div>
+                        <div class="browser-address">
+                            <i class="fa-solid fa-lock" style="margin-right: 5px; font-size: 10px;"></i>
+                            demo.foton.com
+                        </div>
+                    </div>
+
+                    <div class="demo-container">
+                        <div class="top-bar">
+                            🚀 Lançamento Oficial: Ganhe 2 meses grátis no plano anual!
+                            <a href="#" class="btn btn-sm btn-link">Resgatar</a>
+                        </div>
+
+                        <nav class="navbar">
+                            <div
+                                style="display:flex; justify-content:space-between; width:100%; max-width:1200px; padding: 1rem 2rem;">
+                                <a href="#" class="logo"
+                                    style="display: flex; flex-direction: row; align-items: center;">
+
+                                    <img src="vector/Logo.svg" alt="Icone Fóton" width="25px"
+                                        style="margin-right: 10px;">
+                                    Fóton<span>Framework</span>
+                                </a>
+                                <ul class="navbar-menu" style="display: flex; align-items: center;">
+                                    <li><a href="#">Soluções</a></li>
+                                    <li><a href="#">Preços</a></li>
+                                    <li><a class="btn btn-gradient" style="color: white; height: 2.5em;"
+                                            href="#">Login</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+
+                        <section id="hero" class="hero" style="min-height: 550px; padding-top: 6rem;">
+                            <div class="hero-content">
+                                <span style="font-size: 50px;">Acelere seu desenvolvimento<br>web em 10x.</span>
+                                <p>Uma suite completa de ferramentas para desenvolvedores modernos. Do design ao deploy
+                                    em minutos.</p>
+
+                                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                                    <button class="btn btn-gradient"
+                                        style="height: 50px; padding: 0 40px; font-size: 16px;">Começar Agora</button>
+                                    <button class="btn btn-primary" style="height: 50px; padding: 0 30px;">Ver
+                                        Demo</button>
+                                </div>
+
+                                <div
+                                    style="margin-top: 40px; display: flex; gap: 30px; opacity: 0.6; filter: grayscale(1);">
+                                    <i class="fa-brands fa-google" style="font-size: 24px;"></i>
+                                    <i class="fa-brands fa-aws" style="font-size: 24px;"></i>
+                                    <i class="fa-brands fa-stripe" style="font-size: 24px;"></i>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="section-dark"
+                            style="margin-top: -80px; position: relative; z-index: 10; padding: 4rem 2rem;">
+                            <div class="section-header" style="text-align: center;">
+                                <h2>Tudo o que você precisa</h2>
+                                <p>Ferramentas poderosas em uma única assinatura.</p>
+                            </div>
+                            <div class="flex-container">
+                                <div class="card-feature"
+                                    style="background: #fff; width: 260px; height: auto; min-height: 180px; align-items: flex-start; text-align: left;">
+                                    <div
+                                        style="width: 40px; height: 40px; background: #eef2ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #6559ca; font-size: 18px; margin-bottom: 15px;">
+                                        <i class="fa-solid fa-code"></i>
+                                    </div>
+                                    <h1 style="font-size: 20px; margin: 0 0 10px 0;">Código Limpo</h1>
+                                    <p style="text-align: left; margin: 0;">Exportação de código React e HTML sem
+                                        dependências.</p>
+                                </div>
+
+                                <div class="card-feature"
+                                    style="background: #fff; width: 260px; height: auto; min-height: 180px; align-items: flex-start; text-align: left;">
+                                    <div
+                                        style="width: 40px; height: 40px; background: #ecfdf5; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #059669; font-size: 18px; margin-bottom: 15px;">
+                                        <i class="fa-solid fa-rocket"></i>
+                                    </div>
+                                    <h1 style="font-size: 20px; margin: 0 0 10px 0;">Deploy Rápido</h1>
+                                    <p style="text-align: left; margin: 0;">Integração direta com Vercel e Netlify.</p>
+                                </div>
+
+                                <div class="card-feature"
+                                    style="background: #fff; width: 260px; height: auto; min-height: 180px; align-items: flex-start; text-align: left;">
+                                    <div
+                                        style="width: 40px; height: 40px; background: #fff1f2; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #be123c; font-size: 18px; margin-bottom: 15px;">
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                    </div>
+                                    <h1 style="font-size: 20px; margin: 0 0 10px 0;">Segurança</h1>
+                                    <p style="text-align: left; margin: 0;">Certificados SSL automáticos e proteção
+                                        contra DDoS.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div style="background: #f0f0f8; padding-top: 100px; padding-bottom: 0;">
+                            <div class="cta-card">
+                                <div>
+                                    <h2 class="section-title">Comece Grátis</h2>
+                                    <p>Sem cartão de crédito necessário.</p>
+                                </div>
+                                <a href="#" class="btn btn-primary">Criar Conta</a>
+                            </div>
+                            <footer style="padding-top: 120px; padding-bottom: 50px;">
+                                <div style="text-align: center; color: #999;">
+                                    <a href="#" class="logo"
+                                        style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                                        <!-- Cole seu SVG aqui -->
+                                        <img src="vector/Logo.svg" alt="Icone Fóton" width="25px"
+                                            style="margin-right: 10px;">
+                                        Fóton<span>Framework</span>
+                                    </a>
+                                    <div style="margin-top: 10px; font-size: 12px;">© 2025 Todos os direitos reservados.
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="foton_scripts.js"></script>
+</body>
+
+</html>

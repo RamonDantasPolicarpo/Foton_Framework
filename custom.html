@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fóton Framework - [Nome da Página]</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="foton_framework.css">
+</head>
+
+<body>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <button class="mobile-menu-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+
+    <div class="docs-layout-wrapper">
+
+        <nav class="docs-sidebar" id="docsSidebar">
+            <a href="index.html" class="docs-logo">
+                <img src="vector/Logo.svg" width="45" height="45" viewBox="0 0 24 24" fill="none">
+                Fóton
+            </a>
+
+            <div class="docs-menu-category">Visão Geral</div>
+            <a href="index.html" class="docs-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Início &
+                Demo</a>
+
+            <div class="docs-menu-category">Documentação</div>
+            <a href="intro.html" class="docs-link">Introdução</a>
+            <a href="download.html" class="docs-link">Download</a>
+            <a href="custom.html" class="docs-link active">Customização</a>
+            <a href="layout.html" class="docs-link">Layout & Grid</a>
+
+            <div class="docs-menu-category">Componentes</div>
+            <a href="forms.html" class="docs-link">Formulários</a>
+            <a href="components.html" class="docs-link">Biblioteca UI</a>
+            <a href="creative.html" class="docs-link">Composições Criativas</a>
+        </nav>
+
+        <main class="docs-content">
+            <div id="tab-custom" class="tab-view">
+                <h1 class="doc-title">Customização</h1>
+                <p class="doc-subtitle">Cores e variáveis do sistema.</p>
+
+                <h3>Cores Principais</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--text-main);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Primary Text</span>
+                            <span class="color-hex">#343f52</span>
+                            <button class="copy-color-btn" onclick="copyColor('#343f52')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <!-- ... outros cards de cor ... -->
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--text-muted);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Secondary</span>
+                            <span class="color-hex">#60697b</span>
+                            <button class="copy-color-btn" onclick="copyColor('#60697b')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+
+                    <!-- NOVAS CORES ESCURAS -->
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--text-inverse);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Dark Mode Text</span>
+                            <span class="color-hex">#f1f5f9</span>
+                            <button class="copy-color-btn" onclick="copyColor('#f1f5f9')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--text-inverse-muted);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Dark Mode Sec.</span>
+                            <span class="color-hex">#94a3b8</span>
+                            <button class="copy-color-btn" onclick="copyColor('#94a3b8')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--bg-dark);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Dark BG</span>
+                            <span class="color-hex">#1d1e25</span>
+                            <button class="copy-color-btn" onclick="copyColor('#1d1e25')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--bg-body);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Page BG</span>
+                            <span class="color-hex">#f0f0f8</span>
+                            <button class="copy-color-btn" onclick="copyColor('#f0f0f8')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-brand);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Brand Green</span>
+                            <span class="color-hex">#40aa54</span>
+                            <button class="copy-color-btn" onclick="copyColor('#40aa54')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-soft-mint);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Soft Mint</span>
+                            <span class="color-hex">#ebf7ee</span>
+                            <button class="copy-color-btn" onclick="copyColor('#ebf7ee')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Cores de UI & Acentos</h3>
+                <div class="color-grid">
+                    <!-- UI Colors -->
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-info);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Info</span>
+                            <span class="color-hex">#3b82f6</span>
+                            <button class="copy-color-btn" onclick="copyColor('#3b82f6')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-info-soft);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Info Soft</span>
+                            <span class="color-hex">#eff6ff</span>
+                            <button class="copy-color-btn" onclick="copyColor('#eff6ff')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-success);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Success</span>
+                            <span class="color-hex">#10b981</span>
+                            <button class="copy-color-btn" onclick="copyColor('#10b981')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-success-soft);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Success Soft</span>
+                            <span class="color-hex">#ecfdf5</span>
+                            <button class="copy-color-btn" onclick="copyColor('#ecfdf5')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-warning);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Warning</span>
+                            <span class="color-hex">#f59e0b</span>
+                            <button class="copy-color-btn" onclick="copyColor('#f59e0b')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-warning-soft);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Warning Soft</span>
+                            <span class="color-hex">#fffbeb</span>
+                            <button class="copy-color-btn" onclick="copyColor('#fffbeb')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-danger);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Danger</span>
+                            <span class="color-hex">#ef4444</span>
+                            <button class="copy-color-btn" onclick="copyColor('#ef4444')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-danger-soft);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Danger Soft</span>
+                            <span class="color-hex">#fef2f2</span>
+                            <button class="copy-color-btn" onclick="copyColor('#fef2f2')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-neutral);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Neutral</span>
+                            <span class="color-hex">#64748b</span>
+                            <button class="copy-color-btn" onclick="copyColor('#64748b')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-neutral-soft);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Neutral Soft</span>
+                            <span class="color-hex">#f1f5f9</span>
+                            <button class="copy-color-btn" onclick="copyColor('#f1f5f9')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-accent-number);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Accent Number</span>
+                            <span class="color-hex">#0cc27e</span>
+                            <button class="copy-color-btn" onclick="copyColor('#0cc27e')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--color-accent-check);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Accent Check</span>
+                            <span class="color-hex">#45c4a0</span>
+                            <button class="copy-color-btn" onclick="copyColor('#45c4a0')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Gradientes</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--gradient-brand);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Brand Gradient</span>
+                            <span class="color-hex">Gradient</span>
+                            <button class="copy-color-btn"
+                                onclick="copyColor('linear-gradient(135deg, #40aa54, #2d8a3e)')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--gradient-social-insta);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Social Insta</span>
+                            <span class="color-hex">Gradient</span>
+                            <button class="copy-color-btn"
+                                onclick="copyColor('linear-gradient(135deg, #6559ca, #e33f5f)')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--gradient-urban-green);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Urban Green</span>
+                            <span class="color-hex">Gradient</span>
+                            <button class="copy-color-btn"
+                                onclick="copyColor('linear-gradient(135deg, #40aa54, #64748b)')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-preview" style="background: var(--gradient-corporate-blue);"></div>
+                        <div class="color-info">
+                            <span class="color-name">Corporate Blue</span>
+                            <span class="color-hex">Gradient</span>
+                            <button class="copy-color-btn"
+                                onclick="copyColor('linear-gradient(135deg, #3b82f6, #94a3b8)')"><i
+                                    class="fa-regular fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Tipografia</h3>
+                <p>O framework usa fontes <strong>Manrope</strong> para títulos e <strong>Poppins</strong> para corpo de
+                    texto.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="foton_scripts.js"></script>
+</body>
+
+</html>

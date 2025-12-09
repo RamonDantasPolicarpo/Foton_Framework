@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fóton Framework - [Nome da Página]</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="foton_framework.css">
+</head>
+
+<body>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <button class="mobile-menu-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+
+    <div class="docs-layout-wrapper">
+
+        <nav class="docs-sidebar" id="docsSidebar">
+            <a href="index.html" class="docs-logo">
+                <img src="vector/Logo.svg" width="45" height="45" viewBox="0 0 24 24" fill="none">
+                Fóton
+            </a>
+
+            <div class="docs-menu-category">Visão Geral</div>
+            <a href="index.html" class="docs-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Início &
+                Demo</a>
+
+            <div class="docs-menu-category">Documentação</div>
+            <a href="intro.html" class="docs-link">Introdução</a>
+            <a href="download.html" class="docs-link">Download</a>
+            <a href="custom.html" class="docs-link">Customização</a>
+            <a href="layout.html" class="docs-link">Layout & Grid</a>
+
+            <div class="docs-menu-category">Componentes</div>
+            <a href="forms.html" class="docs-link active">Formulários</a>
+            <a href="components.html" class="docs-link">Biblioteca UI</a>
+            <a href="creative.html" class="docs-link">Composições Criativas</a>
+        </nav>
+
+        <main class="docs-content">
+            <div id="tab-forms" class="tab-view">
+                <h1 class="doc-title">Formulários</h1>
+                <p class="doc-subtitle">Componentes de input e busca.</p>
+
+                <h3>Barra de Busca</h3>
+                <div class="preview-box">
+                    <div class="input-group">
+                        <input type="text" class="input-field" placeholder="Digite sua busca...">
+                        <button class="btn btn-gradient">Pesquisar</button>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;div class="input-group"&gt;
+                    &lt;input type="text" class="input-field" placeholder="..."&gt;
+                    &lt;button class="btn btn-gradient"&gt;Ação&lt;/button&gt;
+                    &lt;/div&gt;</div>
+
+                <h3>Inputs Básicos</h3>
+                <p>Campos de texto padrão, email e senha. Utilize a classe <code>.form-control</code> para estilizar.
+                </p>
+                <div class="preview-box">
+                    <div class="form-group">
+                        <label class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Endereço de Email</label>
+                        <input type="email" class="form-control" placeholder="nome@exemplo.com">
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;div class="form-group"&gt;
+                    &lt;label class="form-label"&gt;Email&lt;/label&gt;
+                    &lt;input type="email" class="form-control" placeholder="..."&gt;
+                    &lt;/div&gt;</div>
+
+                <h3>Seleção e Opções</h3>
+                <p>Selects, checkboxes e radio buttons customizados.</p>
+                <div class="preview-box">
+                    <div class="form-group">
+                        <label class="form-label">Selecione uma opção</label>
+                        <select class="form-control">
+                            <option>Opção 1</option>
+                            <option>Opção 2</option>
+                            <option>Opção 3</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-check">
+                            <input type="checkbox" class="form-check-input" checked>
+                            <span class="form-check-label">Aceito os termos e condições</span>
+                        </label>
+                        <label class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <span class="form-check-label">Receber newsletter</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-check">
+                            <input type="radio" name="radioDemo" class="form-check-input" checked>
+                            <span class="form-check-label">Opção A</span>
+                        </label>
+                        <label class="form-check">
+                            <input type="radio" name="radioDemo" class="form-check-input">
+                            <span class="form-check-label">Opção B</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;!-- Checkbox --&gt;
+                    &lt;label class="form-check"&gt;
+                    &lt;input type="checkbox" class="form-check-input"&gt;
+                    &lt;span class="form-check-label"&gt;Texto&lt;/span&gt;
+                    &lt;/label&gt;</div>
+
+                <h3>Áreas de Texto</h3>
+                <div class="preview-box">
+                    <div class="form-group">
+                        <label class="form-label">Mensagem</label>
+                        <textarea class="form-control" placeholder="Escreva sua mensagem aqui..."></textarea>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px;">Exemplos Completos</h3>
+
+                <h4>Login Card</h4>
+                <div class="preview-box" style="display: flex; justify-content: center; background: #f0f0f8;">
+                    <div class="card" style="width: 100%; max-width: 400px;">
+                        <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-main);">Login</h2>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Senha</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check">
+                                <input type="checkbox" class="form-check-input">
+                                <span class="form-check-label">Lembrar de mim</span>
+                            </label>
+                        </div>
+                        <button class="btn btn-gradient" style="width: 100%;">Entrar</button>
+                    </div>
+                </div>
+
+                <h4>Formulário de Contato</h4>
+                <div class="preview-box">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label class="form-label">Nome</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Sobrenome</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Assunto</label>
+                        <select class="form-control">
+                            <option>Suporte Técnico</option>
+                            <option>Vendas</option>
+                            <option>Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mensagem</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <button class="btn btn-gradient">Enviar Mensagem</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="foton_scripts.js"></script>
+</body>
+
+</html>

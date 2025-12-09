@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fóton Framework - [Nome da Página]</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="foton_framework.css">
+</head>
+
+<body>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <button class="mobile-menu-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+
+    <div class="docs-layout-wrapper">
+
+        <nav class="docs-sidebar" id="docsSidebar">
+            <a href="index.html" class="docs-logo">
+                <img src="vector/Logo.svg" width="45" height="45" viewBox="0 0 24 24" fill="none">
+                Fóton
+            </a>
+
+            <div class="docs-menu-category">Visão Geral</div>
+            <a href="index.html" class="docs-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Início &
+                Demo</a>
+
+            <div class="docs-menu-category">Documentação</div>
+            <a href="intro.html" class="docs-link active">Introdução</a>
+            <a href="download.html" class="docs-link">Download</a>
+            <a href="custom.html" class="docs-link">Customização</a>
+            <a href="layout.html" class="docs-link">Layout & Grid</a>
+
+            <div class="docs-menu-category">Componentes</div>
+            <a href="forms.html" class="docs-link">Formulários</a>
+            <a href="components.html" class="docs-link">Biblioteca UI</a>
+            <a href="creative.html" class="docs-link">Composições Criativas</a>
+        </nav>
+
+        <main class="docs-content">
+            <div id="tab-intro" class="tab-view">
+                <h1 class="doc-title">Introdução</h1>
+                <p class="doc-subtitle">O Fóton Framework é uma biblioteca leve, moderna e focada em conversão.</p>
+
+                <h3>Vinculação Externa</h3>
+                <p>Para usar este framework, baixe o arquivo CSS na aba "Download" e vincule-o no seu HTML:</p>
+                <div class="code-block">
+                    &lt;!-- No head do seu index.html --&gt;
+                    &lt;link rel="stylesheet" href="styles-framework.css"&gt;
+
+                    &lt;!-- Fontes Obrigatórias --&gt;
+                    &lt;link
+                    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Poppins:wght@400;600&display=swap"
+                    rel="stylesheet"&gt;
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="foton_scripts.js"></script>
+</body>
+
+</html>
