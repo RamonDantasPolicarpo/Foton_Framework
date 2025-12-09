@@ -114,6 +114,238 @@
                     &lt;a href="#" class="btn btn-sm btn-link"&gt;Small Link&lt;/a&gt;
                 </div>
 
+                <!-- ALERTAS -->
+                <h3 id="alerts">Alertas & Feedback</h3>
+                <p>Use a classe <code>.alert</code> combinada com modificadores de cor para fornecer feedback.</p>
+                <div class="preview-box">
+                    <div class="alert alert-primary">
+                        <i class="fa-solid fa-circle-check alert-icon"></i>
+                        <div style="flex-grow: 1;">
+                            <span class="alert-heading">Sucesso!</span>
+                            Seus dados foram salvos com sucesso.
+                        </div>
+                        <button class="alert-close" onclick="this.parentElement.style.display='none';"><i
+                                class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <i class="fa-solid fa-triangle-exclamation alert-icon"></i>
+                        <div style="flex-grow: 1;">
+                            <span class="alert-heading">Atenção</span>
+                            Sua conta precisa de verificação. <a href="#" style="text-decoration: underline;">Verificar
+                                agora</a>.
+                        </div>
+                    </div>
+
+                    <div class="alert alert-danger">
+                        <i class="fa-solid fa-circle-xmark alert-icon"></i>
+                        <div>
+                            <strong>Erro:</strong> Não foi possível conectar ao servidor.
+                        </div>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;div class="alert alert-primary"&gt;
+                    &lt;i class="fa-solid fa-check alert-icon"&gt;&lt;/i&gt;
+                    &lt;div&gt;Mensagem de sucesso...&lt;/div&gt;
+                    &lt;button class="alert-close"&gt;&times;&lt;/button&gt;
+                    &lt;/div&gt;</div>
+
+                <!-- BADGES -->
+                <h3 id="badges" style="margin-top: 3rem;">Badges & Tags</h3>
+                <div class="preview-box">
+                    <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 20px;">
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-success">Pago</span>
+                        <span class="badge badge-warning">Pendente</span>
+                        <span class="badge badge-danger">Erro</span>
+                        <span class="badge badge-info">Info</span>
+                        <span class="badge badge-neutral">Neutro</span>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="badge badge-pill badge-primary">Pill Style</span>
+                        <span class="badge badge-pill badge-success">Ativo</span>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;span class="badge badge-primary"&gt;Primary&lt;/span&gt;
+                    &lt;span class="badge badge-pill badge-success"&gt;Pill&lt;/span&gt;</div>
+
+                <!-- AVATARES -->
+                <h3 id="avatars" style="margin-top: 3rem;">Avatares</h3>
+                <div class="preview-box">
+                    <div style="display: flex; align-items: flex-end; gap: 15px; margin-bottom: 20px;">
+                        <div class="avatar avatar-xl">XL</div>
+                        <div class="avatar avatar-lg">LG</div>
+                        <div class="avatar avatar-md">MD</div>
+                        <div class="avatar avatar-sm">SM</div>
+                    </div>
+                    <p class="text-muted" style="font-size: 14px; margin-bottom: 10px;">Avatar Group (Hover effect):</p>
+                    <div class="avatar-group">
+                        <div class="avatar avatar-md"><img src="https://i.pravatar.cc/150?img=1" alt="User"></div>
+                        <div class="avatar avatar-md"><img src="https://i.pravatar.cc/150?img=2" alt="User"></div>
+                        <div class="avatar avatar-md"><img src="https://i.pravatar.cc/150?img=3" alt="User"></div>
+                        <div class="avatar avatar-md" style="background: #e2e8f0; font-size: 12px; font-weight: 700;">+3
+                        </div>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;div class="avatar avatar-md"&gt;
+                    &lt;img src="foto.jpg" alt="..."&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Grupo --&gt;
+                    &lt;div class="avatar-group"&gt;
+                    &lt;div class="avatar avatar-md"&gt;...&lt;/div&gt;
+                    &lt;div class="avatar avatar-md"&gt;...&lt;/div&gt;
+                    &lt;/div&gt;</div>
+
+                <!-- TABELAS -->
+                <h3 id="tables" style="margin-top: 3rem;">Tabelas</h3>
+                <p>Estilização limpa para dados. Adicione <code>.table-striped</code> ou <code>.table-hover</code>.</p>
+                <div class="preview-box" style="padding: 0; overflow: hidden;">
+                    <div class="table-responsive" style="margin-bottom: 0; border: none;">
+                        <table class="table table-hover" style="margin-bottom: 0;">
+                            <thead>
+                                <tr>
+                                    <th style="padding-left: 2rem;">Usuário</th>
+                                    <th>Status</th>
+                                    <th>Data</th>
+                                    <th style="text-align: right; padding-right: 2rem;">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding-left: 2rem;">
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <div class="avatar avatar-sm"><img src="https://i.pravatar.cc/150?img=11">
+                                            </div>
+                                            <span style="font-weight: 600;">Alice Silva</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-success">Ativo</span></td>
+                                    <td style="color: #666;">12 Out, 2024</td>
+                                    <td style="text-align: right; padding-right: 2rem;">
+                                        <button class="btn btn-sm btn-link" style="padding: 5px;">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left: 2rem;">
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <div class="avatar avatar-sm"><img src="https://i.pravatar.cc/150?img=12">
+                                            </div>
+                                            <span style="font-weight: 600;">Bruno Souza</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-warning">Pendente</span></td>
+                                    <td style="color: #666;">10 Out, 2024</td>
+                                    <td style="text-align: right; padding-right: 2rem;">
+                                        <button class="btn btn-sm btn-link" style="padding: 5px;">Editar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;div class="table-responsive"&gt;
+                    &lt;table class="table table-hover"&gt;
+                    &lt;thead&gt;
+                    &lt;tr&gt;
+                    &lt;th&gt;Título&lt;/th&gt;
+                    &lt;th&gt;Status&lt;/th&gt;
+                    &lt;th style="text-align: right;"&gt;Ações&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                    &lt;tr&gt;
+                    &lt;td&gt;Dado 1&lt;/td&gt;
+                    &lt;td&gt;&lt;span class="badge badge-success"&gt;Ativo&lt;/span&gt;&lt;/td&gt;
+                    &lt;td style="text-align: right;"&gt;
+                    &lt;button class="btn btn-sm btn-link"&gt;Editar&lt;/button&gt;
+                    &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                    &lt;/table&gt;
+                    &lt;/div&gt;</div>
+
+                <!-- BREADCRUMBS -->
+                <h3 id="breadcrumbs" style="margin-top: 3rem;">Navegação</h3>
+                <div class="preview-box" style="overflow: visible;">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Biblioteca</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Dados</li>
+                        </ol>
+                    </nav>
+
+                    <div style="margin-top: 20px; display: flex; gap: 15px; align-items: center;">
+                        <button class="btn btn-primary" style="gap: 10px;">
+                            <span class="spinner-border spinner-sm"></span> Carregando
+                        </button>
+
+                        <div class="dropdown">
+                            <button class="btn btn-outline-info">Dropdown Menu <i class="fa-solid fa-chevron-down"
+                                    style="margin-left: 8px; font-size: 12px;"></i></button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Ação</a></li>
+                                <li><a class="dropdown-item" href="#">Outra ação</a></li>
+                                <li style="border-top: 1px solid #eee; margin: 5px 0;"></li>
+                                <li><a class="dropdown-item" href="#" style="color: var(--color-danger);">Sair</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;!-- Breadcrumb --&gt;
+                    &lt;nav aria-label="breadcrumb"&gt;
+                    &lt;ol class="breadcrumb"&gt;
+                    &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class="breadcrumb-item active"&gt;Atual&lt;/li&gt;
+                    &lt;/ol&gt;
+                    &lt;/nav&gt;
+
+                    &lt;!-- Spinner --&gt;
+                    &lt;span class="spinner-border spinner-sm"&gt;&lt;/span&gt;
+
+                    &lt;!-- Dropdown (CSS Puro) --&gt;
+                    &lt;div class="dropdown"&gt;
+                    &lt;button class="btn btn-outline-info"&gt;Menu&lt;/button&gt;
+                    &lt;ul class="dropdown-menu"&gt;
+                    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;/div&gt;</div>
+
+                <h3 style="margin-top: 3rem;">Cards de Preço</h3>
+                <div class="preview-box"
+                    style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: flex-start;">
+                    <!-- Card Demo -->
+                    <div class="card" style="width: 300px;">
+                        <div class="card-body">
+                            <h3>Básico</h3>
+                            <div class="price">0</div>
+                            <ul>
+                                <li>Acesso limitado</li>
+                                <li>Suporte por email</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-primary">Começar</a>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;div class="card"&gt;
+                    &lt;div class="card-body"&gt;
+                    &lt;h3&gt;Plano Básico&lt;/h3&gt;
+                    &lt;div class="price"&gt;0&lt;/div&gt;
+                    &lt;ul&gt;
+                    &lt;li&gt;Recurso 1&lt;/li&gt;
+                    &lt;li&gt;Recurso 2&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;a href="#" class="btn btn-primary"&gt;Assinar&lt;/a&gt;
+                    &lt;/div&gt;</div>
+
                 <h3>Cards de Categoria</h3>
                 <div class="preview-box"
                     style="background: #f9f9f9; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
@@ -129,32 +361,6 @@
                     &lt;span&gt;&lt;i class="fa-solid fa-layer-group"&gt;&lt;/i&gt;&lt;/span&gt;
                     &lt;h1&gt;Título&lt;/h1&gt;
                     &lt;p&gt;Texto...&lt;/p&gt;
-                    &lt;/div&gt;
-                </div>
-
-                <h3>Cards de Preço</h3>
-                <div class="preview-box"
-                    style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: flex-start;">
-                    <!-- Standard -->
-                    <div class="card">
-                        <div class="card-body">
-                            <h3>Básico</h3>
-                            <div class="price">0</div>
-                            <ul>
-                                <li>Acesso limitado</li>
-                                <li>Suporte por email</li>
-                            </ul>
-                        </div>
-                        <a href="#" class="btn btn-primary">Começar</a>
-                    </div>
-                </div>
-                <div class="code-block">
-                    &lt;div class="card"&gt;
-                    &lt;div class="card-body"&gt;
-                    &lt;h3&gt;Básico&lt;/h3&gt;
-                    &lt;div class="price"&gt;0&lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;a href="#" class="btn btn-primary"&gt;Começar&lt;/a&gt;
                     &lt;/div&gt;
                 </div>
 
