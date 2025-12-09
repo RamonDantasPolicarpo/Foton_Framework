@@ -423,7 +423,8 @@ textarea.form-input {
 
 .btn-dark:hover {
     background: #2a2b35;
-    border-color: rgba(255, 255, 255, 0.159);;
+    border-color: rgba(255, 255, 255, 0.159);
+    ;
     transform: translateY(-2px);
     color: #fff;
 }
@@ -1538,6 +1539,257 @@ footer {
     animation: spinner-border .75s linear infinite;
 }
 
+/* Pulse */
+.spinner-pulse {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: text-bottom;
+    background-color: currentColor;
+    border-radius: 50%;
+    opacity: 0;
+    animation: spinner-grow .75s linear infinite;
+}
+
+@keyframes spinner-grow {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Dots */
+.spinner-dots {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.spinner-dots span {
+    width: 8px;
+    height: 8px;
+    background-color: currentColor;
+    border-radius: 50%;
+    display: inline-block;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.spinner-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.spinner-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* --- ACORDEÕES (Native <details>) --- */
+details.accordion {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: #fff;
+    overflow: hidden;
+    /* Transição suave para a altura controlada via JS */
+    transition: height 0.3s ease, background-color 0.2s;
+}
+
+details.accordion summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    /* Remove seta padrão */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--txt-primary);
+    transition: background 0.2s;
+}
+
+details.accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+details.accordion summary::after {
+    content: "+";
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--txt-sec);
+    transition: transform 0.2s;
+}
+
+details.accordion[open] summary {
+    background-color: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    color: var(--primary);
+}
+
+details.accordion[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.accordion-body {
+    padding: 1rem;
+    color: var(--txt-sec);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    background: #fff;
+    /* Animação antiga removida para dar lugar à transição de altura do JS */
+}
+
+/* --- BARRAS DE PROGRESSO --- */
+.progress {
+    display: flex;
+    height: 0.75rem;
+    overflow: hidden;
+    font-size: 0.75rem;
+    background-color: #e2e8f0;
+    border-radius: 50rem;
+    /* Pill shape */
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: var(--primary);
+    transition: width 0.6s ease;
+}
+
+.progress-bar.bg-success {
+    background-color: var(--success);
+}
+
+.progress-bar.bg-info {
+    background-color: var(--info);
+}
+
+.progress-bar.bg-warning {
+    background-color: var(--warning);
+}
+
+.progress-bar.bg-danger {
+    background-color: var(--danger);
+}
+
+.progress-bar.bg-dark {
+    background-color: var(--dark);
+}
+
+.progress-bar-striped {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-size: 1rem 1rem;
+}
+
+/* --- TOOLTIPS & POPOVERS (CSS ONLY) --- */
+/* Tooltip simples via data attribute */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.4rem 0.8rem;
+    background: var(--dark);
+    color: #fff;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    margin-bottom: 8px;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+[data-tooltip]:hover::after {
+    /* Seta do tooltip */
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--dark);
+    margin-bottom: -4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* Popover Estático (Base para JS) */
+.popover-container {
+    position: relative;
+    display: inline-block;
+}
+
+.popover-content {
+    position: absolute;
+    top: 0;
+    left: 110%;
+    /* Lado direito por padrão */
+    width: 200px;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 10;
+    display: none;
+    /* JS vai dar toggle */
+}
+
+.popover-content.show {
+    display: block;
+    animation: fadeIn 0.2s;
+}
+
+.popover-header {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.popover-body {
+    font-size: 0.85rem;
+    color: var(--txt-sec);
+}
+
 @keyframes spinner-border {
     100% {
         transform: rotate(360deg);
@@ -1611,7 +1863,7 @@ footer {
     color: var(--primary);
 }
 
-/* --- NOVOS CARDS (BLOG, PROFILE, HIGHLIGHT) --- */
+/* --- CARDS (BLOG, PROFILE, HIGHLIGHT) --- */
 .card-blog {
     padding: 0;
     overflow: hidden;

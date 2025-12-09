@@ -102,7 +102,8 @@
 
                             <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
                                 <!-- Coluna Avatar -->
-                                <div style="display: flex; flex-direction: column; text-align: center; margin: 0rem 1rem;">
+                                <div
+                                    style="display: flex; flex-direction: column; text-align: center; margin: 0rem 1rem;">
                                     <div class="avatar avatar-xl"
                                         style="width: 120px; height: 120px; margin-bottom: 1rem;">
                                         <img src="https://i.pravatar.cc/150?img=57" alt="Profile">
@@ -147,7 +148,7 @@
 
                                     <div style="margin-top: 2rem; display: flex; gap: 10px;">
                                         <button class="btn btn-outline-info">Salvar Alterações</button>
-                                        <button class="btn btn-outline-danger";">Cancelar</button>
+                                        <button class="btn btn-outline-danger" ;">Cancelar</button>
                                     </div>
                                 </div>
                             </div>
@@ -184,7 +185,7 @@
                     &lt;/div&gt;
                     &lt;/div&gt;</div>
 
-                <!-- EXEMPLO 4: CHECKOUT (NOVO) -->
+                <!-- EXEMPLO 4: CHECKOUT -->
                 <h3 style="margin-top: 50px;">4. Widget de Checkout</h3>
                 <p>Combinação de alertas, formulários em grid e resumo de pedido.</p>
 
@@ -287,7 +288,123 @@
                     &lt;/div&gt;
                     &lt;/div&gt;
                     &lt;/div&gt;
+                    &lt;/div&gt;</div>
 
+                <!-- EXEMPLO 5: FAQ (NOVO) -->
+                <h3 style="margin-top: 50px;">5. Seção de FAQ</h3>
+                <p>Uma seção limpa de perguntas frequentes utilizando acordeões nativos.</p>
+
+                <div class="preview-box" style="background: #fff;">
+                    <div style="max-width: 800px; margin: auto;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <h2>Dúvidas Frequentes</h2>
+                            <p style="color: var(--txt-sec);">Tudo o que você precisa saber sobre o produto.</p>
+                        </div>
+
+                        <details class="accordion">
+                            <summary>Qual é a política de reembolso?</summary>
+                            <div class="accordion-body">
+                                Oferecemos garantia de reembolso de 30 dias sem perguntas. Basta entrar em contato com o
+                                suporte.
+                            </div>
+                        </details>
+                        <details class="accordion">
+                            <summary>Posso cancelar a qualquer momento?</summary>
+                            <div class="accordion-body">
+                                Sim, você pode cancelar sua assinatura a qualquer momento através do painel de controle.
+                                Seu acesso continuará até o fim do período pago.
+                            </div>
+                        </details>
+                        <details class="accordion">
+                            <summary>Existe suporte para equipes?</summary>
+                            <div class="accordion-body">
+                                Sim, o plano Enterprise oferece ferramentas de gestão de equipe, SSO e faturamento
+                                centralizado.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;!-- Seção FAQ --&gt;
+                    &lt;div style="max-width: 800px; margin: auto;"&gt;
+                    &lt;h2 style="text-align: center;"&gt;FAQ&lt;/h2&gt;
+                    &lt;details class="accordion"&gt;
+                    &lt;summary&gt;Pergunta 1&lt;/summary&gt;
+                    &lt;div class="accordion-body"&gt;Resposta...&lt;/div&gt;
+                    &lt;/details&gt;
+                    &lt;!-- Mais accordions... --&gt;
+                    &lt;/div&gt;</div>
+
+                <!-- EXEMPLO 6: UPLOAD CARD (NOVO) -->
+                <h3 style="margin-top: 50px;">6. Status de Upload</h3>
+                <p>Demonstração de feedback de estado usando progress bars e spinners.</p>
+
+                <div class="preview-box" style="background: #f0f0f8; display: flex; justify-content: center;">
+                    <div class="card" style="width: 100%; max-width: 450px;">
+                        <div class="card-body">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <h4 style="margin: 0;">Enviando Arquivos</h4>
+                                <span class="badge badge-info">2 de 3</span>
+                            </div>
+
+                            <!-- Item 1: Concluído -->
+                            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
+                                <div
+                                    style="width: 40px; height: 40px; background: #ecfdf5; color: var(--success); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <div style="font-size: 0.9rem; font-weight: 600;">apresentacao_vFinal.pdf</div>
+                                    <div style="font-size: 0.8rem; color: var(--success);">Concluído</div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2: Em Progresso -->
+                            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
+                                <div
+                                    style="width: 40px; height: 40px; background: #eff6ff; color: var(--info); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <div class="spinner-border" style="width: 1rem; height: 1rem; border-width: 2px;">
+                                    </div>
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                        <div style="font-size: 0.9rem; font-weight: 600;">video_demo.mp4</div>
+                                        <div style="font-size: 0.8rem; color: var(--txt-sec);">45%</div>
+                                    </div>
+                                    <div class="progress" style="height: 6px; margin-bottom: 0;">
+                                        <div class="progress-bar bg-info progress-bar-striped" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3: Aguardando -->
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div
+                                    style="width: 40px; height: 40px; background: #f1f5f9; color: var(--txt-sec); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa-regular fa-file"></i>
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <div style="font-size: 0.9rem; font-weight: 600; color: var(--txt-sec);">
+                                        dados_brutos.csv</div>
+                                    <div style="font-size: 0.8rem; color: var(--txt-sec);">Aguardando...</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;!-- Card de Upload --&gt;
+                    &lt;div class="card"&gt;
+                    &lt;div class="card-body"&gt;
+                    &lt;h4&gt;Enviando Arquivos&lt;/h4&gt;
+
+                    &lt;!-- Item com Progresso --&gt;
+                    &lt;div class="progress"&gt;
+                    &lt;div class="progress-bar bg-info" style="width: 45%"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
                     &lt;/div&gt;</div>
 
             </div>
