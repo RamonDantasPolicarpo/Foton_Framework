@@ -79,9 +79,9 @@ function showToast(message) {
     toast.style.borderRadius = '50px';
     toast.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
     toast.innerText = message;
-    
+
     document.body.appendChild(toast);
-    
+
     setTimeout(() => {
         toast.style.opacity = '0';
         toast.style.transition = 'opacity 0.5s';

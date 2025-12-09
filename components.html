@@ -90,6 +90,10 @@
                     <button class="btn btn-outline-warning">Warning Alt</button>
                     <button class="btn btn-outline-danger">Danger Alt</button>
                     <button class="btn btn-outline-info">Info Alt</button>
+                    <div style="background-color: var(--bg-dark); padding: 1em; border-radius: 50vh;">
+                        <button class="btn btn-outline-white">White Outline</button>
+                    </div>
+                    <button class="btn btn-outline-dark">Dark Outline</button>
                 </div>
                 <div class="code-block">
                     &lt;!-- Success Outline --&gt;
@@ -107,11 +111,21 @@
 
                 <h3>Links & Tamanhos</h3>
                 <div class="preview-box" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
-                    <a href="#" class="btn btn-sm btn-link">Small Link</a>
+                    <div style="display: flex; gap: 1em; align-items: center;">
+                        <a href="#" class="btn btn-link">Default Link</a>
+                        <a href="#" class="btn btn-sm btn-link">Small Link</a>
+                    </div>
+                    <a href="#" class="btn btn-block btn-link">Block Link</a>
                 </div>
                 <div class="code-block">
                     &lt;!-- Small Link (Tamanho Reduzido) --&gt;
                     &lt;a href="#" class="btn btn-sm btn-link"&gt;Small Link&lt;/a&gt;
+
+                    &lt;!-- Deafult Link (Tamanho Normal) --&gt;
+                    &lt;a href="#" class="btn btn-link"&gt;Small Link&lt;/a&gt;
+
+                    &lt;!-- Block Link (Ocupa toda a largura do container) --&gt;
+                    &lt;a href="#" class="btn btn-block btn-link"&gt;Small Link&lt;/a&gt;
                 </div>
 
                 <!-- ALERTAS -->
@@ -226,7 +240,8 @@
                                     <td><span class="badge badge-success">Ativo</span></td>
                                     <td style="color: #666;">12 Out, 2024</td>
                                     <td style="text-align: right; padding-right: 2rem;">
-                                        <button class="btn btn-sm btn-link" style="padding: 5px;">Editar</button>
+                                        <button class="btn btn-sm btn-outline-info"
+                                            style="padding: 5px;">Editar</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -240,7 +255,8 @@
                                     <td><span class="badge badge-warning">Pendente</span></td>
                                     <td style="color: #666;">10 Out, 2024</td>
                                     <td style="text-align: right; padding-right: 2rem;">
-                                        <button class="btn btn-sm btn-link" style="padding: 5px;">Editar</button>
+                                        <button class="btn btn-sm btn-outline-info"
+                                            style="padding: 5px;">Editar</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -286,7 +302,7 @@
                         </button>
 
                         <div class="dropdown">
-                            <button class="btn btn-outline-info">Dropdown Menu <i class="fa-solid fa-chevron-down"
+                            <button class="btn btn-primary">Dropdown Menu <i class="fa-solid fa-chevron-down"
                                     style="margin-left: 8px; font-size: 12px;"></i></button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Ação</a></li>
@@ -317,76 +333,207 @@
                     &lt;/ul&gt;
                     &lt;/div&gt;</div>
 
-                <h3 style="margin-top: 3rem;">Cards de Preço</h3>
-                <div class="preview-box"
-                    style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: flex-start;">
-                    <!-- Card Demo -->
-                    <div class="card" style="width: 300px;">
-                        <div class="card-body">
-                            <h3>Básico</h3>
-                            <div class="price">0</div>
-                            <ul>
-                                <li>Acesso limitado</li>
-                                <li>Suporte por email</li>
-                            </ul>
+                <!-- =========================================
+                     SEÇÃO: BIBLIOTECA DE CARDS
+                     ========================================= -->
+                <h3 style="margin-top: 5rem; border-top: 1px solid #eee; padding-top: 2rem;">Biblioteca de Cards &
+                    Layouts</h3>
+                <p>Variações de cards para diferentes contextos: preços, blog, equipe e features.</p>
+
+                <!-- 1. Cards de Preço -->
+                <h4>Cards de Preço</h4>
+                <div class="preview-box" style="background: #f8f9fa;">
+                    <div class="grid-responsive"
+                        style="gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: 20px;">
+
+                        <!-- Card Padrão (Sem Destaque) -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h3>Starter</h3>
+                                <div class="price">0</div>
+                                <div class="period">para sempre</div>
+                                <ul>
+                                    <li>1 Projeto</li>
+                                    <li>Suporte Básico</li>
+                                </ul>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-block">Começar Grátis</a>
                         </div>
-                        <a href="#" class="btn btn-primary">Começar</a>
+
+                        <!-- Card Destacado (Novo - .card-highlight) -->
+                        <div class="card card-highlight">
+                            <div class="card-body">
+                                <h3>Pro</h3>
+                                <div class="price">49</div>
+                                <div class="period">por mês</div>
+                                <ul>
+                                    <li>Projetos Ilimitados</li>
+                                    <li>Prioridade no Suporte</li>
+                                    <li>Analytics Avançado</li>
+                                </ul>
+                            </div>
+                            <a href="#" class="btn btn-gradient btn-block">Assinar Pro</a>
+                        </div>
+
                     </div>
                 </div>
                 <div class="code-block">
-                    &lt;div class="card"&gt;
-                    &lt;div class="card-body"&gt;
-                    &lt;h3&gt;Plano Básico&lt;/h3&gt;
-                    &lt;div class="price"&gt;0&lt;/div&gt;
-                    &lt;ul&gt;
-                    &lt;li&gt;Recurso 1&lt;/li&gt;
-                    &lt;li&gt;Recurso 2&lt;/li&gt;
-                    &lt;/ul&gt;
-                    &lt;/div&gt;
-                    &lt;a href="#" class="btn btn-primary"&gt;Assinar&lt;/a&gt;
+                    &lt;!-- Card Destacado (NOVO - Ideal para planos) --&gt;
+                    &lt;div class="card card-highlight"&gt;
+                    &lt;div class="card-body"&gt;...&lt;/div&gt;
                     &lt;/div&gt;</div>
 
-                <h3>Cards de Categoria</h3>
-                <div class="preview-box"
-                    style="background: #f9f9f9; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-                    <!-- Standard -->
-                    <div class="card-feature">
-                        <span><i class="fa-solid fa-layer-group"></i></span>
-                        <h1>Padrão</h1>
-                        <p>Centralizado com fundo suave.</p>
+                <!-- 2. Cards de Funcionalidade -->
+                <h4>Cards de Funcionalidade (Features)</h4>
+                <div class="preview-box" style="display: flex; flex-direction: column; gap: 20px;">
+
+                    <!-- Feature Vertical (Padrão) -->
+                    <p style="margin-bottom: 5px; font-size: 14px; color: #999;">Vertical (Padrão)</p>
+                    <div class="flex-container" style="justify-content: flex-start;">
+                        <div class="card-feature">
+                            <span><i class="fa-solid fa-bolt"></i></span>
+                            <h1>Rápido</h1>
+                            <p>Otimizado para performance máxima.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature Horizontal (Row) -->
+                    <p style="margin-bottom: 5px; font-size: 14px; color: #999;">Horizontal (Row)</p>
+                    <div class="card card-feature-row">
+                        <span><i class="fa-solid fa-shield-halved"
+                                style="font-size: 24px; color: var(--color-brand);"></i></span>
+                        <div>
+                            <h1>Segurança Total</h1>
+                            <p style="margin: 0; color: var(--text-muted);">Seus dados protegidos com criptografia de
+                                ponta a ponta.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="code-block">
-                    &lt;div class="card-feature"&gt;
-                    &lt;span&gt;&lt;i class="fa-solid fa-layer-group"&gt;&lt;/i&gt;&lt;/span&gt;
+                    &lt;!-- Feature Horizontal (NOVO - Lista de benefícios) --&gt;
+                    &lt;div class="card card-feature-row"&gt;
+                    &lt;span&gt;&lt;i class="fa-solid fa-icon"&gt;&lt;/i&gt;&lt;/span&gt;
+                    &lt;div&gt;
                     &lt;h1&gt;Título&lt;/h1&gt;
-                    &lt;p&gt;Texto...&lt;/p&gt;
+                    &lt;p&gt;Descrição...&lt;/p&gt;
                     &lt;/div&gt;
+                    &lt;/div&gt;</div>
+
+                <!-- 3. Cards de Conteúdo e Perfil -->
+                <div class="grid-responsive" style="margin-top: 40px; gap: 40px;">
+
+                    <!-- Blog Card -->
+                    <div>
+                        <h4>Card de Conteúdo (Blog)</h4>
+                        <div class="preview-box" style="padding: 20px;">
+
+                            <!-- Card Blog: Imagem no topo sem margem -->
+                            <div class="card card-blog">
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    class="card-img-top" alt="Cover">
+                                <div class="card-body">
+                                    <span class="badge badge-success" style="margin-bottom: 10px;">Tech</span>
+                                    <h3 style="font-size: 20px;">Como otimizar seu CSS</h3>
+                                    <p style="color: var(--text-muted); font-size: 14px;">Dicas essenciais para manter
+                                        seu código limpo e performático.</p>
+                                    <a href="#"
+                                        style="color: var(--color-brand); font-weight: 600; font-size: 14px;">Ler mais
+                                        →</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Profile Card -->
+                    <div>
+                        <h4>Card de Perfil (Equipe)</h4>
+                        <div class="preview-box" style="padding: 20px;">
+
+                            <!-- Card Profile: Centralizado para equipe -->
+                            <div class="card card-profile">
+                                <div class="avatar avatar-xl">
+                                    <img src="https://i.pravatar.cc/150?img=68" alt="Profile">
+                                </div>
+                                <h4>Sarah Connor</h4>
+                                <p>Tech Lead</p>
+                                <div style="display: flex; gap: 10px; justify-content: center;">
+                                    <button class="btn btn-sm btn-outline-info"><i
+                                            class="fa-brands fa-linkedin"></i></button>
+                                    <button class="btn btn-sm btn-outline-info"><i
+                                            class="fa-brands fa-twitter"></i></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
 
-                <h3>Notificações & Social Proof</h3>
-                <div class="preview-box" style="background: #eee; padding: 3rem;">
-                    <!-- Like -->
+                <div class="code-block">
+                    &lt;!-- Card Blog (NOVO - Imagem no topo sem padding) --&gt;
+                    &lt;div class="card card-blog"&gt;
+                    &lt;img src="..." class="card-img-top"&gt;
+                    &lt;div class="card-body"&gt;...&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Card Perfil (NOVO - Centralizado para equipes) --&gt;
+                    &lt;div class="card card-profile"&gt;
+                    &lt;div class="avatar avatar-xl"&gt;...&lt;/div&gt;
+                    &lt;h4&gt;Nome&lt;/h4&gt;
+                    &lt;p&gt;Cargo&lt;/p&gt;
+                    &lt;/div&gt;</div>
+
+                <!-- 4. Notificações Extras -->
+                <h4>Estilos de Notificação</h4>
+                <div class="preview-box">
+
+                    <!-- Notification Card (Padrão) -->
                     <div class="notification-card">
                         <div
-                            style="width: 30px; height: 30px; background: #e33f5f; border-radius: 5px; display:flex; align-items:center; justify-content:center; color:white;">
-                            <i class="fa-solid fa-heart"></i>
+                            style="width: 40px; height: 40px; background: #e3f2fd; color: #2196f3; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div>
-                            <div style="font-weight: 700; font-size: 14px;">Novo Like</div>
-                            <div style="font-size: 12px; color: #666;">@usuario curtiu sua foto.</div>
+                            <div style="font-weight: 700; font-size: 14px;">Nova Mensagem</div>
+                            <div style="font-size: 12px; color: #666;">Você recebeu um e-mail de suporte.</div>
                         </div>
                     </div>
+
+                    <!-- Notification Toast (Novo Estilo) -->
+                    <div style="margin-top: 20px;">
+                        <p style="font-size: 12px; color: #999; margin-bottom: 10px;">Toast Style (Compacto)</p>
+
+                        <!-- Toast: Sucesso -->
+                        <div class="notification-toast">
+                            <span class="dot success"></span>
+                            <span>Alterações salvas com sucesso</span>
+                        </div>
+
+                        <!-- Toast: Erro -->
+                        <div class="notification-toast" style="margin-left: 10px;">
+                            <span class="dot danger"></span>
+                            <span>Falha na conexão</span>
+                        </div>
+                    </div>
+
                 </div>
+
                 <div class="code-block">
+                    &lt;!-- Notification Card (Padrão) --&gt;
                     &lt;div class="notification-card"&gt;
-                    &lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-heart"&gt;&lt;/i&gt;&lt;/div&gt;
+                    &lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-envelope"&gt;&lt;/i&gt;&lt;/div&gt;
                     &lt;div&gt;
-                    &lt;div class="title"&gt;Título&lt;/div&gt;
-                    &lt;div class="desc"&gt;Descrição&lt;/div&gt;
+                    &lt;div&gt;Título&lt;/div&gt;
+                    &lt;div&gt;Descrição...&lt;/div&gt;
                     &lt;/div&gt;
                     &lt;/div&gt;
-                </div>
+
+                    &lt;!-- Notification Toast (NOVO - Estilo Flutuante) --&gt;
+                    &lt;div class="notification-toast"&gt;
+                    &lt;span class="dot success"&gt;&lt;/span&gt;
+                    &lt;span&gt;Sucesso&lt;/span&gt;
+                    &lt;/div&gt;</div>
+
             </div>
         </main>
     </div>
