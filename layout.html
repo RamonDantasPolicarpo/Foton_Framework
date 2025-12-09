@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fóton Framework - Layout</title>
+    <title>Fóton Framework - Layout & Grid</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -42,13 +42,15 @@
         </nav>
 
         <main class="docs-content">
-            <div id="tab-layout" class="tab-view">
+            <div id="tab-layout" class="tab-view page-fade-in">
                 <h1 class="doc-title">Layout & Grid</h1>
                 <p class="doc-subtitle">Classes utilitárias para estruturação de conteúdo responsivo.</p>
 
-                <h3>Grid de Preços (Auto-Responsive)</h3>
-                <p>A classe <code>.grid-responsive</code> utiliza CSS Grid com <code>minmax</code> para criar colunas
-                    que se adaptam automaticamente ao espaço disponível.</p>
+                <!-- GRID RESPONSIVO -->
+                <h3>Grid Automático</h3>
+                <p>A classe <code>.grid-responsive</code> utiliza CSS Grid com <code>auto-fit</code> e
+                    <code>minmax</code> para criar colunas que se adaptam automaticamente ao espaço disponível, sem
+                    necessidade de Media Queries manuais.</p>
 
                 <div class="preview-box">
                     <div class="grid-responsive" style="margin: 0;">
@@ -71,24 +73,22 @@
                     &lt;div&gt;Conteúdo 3&lt;/div&gt;
                     &lt;/div&gt;</div>
 
-                <h3 style="margin-top: 40px;">Flex Container (Categorias)</h3>
+                <!-- FLEX CONTAINER -->
+                <h3 style="margin-top: 40px;">Flex Container</h3>
                 <p>A classe <code>.flex-container</code> utiliza Flexbox com wrap, ideal para listas de itens
-                    centralizados.</p>
+                    centralizados, galerias de ícones ou cards de funcionalidades.</p>
 
                 <div class="preview-box">
                     <div class="flex-container" style="margin: 0;">
                         <div
                             style="width: 150px; height: 100px; background: #e3f2fd; border: 1px solid #90caf9; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-                            Item Flex</div>
+                            Flex Item</div>
                         <div
                             style="width: 150px; height: 100px; background: #e3f2fd; border: 1px solid #90caf9; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-                            Item Flex</div>
+                            Flex Item</div>
                         <div
                             style="width: 150px; height: 100px; background: #e3f2fd; border: 1px solid #90caf9; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-                            Item Flex</div>
-                        <div
-                            style="width: 150px; height: 100px; background: #e3f2fd; border: 1px solid #90caf9; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-                            Item Flex</div>
+                            Flex Item</div>
                     </div>
                 </div>
 
@@ -98,6 +98,105 @@
                     &lt;div style="width: 200px;"&gt;Item 1&lt;/div&gt;
                     &lt;div style="width: 200px;"&gt;Item 2&lt;/div&gt;
                     &lt;/div&gt;</div>
+
+                <!-- SECTION DARK -->
+                <h3 style="margin-top: 40px;">Seções de Destaque</h3>
+                <p>A classe <code>.section-dark</code> cria um container escuro com bordas arredondadas e padding
+                    generoso, ideal para quebrar o ritmo da página ou destacar features importantes. Ela já centraliza o
+                    conteúdo e limita a largura.</p>
+
+                <div class="preview-box">
+                    <section class="section-dark" style="margin: 0;">
+                        <div class="section-header" style="text-align: center; margin-bottom: 0;">
+                            <h2>Título da Seção</h2>
+                            <p style="margin-bottom: 0;">Subtítulo descritivo em cor clara.</p>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="code-block">
+                    &lt;section class="section-dark"&gt;
+                    &lt;div class="section-header"&gt;
+                    &lt;h2&gt;Título&lt;/h2&gt;
+                    &lt;p&gt;Descrição...&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;!-- Conteúdo da seção --&gt;
+                    &lt;/section&gt;</div>
+
+                <!-- FORM LAYOUTS (NOVA SEÇÃO DIDÁTICA) -->
+                <h2 style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee;">Layout de Formulários</h2>
+                <p class="doc-subtitle">Aprenda a estruturar seus formulários utilizando CSS Grid e Flexbox nativos
+                    junto com as classes do framework.</p>
+
+                <!-- Layout 1: Vertical -->
+                <h4 style="margin-top: 30px;">1. Pilha Vertical (Padrão)</h4>
+                <p>Os elementos de input nativos possuem largura automática. Ao adicionar a classe
+                    <code>.form-input</code>, eles expandem para <strong>100% da largura</strong> do container pai,
+                    ideal para layouts móveis ou empilhados.</p>
+                <div class="preview-box">
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Senha</label>
+                            <input type="password" class="form-input">
+                        </div>
+                    </form>
+                </div>
+                <div class="code-block">
+                    &lt;!-- Container .form-group agrupa label e input --&gt;
+                    &lt;div class="form-group"&gt;
+                    &lt;label class="form-label"&gt;Email&lt;/label&gt;
+                    &lt;input type="email" class="form-input"&gt;
+                    &lt;/div&gt;</div>
+
+                <!-- Layout 2: Grid -->
+                <h4 style="margin-top: 40px;">2. Grid de Colunas (Lado a Lado)</h4>
+                <p>Para colocar campos lado a lado (ex: Nome e Sobrenome), envolva-os em uma <code>div</code> com
+                    <code>display: grid</code>. Você pode definir as colunas manualmente.</p>
+                <div class="preview-box">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label class="form-label">Nome</label>
+                            <input type="text" class="form-input">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label class="form-label">Sobrenome</label>
+                            <input type="text" class="form-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;!-- Grid de 2 colunas iguais --&gt;
+                    &lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"&gt;
+                    &lt;div class="form-group"&gt;...&lt;/div&gt;
+                    &lt;div class="form-group"&gt;...&lt;/div&gt;
+                    &lt;/div&gt;</div>
+
+                <!-- Layout 3: Inline Flex -->
+                <h4 style="margin-top: 40px;">3. Layout Inline (Botão ao lado)</h4>
+                <p>Use <code>display: flex</code> para alinhar um campo de input com um botão. Use
+                    <code>align-items: flex-end</code> para alinhar o botão com o input (ignorando o label).</p>
+                <div class="preview-box">
+                    <div style="display: flex; gap: 10px; align-items: flex-end;">
+                        <div class="form-group" style="margin-bottom: 0; flex-grow: 1;">
+                            <label class="form-label">Cupom de Desconto</label>
+                            <input type="text" class="form-input">
+                        </div>
+                        <button class="btn btn-dark">Aplicar</button>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;div style="display: flex; gap: 10px; align-items: flex-end;"&gt;
+                    &lt;div class="form-group" style="flex-grow: 1;"&gt;
+                    &lt;label class="form-label"&gt;Cupom&lt;/label&gt;
+                    &lt;input type="text" class="form-input"&gt;
+                    &lt;/div&gt;
+                    &lt;button class="btn btn-dark"&gt;Aplicar&lt;/button&gt;
+                    &lt;/div&gt;</div>
+
             </div>
         </main>
     </div>

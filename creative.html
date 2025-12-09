@@ -42,10 +42,11 @@
         </nav>
 
         <main class="docs-content">
-            <div id="tab-creative" class="tab-view">
+            <div id="tab-creative" class="tab-view page-fade-in">
                 <h1 class="doc-title">Composições Criativas</h1>
                 <p class="doc-subtitle">Exemplos avançados combinando múltiplos componentes.</p>
 
+                <!-- EXEMPLO 1 -->
                 <h3>1. Card de Newsletter</h3>
                 <div class="preview-box" style="background: #f0f0f8; display: flex; justify-content: center;">
                     <div class="card" style="align-items: center; text-align: center; width: 100%; max-width: 500px;">
@@ -65,9 +66,9 @@
                     &lt;h3&gt;Newsletter&lt;/h3&gt;
                     &lt;/div&gt;
                     &lt;div class="input-group"&gt;...&lt;/div&gt;
-                    &lt;/div&gt;
-                </div>
+                    &lt;/div&gt;</div>
 
+                <!-- EXEMPLO 2 -->
                 <h3>2. Banner de Download de App</h3>
                 <div class="preview-box">
                     <div class="cta-card"
@@ -84,6 +85,211 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- EXEMPLO 3: PAINEL DE PERFIL (NOVO) -->
+                <h3 style="margin-top: 50px;">3. Painel de Configurações (Perfil)</h3>
+                <p>Uma composição completa simulando uma página de edição de perfil, utilizando grid, avatares,
+                    formulários e badges.</p>
+
+                <div class="preview-box" style="background: #f8f9fa;">
+                    <div class="card" style="max-width: 800px; margin: auto;">
+                        <div class="card-body">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                                <h3 style="margin: 0;">Editar Perfil</h3>
+                                <span class="badge badge-success">Conta Pro</span>
+                            </div>
+
+                            <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                                <!-- Coluna Avatar -->
+                                <div style="display: flex; flex-direction: column; text-align: center; margin: 0rem 1rem;">
+                                    <div class="avatar avatar-xl"
+                                        style="width: 120px; height: 120px; margin-bottom: 1rem;">
+                                        <img src="https://i.pravatar.cc/150?img=57" alt="Profile">
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-info">Alterar Foto</button>
+                                </div>
+
+                                <!-- Coluna Formulário -->
+                                <div style="flex: 1; min-width: 300px;">
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                        <div class="form-group">
+                                            <label class="form-label">Nome</label>
+                                            <input type="text" class="form-input" value="Enrico">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Sobrenome</label>
+                                            <input type="text" class="form-input" value="Silva">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-input" value="enrico.s@skynet.com">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Bio</label>
+                                        <textarea class="form-input"
+                                            rows="3">Líder de resistência e especialista em segurança cibernética.</textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-check">
+                                            <input type="checkbox" class="form-check-input" checked>
+                                            <span class="form-check-label">Receber notificações por email</span>
+                                        </label>
+                                        <label class="form-check">
+                                            <input type="checkbox" class="form-check-input">
+                                            <span class="form-check-label">Tornar perfil público</span>
+                                        </label>
+                                    </div>
+
+                                    <div style="margin-top: 2rem; display: flex; gap: 10px;">
+                                        <button class="btn btn-outline-info">Salvar Alterações</button>
+                                        <button class="btn btn-outline-danger";">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;!-- Estrutura do Painel de Perfil --&gt;
+                    &lt;div class="card"&gt;
+                    &lt;div class="card-body"&gt;
+                    &lt;!-- Header --&gt;
+                    &lt;div style="display: flex; justify-content: space-between;"&gt;
+                    &lt;h3&gt;Editar Perfil&lt;/h3&gt;
+                    &lt;span class="badge badge-success"&gt;Conta Pro&lt;/span&gt;
+                    &lt;/div&gt;
+
+                    &lt;div style="display: flex; gap: 2rem;"&gt;
+                    &lt;!-- Avatar --&gt;
+                    &lt;div style="display: flex; flex-direction: column; text-align: center; margin: 0rem 1rem;"&gt;
+                    &lt;div class="avatar avatar-xl"&gt;...&lt;/div&gt;
+                    &lt;button class="btn btn-sm btn-outline-info"&gt;Alterar&lt;/button&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Form --&gt;
+                    &lt;div style="flex: 1;"&gt;
+                    &lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"&gt;
+                    &lt;div class="form-group"&gt;...&lt;/div&gt;
+                    &lt;div class="form-group"&gt;...&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!-- Mais campos --&gt;
+                    &lt;button class="btn btn-info"&gt;Salvar&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;</div>
+
+                <!-- EXEMPLO 4: CHECKOUT (NOVO) -->
+                <h3 style="margin-top: 50px;">4. Widget de Checkout</h3>
+                <p>Combinação de alertas, formulários em grid e resumo de pedido.</p>
+
+                <div class="preview-box" style="background: #f0f0f8;">
+                    <div
+                        style="max-width: 900px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+                        <!-- Coluna da Esquerda: Form -->
+                        <div>
+                            <h4 style="margin-bottom: 1.5rem;">Endereço de Entrega</h4>
+
+                            <!-- Alerta Informativo -->
+                            <div class="alert alert-info" style="margin-bottom: 1.5rem;">
+                                <i class="fa-solid fa-truck-fast alert-icon"></i>
+                                <div>
+                                    <span class="alert-heading">Frete Grátis</span>
+                                    Aplicado para compras acima de R$ 100.
+                                </div>
+                            </div>
+
+                            <form>
+                                <div class="form-group">
+                                    <label class="form-label">Endereço</label>
+                                    <input type="text" class="form-input" placeholder="Rua, número...">
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                    <div class="form-group">
+                                        <label class="form-label">Cidade</label>
+                                        <input type="text" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Estado</label>
+                                        <select class="form-input">
+                                            <option>Selecione...</option>
+                                            <option>SP</option>
+                                            <option>RJ</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Coluna da Direita: Resumo -->
+                        <div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3
+                                        style="font-size: 1.2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem;">
+                                        Resumo do Pedido</h3>
+
+                                    <div
+                                        style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem;">
+                                        <span>Fóton Framework Pro</span>
+                                        <strong>R$ 49,00</strong>
+                                    </div>
+                                    <div
+                                        style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem;">
+                                        <span>Template Pack</span>
+                                        <strong>R$ 29,00</strong>
+                                    </div>
+
+                                    <div class="input-group" style="margin: 1.5rem 0;">
+                                        <input type="text" class="input-field" placeholder="Cupom de desconto">
+                                        <button class="btn btn-dark" style="height: 44px; margin: 3px;">Aplicar</button>
+                                    </div>
+
+                                    <div
+                                        style="border-top: 2px dashed #eee; padding-top: 1rem; margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="font-weight: 700;">Total</span>
+                                        <span style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">R$
+                                            78,00</span>
+                                    </div>
+
+                                    <button class="btn btn-success btn-block" style="margin-top: 1.5rem;">Finalizar
+                                        Compra</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;!-- Grid Layout para Checkout --&gt;
+                    &lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;"&gt;
+
+                    &lt;!-- Coluna 1: Form --&gt;
+                    &lt;div&gt;
+                    &lt;div class="alert alert-info"&gt;...&lt;/div&gt;
+                    &lt;form&gt;...&lt;/form&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Coluna 2: Card de Resumo --&gt;
+                    &lt;div&gt;
+                    &lt;div class="card"&gt;
+                    &lt;div class="card-body"&gt;
+                    &lt;h3&gt;Resumo&lt;/h3&gt;
+                    &lt;!-- Lista de Itens --&gt;
+                    &lt;div class="input-group"&gt;...&lt;/div&gt;
+                    &lt;button class="btn btn-success btn-block"&gt;Pagar&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;/div&gt;</div>
+
             </div>
         </main>
     </div>
