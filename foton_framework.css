@@ -79,6 +79,7 @@ body.dark-mode .popover-content,
 body.dark-mode .preview-box,
 body.dark-mode footer {
     border-color: var(--border-color);
+    background-color: var(--bg-page);
     box-shadow: none;
 }
 
@@ -270,7 +271,7 @@ h6 {
 footer {
     display: block;
     width: 100%;
-    background: #ffffff;
+    background: var(--bg-page);
     padding: 0;
     position: relative;
     z-index: 10;
