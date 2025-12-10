@@ -1,6 +1,5 @@
 /* ==========================================================================
    FÓTON FRAMEWORK v1.0
-   Biblioteca de estilos UI leve e moderna.
    ========================================================================== */
 
 /* --- VARIÁVEIS GLOBAIS --- */
@@ -11,6 +10,7 @@
 
     /* 2. Backgrounds */
     --bg-page: #f0f0f8;
+    --bg-surface: #ffffff;
     --dark: #1d1e25;
 
     /* 3. Texto */
@@ -18,6 +18,10 @@
     --txt-sec: #60697b;
     --txt-white: #f1f5f9;
     --txt-white-sec: #94a3b8;
+    --txt-black: #343f52;
+    --txt-black-sec: #60697b;
+
+    --border-color: #e2e8f0;
 
     /* 4. Cores Semânticas */
     --info: #3b82f6;
@@ -40,6 +44,44 @@
     --grad-social: linear-gradient(135deg, #6559ca, #e33f5f);
     --grad-urban: linear-gradient(135deg, #40aa54, #64748b);
     --grad-blue: linear-gradient(135deg, #3b82f6, #94a3b8);
+}
+
+/* --- MODO ESCURO (CLASSE GLOBAL) --- */
+body.dark-mode {
+    --bg-page: #121212;
+    --bg-surface: #1e1e24;
+
+    --txt-primary: #e2e8f0;
+    --txt-sec: #94a3b8;
+
+    --primary-soft: #143520;
+    --info-soft: #172a46;
+    --success-soft: #064e3b;
+    --warning-soft: #451a03;
+    --danger-soft: #450a0a;
+    --neutral-soft: #1f2937;
+
+    --border-color: #2d2d3a;
+}
+
+/* Dark Mode */
+body.dark-mode .card,
+body.dark-mode .navbar,
+body.dark-mode .docs-sidebar,
+body.dark-mode .input-group,
+body.dark-mode .form-input,
+body.dark-mode .dropdown-menu,
+body.dark-mode details.accordion,
+body.dark-mode .accordion-body,
+body.dark-mode .popover-content,
+body.dark-mode .preview-box,
+body.dark-mode footer {
+    border-color: #2d2d3a;
+    box-shadow: none;
+}
+
+body.dark-mode .preview-box {
+    background-color: #16161c !important;
 }
 
 /* --- RESET & BASE --- */
@@ -65,6 +107,8 @@ body {
     font-family: 'Poppins', sans-serif;
     background: var(--bg-page);
     color: var(--txt-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transição suave de tema */
 }
 
 /* Tipografia */
@@ -122,7 +166,7 @@ h6 {
     width: 100%;
     flex-direction: column;
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--bg-surface);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -151,7 +195,7 @@ h6 {
     font-size: 1.4rem;
     font-weight: 800;
     letter-spacing: 1px;
-    color: #202020;
+    color: var(--txt-primary);
 }
 
 .logo span {
@@ -318,7 +362,7 @@ select option {
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
     color: var(--txt-primary);
-    background-color: #fff;
+    background-color: var(--bg-surface);
     border: 1px solid #e2e8f0;
     border-radius: 8px;
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -360,7 +404,7 @@ textarea.form-input {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     border: 1px solid #e0e0e0;
     width: 100%;
-    background: #fff;
+    background: var(--bg-surface);
     transition: all 0.3s ease;
     max-width: 100%;
 }
@@ -402,7 +446,7 @@ textarea.form-input {
     height: 1.25rem;
     border: 1px solid #cbd5e1;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--bg-surface);
     cursor: pointer;
     position: relative;
     transition: all 0.2s;
@@ -507,15 +551,15 @@ textarea.form-input {
 
 .btn-primary {
     background-color: #e9e9ed;
-    color: var(--txt-sec);
-    border: 2px solid #e0e0e0;
+    color: var(--txt-black-sec);
+    border: 2px solid #d1d1d1;
 }
 
 .btn-primary:hover {
-    background-color: #e3e3e3;
-    color: var(--txt-primary);
+    background-color: #d5d5d5;
+    color: var(--txt-black);
     transform: translateY(-2px);
-    border-color: #d0d0d0;
+    border-color: #bababa;
 }
 
 .btn-dark {
@@ -690,7 +734,7 @@ textarea.form-input {
 .card {
     padding: 2rem;
     box-shadow: 2px 0 24px rgba(64, 170, 84, 0.1);
-    background: #fff;
+    background: var(--bg-surface);
     border-radius: 1.5rem;
     display: flex;
     gap: 1.5rem;
@@ -883,7 +927,7 @@ textarea.form-input {
     border: 2px solid var(--primary);
     transform: scale(1.05);
     z-index: 2;
-    background: #fff;
+    background: var(--bg-surface);
     position: relative;
 }
 
@@ -943,7 +987,7 @@ textarea.form-input {
     position: relative;
     padding: 1rem 1.25rem;
     margin-bottom: 1rem;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: 8px;
     display: flex;
     align-items: start;
@@ -964,6 +1008,7 @@ textarea.form-input {
 }
 
 .alert-close {
+    color: var(--txt-primary);
     margin-left: auto;
     background: transparent;
     border: none;
@@ -980,19 +1025,19 @@ textarea.form-input {
 }
 
 .alert-primary {
-    background-color: #f0fdf4;
-    color: #166534;
-    border-color: #bbf7d0;
+    background-color: var(--success-soft);
+    color: var(--success);
+    border-color: rgba(16, 185, 129, 0.2);
 }
 
 .alert-primary .alert-icon {
-    color: #22c55e;
+    color: var(--success);
 }
 
 .alert-info {
     background-color: var(--info-soft);
-    color: #1e40af;
-    border-color: #bfdbfe;
+    color: var(--info);
+    border-color: rgba(59, 130, 246, 0.2);
 }
 
 .alert-info .alert-icon {
@@ -1001,8 +1046,8 @@ textarea.form-input {
 
 .alert-warning {
     background-color: var(--warning-soft);
-    color: #92400e;
-    border-color: #fde68a;
+    color: var(--warning);
+    border-color: rgba(245, 158, 11, 0.2);
 }
 
 .alert-warning .alert-icon {
@@ -1011,12 +1056,22 @@ textarea.form-input {
 
 .alert-danger {
     background-color: var(--danger-soft);
-    color: #991b1b;
-    border-color: #fecaca;
+    color: var(--danger);
+    border-color: rgba(239, 68, 68, 0.2);
 }
 
 .alert-danger .alert-icon {
     color: var(--danger);
+}
+
+.alert-neutral {
+    background-color: var(--neutral-soft);
+    color: var(--neutral);
+    border-color: rgba(100, 116, 139, 0.2);
+}
+
+.alert-neutral .alert-icon {
+    color: var(--neutral);
 }
 
 .badge {
@@ -1054,31 +1109,31 @@ textarea.form-input {
 .badge-success {
     background-color: var(--success-soft);
     color: var(--success);
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    border: 2px solid rgba(16, 185, 129, 0.2);
 }
 
 .badge-danger {
     background-color: var(--danger-soft);
     color: var(--danger);
-    border: 1px solid rgba(239, 68, 68, 0.2);
+    border: 2px solid rgba(239, 68, 68, 0.2);
 }
 
 .badge-warning {
     background-color: var(--warning-soft);
     color: var(--warning);
-    border: 1px solid rgba(245, 158, 11, 0.2);
+    border: 2px solid rgba(245, 158, 11, 0.2);
 }
 
 .badge-info {
     background-color: var(--info-soft);
     color: var(--info);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    border: 2px solid rgba(59, 130, 246, 0.2);
 }
 
 .badge-neutral {
     background-color: var(--neutral-soft);
     color: var(--neutral);
-    border: 1px solid #e2e8f0;
+    border: 2px solid rgba(100, 116, 139, 0.2)      ;
 }
 
 .notification-card {
@@ -1086,7 +1141,7 @@ textarea.form-input {
     width: max-content;
     min-width: 320px;
     padding: 1rem;
-    background: #fff;
+    background: var(--bg-surface);
     border-radius: 16px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     display: flex;
@@ -1105,7 +1160,7 @@ textarea.form-input {
 .notification-toast {
     position: relative;
     padding: 0.75rem 1rem;
-    background: #fff;
+    background: var(--bg-surface);
     border-radius: 50px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: inline-flex;
@@ -1206,7 +1261,7 @@ textarea.form-input {
 .table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #fff;
+    background-color: var(--bg-surface);
     font-size: 0.95rem;
     text-align: left;
 }
@@ -1220,7 +1275,7 @@ textarea.form-input {
 }
 
 .table th {
-    background-color: #f8fafc;
+    background-color: var(--bg-page);
     font-weight: 600;
     color: var(--txt-sec);
     font-size: 0.85rem;
@@ -1233,11 +1288,11 @@ textarea.form-input {
 }
 
 .table-hover tbody tr:hover {
-    background-color: #f8fafc;
+    background-color: var(--bg-page);
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #fcfcfd;
+    background-color: var(--bg-page);
 }
 
 .breadcrumb {
@@ -1380,7 +1435,7 @@ textarea.form-input {
     color: var(--txt-primary);
     text-align: left;
     list-style: none;
-    background-color: #fff;
+    background-color: var(--bg-surface);
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .05);
     border-radius: 0.5rem;
@@ -1418,7 +1473,7 @@ textarea.form-input {
 }
 
 .dropdown-item:hover {
-    background-color: #f1f5f9;
+    background-color: var(--bg-page);
     color: var(--primary);
 }
 
@@ -1431,7 +1486,7 @@ details.accordion {
     border: 1px solid #e2e8f0;
     border-radius: 8px;
     margin-bottom: 10px;
-    background: #fff;
+    background: var(--bg-surface);
     overflow: hidden;
     transition: height 0.3s ease, background-color 0.2s;
 }
@@ -1461,7 +1516,7 @@ details.accordion summary::after {
 }
 
 details.accordion[open] summary {
-    background-color: #f8fafc;
+    background-color: var(--bg-page);
     border-bottom: 1px solid #e2e8f0;
     color: var(--primary);
 }
@@ -1475,7 +1530,7 @@ details.accordion[open] summary::after {
     color: var(--txt-sec);
     font-size: 0.95rem;
     line-height: 1.6;
-    background: #fff;
+    background: var(--bg-surface);
 }
 
 .progress {
@@ -1580,7 +1635,7 @@ details.accordion[open] summary::after {
     left: 110%;
     width: 200px;
     padding: 1rem;
-    background: #fff;
+    background: var(--bg-surface);
     border: 1px solid #e2e8f0;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     border-radius: 8px;

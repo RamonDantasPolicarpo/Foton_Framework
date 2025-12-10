@@ -26,6 +26,15 @@
                 Fóton
             </a>
 
+            <!-- SWITCH DE MODO ESCURO (NOVO) -->
+            <div style="margin-bottom: 2rem;">
+                <label class="toggle__section" style="margin: 0; cursor: pointer;">
+                    <input type="checkbox" id="darkModeSwitch">
+                    <div class="toggle__btn" style="transform: scale(0.8);"><span></span></div>
+                    <span style="font-size: 0.9rem; font-weight: 600; color: var(--txt-primary);">Modo Escuro</span>
+                </label>
+            </div>
+
             <div class="docs-menu-category">Visão Geral</div>
             <a href="index.html" class="docs-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Início &
                 Demo</a>
@@ -102,7 +111,9 @@
                         <button class="btn btn-outline-info">Info</button>
 
                         <!-- Outlines Translúcidos -->
-                        <button class="btn btn-outline-dark">Dark Translucent</button>
+                        <div style="background-color: #f0f0f8; padding: 10px; border-radius: 8px;">
+                            <button class="btn btn-outline-dark">Dark Translucent</button>
+                        </div>
                         <div style="background-color: var(--dark); padding: 10px; border-radius: 8px;">
                             <button class="btn btn-outline-white">White Translucent</button>
                         </div>
@@ -326,6 +337,11 @@
                             <i class="fa-solid fa-circle-info alert-icon"></i>
                             <div><strong>Info:</strong> Nova versão disponível para download.</div>
                         </div>
+
+                        <div class="alert alert-neutral">
+                            <i class="fa-solid fa-circle-info alert-icon"></i>
+                            <div><strong>Info:</strong> Olá esse é um alert-neutral.</div>
+                        </div>
                     </div>
                     <div class="code-block">
                         &lt;div class="alert alert-primary"&gt;
@@ -363,9 +379,13 @@
                             <span class="badge badge-neutral">Neutral</span>
                         </div>
                         <div style="display: flex; gap: 10px; align-items: center; margin-top: 15px;">
-                            <span class="badge badge-pill badge-primary">Pill Style</span>
-                            <span class="badge badge-pill badge-success">Ativo</span>
-                            <span class="badge badge-pill badge-danger">12</span>
+                            <span class="badge badge-pill badge-primary">Primary</span>
+                            <span class="badge badge-pill badge-secondary">Secondary</span>
+                            <span class="badge badge-pill badge-success">Success</span>
+                            <span class="badge badge-pill badge-warning">Warning</span>
+                            <span class="badge badge-pill badge-danger">Danger</span>
+                            <span class="badge badge-pill badge-info">Info</span>
+                            <span class="badge badge-pill badge-neutral">Neutral</span>
                         </div>
                     </div>
                     <div class="code-block">
@@ -709,7 +729,7 @@
                                 <ul class="navbar-menu" style="margin-bottom: 0;">
                                     <li><a href="#">Link 1</a></li>
                                     <li><a href="#">Link 2</a></li>
-                                    <li><a href="#" class="btn btn-sm btn-primary">Login</a></li>
+                                    <li><a href="#" class="btn btn-sm btn-link">Login</a></li>   
                                 </ul>
                             </div>
                         </nav>
@@ -757,8 +777,9 @@
                     <div class="preview-box" style="padding: 0;">
                         <section class="hero" style="min-height: 300px; padding-top: 2rem;">
                             <div class="hero-content">
-                                <span>Título de Impacto</span>
-                                <p>Subtítulo explicativo curto para engajar o usuário.</p>
+                                <span style="color: var(--txt-black);">Título de Impacto</span>
+                                <p style="color: var(--txt-black-sec);">Subtítulo explicativo curto para engajar o
+                                    usuário.</p>
                                 <button class="btn btn-gradient">Call to Action</button>
                             </div>
                         </section>
@@ -800,8 +821,7 @@
             </main>
 
             <!-- RODAPÉ DA DOCUMENTAÇÃO -->
-            <footer
-                style="margin-top: 0; padding-top: 2rem; padding-bottom: 2rem; border-top: 1px solid #eee; color: var(--txt-sec); font-size: 0.9rem; background: #fbfbfd; width: 100%;">
+            <footer class="docs-footer">
                 <div
                     style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center;">
 

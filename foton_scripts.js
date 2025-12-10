@@ -8,7 +8,37 @@ document.addEventListener('DOMContentLoaded', () => {
     initAlerts();
     initPopovers();
     initAccordions();
+    initThemeToggle();
 });
+
+// --- Dark Mode Toggle ---
+function initThemeToggle() {
+    const toggleInput = document.getElementById('darkModeSwitch');
+
+    // 1. Verificar preferência salva
+    const savedTheme = localStorage.getItem('foton-theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.body.classList.add('dark-mode');
+        if (toggleInput) toggleInput.checked = true;
+    }
+
+    // 2. Ouvir mudanças
+    if (toggleInput) {
+        toggleInput.addEventListener('change', () => {
+            if (toggleInput.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('foton-theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('foton-theme', 'light');
+            }
+        });
+    }
+}
+
+// ... (Mantenha o restante das funções: initMobileMenu, initAlerts, etc.) ...
 
 // --- 1. Menu Mobile ---
 function initMobileMenu() {
@@ -54,18 +84,15 @@ function closeMobileMenu(sidebar, overlay, btn) {
 
 // --- 2. Alertas (Fechar) ---
 function initAlerts() {
-    // Usa Event Delegation para funcionar com alertas criados dinamicamente
     document.addEventListener('click', (e) => {
         const closeBtn = e.target.closest('.alert-close');
         if (closeBtn) {
             const alert = closeBtn.closest('.alert');
             if (alert) {
-                // Efeito de fade-out simples
                 alert.style.transition = 'opacity 0.3s, transform 0.3s';
                 alert.style.opacity = '0';
                 alert.style.transform = 'translateY(-10px)';
 
-                // Remove do DOM após a animação
                 setTimeout(() => {
                     alert.remove();
                 }, 300);
@@ -76,32 +103,29 @@ function initAlerts() {
 
 // --- 3. Popovers & Dropdowns (Click Outside) ---
 function initPopovers() {
-    // Lógica para abrir/fechar popovers
     document.addEventListener('click', (e) => {
-        // Verifica se clicou num gatilho de popover
         const trigger = e.target.closest('[data-toggle="popover"]');
 
         if (trigger) {
-            const container = trigger.closest('.popover-container');
-            const content = container.querySelector('.popover-content');
+            const container = trigger.closest('.popover-container') || trigger.closest('.dropdown');
+            const content = container.querySelector('.popover-content') || container.querySelector('.dropdown-menu');
 
-            // Fecha outros popovers abertos
             closeAllPopovers(content);
 
-            // Toggle do atual
-            content.classList.toggle('show');
-            e.stopPropagation(); // Impede que o evento suba e feche imediatamente
-        } else if (!e.target.closest('.popover-content')) {
-            // Se clicar fora do conteúdo, fecha tudo
+            if (content) {
+                content.classList.toggle('show');
+            }
+            e.stopPropagation();
+        } else if (!e.target.closest('.popover-content') && !e.target.closest('.dropdown-menu')) {
             closeAllPopovers();
         }
     });
 }
 
 function closeAllPopovers(except = null) {
-    document.querySelectorAll('.popover-content.show').forEach(popover => {
-        if (popover !== except) {
-            popover.classList.remove('show');
+    document.querySelectorAll('.popover-content.show, .dropdown-menu.show').forEach(el => {
+        if (el !== except) {
+            el.classList.remove('show');
         }
     });
 }
@@ -114,48 +138,35 @@ function initAccordions() {
         const summary = acc.querySelector('summary');
         const content = acc.querySelector('.accordion-body');
 
-        // Garante que o height seja auto se já estiver aberto no load
         if (acc.hasAttribute('open')) {
             acc.style.height = 'auto';
         }
 
         summary.addEventListener('click', (e) => {
-            e.preventDefault(); // Impede o comportamento padrão instantâneo
+            e.preventDefault();
 
-            // Fechando
             if (acc.hasAttribute('open')) {
-                // 1. Define a altura atual explicitamente (para poder animar)
                 acc.style.height = `${acc.offsetHeight}px`;
-
-                // 2. Força um reflow/repaint
                 requestAnimationFrame(() => {
-                    // 3. Define a altura para apenas o cabeçalho (fechando)
                     acc.style.height = `${summary.offsetHeight}px`;
                 });
 
-                // 4. Quando terminar a animação, remove o atributo open
                 const onTransitionEnd = () => {
                     acc.removeAttribute('open');
-                    acc.style.height = null; // Limpa o estilo inline
+                    acc.style.height = null;
                     acc.removeEventListener('transitionend', onTransitionEnd);
                 };
                 acc.addEventListener('transitionend', onTransitionEnd);
 
             } else {
-                // Abrindo
-                // 1. Define a altura inicial (só o cabeçalho)
                 acc.style.height = `${summary.offsetHeight}px`;
-                acc.setAttribute('open', ''); // Renderiza o conteúdo (ainda oculto pelo height)
-
-                // 2. Calcula a altura final (cabeçalho + conteúdo)
+                acc.setAttribute('open', '');
                 const fullHeight = summary.offsetHeight + content.offsetHeight;
 
-                // 3. Anima para a altura total
                 requestAnimationFrame(() => {
                     acc.style.height = `${fullHeight}px`;
                 });
 
-                // 4. Ao terminar, define height: auto para responsividade
                 const onTransitionEnd = () => {
                     acc.style.height = 'auto';
                     acc.removeEventListener('transitionend', onTransitionEnd);
@@ -198,14 +209,12 @@ function fallbackCopyTextToClipboard(text) {
 }
 
 function showToast(message) {
-    // Remove toast anterior se existir
     const existingToast = document.querySelector('.foton-toast');
     if (existingToast) existingToast.remove();
 
     const toast = document.createElement('div');
     toast.className = 'badge badge-dark foton-toast';
 
-    // Estilos inline para garantir funcionamento sem CSS extra
     Object.assign(toast.style, {
         position: 'fixed',
         bottom: '20px',
@@ -226,13 +235,11 @@ function showToast(message) {
     toast.innerText = message;
     document.body.appendChild(toast);
 
-    // Animação de entrada
     requestAnimationFrame(() => {
         toast.style.opacity = '1';
         toast.style.transform = 'translateX(-50%) translateY(0)';
     });
 
-    // Animação de saída
     setTimeout(() => {
         toast.style.opacity = '0';
         toast.style.transform = 'translateX(-50%) translateY(10px)';
@@ -242,7 +249,6 @@ function showToast(message) {
 
 // --- 6. Download Real do CSS ---
 function downloadCSS() {
-    // Busca o arquivo CSS na mesma pasta
     fetch('foton_framework.css')
         .then(response => {
             if (!response.ok) {
@@ -251,22 +257,15 @@ function downloadCSS() {
             return response.blob();
         })
         .then(blob => {
-            // Cria uma URL temporária para o blob
             const url = window.URL.createObjectURL(blob);
-            
-            // Cria um link invisível para forçar o download
             const a = document.createElement('a');
             a.style.display = 'none';
             a.href = url;
-            a.download = 'foton_framework.css'; // Nome do arquivo ao baixar
-            
+            a.download = 'foton_framework.css';
             document.body.appendChild(a);
             a.click();
-            
-            // Limpeza
             window.URL.revokeObjectURL(url);
             document.body.removeChild(a);
-            
             showToast('Download iniciado!');
         })
         .catch(err => {
