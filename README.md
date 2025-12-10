@@ -1,4 +1,44 @@
-<div align="center"> <img src="/vector/Logo.svg" alt="Fóton Framework Logo" width="120" /> <h1>Fóton Framework</h1> <p><strong>A base invisível para interfaces modernas.</strong></p><p> <a href="#recursos">Recursos</a>  •  <a href="#como-usar">Como Usar</a>  •  <a href="#customização">Customização</a>  •  <a href="#componentes">Componentes</a> </p></div>⚡ SobreO Fóton Framework é uma biblioteca CSS agnóstica desenvolvida para criar layouts de alta conversão com o mínimo de esforço. Diferente de frameworks massivos que exigem configurações complexas, o Fóton foca no essencial: tipografia sólida, espaçamento rítmico e componentes prontos para produção.O objetivo é fornecer uma base leve que não brigue com o seu código, permitindo prototipagem rápida e escalabilidade fácil.✨ VantagensUltra Leve: O núcleo é puramente CSS, otimizado para carregar instantaneamente.Zero Dependências: Funciona sem jQuery, sem compiladores obrigatórios, apenas HTML e CSS.Grid Inteligente: Layouts responsivos automáticos usando CSS Grid e Flexbox modernos.Tipografia Premium: Combinação curada de Manrope (Títulos) e Poppins (Corpo) nativa.Variáveis CSS: Design System completo controlado por variáveis nativas (:root), facilitando temas (incluindo Dark Mode).Semântico: Classes com nomes intuitivos como .btn, .card, .hero, .navbar.🚀 Como Usar1. Estrutura BásicaBasta adicionar o arquivo CSS e as fontes ao <head> do seu projeto.<!DOCTYPE html>
+<div align="center">
+<img src="vector/Logo.svg" alt="Fóton Framework Logo" width="120" />
+<h1>Fóton Framework</h1>
+<p><strong>A base invisível para interfaces modernas.</strong></p>
+
+<p>
+<a href="#recursos">Recursos</a> •
+<a href="#como-usar">Como Usar</a> •
+<a href="#customização">Customização</a> •
+<a href="#componentes">Componentes</a>
+</p>
+
+</div>
+
+⚡ Sobre
+
+O Fóton Framework é uma biblioteca CSS agnóstica desenvolvida para criar layouts de alta conversão com o mínimo de esforço. Diferente de frameworks massivos que exigem configurações complexas, o Fóton foca no essencial: tipografia sólida, espaçamento rítmico e componentes prontos para produção.
+
+O objetivo é fornecer uma base leve que não brigue com o seu código, permitindo prototipagem rápida e escalabilidade fácil.
+
+✨ Vantagens
+
+Ultra Leve: O núcleo é puramente CSS, otimizado para carregar instantaneamente.
+
+Zero Dependências: Funciona sem jQuery, sem compiladores obrigatórios, apenas HTML e CSS.
+
+Grid Inteligente: Layouts responsivos automáticos usando CSS Grid e Flexbox modernos.
+
+Tipografia Premium: Combinação curada de Manrope (Títulos) e Poppins (Corpo) nativa.
+
+Variáveis CSS: Design System completo controlado por variáveis nativas (:root), facilitando temas (incluindo Dark Mode).
+
+Semântico: Classes com nomes intuitivos como .btn, .card, .hero, .navbar.
+
+🚀 Como Usar
+
+Instalação Rápida
+
+Basta adicionar o arquivo CSS e as fontes ao <head> do seu projeto.
+
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -17,15 +57,13 @@
     <!-- Seu conteúdo aqui -->
 </body>
 </html>
-2. Exemplo de ComponenteCriando um card de produto simples:<div class="card">
-  <div class="card-body">
-    <span class="badge badge-success">Novo</span>
-    <h3>Fóton Pro</h3>
-    <p>Acelere seu desenvolvimento frontend hoje mesmo.</p>
-    <button class="btn btn-gradient">Começar Agora</button>
-  </div>
-</div>
-🎨 CustomizaçãoO Fóton é construído sobre variáveis CSS nativas. Para alterar a identidade visual do seu projeto, basta sobrescrever as variáveis no seu arquivo CSS ou diretamente na tag <style>.:root {
+
+
+🎨 Customização
+
+O Fóton é construído sobre variáveis CSS nativas. Para alterar a identidade visual do seu projeto, basta sobrescrever as variáveis no seu arquivo CSS ou diretamente na tag <style>.
+
+:root {
     /* Cor Principal */
     --primary: #7c3aed;       /* Roxo */
     --primary-soft: #f5f3ff;
@@ -37,4 +75,46 @@
     /* Gradientes */
     --grad-primary: linear-gradient(135deg, #7c3aed, #4c1d95);
 }
-🧩 Componentes IncluídosCategoriaElementosEstruturaNavbar, Hero, Footer, Grid Responsivo, Flex ContainerAçõesBotões (Solid, Outline, Ghost), Links, TogglesFeedbackAlertas, Badges, Toasts, Progress Bars, SpinnersConteúdoCards (Blog, Profile, Pricing), Tabelas, AcordeõesFormuláriosInputs, Selects, Checkboxes, Radios, Input GroupsOverlaysPopovers, Tooltips (CSS Puro)📂 Estrutura de Arquivosfoton_framework.css - O núcleo do framework (use este em produção).docs_style.css - Estilos específicos apenas para a documentação.foton_scripts.js - Scripts opcionais para interatividade (Menu Mobile, Fechar Alertas, etc).<div align="center"> <p>Desenvolvido por <a href="https://github.com/RamonDantasPolicarpo">Ramon Dantas</a></p> </div>
+
+
+🧩 Componentes Incluídos
+
+Categoria
+
+Elementos
+
+Estrutura
+
+Navbar, Hero, Footer, Grid Responsivo, Flex Container
+
+Ações
+
+Botões (Solid, Outline, Ghost), Links, Toggles
+
+Feedback
+
+Alertas, Badges, Toasts, Progress Bars, Spinners
+
+Conteúdo
+
+Cards (Blog, Profile, Pricing), Tabelas, Acordeões
+
+Formulários
+
+Inputs, Selects, Checkboxes, Radios, Input Groups
+
+Overlays
+
+Popovers, Tooltips (CSS Puro)
+
+📂 Estrutura de Arquivos
+
+foton_framework.css - O núcleo do framework (use este em produção).
+
+docs_style.css - Estilos específicos apenas para a documentação.
+
+foton_scripts.js - Scripts opcionais para interatividade (Menu Mobile, Fechar Alertas, etc).
+
+<div align="center">
+<p>Desenvolvido por <a href="https://github.com/RamonDantasPolicarpo">Ramon Dantas</a></p>
+</div>
