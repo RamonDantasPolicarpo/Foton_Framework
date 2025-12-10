@@ -49,6 +49,8 @@
 
 /* --- MODO ESCURO (CLASSE GLOBAL) --- */
 body.dark-mode {
+    color-scheme: dark;
+
     --bg-page: #121212;
     --bg-surface: #1e1e24;
 
