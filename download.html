@@ -14,10 +14,12 @@
 </head>
 
 <body>
+
     <div class="mobile-overlay" id="mobileOverlay"></div>
     <button class="mobile-menu-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
 
     <div class="docs-layout-wrapper">
+
         <nav class="docs-sidebar" id="docsSidebar">
             <a href="index.html" class="docs-logo">
                 <img src="vector/Logo.svg" width="45" height="45" viewBox="0 0 24 24" fill="none">
@@ -26,31 +28,75 @@
             <div class="docs-menu-category">Visão Geral</div>
             <a href="index.html" class="docs-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Início &
                 Demo</a>
+
             <div class="docs-menu-category">Documentação</div>
             <a href="intro.html" class="docs-link">Introdução</a>
             <a href="download.html" class="docs-link active">Download</a>
             <a href="custom.html" class="docs-link">Customização</a>
             <a href="layout.html" class="docs-link">Layout & Grid</a>
+
             <div class="docs-menu-category">Componentes</div>
             <a href="forms.html" class="docs-link">Formulários</a>
             <a href="components.html" class="docs-link">Biblioteca UI</a>
             <a href="creative.html" class="docs-link">Composições Criativas</a>
         </nav>
 
-        <main class="docs-content">
-            <div id="tab-download" class="tab-view">
-                <h1 class="doc-title">Download</h1>
-                <p class="doc-subtitle">Obtenha a última versão do arquivo de estilos.</p>
-                <div class="preview-box" style="text-align: center;">
-                    <i class="fa-solid fa-file-code" style="font-size: 40px; color: #40aa54; margin-bottom: 1rem;"></i>
-                    <h3>foton_framework.css</h3>
-                    <p>v1.0.0 • Minificado</p>
-                    <button class="btn btn-gradient" style="margin: 1rem auto;" onclick="downloadCSS()">Baixar Arquivo
-                        .CSS</button>
+        <!-- WRAPPER DA COLUNA DIREITA (Conteúdo + Footer) -->
+        <div style="display: flex; flex-direction: column; min-width: 0;">
+
+            <main class="docs-content" style="flex: 1;">
+                <div id="tab-download" class="tab-view page-fade-in">
+                    <h1 class="doc-title">Download</h1>
+                    <p class="doc-subtitle">Obtenha a última versão do arquivo de estilos.</p>
+                    <div class="preview-box" style="text-align: center;">
+                        <i class="fa-solid fa-file-code"
+                            style="font-size: 40px; color: #40aa54; margin-bottom: 1rem;"></i>
+                        <h3>foton_framework.css</h3>
+                        <p>v1.0.0 • Minificado</p>
+                        <button class="btn btn-gradient" style="margin: 1rem auto;" onclick="downloadCSS()">Baixar
+                            Arquivo .CSS</button>
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
+
+            <!-- RODAPÉ DA DOCUMENTAÇÃO -->
+            <footer
+                style="margin-top: 0; padding-top: 2rem; padding-bottom: 2rem; border-top: 1px solid #eee; color: var(--txt-sec); font-size: 0.9rem; background: #fbfbfd; width: 100%;">
+                <div
+                    style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center;">
+
+                    <!-- Social Links -->
+                    <div style="display: flex; gap: 1.5rem; font-size: 1.4rem;">
+                        <a href="https://www.linkedin.com/in/ramondantaspolicarpo/" target="_blank"
+                            style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
+                            onmouseover="this.style.color='var(--primary)'"
+                            onmouseout="this.style.color='var(--txt-primary)'">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/RamonDantasPolicarpo" target="_blank"
+                            style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
+                            onmouseover="this.style.color='var(--primary)'"
+                            onmouseout="this.style.color='var(--txt-primary)'">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ramo0n.36/" target="_blank"
+                            style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
+                            onmouseover="this.style.color='var(--primary)'"
+                            onmouseout="this.style.color='var(--txt-primary)'">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+
+                    <!-- Copyright -->
+                    <p style="margin: 0;">
+                        &copy; 2025 Fóton Framework. Todos os direitos reservados a <strong>Ramon Dantas</strong>.
+                    </p>
+                </div>
+            </footer>
+
+        </div>
     </div>
+
     <script src="foton_scripts.js"></script>
 </body>
 

@@ -14,523 +14,827 @@
 </head>
 
 <body>
+
     <div class="mobile-overlay" id="mobileOverlay"></div>
     <button class="mobile-menu-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
 
     <div class="docs-layout-wrapper">
+
         <nav class="docs-sidebar" id="docsSidebar">
             <a href="index.html" class="docs-logo">
                 <img src="vector/Logo.svg" width="45" height="45" viewBox="0 0 24 24" fill="none">
                 Fóton
             </a>
+
             <div class="docs-menu-category">Visão Geral</div>
             <a href="index.html" class="docs-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Início &
                 Demo</a>
+
             <div class="docs-menu-category">Documentação</div>
             <a href="intro.html" class="docs-link">Introdução</a>
             <a href="download.html" class="docs-link">Download</a>
             <a href="custom.html" class="docs-link">Customização</a>
             <a href="layout.html" class="docs-link">Layout & Grid</a>
+
             <div class="docs-menu-category">Componentes</div>
             <a href="forms.html" class="docs-link">Formulários</a>
             <a href="components.html" class="docs-link active">Biblioteca UI</a>
             <a href="creative.html" class="docs-link">Composições Criativas</a>
         </nav>
 
-        <main class="docs-content">
-            <div id="tab-components" class="tab-view">
-                <h1 class="doc-title">Biblioteca de Componentes</h1>
-                <p class="doc-subtitle">Documentação técnica dos elementos de interface do Fóton Framework.</p>
+        <!-- WRAPPER DA COLUNA DIREITA (Conteúdo + Footer) -->
+        <div style="display: flex; flex-direction: column; min-width: 0;">
 
-                <!-- BOTÕES -->
-                <h3>Botões</h3>
-                <p>Utilize a classe base <code>.btn</code> seguida de um modificador de estilo.</p>
-                <div class="preview-box" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
-                    <button class="btn btn-gradient">.btn-gradient</button>
-                    <button class="btn btn-primary">.btn-primary</button>
-                    <button class="btn btn-dark">.btn-dark</button>
-                </div>
-                <div class="code-block">
-                    &lt;!-- Botão com gradiente da marca --&gt;
-                    &lt;button class="btn btn-gradient"&gt;Ação Principal&lt;/button&gt;
-                    &lt;!-- Botão secundário --&gt;
-                    &lt;button class="btn btn-primary"&gt;Cancelar&lt;/button&gt;
-                    &lt;!-- Botão escuro --&gt;
-                    &lt;button class="btn btn-dark"&gt;Dark&lt;/button&gt;</div>
+            <main class="docs-content" style="flex: 1;">
+                <div id="tab-components" class="tab-view">
+                    <h1 class="doc-title">Biblioteca de Componentes</h1>
+                    <p class="doc-subtitle">Documentação técnica dos elementos de interface do Fóton Framework.</p>
 
-                <h4>Botões Semânticos</h4>
-                <div class="preview-box" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
-                    <button class="btn btn-success">Success</button>
-                    <button class="btn btn-warning">Warning</button>
-                    <button class="btn btn-danger">Danger</button>
-                    <button class="btn btn-info">Info</button>
-                </div>
-                <div class="code-block">
-                    &lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
-                    &lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;
-                    &lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
-                    &lt;button class="btn btn-info"&gt;Info&lt;/button&gt;</div>
-
-                <h4>Botões Outline</h4>
-                <div class="preview-box" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
-                    <button class="btn btn-outline-success">Success</button>
-                    <button class="btn btn-outline-warning">Warning</button>
-                    <button class="btn btn-outline-danger">Danger</button>
-                    <button class="btn btn-outline-info">Info</button>
-                    <button class="btn btn-outline-dark">Dark Translucent</button>
-                    <div style="background-color: var(--dark); padding: 10px; border-radius: 8px;">
-                        <button class="btn btn-outline-white">White Translucent</button>
-                    </div>
-                </div>
-                <div class="code-block">
-                    &lt;button class="btn btn-outline-success"&gt;Success&lt;/button&gt;
-                    &lt;button class="btn btn-outline-dark"&gt;Dark Outline&lt;/button&gt;
-                    &lt;button class="btn btn-outline-white"&gt;White Outline&lt;/button&gt;</div>
-
-                <h4>Links e Tamanhos</h4>
-                <div class="preview-box"
-                    style="display: flex; flex-direction: column; gap: 15px; align-items: flex-start;">
-                    <div style="display: flex; gap: 15px; align-items: center;">
-                        <a href="#" class="btn btn-sm btn-dark">Botão Pequeno (.btn-sm)</a>
-                        <a href="#" class="btn btn-link">Link Padrão (.btn-link)</a>
-                        <a href="#" class="btn btn-sm btn-link">Link Pequeno</a>
-                    </div>
-                    <a href="#" class="btn btn-block btn-primary">Botão Bloco (.btn-block)</a>
-                </div>
-                <div class="code-block">
-                    &lt;a href="#" class="btn btn-sm btn-dark"&gt;Pequeno&lt;/a&gt;
-                    &lt;a href="#" class="btn btn-link"&gt;Estilo Link&lt;/a&gt;
-                    &lt;a href="#" class="btn btn-block btn-primary"&gt;Botão de Bloco&lt;/a&gt;</div>
-
-                <!-- TOGGLE SWITCH -->
-                <h3 id="toggle" style="margin-top: 4rem;">Toggle Switch</h3>
-                <div class="preview-box">
-                    <label class="toggle__section">
-                        <input type="checkbox">
-                        <div class="toggle__btn"><span></span></div>
-                        <span style="font-weight: 600; color: var(--txt-primary);">Ativar Notificações</span>
-                    </label>
-                </div>
-                <div class="code-block">
-                    &lt;label class="toggle__section"&gt;
-                    &lt;input type="checkbox"&gt;
-                    &lt;div class="toggle__btn"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
-                    &lt;span&gt;Label do Switch&lt;/span&gt;
-                    &lt;/label&gt;</div>
-
-                <!-- ALERTAS -->
-                <h3 id="alerts" style="margin-top: 4rem;">Alertas</h3>
-                <div class="preview-box">
-                    <div class="alert alert-primary">
-                        <i class="fa-solid fa-circle-check alert-icon"></i>
-                        <div style="flex-grow: 1;">
-                            <span class="alert-heading">Operação Realizada</span>
-                            Seus dados foram salvos com sucesso no banco de dados.
-                        </div>
-                        <button class="alert-close"><i class="fa-solid fa-xmark"></i></button>
-                    </div>
-                    <div class="alert alert-warning">
-                        <i class="fa-solid fa-triangle-exclamation alert-icon"></i>
-                        <div><strong>Atenção:</strong> Sua assinatura expira em 3 dias.</div>
-                    </div>
-                    <div class="alert alert-danger">
-                        <i class="fa-solid fa-circle-xmark alert-icon"></i>
-                        <div><strong>Erro Crítico:</strong> Falha ao conectar ao servidor.</div>
-                    </div>
-                    <div class="alert alert-info">
-                        <i class="fa-solid fa-circle-info alert-icon"></i>
-                        <div><strong>Info:</strong> Nova versão disponível para download.</div>
-                    </div>
-                </div>
-                <div class="code-block">
-                    &lt;div class="alert alert-primary"&gt;
-                    &lt;i class="fa-solid fa-check alert-icon"&gt;&lt;/i&gt;
-                    &lt;div&gt;
-                    &lt;span class="alert-heading"&gt;Título&lt;/span&gt;
-                    Mensagem de corpo.
-                    &lt;/div&gt;
-                    &lt;button class="alert-close"&gt;&lt;i class="fa-solid fa-xmark"&gt;&lt;/i&gt;&lt;/button&gt;
-                    &lt;/div&gt;</div>
-
-                <!-- BADGES -->
-                <h3 id="badges" style="margin-top: 4rem;">Badges</h3>
-                <div class="preview-box">
-                    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-secondary">Secondary</span>
-                        <span class="badge badge-success">Success</span>
-                        <span class="badge badge-warning">Warning</span>
-                        <span class="badge badge-danger">Danger</span>
-                        <span class="badge badge-info">Info</span>
-                        <span class="badge badge-neutral">Neutral</span>
-                    </div>
-                    <div style="display: flex; gap: 10px; align-items: center; margin-top: 15px;">
-                        <span class="badge badge-pill badge-primary">Pill Style</span>
-                        <span class="badge badge-pill badge-success">Ativo</span>
-                        <span class="badge badge-pill badge-danger">12</span>
-                    </div>
-                </div>
-                <div class="code-block">
-                    &lt;span class="badge badge-primary"&gt;Texto&lt;/span&gt;
-                    &lt;span class="badge badge-pill badge-success"&gt;Arredondado&lt;/span&gt;</div>
-
-                <!-- AVATARES -->
-                <h3 id="avatars" style="margin-top: 4rem;">Avatares</h3>
-                <div class="preview-box">
-                    <div style="display: flex; align-items: flex-end; gap: 15px; margin-bottom: 20px;">
-                        <div class="avatar avatar-sm">SM</div>
-                        <div class="avatar avatar-md">MD</div>
-                        <div class="avatar avatar-lg">LG</div>
-                        <div class="avatar avatar-xl">XL</div>
-                    </div>
-                    <p class="text-muted" style="margin-bottom: 5px;">Grupo de Avatares (<code>.avatar-group</code>):
+                    <!-- =========================================
+                     BOTÕES
+                     ========================================= -->
+                    <h3>Botões</h3>
+                    <p>Utilize a classe base <code>.btn</code> seguida de um modificador de estilo. A tag pode ser
+                        <code>&lt;button&gt;</code> ou <code>&lt;a&gt;</code>. Os botões possuem transições suaves,
+                        estados
+                        de hover automáticos e reset de estilos nativos.
                     </p>
-                    <div class="avatar-group">
-                        <div class="avatar avatar-md"><img src="https://i.pravatar.cc/150?img=1" alt="User"></div>
-                        <div class="avatar avatar-md"><img src="https://i.pravatar.cc/150?img=2" alt="User"></div>
-                        <div class="avatar avatar-md"><img src="https://i.pravatar.cc/150?img=3" alt="User"></div>
-                        <div class="avatar avatar-md" style="background: #e2e8f0; font-size: 12px; font-weight: 700;">+3
+
+                    <div class="preview-box" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+                        <button class="btn btn-gradient">.btn-gradient</button>
+                        <button class="btn btn-primary">.btn-primary</button>
+                        <button class="btn btn-dark">.btn-dark</button>
+                    </div>
+                    <div class="code-block">
+                        &lt;!-- Botão com gradiente da marca (Destaque Principal) --&gt;
+                        &lt;button class="btn btn-gradient"&gt;Ação Principal&lt;/button&gt;
+
+                        &lt;!-- Botão secundário/neutro (Fundo cinza claro) --&gt;
+                        &lt;button class="btn btn-primary"&gt;Cancelar&lt;/button&gt;
+
+                        &lt;!-- Botão sólido escuro (Contraste alto) --&gt;
+                        &lt;button class="btn btn-dark"&gt;Dark&lt;/button&gt;</div>
+
+                    <h4>Botões Semânticos</h4>
+                    <p>Use cores semânticas para indicar o feedback ou propósito da ação (sucesso, aviso, perigo,
+                        informação). Adicione a classe correspondente ao estado desejado.</p>
+                    <div class="preview-box" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+                        <button class="btn btn-success">Success</button>
+                        <button class="btn btn-warning">Warning</button>
+                        <button class="btn btn-danger">Danger</button>
+                        <button class="btn btn-info">Info</button>
+                    </div>
+                    <div class="code-block">
+                        &lt;!-- Classes Semânticas --&gt;
+                        &lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                        &lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+                        &lt;button class="btn btn-info"&gt;Info&lt;/button&gt;</div>
+
+                    <h4>Botões Outline (Borda)</h4>
+                    <p>Para interfaces mais leves e secundárias, use as variações <code>.btn-outline-*</code>. Inclui
+                        variantes translúcidas (White/Dark) para uso sobre fundos coloridos ou imagens.</p>
+                    <div class="preview-box" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+                        <!-- Outlines Padrão -->
+                        <button class="btn btn-outline-success">Success</button>
+                        <button class="btn btn-outline-warning">Warning</button>
+                        <button class="btn btn-outline-danger">Danger</button>
+                        <button class="btn btn-outline-info">Info</button>
+
+                        <!-- Outlines Translúcidos -->
+                        <button class="btn btn-outline-dark">Dark Translucent</button>
+                        <div style="background-color: var(--dark); padding: 10px; border-radius: 8px;">
+                            <button class="btn btn-outline-white">White Translucent</button>
                         </div>
                     </div>
-                </div>
-                <div class="code-block">
-                    &lt;!-- Avatar com Imagem --&gt;
-                    &lt;div class="avatar avatar-md"&gt;
-                    &lt;img src="foto.jpg" alt="Alt text"&gt;
-                    &lt;/div&gt;
-                    &lt;!-- Grupo Sobreposto --&gt;
-                    &lt;div class="avatar-group"&gt;
-                    &lt;div class="avatar avatar-md"&gt;...&lt;/div&gt;
-                    &lt;div class="avatar avatar-md"&gt;...&lt;/div&gt;
-                    &lt;/div&gt;</div>
+                    <div class="code-block">
+                        &lt;!-- Outlines Coloridos --&gt;
+                        &lt;button class="btn btn-outline-success"&gt;Success&lt;/button&gt;
+                        &lt;button class="btn btn-outline-warning"&gt;Warning&lt;/button&gt;
+                        &lt;button class="btn btn-outline-danger"&gt;Danger&lt;/button&gt;
+                        &lt;button class="btn btn-outline-info"&gt;Info&lt;/button&gt;
 
-                <!-- TABELAS -->
-                <h3 id="tables" style="margin-top: 4rem;">Tabelas</h3>
-                <div class="preview-box" style="padding: 0; overflow: hidden;">
-                    <div class="table-responsive" style="margin-bottom: 0; border: none;">
-                        <table class="table table-hover" style="margin-bottom: 0;">
-                            <thead>
-                                <tr>
-                                    <th style="padding-left: 2rem;">Projeto</th>
-                                    <th>Status</th>
-                                    <th style="text-align: right; padding-right: 2rem;">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding-left: 2rem;">Fóton Website</td>
-                                    <td><span class="badge badge-success">Online</span></td>
-                                    <td style="text-align: right; padding-right: 2rem;">
-                                        <button class="btn btn-sm btn-link">Gerenciar</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding-left: 2rem;">App Mobile</td>
-                                    <td><span class="badge badge-warning">Dev</span></td>
-                                    <td style="text-align: right; padding-right: 2rem;">
-                                        <button class="btn btn-sm btn-link">Gerenciar</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        &lt;!-- Translúcidos (Fundo Transparente) --&gt;
+                        &lt;button class="btn btn-outline-dark"&gt;Dark Outline&lt;/button&gt;
+                        &lt;button class="btn btn-outline-white"&gt;White Outline&lt;/button&gt;</div>
+
+                    <h4>Links e Tamanhos</h4>
+                    <p>Adicione <code>.btn-sm</code> para botões compactos (padding reduzido e fonte menor) ou
+                        <code>.btn-block</code> para ocupar 100% da largura do container pai (display flex). Para links
+                        que
+                        parecem texto mas têm comportamento de botão, use <code>.btn-link</code>.
+                    </p>
+                    <div class="preview-box"
+                        style="display: flex; flex-direction: column; gap: 15px; align-items: start;">
+                        <a href="#" class="btn btn-sm btn-link">Link (.btn-link)</a>
+                        <a href="#" class="btn btn-sm btn-primary">Botão Pequeno (.btn-sm)</a>
+                        <a href="#" class="btn btn-block btn-primary">Botão Bloco (.btn-block)</a>
                     </div>
-                </div>
-                <div class="code-block">
-                    &lt;div class="table-responsive"&gt;
-                    &lt;table class="table table-hover"&gt;
-                    &lt;thead&gt;
-                    &lt;tr&gt;&lt;th&gt;Cabeçalho&lt;/th&gt;&lt;/tr&gt;
-                    &lt;/thead&gt;
-                    &lt;tbody&gt;
-                    &lt;tr&gt;&lt;td&gt;Dado&lt;/td&gt;&lt;/tr&gt;
-                    &lt;/tbody&gt;
-                    &lt;/table&gt;
-                    &lt;/div&gt;</div>
+                    <div class="code-block">
+                        &lt;!-- Tamanhos --&gt;
+                        &lt;a href="#" class="btn btn-sm btn-dark"&gt;Pequeno&lt;/a&gt;
+                        &lt;a href="#" class="btn btn-link"&gt;Estilo Link&lt;/a&gt;
 
-                <!-- NAVEGAÇÃO E DROPDOWNS -->
-                <h3 id="breadcrumbs" style="margin-top: 4rem;">Navegação & UI Elements</h3>
-                <h4>Breadcrumbs</h4>
-                <div class="preview-box">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Biblioteca</a></li>
-                            <li class="breadcrumb-item active">Dados</li>
-                        </ol>
-                    </nav>
-                </div>
-                <div class="code-block">
-                    &lt;nav aria-label="breadcrumb"&gt;
-                    &lt;ol class="breadcrumb"&gt;
-                    &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-                    &lt;li class="breadcrumb-item active"&gt;Atual&lt;/li&gt;
-                    &lt;/ol&gt;
-                    &lt;/nav&gt;</div>
+                        &lt;!-- Bloco (Full Width) --&gt;
+                        &lt;a href="#" class="btn btn-block btn-primary"&gt;Botão de Bloco&lt;/a&gt;</div>
 
-                <h4>Dropdowns</h4>
-                <div class="preview-box" style="overflow: visible; padding-bottom: 80px;">
-                    <div class="dropdown">
-                        <button class="btn btn-primary" data-toggle="popover">
-                            Opções <i class="fa-solid fa-chevron-down" style="margin-left: 8px; font-size: 12px;"></i>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Editar</a></li>
-                            <li><a class="dropdown-item" href="#">Duplicar</a></li>
-                            <li style="border-top: 1px solid #eee; margin: 5px 0;"></li>
-                            <li><a class="dropdown-item" href="#" style="color: var(--danger);">Excluir</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="code-block">
-                    &lt;div class="dropdown"&gt;
-                    &lt;button class="btn btn-primary" data-toggle="popover"&gt;
-                    Menu &lt;i class="fa-solid fa-chevron-down"&gt;&lt;/i&gt;
-                    &lt;/button&gt;
-                    &lt;ul class="dropdown-menu"&gt;
-                    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Item 1&lt;/a&gt;&lt;/li&gt;
-                    &lt;li style="border-top: 1px solid #eee;"&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Sair&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                    &lt;/div&gt;</div>
-
-                <!-- CARDS -->
-                <h3 style="margin-top: 4rem;">Cards</h3>
-                <h4>1. Card Padrão & Destaque</h4>
-                <div class="preview-box" style="background: #f8f9fa;">
-                    <div class="grid-responsive"
-                        style="gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                        <div class="card">
-                            <div class="card-body">
-                                <h3>Padrão</h3>
-                                <p>Card básico com sombra suave.</p>
-                                <a href="#" class="btn btn-sm btn-primary">Ação</a>
-                            </div>
-                        </div>
-                        <div class="card card-highlight">
-                            <div class="card-body">
-                                <h3>Destaque</h3>
-                                <p>Use <code>.card-highlight</code> para bordas coloridas.</p>
-                                <a href="#" class="btn btn-sm btn-gradient">Ação</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="code-block">
-                    &lt;!-- Card Simples --&gt;
-                    &lt;div class="card"&gt;
-                    &lt;div class="card-body"&gt;
-                    &lt;h3&gt;Título&lt;/h3&gt;
-                    &lt;p&gt;Conteúdo...&lt;/p&gt;
-                    &lt;/div&gt;
-                    &lt;/div&gt;
-
-                    &lt;!-- Card Destacado --&gt;
-                    &lt;div class="card card-highlight"&gt;
-                    &lt;div class="card-body"&gt;...&lt;/div&gt;
-                    &lt;/div&gt;</div>
-
-                <h4>2. Variações Específicas</h4>
-                <div class="preview-box" style="background: #f8f9fa;">
-                    <div class="grid-responsive"
-                        style="gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                        <div class="card card-blog">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                class="card-img-top" alt="Cover">
-                            <div class="card-body">
-                                <h4>Card Blog</h4>
-                                <p style="font-size: 0.9rem; color: #666;">A classe <code>.card-blog</code> remove o
-                                    padding superior.</p>
-                            </div>
-                        </div>
-                        <div class="card card-profile">
-                            <div class="avatar avatar-xl">
-                                <img src="https://i.pravatar.cc/150?img=68" alt="Profile">
-                            </div>
-                            <h4>Card Profile</h4>
-                            <p>Centraliza conteúdo.</p>
-                            <button class="btn btn-sm btn-outline-info">Seguir</button>
-                        </div>
-                        <div class="card card-feature-row">
-                            <span style="color: var(--primary); font-size: 24px;"><i
-                                    class="fa-solid fa-star"></i></span>
-                            <div>
-                                <h4>Feature Row</h4>
-                                <p>Layout horizontal flex.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="code-block">
-                    &lt;!-- Card Blog --&gt;
-                    &lt;div class="card card-blog"&gt;
-                    &lt;img src="..." class="card-img-top"&gt;
-                    &lt;div class="card-body"&gt;...&lt;/div&gt;
-                    &lt;/div&gt;
-
-                    &lt;!-- Card Perfil --&gt;
-                    &lt;div class="card card-profile"&gt;...&lt;/div&gt;
-
-                    &lt;!-- Feature Horizontal --&gt;
-                    &lt;div class="card card-feature-row"&gt;
-                    &lt;span&gt;&lt;i class="icon"&gt;&lt;/i&gt;&lt;/span&gt;
-                    &lt;div&gt;
-                    &lt;h4&gt;Título&lt;/h4&gt;
-                    &lt;p&gt;Descrição&lt;/p&gt;
-                    &lt;/div&gt;
-                    &lt;/div&gt;</div>
-
-                <!-- ACORDEÕES -->
-                <h3 id="accordions" style="margin-top: 4rem;">Acordeões</h3>
-                <div class="preview-box" style="background: #f8f9fa;">
-                    <details class="accordion">
-                        <summary>Como funciona a animação?</summary>
-                        <div class="accordion-body">
-                            O JavaScript calcula a altura do conteúdo e transiciona a propriedade height.
-                        </div>
-                    </details>
-                    <details class="accordion">
-                        <summary>É necessário JavaScript?</summary>
-                        <div class="accordion-body">
-                            Sim, para a animação. Sem ele, funciona com toggle instantâneo.
-                        </div>
-                    </details>
-                </div>
-                <div class="code-block">
-                    &lt;details class="accordion"&gt;
-                    &lt;summary&gt;Pergunta ou Título&lt;/summary&gt;
-                    &lt;div class="accordion-body"&gt;
-                    Conteúdo oculto que será expandido...
-                    &lt;/div&gt;
-                    &lt;/details&gt;</div>
-
-                <!-- PROGRESSO & SPINNERS -->
-                <h3 id="progress" style="margin-top: 4rem;">Progresso & Carregamento</h3>
-                <div class="preview-box">
-                    <p style="margin-bottom: 5px;">Progress Bars:</p>
-                    <div class="progress">
-                        <div class="progress-bar bg-success" style="width: 50%">50%</div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar bg-info progress-bar-striped" style="width: 75%"></div>
-                    </div>
-                    <p style="margin-bottom: 5px; margin-top: 20px;">Spinners:</p>
-                    <div style="display: flex; gap: 15px; align-items: center;">
-                        <div class="spinner-border"></div>
-                        <div class="spinner-pulse" style="color: var(--primary);"></div>
-                        <div class="spinner-dots" style="color: var(--info);"><span></span><span></span><span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="code-block">
-                    &lt;!-- Barra de Progresso --&gt;
-                    &lt;div class="progress"&gt;
-                    &lt;div class="progress-bar bg-success" style="width: 50%"&gt;50%&lt;/div&gt;
-                    &lt;/div&gt;
-
-                    &lt;!-- Spinners --&gt;
-                    &lt;div class="spinner-border"&gt;&lt;/div&gt;
-                    &lt;div class="spinner-pulse"&gt;&lt;/div&gt;
-                    &lt;div
-                    class="spinner-dots"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
-                </div>
-
-                <!-- POPOVERS & TOOLTIPS -->
-                <h3 id="popovers" style="margin-top: 4rem;">Popovers & Tooltips</h3>
-                <div class="preview-box"
-                    style="display: flex; gap: 2rem; align-items: center; justify-content: center; height: 120px;">
-                    <button class="btn btn-dark" data-tooltip="Mensagem flutuante!">Tooltip (Hover)</button>
-                    <div class="popover-container">
-                        <button class="btn btn-outline-info" data-toggle="popover">Popover (Click)</button>
-                        <div class="popover-content">
-                            <span class="popover-header">Info</span>
-                            <div class="popover-body">Detalhes adicionais aqui.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="code-block">
-                    &lt;!-- Tooltip --&gt;
-                    &lt;button data-tooltip="Texto..."&gt;Hover&lt;/button&gt;
-
-                    &lt;!-- Popover --&gt;
-                    &lt;div class="popover-container"&gt;
-                    &lt;button data-toggle="popover"&gt;Clique&lt;/button&gt;
-                    &lt;div class="popover-content"&gt;
-                    &lt;span class="popover-header"&gt;Título&lt;/span&gt;
-                    &lt;div class="popover-body"&gt;Conteúdo...&lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;/div&gt;</div>
-
-                <!-- ESTRUTURA DE PÁGINA -->
-                <h2 style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid #eee;">Estrutura de Página</h2>
-
-                <h3 id="navbar">Navbar</h3>
-                <div class="preview-box"
-                    style="position: relative; height: 120px; background: #eee; overflow: hidden; border: 1px solid #ddd; padding: 0;">
-                    <nav class="navbar" style="position: absolute; top: 0; left: 0; width: 100%;">
-                        <div
-                            style="display:flex; justify-content:space-between; align-items: center; width:100%; max-width: 1000px; padding: 0 20px;">
-                            <a href="#" class="logo">Logo<span>Type</span></a>
-                            <ul class="navbar-menu" style="margin-bottom: 0;">
-                                <li><a href="#">Link 1</a></li>
-                                <li><a href="#">Link 2</a></li>
-                                <li><a href="#" class="btn btn-sm btn-primary">Login</a></li>
+                    <!-- =========================================
+                     DROPDOWNS (MOVIDO)
+                     ========================================= -->
+                    <h3 id="dropdowns" style="margin-top: 4rem;">Dropdowns</h3>
+                    <p>Menus flutuantes acionáveis. O framework suporta dropdowns via CSS (hover) mas recomenda-se o uso
+                        do
+                        atributo <code>data-toggle="popover"</code> no botão gatilho para melhor suporte em dispositivos
+                        touch e controle via JavaScript (clicar fora para fechar). A estrutura exige um container
+                        <code>.dropdown</code> envolvendo o botão e a lista <code>.dropdown-menu</code>.
+                    </p>
+                    <div class="preview-box" style="overflow: visible; padding-bottom: 80px;">
+                        <div class="dropdown">
+                            <button class="btn btn-primary" data-toggle="popover">
+                                Opções <i class="fa-solid fa-chevron-down"
+                                    style="margin-left: 8px; font-size: 12px;"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Editar</a></li>
+                                <li><a class="dropdown-item" href="#">Duplicar</a></li>
+                                <li class="dropdown-div"></li>
+                                <li><a class="dropdown-item" href="#" style="color: var(--danger);">Excluir</a></li>
                             </ul>
                         </div>
-                    </nav>
-                </div>
-                <div class="code-block">
-                    &lt;nav class="navbar"&gt;
-                    &lt;div style="display: flex; justify-content: space-between; width: 100%; max-width: 1200px;"&gt;
-                    &lt;a href="#" class="logo"&gt;Minha&lt;span&gt;Marca&lt;/span&gt;&lt;/a&gt;
-                    &lt;ul class="navbar-menu"&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#" class="btn btn-sm btn-primary"&gt;Login&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                    &lt;/div&gt;
-                    &lt;/nav&gt;</div>
+                    </div>
+                    <div class="code-block">
+                        &lt;div class="dropdown"&gt;
+                        &lt;!-- Gatilho com ícone --&gt;
+                        &lt;button class="btn btn-primary" data-toggle="popover"&gt;
+                        Menu &lt;i class="fa-solid fa-chevron-down"&gt;&lt;/i&gt;
+                        &lt;/button&gt;
 
-                <h3 id="hero" style="margin-top: 3rem;">Hero Section</h3>
-                <div class="preview-box" style="padding: 0;">
-                    <section class="hero" style="min-height: 300px; padding-top: 2rem;">
-                        <div class="hero-content">
-                            <span>Título de Impacto</span>
-                            <p>Subtítulo explicativo curto.</p>
-                            <button class="btn btn-gradient">Call to Action</button>
+                        &lt;!-- Lista de Itens --&gt;
+                        &lt;ul class="dropdown-menu"&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+                        &lt;!-- Divisor --&gt;
+                        &lt;li class="dropdown-div"&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Sair&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;/div&gt;</div>
+
+                    <!-- =========================================
+                     POPOVERS & TOOLTIPS (MOVIDO)
+                     ========================================= -->
+                    <h3 id="popovers" style="margin-top: 4rem;">Popovers & Tooltips</h3>
+                    <p>Elementos flutuantes para informações contextuais. <strong>Tooltips</strong> são ativados via
+                        hover e
+                        implementados com CSS puro usando o atributo <code>data-tooltip</code>.
+                        <strong>Popovers</strong>
+                        são ativados via clique e requerem a estrutura HTML completa e o atributo
+                        <code>data-toggle="popover"</code> no botão para que o JavaScript gerencie a abertura e o
+                        fechamento
+                        ao clicar fora.
+                    </p>
+
+                    <div class="preview-box"
+                        style="display: flex; gap: 2rem; align-items: center; justify-content: center; height: 120px; overflow: visible;">
+                        <!-- Tooltip -->
+                        <button class="btn btn-dark" data-tooltip="Mensagem flutuante!">Tooltip (Hover)</button>
+
+                        <!-- Popover -->
+                        <div class="popover-container">
+                            <button class="btn btn-outline-info" data-toggle="popover">Popover (Click)</button>
+                            <div class="popover-content">
+                                <span class="popover-header">Info</span>
+                                <div class="popover-body">Detalhes adicionais aqui.</div>
+                            </div>
                         </div>
-                    </section>
-                </div>
-                <div class="code-block">
-                    &lt;section class="hero"&gt;
-                    &lt;div class="hero-content"&gt;
-                    &lt;span&gt;Título Principal&lt;/span&gt;
-                    &lt;p&gt;Descrição...&lt;/p&gt;
-                    &lt;button class="btn btn-gradient"&gt;Ação&lt;/button&gt;
-                    &lt;/div&gt;
-                    &lt;/section&gt;</div>
+                    </div>
+                    <div class="code-block">
+                        &lt;!-- Tooltip (CSS Puro) --&gt;
+                        &lt;button data-tooltip="Texto..."&gt;Hover&lt;/button&gt;
 
-                <h3 id="footer" style="margin-top: 3rem;">Footer</h3>
-                <div class="preview-box">
-                    <footer style="padding: 2rem; background: #fff; text-align: center;">
-                        <p style="color: #666; margin: 0;">© 2025 Fóton Framework.</p>
-                        <div style="margin-top: 10px;">
-                            <a href="#" style="margin: 0 10px; color: var(--primary);">Link 1</a>
-                            <a href="#" style="margin: 0 10px; color: var(--primary);">Link 2</a>
+                        &lt;!-- Popover (Requer container relativo) --&gt;
+                        &lt;div class="popover-container"&gt;
+                        &lt;button data-toggle="popover"&gt;Clique&lt;/button&gt;
+                        &lt;div class="popover-content"&gt;
+                        &lt;span class="popover-header"&gt;Título&lt;/span&gt;
+                        &lt;div class="popover-body"&gt;Conteúdo do popover...&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;/div&gt;</div>
+
+                    <!-- TOGGLE SWITCH -->
+                    <h3 id="toggle" style="margin-top: 4rem;">Toggle Switch</h3>
+                    <p>Um checkbox estilizado como interruptor físico. A estrutura requer um <code>&lt;label&gt;</code>
+                        envolvendo o input checkbox oculto e uma div <code>.toggle__btn</code> que renderiza o visual.
+                    </p>
+                    <div class="preview-box">
+                        <label class="toggle__section">
+                            <input type="checkbox">
+                            <div class="toggle__btn"><span></span></div>
+                            <span style="font-weight: 600; color: var(--txt-primary);">Ativar Notificações</span>
+                        </label>
+                    </div>
+                    <div class="code-block">
+                        &lt;label class="toggle__section"&gt;
+                        &lt;input type="checkbox"&gt;
+                        &lt;div class="toggle__btn"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+                        &lt;span&gt;Label do Switch&lt;/span&gt;
+                        &lt;/label&gt;</div>
+
+                    <!-- =========================================
+                     NOTIFICAÇÕES (NOVO)
+                     ========================================= -->
+                    <h3 id="notifications" style="margin-top: 4rem;">Notificações</h3>
+                    <p>Componentes para exibir avisos do sistema. O <strong>Notification Card</strong> é ideal para
+                        listas
+                        de atividades ou feeds, enquanto o <strong>Notification Toast</strong> é perfeito para feedbacks
+                        flutuantes temporários.</p>
+
+                    <div class="preview-box">
+                        <!-- Notification Card -->
+                        <div class="notification-card">
+                            <div
+                                style="width: 40px; height: 40px; background: #e3f2fd; color: #2196f3; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div style="font-weight: 700; font-size: 14px;">Nova Mensagem</div>
+                                <div style="font-size: 12px; color: #666;">Você recebeu um e-mail de suporte.</div>
+                            </div>
                         </div>
-                    </footer>
-                </div>
-                <div class="code-block">
-                    &lt;footer style="padding: 3rem 0; background: #fff;"&gt;
-                    &lt;div class="container" style="text-align: center;"&gt;
-                    &lt;p&gt;© 2025 Todos os direitos reservados.&lt;/p&gt;
-                    &lt;div&gt;
-                    &lt;a href="#"&gt;Link 1&lt;/a&gt;
-                    &lt;a href="#"&gt;Link 2&lt;/a&gt;
-                    &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;/footer&gt;</div>
 
-            </div>
-        </main>
+                        <!-- Notification Toast -->
+                        <div style="margin-top: 20px;">
+                            <p style="font-size: 12px; color: #999; margin-bottom: 10px;">Toast Style (Pílula)</p>
+                            <div class="notification-toast">
+                                <span class="dot success"></span>
+                                <span>Alterações salvas com sucesso</span>
+                            </div>
+                            <div class="notification-toast" style="margin-left: 10px;">
+                                <span class="dot danger"></span>
+                                <span>Falha na conexão</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        &lt;!-- Card de Notificação --&gt;
+                        &lt;div class="notification-card"&gt;
+                        &lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-envelope"&gt;&lt;/i&gt;&lt;/div&gt;
+                        &lt;div&gt;
+                        &lt;div&gt;Título&lt;/div&gt;
+                        &lt;div&gt;Descrição...&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Toast Flutuante --&gt;
+                        &lt;div class="notification-toast"&gt;
+                        &lt;span class="dot success"&gt;&lt;/span&gt;
+                        &lt;span&gt;Mensagem&lt;/span&gt;
+                        &lt;/div&gt;</div>
+
+                    <!-- =========================================
+                     ALERTAS
+                     ========================================= -->
+                    <h3 id="alerts" style="margin-top: 4rem;">Alertas</h3>
+                    <p>Componentes de feedback para mensagens de usuário. Utilize a classe <code>.alert</code> combinada
+                        com
+                        uma cor contextual (ex: <code>.alert-warning</code>). O botão de fechar requer a classe
+                        <code>.alert-close</code> e a funcionalidade de "dismiss" é gerenciada automaticamente pelo
+                        script
+                        <code>foton_scripts.js</code>.
+                    </p>
+
+                    <div class="preview-box">
+                        <div class="alert alert-primary">
+                            <i class="fa-solid fa-circle-check alert-icon"></i>
+                            <div style="flex-grow: 1;">
+                                <span class="alert-heading">Operação Realizada</span>
+                                Seus dados foram salvos com sucesso no banco de dados.
+                            </div>
+                            <button class="alert-close"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <i class="fa-solid fa-triangle-exclamation alert-icon"></i>
+                            <div><strong>Atenção:</strong> Sua assinatura expira em 3 dias.</div>
+                        </div>
+
+                        <div class="alert alert-danger">
+                            <i class="fa-solid fa-circle-xmark alert-icon"></i>
+                            <div><strong>Erro Crítico:</strong> Falha ao conectar ao servidor.</div>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <i class="fa-solid fa-circle-info alert-icon"></i>
+                            <div><strong>Info:</strong> Nova versão disponível para download.</div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        &lt;div class="alert alert-primary"&gt;
+                        &lt;!-- Ícone opcional --&gt;
+                        &lt;i class="fa-solid fa-check alert-icon"&gt;&lt;/i&gt;
+
+                        &lt;!-- Conteúdo --&gt;
+                        &lt;div&gt;
+                        &lt;span class="alert-heading"&gt;Título&lt;/span&gt;
+                        Mensagem de corpo.
+                        &lt;/div&gt;
+
+                        &lt;!-- Botão de fechar (JS automático) --&gt;
+                        &lt;button class="alert-close"&gt;&lt;i class="fa-solid fa-xmark"&gt;&lt;/i&gt;&lt;/button&gt;
+                        &lt;/div&gt;</div>
+
+                    <!-- =========================================
+                     BADGES
+                     ========================================= -->
+                    <h3 id="badges" style="margin-top: 4rem;">Badges</h3>
+                    <p>Indicadores visuais para status, contadores ou categorias. A classe base <code>.badge</code>
+                        aplica
+                        padding e alinhamento. Combine com cores contextuais (ex: <code>.badge-success</code>) para
+                        alterar
+                        o fundo e a cor do texto. Adicione <code>.badge-pill</code> para bordas totalmente arredondadas
+                        (estilo pílula).</p>
+                    <div class="preview-box">
+                        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                            <span class="badge badge-primary">Primary</span>
+                            <span class="badge badge-secondary">Secondary</span>
+                            <span class="badge badge-success">Success</span>
+                            <span class="badge badge-warning">Warning</span>
+                            <span class="badge badge-danger">Danger</span>
+                            <span class="badge badge-info">Info</span>
+                            <span class="badge badge-neutral">Neutral</span>
+                        </div>
+                        <div style="display: flex; gap: 10px; align-items: center; margin-top: 15px;">
+                            <span class="badge badge-pill badge-primary">Pill Style</span>
+                            <span class="badge badge-pill badge-success">Ativo</span>
+                            <span class="badge badge-pill badge-danger">12</span>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        &lt;!-- Estilo Padrão (Canto levemente arredondado) --&gt;
+                        &lt;span class="badge badge-primary"&gt;Texto&lt;/span&gt;
+
+                        &lt;!-- Estilo Pill (Totalmente arredondado) --&gt;
+                        &lt;span class="badge badge-pill badge-success"&gt;Arredondado&lt;/span&gt;</div>
+
+                    <!-- =========================================
+                     AVATARES
+                     ========================================= -->
+                    <h3 id="avatars" style="margin-top: 4rem;">Avatares</h3>
+                    <p>Componente para imagens de perfil. A classe base <code>.avatar</code> cria um círculo com
+                        overflow
+                        hidden. Use as classes de tamanho para ajustar as dimensões: <code>.avatar-sm</code> (32px),
+                        <code>.avatar-md</code> (48px), <code>.avatar-lg</code> (64px) ou <code>.avatar-xl</code>
+                        (96px).
+                        Para agrupar avatares, envolva-os em um container <code>.avatar-group</code>.
+                    </p>
+                    <div class="preview-box">
+                        <div style="display: flex; align-items: flex-end; gap: 15px; margin-bottom: 20px;">
+                            <div class="avatar avatar-xl">XL</div>
+                            <div class="avatar avatar-lg">LG</div>
+                            <div class="avatar avatar-md">MD</div>
+                            <div class="avatar avatar-sm">SM</div>
+                        </div>
+
+                        <p class="text-muted" style="margin-bottom: 5px;">Grupo de Avatares
+                            (<code>.avatar-group</code>):
+                        </p>
+                        <div class="avatar-group">
+                            <div class="avatar avatar-md"><img src="https://i.pravatar.cc/150?img=31" alt="User"></div>
+                            <div class="avatar avatar-md"><img src="https://i.pravatar.cc/150?img=52" alt="User"></div>
+                            <div class="avatar avatar-md"><img src="https://i.pravatar.cc/150?img=56" alt="User"></div>
+                            <div class="avatar avatar-md"
+                                style="background: #e2e8f0; font-size: 12px; font-weight: 700;">+3
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        &lt;!-- Avatar com Imagem --&gt;
+                        &lt;div class="avatar avatar-md"&gt;
+                        &lt;img src="foto.jpg" alt="Alt text"&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Grupo Sobreposto (Hover animation inclusa) --&gt;
+                        &lt;div class="avatar-group"&gt;
+                        &lt;div class="avatar avatar-md"&gt;...&lt;/div&gt;
+                        &lt;div class="avatar avatar-md"&gt;...&lt;/div&gt;
+                        &lt;/div&gt;</div>
+
+                    <!-- =========================================
+                     TABELAS
+                     ========================================= -->
+                    <h3 id="tables" style="margin-top: 4rem;">Tabelas</h3>
+                    <p>Tabelas leves e limpas. Adicione a classe <code>.table</code> na tag <code>&lt;table&gt;</code>.
+                        Modificadores como <code>.table-hover</code> (destaque ao passar o mouse) e
+                        <code>.table-striped</code> (listrada) estão disponíveis. Envolva em
+                        <code>.table-responsive</code>
+                        para habilitar rolagem horizontal em dispositivos móveis sem quebrar o layout.
+                    </p>
+                    <div class="preview-box" style="padding: 0; overflow: hidden;">
+                        <div class="table-responsive" style="margin-bottom: 0; border: none;">
+                            <table class="table table-hover" style="margin-bottom: 0;">
+                                <thead>
+                                    <tr>
+                                        <th style="padding-left: 2rem;">Projeto</th>
+                                        <th>Status</th>
+                                        <th style="text-align: right; padding-right: 2rem;">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding-left: 2rem;">Fóton Website</td>
+                                        <td><span class="badge badge-success">Online</span></td>
+                                        <td style="text-align: right; padding-right: 2rem;">
+                                            <button class="btn btn-sm btn-link">Gerenciar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left: 2rem;">App Mobile</td>
+                                        <td><span class="badge badge-warning">Dev</span></td>
+                                        <td style="text-align: right; padding-right: 2rem;">
+                                            <button class="btn btn-sm btn-link">Gerenciar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        &lt;div class="table-responsive"&gt;
+                        &lt;table class="table table-hover"&gt;
+                        &lt;thead&gt;
+                        &lt;tr&gt;
+                        &lt;th&gt;Cabeçalho&lt;/th&gt;
+                        &lt;th&gt;...&lt;/th&gt;
+                        &lt;/tr&gt;
+                        &lt;/thead&gt;
+                        &lt;tbody&gt;
+                        &lt;tr&gt;
+                        &lt;td&gt;Dado&lt;/td&gt;
+                        &lt;td&gt;...&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                        &lt;/table&gt;
+                        &lt;/div&gt;</div>
+
+                    <!-- =========================================
+                     NAVEGAÇÃO
+                     ========================================= -->
+                    <h3 id="breadcrumbs" style="margin-top: 4rem;">Navegação</h3>
+
+                    <h4>Breadcrumbs</h4>
+                    <p>Indica a localização atual. Use uma lista ordenada dentro de <code>nav</code>.</p>
+                    <div class="preview-box">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Biblioteca</a></li>
+                                <li class="breadcrumb-item active">Dados</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="code-block">
+                        &lt;nav aria-label="breadcrumb"&gt;
+                        &lt;ol class="breadcrumb"&gt;
+                        &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="breadcrumb-item active"&gt;Atual&lt;/li&gt;
+                        &lt;/ol&gt;
+                        &lt;/nav&gt;</div>
+
+                    <!-- =========================================
+                     CARDS
+                     ========================================= -->
+                    <h3 style="margin-top: 4rem;">Cards</h3>
+                    <p>Container flexível e extensível com borda, sombra suave e padding padrão. Use <code>.card</code>
+                        como
+                        wrapper principal e <code>.card-body</code> para o conteúdo interno, garantindo espaçamento
+                        consistente.</p>
+
+                    <h4>1. Card Padrão & Destaque</h4>
+                    <div class="preview-box" style="background: #f8f9fa;">
+                        <div class="grid-responsive"
+                            style="gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+
+                            <!-- Card Padrão -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3>Padrão</h3>
+                                    <p>Card básico com sombra suave.</p>
+                                    <a href="#" class="btn btn-sm btn-primary">Ação</a>
+                                </div>
+                            </div>
+
+                            <!-- Card Highlight -->
+                            <div class="card card-highlight">
+                                <div class="card-body">
+                                    <h3>Destaque</h3>
+                                    <p>Use <code>.card-highlight</code> para bordas coloridas e tag "Popular".</p>
+                                    <a href="#" class="btn btn-sm btn-gradient">Ação</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        &lt;!-- Card Simples --&gt;
+                        &lt;div class="card"&gt;
+                        &lt;div class="card-body"&gt;
+                        &lt;h3&gt;Título&lt;/h3&gt;
+                        &lt;p&gt;Conteúdo...&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Card Destacado (Borda colorida + Tag Popular) --&gt;
+                        &lt;div class="card card-highlight"&gt;
+                        &lt;div class="card-body"&gt;...&lt;/div&gt;
+                        &lt;/div&gt;</div>
+
+                    <h4>2. Variações Específicas</h4>
+                    <p>Classes auxiliares para casos de uso comuns que alteram o layout do card:</p>
+                    <ul style="margin-bottom: 20px; padding-left: 20px; color: var(--txt-sec);">
+                        <li><strong>.card-blog:</strong> Remove o padding do topo para permitir imagens "full-width"
+                            (largura total) no cabeçalho.</li>
+                        <li><strong>.card-profile:</strong> Centraliza todo o conteúdo e adiciona espaçamentos ideais
+                            para
+                            avatares e nomes.</li>
+                        <li><strong>.card-feature-row:</strong> Altera o layout para horizontal (flex-row), ideal para
+                            listar funcionalidades com ícones à esquerda.</li>
+                    </ul>
+
+                    <div class="preview-box" style="background: #f8f9fa;">
+                        <div style="display: flex; justify-content: center; align-items: center; gap: 3em;">
+
+                            <!-- Card Blog -->
+                            <div class="card card-blog" style="width: 600px;">
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    class="card-img-top" alt="Cover">
+                                <div class="card-body">
+                                    <h4>Card Blog</h4>
+                                    <p style="font-size: 0.9rem; color: #666;">A classe <code>.card-blog</code> remove o
+                                        padding superior para imagens full-width.</p>
+                                </div>
+                            </div>
+
+                            <!-- Card Profile -->
+                            <div class="card card-profile" style="width: 600px;">
+                                <div class="avatar avatar-xl">
+                                    <img src="https://i.pravatar.cc/150?img=68" alt="Profile">
+                                </div>
+                                <h4>Card Profile</h4>
+                                <p>Centraliza conteúdo.</p>
+                                <button class="btn btn-sm btn-outline-info">Seguir</button>
+                            </div>
+
+                            <!-- Card Feature Row -->
+                            <div class="card card-feature-row" style="width: 600px;">
+                                <span style="color: var(--primary); font-size: 24px;"><i
+                                        class="fa-solid fa-star"></i></span>
+                                <div>
+                                    <h4>Feature Row</h4>
+                                    <p>Layout horizontal flex para ícones e texto.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        &lt;!-- Card Blog (Imagem no topo) --&gt;
+                        &lt;div class="card card-blog"&gt;
+                        &lt;img src="..." class="card-img-top"&gt;
+                        &lt;div class="card-body"&gt;...&lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Card Perfil (Centralizado) --&gt;
+                        &lt;div class="card card-profile"&gt;...&lt;/div&gt;
+
+                        &lt;!-- Feature Horizontal --&gt;
+                        &lt;div class="card card-feature-row"&gt;
+                        &lt;span&gt;&lt;i class="icon"&gt;&lt;/i&gt;&lt;/span&gt;
+                        &lt;div&gt;
+                        &lt;h4&gt;Título&lt;/h4&gt;
+                        &lt;p&gt;Descrição&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;/div&gt;</div>
+
+                    <!-- =========================================
+                     ACORDEÕES
+                     ========================================= -->
+                    <h3 id="accordions" style="margin-top: 4rem;">Acordeões</h3>
+                    <p>Componente expansível para FAQs ou conteúdo colapsável. Baseado na tag nativa
+                        <code>&lt;details&gt;</code> e <code>&lt;summary&gt;</code> para máxima semântica e
+                        acessibilidade.
+                        O arquivo JavaScript do framework adiciona automaticamente uma animação suave de altura (slide
+                        down/up) ao abrir e fechar, garantindo uma experiência fluida (60fps).
+                    </p>
+                    <div class="preview-box" style="background: #f8f9fa;">
+                        <details class="accordion">
+                            <summary>Como funciona a animação?</summary>
+                            <div class="accordion-body">
+                                O JavaScript calcula a altura do conteúdo e transiciona a propriedade height, oferecendo
+                                uma
+                                experiência de 60fps.
+                            </div>
+                        </details>
+                        <details class="accordion">
+                            <summary>É necessário JavaScript?</summary>
+                            <div class="accordion-body">
+                                Sim, para a animação. Sem ele, funciona com toggle instantâneo.
+                            </div>
+                        </details>
+                    </div>
+                    <div class="code-block">
+                        &lt;details class="accordion"&gt;
+                        &lt;summary&gt;Pergunta ou Título&lt;/summary&gt;
+                        &lt;div class="accordion-body"&gt;
+                        Conteúdo oculto que será expandido...
+                        &lt;/div&gt;
+                        &lt;/details&gt;</div>
+
+                    <!-- =========================================
+                     PROGRESSO & SPINNERS
+                     ========================================= -->
+                    <h3 id="progress" style="margin-top: 4rem;">Progresso & Carregamento</h3>
+                    <p>Indicadores visuais de estado. As barras de progresso suportam larguras percentuais e cores
+                        contextuais. Os spinners são puramente CSS e ideais para indicar carregamento de dados ou ações
+                        pendentes.</p>
+
+                    <div class="preview-box">
+                        <p style="margin-bottom: 5px;">Progress Bars:</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 50%">50%</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info progress-bar-striped" style="width: 75%"></div>
+                        </div>
+
+                        <p style="margin-bottom: 5px; margin-top: 20px;">Spinners:</p>
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <div class="spinner-border"></div>
+                            <div class="spinner-pulse" style="color: var(--primary);"></div>
+                            <div class="spinner-dots" style="color: var(--info);">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        &lt;!-- Barra de Progresso --&gt;
+                        &lt;div class="progress"&gt;
+                        &lt;div class="progress-bar bg-success" style="width: 50%"&gt;50%&lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Spinners --&gt;
+                        &lt;div class="spinner-border"&gt;&lt;/div&gt;
+                        &lt;div class="spinner-pulse"&gt;&lt;/div&gt;
+                        &lt;div
+                        class="spinner-dots"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+                    </div>
+
+                    <!-- =========================================
+                     ESTRUTURA DE PÁGINA (NAVBAR, HERO, FOOTER)
+                     ========================================= -->
+                    <h2 style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid #eee;">Estrutura de Página
+                    </h2>
+                    <p class="doc-subtitle">Componentes estruturais para montar o layout macro do seu site.</p>
+
+                    <!-- NAVBAR -->
+                    <h3 id="navbar">Navbar (Menu Superior)</h3>
+                    <p>A barra de navegação é fixa no topo por padrão (<code>position: fixed</code> no CSS do
+                        framework).
+                        Utilize um container flex interno para alinhar o logo e os links. O exemplo abaixo simula a
+                        visualização.</p>
+                    <div class="preview-box"
+                        style="position: relative; height: 120px; background: #eee; overflow: hidden; border: 1px solid #ddd; padding: 0;">
+                        <!-- Simulando Navbar fixa dentro do preview -->
+                        <nav class="navbar" style="position: absolute; top: 0; left: 0; width: 100%;">
+                            <div
+                                style="display:flex; justify-content:space-between; align-items: center; width:100%; max-width: 1000px; padding: 0 20px;">
+                                <a href="#" class="logo">Logo<span>Type</span></a>
+                                <ul class="navbar-menu" style="margin-bottom: 0;">
+                                    <li><a href="#">Link 1</a></li>
+                                    <li><a href="#">Link 2</a></li>
+                                    <li><a href="#" class="btn btn-sm btn-primary">Login</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="code-block">
+                        &lt;nav class="navbar"&gt;
+                        &lt;div style="display: flex; justify-content: space-between; align-items: center; width: 100%;
+                        max-width: 1200px; margin: auto; padding: 0 20px;"&gt;
+
+                        &lt;!-- Logo --&gt;
+                        &lt;a href="#" class="logo"&gt;Minha&lt;span&gt;Marca&lt;/span&gt;&lt;/a&gt;
+
+                        &lt;!-- Menu Links --&gt;
+                        &lt;ul class="navbar-menu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#" class="btn btn-sm btn-primary"&gt;Login&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+
+                        &lt;/div&gt;
+                        &lt;/nav&gt;</div>
+
+                    <!-- TOP BAR -->
+                    <h3 id="topbar">Top Bar</h3>
+                    <p>Uma barra utilitária fina localizada acima da navegação principal. Ideal para anúncios, promoções
+                        ou
+                        links secundários. Utilize a classe <code>.top-bar</code>.</p>
+                    <div class="preview-box" style="padding: 0; overflow: hidden;">
+                        <div class="top-bar">
+                            🚀 Oferta: 50% de desconto nos planos anuais!
+                            <a href="#" class="btn btn-sm btn-outline-white">Aproveitar</a>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        &lt;div class="top-bar"&gt;
+                        Texto do anúncio...
+                        &lt;a href="#" class="btn btn-sm btn-link"&gt;Link&lt;/a&gt;
+                        &lt;/div&gt;</div>
+
+                    <!-- HERO SECTION -->
+                    <h3 id="hero" style="margin-top: 3rem;">Hero Section</h3>
+                    <p>Área de destaque inicial. Possui padding generoso (padding-top ajustado para compensar a navbar
+                        fixa)
+                        e centralização vertical/horizontal do conteúdo dentro de <code>.hero-content</code>.</p>
+                    <div class="preview-box" style="padding: 0;">
+                        <section class="hero" style="min-height: 300px; padding-top: 2rem;">
+                            <div class="hero-content">
+                                <span>Título de Impacto</span>
+                                <p>Subtítulo explicativo curto para engajar o usuário.</p>
+                                <button class="btn btn-gradient">Call to Action</button>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="code-block">
+                        &lt;section class="hero"&gt;
+                        &lt;div class="hero-content"&gt;
+                        &lt;span&gt;Título Principal&lt;/span&gt;
+                        &lt;p&gt;Descrição...&lt;/p&gt;
+                        &lt;button class="btn btn-gradient"&gt;Ação&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;/section&gt;</div>
+
+                    <!-- FOOTER -->
+                    <h3 id="footer" style="margin-top: 3rem;">Footer</h3>
+                    <p>Rodapé simples. Geralmente usado dentro de um container com cor de fundo diferente ou como último
+                        elemento do corpo da página.</p>
+                    <div class="preview-box">
+                        <footer style="padding: 2rem; background: #fff; text-align: center;">
+                            <p style="color: #666; margin: 0;">© 2025 Fóton Framework. Todos os direitos reservados.</p>
+                            <div style="margin-top: 10px;">
+                                <a href="#" style="margin: 0 10px; color: var(--primary);">Termos</a>
+                                <a href="#" style="margin: 0 10px; color: var(--primary);">Privacidade</a>
+                            </div>
+                        </footer>
+                    </div>
+                    <div class="code-block">
+                        &lt;footer style="padding: 3rem 0; background: #fff;"&gt;
+                        &lt;div class="container" style="text-align: center;"&gt;
+                        &lt;p&gt;© 2025 Todos os direitos reservados.&lt;/p&gt;
+                        &lt;div&gt;
+                        &lt;a href="#"&gt;Link 1&lt;/a&gt;
+                        &lt;a href="#"&gt;Link 2&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;/footer&gt;</div>
+
+                </div>
+            </main>
+
+            <!-- RODAPÉ DA DOCUMENTAÇÃO -->
+            <footer
+                style="margin-top: 0; padding-top: 2rem; padding-bottom: 2rem; border-top: 1px solid #eee; color: var(--txt-sec); font-size: 0.9rem; background: #fbfbfd; width: 100%;">
+                <div
+                    style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center;">
+
+                    <!-- Social Links -->
+                    <div style="display: flex; gap: 1.5rem; font-size: 1.4rem;">
+                        <a href="https://www.linkedin.com/in/ramondantaspolicarpo/" target="_blank"
+                            style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
+                            onmouseover="this.style.color='var(--primary)'"
+                            onmouseout="this.style.color='var(--txt-primary)'">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/RamonDantasPolicarpo" target="_blank"
+                            style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
+                            onmouseover="this.style.color='var(--primary)'"
+                            onmouseout="this.style.color='var(--txt-primary)'">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ramo0n.36/" target="_blank"
+                            style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
+                            onmouseover="this.style.color='var(--primary)'"
+                            onmouseout="this.style.color='var(--txt-primary)'">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+
+                    <!-- Copyright -->
+                    <p style="margin: 0;">
+                        &copy; 2025 Fóton Framework. Todos os direitos reservados a <strong>Ramon Dantas</strong>.
+                    </p>
+                </div>
+            </footer>
+
+        </div>
     </div>
 
     <script src="foton_scripts.js"></script>
