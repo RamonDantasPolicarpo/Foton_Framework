@@ -12,6 +12,7 @@
     --bg-page: #f0f0f8;
     --bg-surface: #ffffff;
     --dark: #1d1e25;
+    --hero-bg: radial-gradient(#eef 1px, transparent 1px), linear-gradient(180deg, #f9f9ff 0%, #fff 100%);
 
     /* 3. Texto */
     --txt-primary: #343f52;
@@ -51,6 +52,7 @@ body.dark-mode {
     --bg-page: #121212;
     --bg-surface: #1e1e24;
 
+    --hero-bg: radial-gradient(#32384a 1px, transparent 1px), linear-gradient(180deg, #181c26 0%, #14161f 100%);
     --txt-primary: #e2e8f0;
     --txt-sec: #94a3b8;
 
@@ -76,8 +78,25 @@ body.dark-mode .accordion-body,
 body.dark-mode .popover-content,
 body.dark-mode .preview-box,
 body.dark-mode footer {
-    border-color: #2d2d3a;
+    border-color: var(--border-color);
     box-shadow: none;
+}
+
+body.dark-mode .card-highlight {
+    border-color: var(--primary);
+}
+
+body.dark-mode .btn-gradient {
+    background: #fff;
+    color: var(--dark);
+    /* Texto escuro para contraste */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .btn-gradient:hover {
+    background-image: var(--grad-primary);
+    color: #fff;
+    box-shadow: 0 15px 30px rgba(64, 170, 84, 0.4);
 }
 
 body.dark-mode .preview-box {
@@ -167,7 +186,7 @@ h6 {
     flex-direction: column;
     backdrop-filter: blur(10px);
     background: var(--bg-surface);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar-menu {
@@ -212,7 +231,7 @@ h6 {
     align-items: center;
     display: flex;
     justify-content: center;
-    background: radial-gradient(#eef 1px, transparent 1px), linear-gradient(180deg, #f9f9ff 0%, #fff 100%);
+    background: var(--hero-bg);
     background-size: 20px 20px, 100% 100%;
     min-height: 600px;
 }
@@ -363,7 +382,7 @@ select option {
     font-family: 'Poppins', sans-serif;
     color: var(--txt-primary);
     background-color: var(--bg-surface);
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     transition: border-color 0.2s, box-shadow 0.2s;
     -webkit-appearance: none;
@@ -402,7 +421,7 @@ textarea.form-input {
     padding: 6px;
     border-radius: 1000px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-color);
     width: 100%;
     background: var(--bg-surface);
     transition: all 0.3s ease;
@@ -740,7 +759,7 @@ textarea.form-input {
     gap: 1.5rem;
     flex-direction: column;
     transition: all 0.4s ease;
-    border: 1px solid #f0f0f8;
+    border: 1px solid var(--border-color);
     position: relative;
     top: 0;
 }
@@ -1133,7 +1152,7 @@ textarea.form-input {
 .badge-neutral {
     background-color: var(--neutral-soft);
     color: var(--neutral);
-    border: 2px solid rgba(100, 116, 139, 0.2)      ;
+    border: 2px solid rgba(100, 116, 139, 0.2);
 }
 
 .notification-card {
@@ -1270,7 +1289,7 @@ textarea.form-input {
 .table td {
     padding: 1rem;
     vertical-align: middle;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--border-color);
     color: var(--txt-primary);
 }
 
@@ -1437,7 +1456,7 @@ textarea.form-input {
     list-style: none;
     background-color: var(--bg-surface);
     background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .05);
+    border: 1px solid var(--border-color);
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     animation: fadeIn 0.2s ease;
@@ -1483,7 +1502,7 @@ textarea.form-input {
 }
 
 details.accordion {
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     margin-bottom: 10px;
     background: var(--bg-surface);
@@ -1517,7 +1536,7 @@ details.accordion summary::after {
 
 details.accordion[open] summary {
     background-color: var(--bg-page);
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--border-color);
     color: var(--primary);
 }
 
@@ -1636,7 +1655,7 @@ details.accordion[open] summary::after {
     width: 200px;
     padding: 1rem;
     background: var(--bg-surface);
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 10;
