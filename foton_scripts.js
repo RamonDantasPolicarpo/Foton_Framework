@@ -240,7 +240,37 @@ function showToast(message) {
     }, 2500);
 }
 
-// --- 6. Mock Download ---
+// --- 6. Download Real do CSS ---
 function downloadCSS() {
-    alert("O download iniciaria aqui com o arquivo .css gerado.");
+    // Busca o arquivo CSS na mesma pasta
+    fetch('foton_framework.css')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao carregar o arquivo CSS.');
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            // Cria uma URL temporária para o blob
+            const url = window.URL.createObjectURL(blob);
+            
+            // Cria um link invisível para forçar o download
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'foton_framework.css'; // Nome do arquivo ao baixar
+            
+            document.body.appendChild(a);
+            a.click();
+            
+            // Limpeza
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+            
+            showToast('Download iniciado!');
+        })
+        .catch(err => {
+            console.error(err);
+            showToast('Erro ao baixar o arquivo.');
+        });
 }
