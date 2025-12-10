@@ -10,31 +10,27 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="foton_framework.css">
+    <link rel="stylesheet" href="docs_style.css">
 </head>
 
 <body>
-
     <div class="mobile-overlay" id="mobileOverlay"></div>
     <button class="mobile-menu-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
 
     <div class="docs-layout-wrapper">
-
         <nav class="docs-sidebar" id="docsSidebar">
             <a href="index.html" class="docs-logo">
                 <img src="vector/Logo.svg" width="45" height="45" viewBox="0 0 24 24" fill="none">
                 Fóton
             </a>
-
             <div class="docs-menu-category">Visão Geral</div>
             <a href="index.html" class="docs-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Início &
                 Demo</a>
-
             <div class="docs-menu-category">Documentação</div>
             <a href="intro.html" class="docs-link">Introdução</a>
             <a href="download.html" class="docs-link">Download</a>
             <a href="custom.html" class="docs-link">Customização</a>
             <a href="layout.html" class="docs-link">Layout & Grid</a>
-
             <div class="docs-menu-category">Componentes</div>
             <a href="forms.html" class="docs-link active">Formulários</a>
             <a href="components.html" class="docs-link">Biblioteca UI</a>
@@ -46,12 +42,10 @@
                 <h1 class="doc-title">Formulários</h1>
                 <p class="doc-subtitle">Componentes de input e busca.</p>
 
-                <!-- BARRA DE PESQUISA -->
                 <h3>Barra de Busca</h3>
                 <p>O <code>.input-group</code> ocupa 100% do container pai por padrão. Ajuste a largura usando CSS
                     inline ou classes utilitárias se precisar.</p>
                 <div class="preview-box">
-                    <!-- Default Full Width -->
                     <p style="font-size: 12px; color: #999; margin-bottom: 5px;">Padrão (100%)</p>
                     <div class="input-group">
                         <i class="fa-solid fa-magnifying-glass" style="margin-left: 15px; color: var(--txt-sec);"></i>
@@ -59,8 +53,6 @@
                         <button class="btn btn-gradient"
                             style="margin: 3px; height: 44px; padding: 0 25px;">Pesquisar</button>
                     </div>
-
-                    <!-- Custom Width -->
                     <p style="font-size: 12px; color: #999; margin-bottom: 5px; margin-top: 20px;">Largura Personalizada
                         (ex: 400px)</p>
                     <div class="input-group" style="max-width: 400px;">
@@ -76,7 +68,6 @@
                     &lt;button class="btn btn-gradient"&gt;Pesquisar&lt;/button&gt;
                     &lt;/div&gt;</div>
 
-                <!-- INPUTS BÁSICOS -->
                 <h3>Inputs Básicos</h3>
                 <p>Campos de texto padrão, email e senha. Utilize a classe <code>.form-input</code> para expandir e
                     estilizar.</p>
@@ -96,7 +87,6 @@
                     &lt;input type="email" class="form-input" placeholder="..."&gt;
                     &lt;/div&gt;</div>
 
-                <!-- SELEÇÃO E OPÇÕES -->
                 <h3>Seleção e Opções</h3>
                 <p>Selects, checkboxes e radio buttons customizados. A fonte das opções agora herda corretamente.</p>
                 <div class="preview-box">
@@ -108,7 +98,6 @@
                             <option>Opção 3 - Fonte Poppins</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label class="form-check">
                             <input type="checkbox" class="form-check-input" checked>
@@ -119,7 +108,6 @@
                             <span class="form-check-label">Receber newsletter</span>
                         </label>
                     </div>
-
                     <div class="form-group">
                         <label class="form-check">
                             <input type="radio" name="radioDemo" class="form-check-input" checked>
@@ -150,7 +138,6 @@
                     &lt;span class="form-check-label"&gt;Opção&lt;/span&gt;
                     &lt;/label&gt;</div>
 
-                <!-- TEXTAREAS -->
                 <h3>Áreas de Texto</h3>
                 <div class="preview-box">
                     <div class="form-group">
@@ -165,8 +152,6 @@
                     &lt;/div&gt;</div>
 
                 <h3 style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px;">Exemplos Completos</h3>
-
-                <!-- LOGIN CARD -->
                 <h4>Login Card</h4>
                 <div class="preview-box" style="display: flex; justify-content: center; background: #f0f0f8;">
                     <div class="card" style="width: 100%; max-width: 400px;">
@@ -202,7 +187,6 @@
                     &lt;button class="btn btn-gradient btn-block"&gt;Entrar&lt;/button&gt;
                     &lt;/div&gt;</div>
 
-                <!-- CONTATO -->
                 <h4>Formulário de Contato</h4>
                 <div class="preview-box">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
@@ -252,10 +236,8 @@
                     &lt;button class="btn btn-gradient"&gt;Enviar&lt;/button&gt;
                     &lt;/form&gt;</div>
 
-                <!-- NOVOS EXEMPLOS -->
                 <h3 style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px;">Mais Layouts de Formulário
                 </h3>
-
                 <h4>Newsletter Inline</h4>
                 <div class="preview-box">
                     <div style="display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap;">
@@ -319,11 +301,9 @@
                     &lt;input type="text" class="form-input" placeholder="CEP"&gt;
                     &lt;/div&gt;
                     &lt;/div&gt;</div>
-
             </div>
         </main>
     </div>
-
     <script src="foton_scripts.js"></script>
 </body>
 
