@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fóton Framework - Início</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fóton Framework - Início</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Framework e Estilos da Doc -->
-    <link rel="stylesheet" href="foton_framework.css">
-    <link rel="stylesheet" href="docs_style.css">
+        <!-- Framework e Estilos da Doc -->
+        <link rel="stylesheet" href="foton_framework.css">
+        <link rel="stylesheet" href="docs_style.css">
 
-    <style>
+        <style>
         /* Ajustes específicos para a DEMO funcionar dentro da caixa */
         .demo-container {
             position: relative;
@@ -32,396 +33,472 @@
             z-index: 100;
         }
     </style>
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    <button class="mobile-menu-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        <button class="mobile-menu-toggle" id="mobileToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
-    <div class="docs-layout-wrapper">
+        <div class="docs-layout-wrapper">
 
-        <!-- MENU LATERAL -->
-        <nav class="docs-sidebar" id="docsSidebar">
-            <a href="index.html" class="docs-logo">
-                <img src="vector/Logo.svg" width="45" height="45" viewBox="0 0 24 24" fill="none">
-                Fóton
-            </a>
+            <!-- MENU LATERAL -->
+            <nav class="docs-sidebar" id="docsSidebar">
+                <a href="index.html" class="docs-logo">
+                    <img src="vector/Logo.svg" width="45" height="45"
+                        viewBox="0 0 24 24" fill="none">
+                    Fóton
+                </a>
 
-            <!-- SWITCH DE MODO ESCURO -->
-            <div style="margin-bottom: 2rem;">
-                <label class="toggle__section" style="margin: 0; cursor: pointer;">
-                    <input type="checkbox" id="darkModeSwitch">
-                    <div class="toggle__btn" style="transform: scale(0.8);"><span></span></div>
-                    <span style="font-size: 0.9rem; font-weight: 600; color: var(--txt-primary);">Modo Escuro</span>
-                </label>
-            </div>
-
-            <div class="docs-menu-category">Visão Geral</div>
-            <a href="index.html" class="docs-link active"><i class="fa-solid fa-house" style="margin-right: 8px;"></i>
-                Início & Demo</a>
-
-            <div class="docs-menu-category">Documentação</div>
-            <a href="intro.html" class="docs-link">Introdução</a>
-            <a href="download.html" class="docs-link">Download</a>
-            <a href="custom.html" class="docs-link">Customização</a>
-            <a href="layout.html" class="docs-link">Layout & Grid</a>
-
-            <div class="docs-menu-category">Componentes</div>
-            <a href="forms.html" class="docs-link">Formulários</a>
-            <a href="components.html" class="docs-link">Biblioteca UI</a>
-            <a href="creative.html" class="docs-link">Composições Criativas</a>
-        </nav>
-
-        <!-- WRAPPER DA COLUNA DIREITA (Conteúdo + Footer) -->
-        <div style="display: flex; flex-direction: column; min-width: 0;">
-
-            <!-- ÁREA PRINCIPAL -->
-            <main class="docs-content" style="flex: 1;">
-                <div class="page-fade-in">
-
-                    <!-- HERO DE APRESENTAÇÃO -->
-                    <div class="home-hero container-pr">
-                        <div style="max-width: 600px;">
-                            <span class="badge badge-pill badge-success" style="margin-bottom: 1rem;">v1.0
-                                Disponível</span>
-                            <h1 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem;">Construa interfaces na
-                                velocidade da luz.</h1>
-                            <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">O Fóton é um framework
-                                CSS semântico, leve e focado em design system. Crie landing pages de alta conversão sem
-                                lutar contra o código.</p>
-
-                            <div class="home-actions">
-                                <a href="intro.html" class="btn btn-gradient">Documentação</a>
-                                <a href="components.html" class="btn btn-primary">Ver Componentes</a>
-                            </div>
-
-                            <div
-                                style="margin-top: 2rem; display: flex; gap: 20px; font-size: 0.9rem; color: var(--txt-sec);">
-                                <span><i class="fa-solid fa-check"
-                                        style="color: var(--primary); margin-right: 5px;"></i> Sem dependências
-                                    JS</span>
-                                <span><i class="fa-solid fa-check"
-                                        style="color: var(--primary); margin-right: 5px;"></i> Grid Responsivo</span>
-                                <span><i class="fa-solid fa-check"
-                                        style="color: var(--primary); margin-right: 5px;"></i> Dark Mode Ready</span>
-                            </div>
+                <!-- SWITCH DE MODO ESCURO -->
+                <div class="sidebar-toggle-wrapper">
+                    <label class="toggle__section sidebar-toggle-label">
+                        <input type="checkbox" id="darkModeSwitch">
+                        <div class="toggle__btn toggle-scale">
+                            <span></span>
                         </div>
+                        <span class="sidebar-toggle-text">Modo Escuro</span>
+                    </label>
+                </div>
 
-                        <!-- SVG Ilustrativo (Abstrato) -->
-                        <div style="position: relative;">
-                            <img src="vector/Logo.svg" alt="Fóton Logo" width="250"
-                                style="filter: drop-shadow(0 20px 40px rgba(64,170,84,0.3)); transform: rotate(-10deg);">
-                        </div>
-                    </div>
+                <div class="docs-menu-category">Visão Geral</div>
+                <a href="index.html" class="docs-link active">
+                    <i class="fa-solid fa-house"></i>
+                    Início & Demo
+                </a>
 
-                    <!-- SEÇÃO DEMONSTRAÇÃO AO VIVO -->
-                    <div
-                        style="margin-top: 4rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: flex-end;">
-                        <div>
-                            <h2 style="font-size: 1.8rem; margin-bottom: 5px;">Veja em Ação</h2>
-                            <p style="margin: 0; color: var(--txt-sec);">Uma landing page completa construída apenas com
-                                classes do Fóton.</p>
-                        </div>
-                        <span class="badge badge-neutral"><i class="fa-solid fa-eye" style="margin-right: 5px;"></i>
-                            Live Preview</span>
-                    </div>
+                <div class="docs-menu-category">Documentação</div>
+                <a href="intro.html" class="docs-link">Introdução</a>
+                <a href="download.html" class="docs-link">Download</a>
+                <a href="custom.html" class="docs-link">Customização</a>
+                <a href="layout.html" class="docs-link">Layout & Grid</a>
 
-                    <!-- MOCKUP DO BROWSER (A DEMO REAL) -->
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <div class="browser-dot red"></div>
-                                <div class="browser-dot yellow"></div>
-                                <div class="browser-dot green"></div>
-                            </div>
-                            <div class="browser-address">
-                                <i class="fa-solid fa-lock"
-                                    style="margin-right: 5px; font-size: 10px; color: var(--success);"></i>
-                                demo.foton-framework.com/landing
-                            </div>
-                        </div>
+                <div class="docs-menu-category">Componentes</div>
+                <a href="forms.html" class="docs-link">Formulários</a>
+                <a href="components.html" class="docs-link">Biblioteca UI</a>
+                <a href="creative.html" class="docs-link">Composições
+                    Criativas</a>
+            </nav>
 
-                        <!-- CONTEÚDO DA DEMO (ISOLADO) -->
-                        <div class="demo-container">
+            <!-- WRAPPER DA COLUNA DIREITA (Conteúdo + Footer) -->
+            <div class="docs-main-wrapper">
 
-                            <!-- 1. Top Bar -->
-                            <div class="top-bar">
-                                🎉 Oferta de Lançamento: Ganhe acesso vitalício ao Plano Pro!
-                                <a href="#" class="btn btn-sm btn-link"
-                                    style="color: #fff; text-decoration: underline;">Saber mais</a>
-                            </div>
+                <!-- ÁREA PRINCIPAL -->
+                <main class="docs-content">
+                    <div class="page-fade-in">
 
-                            <!-- 2. Navbar (Sticky dentro do container) -->
-                            <nav class="navbar">
+                        <!-- HERO DE APRESENTAÇÃO -->
+                        <div class="home-hero container-pr">
+                            <div class="hero-text-col">
+                                <span
+                                    class="badge badge-pill badge-success mb-md">
+                                    v1.0 Disponível
+                                </span>
+                                <h1 class="hero-title">
+                                    Construa interfaces na velocidade da luz.
+                                </h1>
+                                <p class="hero-description">
+                                    O Fóton é um framework CSS semântico, leve e
+                                    focado em design system. Crie landing pages
+                                    de alta conversão sem lutar contra o código.
+                                </p>
+
                                 <div
-                                    style="display:flex; justify-content:space-between; width:100%; max-width:1100px; padding: 0 2rem;">
-                                    <a href="#" class="logo" style="display: flex; align-items: center; gap: 10px;">
-                                        <img src="vector/Logo.svg" width="24"> Fóton
+                                    class="home-actions home-actions-responsive">
+                                    <a href="intro.html"
+                                        class="btn btn-gradient">
+                                        Documentação
                                     </a>
-                                    <ul class="navbar-menu" style="display: flex; align-items: center;">
-                                        <li><a href="#">Recursos</a></li>
-                                        <li><a href="#">Preços</a></li>
-                                        <li><a href="#" class="btn btn-sm btn-outline-dark"
-                                                style="margin-left: 10px;">Entrar</a></li>
-                                    </ul>
-                                </div>
-                            </nav>
-
-                            <!-- 3. Hero Section -->
-                            <section class="hero" style="min-height: 500px; padding-top: 4rem;">
-                                <div class="hero-content">
-                                    <span style="font-size: 3rem; line-height: 1.1; color: var(--txt-primary);">Escale
-                                        seu negócio <br>com design inteligente.</span>
-                                    <p style="color: var(--txt-sec);">A plataforma definitiva para gerenciar suas
-                                        vendas, clientes e marketing em um só lugar.</p>
-
-                                    <div class="demo-hero-form">
-                                        <div class="input-group">
-                                            <input type="email" class="input-field"
-                                                placeholder="Digite seu e-mail profissional">
-                                            <button class="btn btn-gradient" style="margin: 4px;">Começar</button>
-                                        </div>
-                                        <div style="font-size: 12px; color: var(--txt-sec); margin-top: 10px;">* 14 dias
-                                            grátis. Sem cartão de crédito.</div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- 4. Features Grid -->
-                            <section style="padding: 4rem 2rem; max-width: 1100px; margin: auto;">
-                                <div style="text-align: center; margin-bottom: 3rem;">
-                                    <h2>Por que escolher o Fóton?</h2>
-                                    <p style="color: var(--txt-sec);">Ferramentas poderosas para times modernos.</p>
+                                    <a href="components.html"
+                                        class="btn btn-primary">
+                                        Ver Componentes
+                                    </a>
                                 </div>
 
-                                <div class="grid-responsive"
-                                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                                    <!-- Feature 1 -->
-                                    <div class="card-feature"
-                                        style="width: 100%; align-items: flex-start; text-align: left; background: var(--bg-surface);">
-                                        <div
-                                            style="width: 45px; height: 45px; background: var(--info-soft); color: var(--info); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 1rem;">
-                                            <i class="fa-solid fa-chart-line"></i>
-                                        </div>
-                                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Analytics em Tempo Real
-                                        </h3>
-                                        <p style="text-align: left; font-size: 0.95rem;">Acompanhe métricas vitais do
-                                            seu negócio com dashboards atualizados instantaneamente.</p>
-                                    </div>
-
-                                    <!-- Feature 2 -->
-                                    <div class="card-feature"
-                                        style="width: 100%; align-items: flex-start; text-align: left; background: var(--bg-surface);">
-                                        <div
-                                            style="width: 45px; height: 45px; background: var(--success-soft); color: var(--success); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 1rem;">
-                                            <i class="fa-solid fa-shield-halved"></i>
-                                        </div>
-                                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Segurança Bancária</h3>
-                                        <p style="text-align: left; font-size: 0.95rem;">Seus dados protegidos com
-                                            criptografia de ponta a ponta e backups diários automáticos.</p>
-                                    </div>
-
-                                    <!-- Feature 3 -->
-                                    <div class="card-feature"
-                                        style="width: 100%; align-items: flex-start; text-align: left; background: var(--bg-surface);">
-                                        <div
-                                            style="width: 45px; height: 45px; background: var(--warning-soft); color: var(--warning); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 1rem;">
-                                            <i class="fa-solid fa-bolt"></i>
-                                        </div>
-                                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Deploy Instantâneo</h3>
-                                        <p style="text-align: left; font-size: 0.95rem;">Integração contínua com suas
-                                            ferramentas favoritas para um fluxo de trabalho sem atrito.</p>
-                                    </div>
+                                <div class="hero-checks">
+                                    <span>
+                                        <i
+                                            class="fa-solid fa-check check-icon"></i>
+                                        Sem dependências JS
+                                    </span>
+                                    <span>
+                                        <i
+                                            class="fa-solid fa-check check-icon"></i>
+                                        Grid Responsivo
+                                    </span>
+                                    <span>
+                                        <i
+                                            class="fa-solid fa-check check-icon"></i>
+                                        Dark Mode Ready
+                                    </span>
                                 </div>
-                            </section>
+                            </div>
 
-                            <!-- 5. Dark Section (Pricing Preview) -->
-                            <section class="section-dark"
-                                style="margin: 2rem auto; max-width: 1100px; border-radius: 20px;">
-                                <div class="section-header" style="text-align: center;">
-                                    <span class="badge badge-pill badge-primary" style="margin-bottom: 1rem;">Planos
-                                        Flexíveis</span>
-                                    <h2>Simples e Transparente</h2>
-                                    <p>Escolha o plano ideal para sua fase de crescimento.</p>
+                            <!-- SVG Ilustrativo (Abstrato) -->
+                            <div class="hero-logo-wrapper">
+                                <img class="hero-logo-img" src="vector/Logo.svg"
+                                    alt="Fóton Logo" width="250">
+                            </div>
+                        </div>
+
+                        <!-- SEÇÃO DEMONSTRAÇÃO AO VIVO -->
+                        <div class="live-preview-header">
+                            <div>
+                                <h2 class="mb-sm" style="font-size: 1.8rem;">
+                                    Veja em Ação
+                                </h2>
+                                <p class="mb-0 text-sec">
+                                    Uma landing page completa construída apenas
+                                    com classes do Fóton.
+                                </p>
+                            </div>
+                            <span class="badge badge-neutral">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="preview-label">Preview</span>
+                            </span>
+                        </div>
+
+                        <!-- MOCKUP DO BROWSER (A DEMO REAL) -->
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <div class="browser-dot red"></div>
+                                    <div class="browser-dot yellow"></div>
+                                    <div class="browser-dot green"></div>
+                                </div>
+                                <div class="browser-address">
+                                    <i class="fa-solid fa-lock"
+                                        style="margin-right: 5px; font-size: 10px; color: var(--success);"></i>
+                                    demo.foton-framework.com/landing
+                                </div>
+                            </div>
+
+                            <!-- CONTEÚDO DA DEMO (ISOLADO) -->
+                            <div class="demo-container">
+
+                                <!-- 1. Top Bar -->
+                                <div class="top-bar">
+                                    🎉 Oferta de Lançamento: Ganhe acesso
+                                    vitalício ao Plano Pro!
+                                    <a href="#"
+                                        class="btn btn-sm btn-outline-white">Saber
+                                        mais</a>
                                 </div>
 
-                                <div class="flex-container" style="gap: 30px; align-items: stretch;">
-                                    <!-- Pricing Card 1 -->
-                                    <div class="card demo-pricing-card">
-                                        <div class="card-body">
-                                            <h3 style="font-size: 1.2rem;">Starter</h3>
-                                            <div class="price">0</div>
-                                            <div class="period">para sempre</div>
-                                            <hr
-                                                style="border: 0; border-top: 1px solid var(--border-color); margin: 1.5rem 0;">
-                                            <ul style="margin: 0;">
-                                                <li>1 Usuário</li>
-                                                <li>5 Projetos</li>
-                                                <li>Suporte da Comunidade</li>
-                                            </ul>
-                                        </div>
-                                        <button class="btn btn-outline-dark btn-block">Criar Conta Grátis</button>
-                                    </div>
-
-                                    <!-- Pricing Card 2 (Highlight) -->
-                                    <div class="card card-highlight demo-pricing-card">
-                                        <div class="card-body">
-                                            <h3 style="font-size: 1.2rem;">Business</h3>
-                                            <div class="price">99</div>
-                                            <div class="period">mês</div>
-                                            <hr
-                                                style="border: 0; border-top: 1px solid var(--border-color); margin: 1.5rem 0;">
-                                            <ul style="margin: 0;">
-                                                <li>Até 10 Usuários</li>
-                                                <li>Projetos Ilimitados</li>
-                                                <li>Suporte Prioritário</li>
-                                                <li>Analytics Avançado</li>
-                                            </ul>
-                                        </div>
-                                        <button class="btn btn-gradient btn-block">Começar Teste Grátis</button>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- 6. FAQ Accordion -->
-                            <section style="padding: 4rem 2rem; max-width: 800px; margin: auto;">
-                                <h2 style="text-align: center; margin-bottom: 2rem;">Perguntas Frequentes</h2>
-
-                                <details class="accordion">
-                                    <summary>Preciso saber programar?</summary>
-                                    <div class="accordion-body">Não! Nossa plataforma é low-code, permitindo que você
-                                        construa tudo visualmente, mas com acesso ao código se precisar.</div>
-                                </details>
-                                <details class="accordion">
-                                    <summary>Posso cancelar quando quiser?</summary>
-                                    <div class="accordion-body">Sim, não há fidelidade. Você pode cancelar sua
-                                        assinatura a qualquer momento diretamente no painel.</div>
-                                </details>
-                                <details class="accordion">
-                                    <summary>Aceitam PIX?</summary>
-                                    <div class="accordion-body">Aceitamos cartões de crédito, PIX e boleto bancário para
-                                        planos anuais.</div>
-                                </details>
-                            </section>
-
-                            <!-- 7. Footer da Demo -->
-                            <footer
-                                style="background: var(--bg-surface); padding: 3rem 2rem; border-top: 1px solid var(--border-color); margin-top: 2rem;">
-                                <div
-                                    style="max-width: 1100px; margin: auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
-                                    <div>
-                                        <a href="#" class="logo"
-                                            style="margin-bottom: 10px; display: block; color: var(--txt-primary);">
-                                            Fóton Framework
+                                <!-- 2. Navbar (Sticky dentro do container) -->
+                                <nav class="navbar">
+                                    <div class="demo-nav-inner">
+                                        <a href="#"
+                                            class="logo flex-center gap-10">
+                                            <img src="vector/Logo.svg"
+                                                width="24"> Fóton
                                         </a>
-                                        <p style="font-size: 0.9rem; color: var(--txt-sec); max-width: 300px;">
-                                            A base sólida para seus próximos projetos web. Rápido, semântico e bonito.
-                                        </p>
+                                        <ul class="navbar-menu">
+                                            <li class="demo-nav-item"><a
+                                                    href="#">Recursos</a></li>
+                                            <li class="demo-nav-item"><a
+                                                    href="#">Preços</a></li>
+                                            <li class="demo-nav-btn"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark">Entrar</a></li>
+                                        </ul>
                                     </div>
-                                    <div style="display: flex; gap: 40px;">
+                                </nav>
+
+                                <!-- 3. Hero Section -->
+                                <section class="hero demo-hero">
+                                    <div class="hero-content">
+                                        <span class="demo-hero-title">Escale seu
+                                            negócio <br>com design
+                                            inteligente.</span>
+                                        <p class="text-sec">A plataforma
+                                            definitiva para gerenciar suas
+                                            vendas, clientes e marketing em um
+                                            só lugar.</p>
+
+                                        <div class="demo-hero-form">
+                                            <div class="input-group">
+                                                <input type="email"
+                                                    class="input-field"
+                                                    placeholder="Digite seu e-mail profissional">
+                                                <button class="btn btn-gradient"
+                                                    style="margin: 4px;">Começar</button>
+                                            </div>
+                                            <div class="text-muted-small"
+                                                style="margin-top: 10px;">* 14
+                                                dias grátis. Sem cartão de
+                                                crédito.</div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- 4. Features Grid -->
+                                <section class="demo-section-centered">
+                                    <div class="text-center mb-lg">
+                                        <h2>Por que escolher o Fóton?</h2>
+                                        <p class="text-sec">Ferramentas
+                                            poderosas para times modernos.</p>
+                                    </div>
+
+                                    <div class="grid-responsive gap-20">
+                                        <!-- Feature 1 -->
+                                        <div class="demo-feature-card">
+                                            <div class="demo-icon-box"
+                                                style="background: var(--info-soft); color: var(--info);">
+                                                <i
+                                                    class="fa-solid fa-chart-line"></i>
+                                            </div>
+                                            <h3 class="mb-sm"
+                                                style="font-size: 1.2rem;">Analytics
+                                                em Tempo Real</h3>
+                                            <p class="text-left"
+                                                style="font-size: 0.95rem;">Acompanhe
+                                                métricas vitais do seu negócio
+                                                com dashboards atualizados
+                                                instantaneamente.</p>
+                                        </div>
+
+                                        <!-- Feature 2 -->
+                                        <div class="demo-feature-card">
+                                            <div class="demo-icon-box"
+                                                style="background: var(--success-soft); color: var(--success);">
+                                                <i
+                                                    class="fa-solid fa-shield-halved"></i>
+                                            </div>
+                                            <h3 class="mb-sm"
+                                                style="font-size: 1.2rem;">Segurança
+                                                Bancária</h3>
+                                            <p class="text-left"
+                                                style="font-size: 0.95rem;">Seus
+                                                dados protegidos com
+                                                criptografia de ponta a ponta e
+                                                backups diários automáticos.</p>
+                                        </div>
+
+                                        <!-- Feature 3 -->
+                                        <div class="demo-feature-card">
+                                            <div class="demo-icon-box"
+                                                style="background: var(--warning-soft); color: var(--warning);">
+                                                <i class="fa-solid fa-bolt"></i>
+                                            </div>
+                                            <h3 class="mb-sm"
+                                                style="font-size: 1.2rem;">Deploy
+                                                Instantâneo</h3>
+                                            <p class="text-left"
+                                                style="font-size: 0.95rem;">Integração
+                                                contínua com suas ferramentas
+                                                favoritas para um fluxo de
+                                                trabalho sem atrito.</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- 5. Dark Section (Pricing Preview) -->
+                                <section
+                                    class="section-dark demo-pricing-section">
+                                    <div class="section-header text-center">
+                                        <span
+                                            class="badge badge-pill badge-primary mb-md">Planos
+                                            Flexíveis</span>
+                                        <h2>Simples e Transparente</h2>
+                                        <p>Escolha o plano ideal para sua fase
+                                            de crescimento.</p>
+                                    </div>
+
+                                    <div class="flex-container gap-30"
+                                        style="align-items: stretch;">
+                                        <!-- Pricing Card 1 -->
+                                        <div class="card demo-pricing-card">
+                                            <div class="card-body">
+                                                <h3
+                                                    style="font-size: 1.2rem;">Starter</h3>
+                                                <div class="price">0</div>
+                                                <div class="period">para
+                                                    sempre</div>
+                                                <hr
+                                                    style="border: 0; border-top: 1px solid var(--border-color); margin: 1.5rem 0;">
+                                                <ul class="mb-0">
+                                                    <li>1 Usuário</li>
+                                                    <li>5 Projetos</li>
+                                                    <li>Suporte da
+                                                        Comunidade</li>
+                                                </ul>
+                                            </div>
+                                            <button
+                                                class="btn btn-outline-dark btn-block">Criar
+                                                Conta Grátis</button>
+                                        </div>
+
+                                        <!-- Pricing Card 2 (Highlight) -->
+                                        <div
+                                            class="card card-highlight demo-pricing-card">
+                                            <div class="card-body">
+                                                <h3
+                                                    style="font-size: 1.2rem;">Business</h3>
+                                                <div class="price">99</div>
+                                                <div class="period">mês</div>
+                                                <hr
+                                                    style="border: 0; border-top: 1px solid var(--border-color); margin: 1.5rem 0;">
+                                                <ul class="mb-0">
+                                                    <li>Até 10 Usuários</li>
+                                                    <li>Projetos Ilimitados</li>
+                                                    <li>Suporte Prioritário</li>
+                                                    <li>Analytics Avançado</li>
+                                                </ul>
+                                            </div>
+                                            <button
+                                                class="btn btn-gradient btn-block">Começar
+                                                Teste Grátis</button>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- 6. FAQ Accordion -->
+                                <section class="demo-section-faq">
+                                    <h2 class="text-center mb-lg">Perguntas
+                                        Frequentes</h2>
+
+                                    <details class="accordion">
+                                        <summary>Preciso saber
+                                            programar?</summary>
+                                        <div class="accordion-body">Não! Nossa
+                                            plataforma é low-code, permitindo
+                                            que você construa tudo visualmente,
+                                            mas com acesso ao código se
+                                            precisar.</div>
+                                    </details>
+                                    <details class="accordion">
+                                        <summary>Posso cancelar quando
+                                            quiser?</summary>
+                                        <div class="accordion-body">Sim, não há
+                                            fidelidade. Você pode cancelar sua
+                                            assinatura a qualquer momento
+                                            diretamente no painel.</div>
+                                    </details>
+                                    <details class="accordion">
+                                        <summary>Aceitam PIX?</summary>
+                                        <div class="accordion-body">Aceitamos
+                                            cartões de crédito, PIX e boleto
+                                            bancário para planos anuais.</div>
+                                    </details>
+                                </section>
+
+                                <!-- 7. Footer da Demo -->
+                                <footer class="demo-footer">
+                                    <div class="demo-footer-inner">
                                         <div>
-                                            <h4
-                                                style="font-size: 0.9rem; text-transform: uppercase; color: var(--txt-primary); margin-bottom: 1rem;">
-                                                Produto</h4>
-                                            <div class="demo-footer-links">
-                                                <a href="#" class="demo-footer-link">Recursos</a>
-                                                <a href="#" class="demo-footer-link">Integrações</a>
-                                                <a href="#" class="demo-footer-link">Preços</a>
+                                            <a href="#" class="logo mb-md"
+                                                style="display: block;">Fóton
+                                                Framework</a>
+                                            <p class="text-sec"
+                                                style="font-size: 0.9rem; max-width: 300px;">
+                                                A base sólida para seus próximos
+                                                projetos web. Rápido, semântico
+                                                e bonito.
+                                            </p>
+                                        </div>
+                                        <div class="demo-footer-col-wrapper">
+                                            <div>
+                                                <h4 class="mb-md"
+                                                    style="font-size: 0.9rem; text-transform: uppercase;">Produto</h4>
+                                                <div class="demo-footer-links">
+                                                    <a href="#"
+                                                        class="demo-footer-link">Recursos</a>
+                                                    <a href="#"
+                                                        class="demo-footer-link">Integrações</a>
+                                                    <a href="#"
+                                                        class="demo-footer-link">Preços</a>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h4 class="mb-md"
+                                                    style="font-size: 0.9rem; text-transform: uppercase;">Empresa</h4>
+                                                <div class="demo-footer-links">
+                                                    <a href="#"
+                                                        class="demo-footer-link">Sobre</a>
+                                                    <a href="#"
+                                                        class="demo-footer-link">Blog</a>
+                                                    <a href="#"
+                                                        class="demo-footer-link">Vagas</a>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div>
-                                            <h4
-                                                style="font-size: 0.9rem; text-transform: uppercase; color: var(--txt-primary); margin-bottom: 1rem;">
-                                                Empresa</h4>
-                                            <div class="demo-footer-links">
-                                                <a href="#" class="demo-footer-link">Sobre</a>
-                                                <a href="#" class="demo-footer-link">Blog</a>
-                                                <a href="#" class="demo-footer-link">Vagas</a>
-                                            </div>
-                                        </div>
                                     </div>
-                                </div>
-                                <div
-                                    style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--txt-sec);">
-                                    © 2025 Fóton Framework Inc. Todos os direitos reservados.
-                                </div>
-                            </footer>
+                                    <div class="demo-copyright">
+                                        © 2025 Fóton Framework Inc. Todos os
+                                        direitos reservados.
+                                    </div>
+                                </footer>
 
+                            </div>
+                            <!-- FIM DA DEMO -->
                         </div>
-                        <!-- FIM DA DEMO -->
+
+                        <!-- SEÇÃO DE RECURSOS (FORA DA DEMO) -->
+                        <div class="grid-responsive mt-section gap-20">
+                            <div class="demo-feature-card">
+                                <i class="fa-solid fa-feather mb-md"
+                                    style="font-size: 2rem; color: var(--primary);"></i>
+                                <h3>Ultra Leve</h3>
+                                <p class="text-sec">Menos de 10KB. Carregamento
+                                    instantâneo sem bloatware de frameworks
+                                    gigantes.</p>
+                            </div>
+                            <div class="demo-feature-card">
+                                <i class="fa-solid fa-cubes mb-md"
+                                    style="font-size: 2rem; color: var(--info);"></i>
+                                <h3>Componentes Puros</h3>
+                                <p class="text-sec">Construído com HTML5
+                                    semântico e CSS moderno. JavaScript apenas
+                                    onde é estritamente necessário.</p>
+                            </div>
+                            <div class="demo-feature-card">
+                                <i class="fa-solid fa-palette mb-md"
+                                    style="font-size: 2rem; color: var(--warning);"></i>
+                                <h3>Customizável</h3>
+                                <p class="text-sec">Variáveis CSS nativas para
+                                    fácil tematização. Mude as cores globais em
+                                    uma única linha.</p>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <!-- SEÇÃO DE RECURSOS (FORA DA DEMO) -->
-                    <div class="grid-responsive" style="margin-top: 4rem; gap: 2rem;">
-                        <div class="demo-feature-card"
-                            style="padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color);">
-                            <i class="fa-solid fa-feather"
-                                style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
-                            <h3>Ultra Leve</h3>
-                            <p style="color: var(--txt-sec);">Menos de 10KB gzipped. Carregamento instantâneo sem
-                                bloatware de frameworks gigantes.</p>
+                </main>
+
+                <!-- RODAPÉ DA DOCUMENTAÇÃO -->
+                <footer class="docs-footer">
+                    <div class="docs-footer-inner">
+                        <!-- Social Links -->
+                        <div class="docs-social-wrapper">
+                            <a
+                                href="https://www.linkedin.com/in/ramondantaspolicarpo/"
+                                target="_blank" class="docs-social-link">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/RamonDantasPolicarpo"
+                                target="_blank" class="docs-social-link">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/ramo0n.36/"
+                                target="_blank" class="docs-social-link">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
                         </div>
-                        <div class="demo-feature-card"
-                            style="padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color);">
-                            <i class="fa-solid fa-cubes"
-                                style="font-size: 2rem; color: var(--info); margin-bottom: 1rem;"></i>
-                            <h3>Componentes Puros</h3>
-                            <p style="color: var(--txt-sec);">Construído com HTML5 semântico e CSS moderno. JavaScript
-                                apenas onde é estritamente necessário.</p>
-                        </div>
-                        <div class="demo-feature-card"
-                            style="padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color);">
-                            <i class="fa-solid fa-palette"
-                                style="font-size: 2rem; color: var(--warning); margin-bottom: 1rem;"></i>
-                            <h3>Customizável</h3>
-                            <p style="color: var(--txt-sec);">Variáveis CSS nativas para fácil tematização. Mude as
-                                cores globais em uma única linha.</p>
-                        </div>
+
+                        <!-- Copyright -->
+                        <p class="mb-0">
+                            &copy; 2025 Fóton Framework. Todos os direitos
+                            reservados a <strong>Ramon Dantas</strong>.
+                        </p>
                     </div>
+                </footer>
 
-                </div>
-
-            </main>
-
-            <!-- RODAPÉ DA DOCUMENTAÇÃO -->
-            <footer class="docs-footer">
-                <div
-                    style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center;">
-
-                    <!-- Social Links -->
-                    <div style="display: flex; gap: 1.5rem; font-size: 1.4rem;">
-                        <a href="https://www.linkedin.com/in/ramondantaspolicarpo/" target="_blank"
-                            style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                            onmouseover="this.style.color='var(--primary)'"
-                            onmouseout="this.style.color='var(--txt-primary)'">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/RamonDantasPolicarpo" target="_blank"
-                            style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                            onmouseover="this.style.color='var(--primary)'"
-                            onmouseout="this.style.color='var(--txt-primary)'">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://www.instagram.com/ramo0n.36/" target="_blank"
-                            style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                            onmouseover="this.style.color='var(--primary)'"
-                            onmouseout="this.style.color='var(--txt-primary)'">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-
-                    <!-- Copyright -->
-                    <p style="margin: 0;">
-                        &copy; 2025 Fóton Framework. Todos os direitos reservados a <strong>Ramon Dantas</strong>.
-                    </p>
-                </div>
-            </footer>
-
+            </div>
         </div>
-    </div>
 
-    <script src="foton_scripts.js"></script>
-</body>
+        <script src="foton_scripts.js"></script>
+    </body>
 
 </html>
