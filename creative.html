@@ -1,476 +1,487 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fóton Framework - Criativos</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="foton_framework.css">
-    <link rel="stylesheet" href="docs_style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fóton Framework - Criativos</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="foton_framework.css">
+        <link rel="stylesheet" href="docs_style.css">
+    </head>
 
-<body>
+    <body>
 
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    <button class="mobile-menu-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        <button class="mobile-menu-toggle" id="mobileToggle"><i
+                class="fa-solid fa-bars"></i></button>
 
-    <div class="docs-layout-wrapper">
+        <div class="docs-layout-wrapper">
 
-        <nav class="docs-sidebar" id="docsSidebar">
-            <a href="index.html" class="docs-logo">
-                <img src="vector/Logo.svg" width="45" height="45" viewBox="0 0 24 24" fill="none">
-                Fóton
-            </a>
+            <nav class="docs-sidebar" id="docsSidebar">
+                <a href="index.html" class="docs-logo">
+                    <img src="vector/Logo.svg" width="45" height="45"
+                        viewBox="0 0 24 24" fill="none">
+                    Fóton
+                </a>
 
-            <!-- SWITCH DE MODO ESCURO (NOVO) -->
-            <div style="margin-bottom: 2rem;">
-                <label class="toggle__section" style="margin: 0; cursor: pointer;">
-                    <input type="checkbox" id="darkModeSwitch">
-                    <div class="toggle__btn" style="transform: scale(0.8);"><span></span></div>
-                    <span style="font-size: 0.9rem; font-weight: 600; color: var(--txt-primary);">Modo Escuro</span>
-                </label>
-            </div>
-
-            <div class="docs-menu-category">Visão Geral</div>
-            <a href="index.html" class="docs-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Início &
-                Demo</a>
-
-            <div class="docs-menu-category">Documentação</div>
-            <a href="intro.html" class="docs-link">Introdução</a>
-            <a href="download.html" class="docs-link">Download</a>
-            <a href="custom.html" class="docs-link">Customização</a>
-            <a href="layout.html" class="docs-link">Layout & Grid</a>
-
-            <div class="docs-menu-category">Componentes</div>
-            <a href="forms.html" class="docs-link">Formulários</a>
-            <a href="components.html" class="docs-link">Biblioteca UI</a>
-            <a href="creative.html" class="docs-link active">Composições Criativas</a>
-        </nav>
-
-        <!-- WRAPPER DA COLUNA DIREITA (Conteúdo + Footer) -->
-        <div style="display: flex; flex-direction: column; min-width: 0;">
-
-            <main class="docs-content" style="flex: 1;">
-                <div id="tab-creative" class="tab-view page-fade-in">
-                    <h1 class="doc-title">Composições Criativas</h1>
-                    <p class="doc-subtitle">Exemplos avançados combinando múltiplos componentes.</p>
-
-                    <!-- EXEMPLO 1 -->
-                    <h3>1. Card de Newsletter</h3>
-                    <div class="preview-box" style="background: #f0f0f8; display: flex; justify-content: center;">
-                        <div class="card"
-                            style="align-items: center; text-align: center; width: 100%; max-width: 500px;">
-                            <div class="card-body">
-                                <h3>Newsletter</h3>
-                                <p style="color: #666; margin-bottom: 20px;">Receba as novidades semanalmente.</p>
-                            </div>
-                            <div class="input-group" style="width: 100%;">
-                                <input type="text" class="input-field" placeholder="Seu melhor e-mail">
-                                <button class="btn btn-gradient">Assinar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="code-block">
-                        &lt;div class="card" style="align-items: center; text-align: center;"&gt;
-                        &lt;div class="card-body"&gt;
-                        &lt;h3&gt;Newsletter&lt;/h3&gt;
-                        &lt;/div&gt;
-                        &lt;div class="input-group"&gt;...&lt;/div&gt;
-                        &lt;/div&gt;</div>
-
-                    <!-- EXEMPLO 2 -->
-                    <h3>2. Banner de Download de App</h3>
-                    <div class="preview-box">
-                        <div class="cta-card"
-                            style="position: static; margin: 0; transform: none; box-shadow: none; padding: 40px;">
-                            <div>
-                                <h2 class="section-title" style="font-size: 24px;">Baixe o App</h2>
-                                <p style="color: #a0a0a0;">Disponível para iOS e Android.</p>
-                            </div>
-                            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                                <button class="btn btn-outline-white" style="flex: 1;">
-                                    <i class="fa-brands fa-apple" style="margin-right: 5px;"></i>
-                                    iOS
-                                    </button>
-                                <button class="btn btn-outline-white" style="flex: 1;">
-                                    <i class="fa-brands fa-google-play" style="margin-right: 5px;"></i>
-                                    Android
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- EXEMPLO 3: PAINEL DE PERFIL (NOVO) -->
-                    <h3 style="margin-top: 50px;">3. Painel de Configurações (Perfil)</h3>
-                    <p>Uma composição completa simulando uma página de edição de perfil, utilizando grid, avatares,
-                        formulários e badges.</p>
-
-                    <div class="preview-box" style="background: #f8f9fa;">
-                        <div class="card" style="max-width: 800px; margin: auto;">
-                            <div class="card-body">
-                                <div
-                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
-                                    <h3 style="margin: 0;">Editar Perfil</h3>
-                                    <span class="badge badge-success">Conta Pro</span>
-                                </div>
-
-                                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-                                    <!-- Coluna Avatar -->
-                                    <div
-                                        style="display: flex; flex-direction: column; text-align: center; margin: 0rem 1rem;">
-                                        <div class="avatar avatar-xl"
-                                            style="width: 120px; height: 120px; margin-bottom: 1rem;">
-                                            <img src="https://i.pravatar.cc/150?img=57" alt="Profile">
-                                        </div>
-                                        <button class="btn btn-sm btn-outline-info">Alterar Foto</button>
-                                    </div>
-
-                                    <!-- Coluna Formulário -->
-                                    <div style="flex: 1; min-width: 300px;">
-                                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                            <div class="form-group">
-                                                <label class="form-label">Nome</label>
-                                                <input type="text" class="form-input" value="Enrico">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label">Sobrenome</label>
-                                                <input type="text" class="form-input" value="Silva">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="form-label">Email</label>
-                                            <input type="email" class="form-input" value="enrico.s@skynet.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="form-label">Bio</label>
-                                            <textarea class="form-input"
-                                                rows="3">Líder de resistência e especialista em segurança cibernética.</textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="form-check">
-                                                <input type="checkbox" class="form-check-input" checked>
-                                                <span class="form-check-label">Receber notificações por email</span>
-                                            </label>
-                                            <label class="form-check">
-                                                <input type="checkbox" class="form-check-input">
-                                                <span class="form-check-label">Tornar perfil público</span>
-                                            </label>
-                                        </div>
-
-                                        <div style="margin-top: 2rem; display: flex; gap: 10px;">
-                                            <button class="btn btn-outline-info">Salvar Alterações</button>
-                                            <button class="btn btn-outline-danger" ;">Cancelar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="code-block">
-                        &lt;!-- Estrutura do Painel de Perfil --&gt;
-                        &lt;div class="card"&gt;
-                        &lt;div class="card-body"&gt;
-                        &lt;!-- Header --&gt;
-                        &lt;div style="display: flex; justify-content: space-between;"&gt;
-                        &lt;h3&gt;Editar Perfil&lt;/h3&gt;
-                        &lt;span class="badge badge-success"&gt;Conta Pro&lt;/span&gt;
-                        &lt;/div&gt;
-
-                        &lt;div style="display: flex; gap: 2rem;"&gt;
-                        &lt;!-- Avatar --&gt;
-                        &lt;div style="display: flex; flex-direction: column; text-align: center; margin: 0rem
-                        1rem;"&gt;
-                        &lt;div class="avatar avatar-xl"&gt;...&lt;/div&gt;
-                        &lt;button class="btn btn-sm btn-outline-info"&gt;Alterar&lt;/button&gt;
-                        &lt;/div&gt;
-
-                        &lt;!-- Form --&gt;
-                        &lt;div style="flex: 1;"&gt;
-                        &lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"&gt;
-                        &lt;div class="form-group"&gt;...&lt;/div&gt;
-                        &lt;div class="form-group"&gt;...&lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;!-- Mais campos --&gt;
-                        &lt;button class="btn btn-info"&gt;Salvar&lt;/button&gt;
-                        &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;/div&gt;</div>
-
-                    <!-- EXEMPLO 4: CHECKOUT (NOVO) -->
-                    <h3 style="margin-top: 50px;">4. Widget de Checkout</h3>
-                    <p>Combinação de alertas, formulários em grid e resumo de pedido.</p>
-
-                    <div class="preview-box" style="background: #f0f0f8;">
+                <!-- SWITCH DE MODO ESCURO -->
+                <div class="sidebar-toggle-wrapper">
+                    <label class="toggle__section sidebar-toggle-label">
+                        <input type="checkbox" id="darkModeSwitch">
                         <div
-                            style="max-width: 900px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                            class="toggle__btn toggle-scale"><span></span></div>
+                        <span class="sidebar-toggle-text">Modo Escuro</span>
+                    </label>
+                </div>
 
-                            <!-- Coluna da Esquerda: Form -->
-                            <div>
-                                <h4 style="margin-bottom: 1.5rem;">Endereço de Entrega</h4>
+                <div class="docs-menu-category">Visão Geral</div>
+                <a href="index.html" class="docs-link"><i
+                        class="fa-solid fa-house"></i> Início & Demo</a>
 
-                                <!-- Alerta Informativo -->
-                                <div class="alert alert-info" style="margin-bottom: 1.5rem;">
-                                    <i class="fa-solid fa-truck-fast alert-icon"></i>
-                                    <div>
-                                        <span class="alert-heading">Frete Grátis</span>
-                                        Aplicado para compras acima de R$ 100.
-                                    </div>
+                <div class="docs-menu-category">Documentação</div>
+                <a href="intro.html" class="docs-link">Introdução</a>
+                <a href="download.html" class="docs-link">Download</a>
+                <a href="custom.html" class="docs-link">Customização</a>
+                <a href="layout.html" class="docs-link">Layout & Grid</a>
+
+                <div class="docs-menu-category">Componentes</div>
+                <a href="forms.html" class="docs-link">Formulários</a>
+                <a href="components.html" class="docs-link">Biblioteca UI</a>
+                <a href="creative.html" class="docs-link active">Composições
+                    Criativas</a>
+            </nav>
+
+            <!-- WRAPPER DA COLUNA DIREITA -->
+            <div class="docs-main-wrapper">
+
+                <main class="docs-content">
+                    <div id="tab-creative" class="tab-view page-fade-in">
+                        <h1 class="doc-title">Composições Criativas</h1>
+                        <p class="doc-subtitle">Exemplos avançados combinando
+                            múltiplos componentes.</p>
+
+                        <!-- EXEMPLO 1 -->
+                        <h3>1. Card de Newsletter</h3>
+                        <div class="preview-box bg-offset flex-center">
+                            <div class="card card-newsletter">
+                                <div class="card-body">
+                                    <h3>Newsletter</h3>
+                                    <p class="text-sec mb-md">Receba as
+                                        novidades semanalmente.</p>
                                 </div>
-
-                                <form>
-                                    <div class="form-group">
-                                        <label class="form-label">Endereço</label>
-                                        <input type="text" class="form-input" placeholder="Rua, número...">
-                                    </div>
-                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                        <div class="form-group">
-                                            <label class="form-label">Cidade</label>
-                                            <input type="text" class="form-input">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label">Estado</label>
-                                            <select class="form-input">
-                                                <option>Selecione...</option>
-                                                <option>SP</option>
-                                                <option>RJ</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <!-- Coluna da Direita: Resumo -->
-                            <div>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h3
-                                            style="font-size: 1.2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem;">
-                                            Resumo do Pedido</h3>
-
-                                        <div
-                                            style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem;">
-                                            <span>Fóton Framework Pro</span>
-                                            <strong>R$ 49,00</strong>
-                                        </div>
-                                        <div
-                                            style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem;">
-                                            <span>Template Pack</span>
-                                            <strong>R$ 29,00</strong>
-                                        </div>
-
-                                        <div class="input-group" style="margin: 1.5rem 0;">
-                                            <input type="text" class="input-field" placeholder="Cupom de desconto">
-                                            <button class="btn btn-dark"
-                                                style="height: 44px; margin: 3px;">Aplicar</button>
-                                        </div>
-
-                                        <div
-                                            style="border-top: 2px dashed #eee; padding-top: 1rem; margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
-                                            <span style="font-weight: 700;">Total</span>
-                                            <span style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">R$
-                                                78,00</span>
-                                        </div>
-
-                                        <button class="btn btn-success btn-block" style="margin-top: 1.5rem;">Finalizar
-                                            Compra</button>
-                                    </div>
+                                <div class="input-group w-100">
+                                    <input type="text" class="input-field"
+                                        placeholder="Seu melhor e-mail">
+                                    <button
+                                        class="btn btn-gradient">Assinar</button>
                                 </div>
                             </div>
-
                         </div>
-                    </div>
-                    <div class="code-block">
-                        &lt;!-- Grid Layout para Checkout --&gt;
-                        &lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;"&gt;
+                        <div class="code-block">
+                            &lt;div class="card"
+                            style="align-items: center; text-align: center;"&gt;
+                            &lt;div class="card-body"&gt;
+                            &lt;h3&gt;Newsletter&lt;/h3&gt;
+                            &lt;/div&gt;
+                            &lt;div class="input-group"&gt;...&lt;/div&gt;
+                            &lt;/div&gt;</div>
 
-                        &lt;!-- Coluna 1: Form --&gt;
-                        &lt;div&gt;
-                        &lt;div class="alert alert-info"&gt;...&lt;/div&gt;
-                        &lt;form&gt;...&lt;/form&gt;
-                        &lt;/div&gt;
-
-                        &lt;!-- Coluna 2: Card de Resumo --&gt;
-                        &lt;div&gt;
-                        &lt;div class="card"&gt;
-                        &lt;div class="card-body"&gt;
-                        &lt;h3&gt;Resumo&lt;/h3&gt;
-                        &lt;!-- Lista de Itens --&gt;
-                        &lt;div class="input-group"&gt;...&lt;/div&gt;
-                        &lt;button class="btn btn-success btn-block"&gt;Pagar&lt;/button&gt;
-                        &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;/div&gt;
-
-                        &lt;/div&gt;</div>
-
-                    <!-- EXEMPLO 5: FAQ (NOVO) -->
-                    <h3 style="margin-top: 50px;">5. Seção de FAQ</h3>
-                    <p>Uma seção limpa de perguntas frequentes utilizando acordeões nativos.</p>
-
-                    <div class="preview-box" style="background: #fff;">
-                        <div style="max-width: 800px; margin: auto;">
-                            <div style="text-align: center; margin-bottom: 2rem;">
-                                <h2>Dúvidas Frequentes</h2>
-                                <p style="color: var(--txt-sec);">Tudo o que você precisa saber sobre o produto.</p>
+                        <!-- EXEMPLO 2 -->
+                        <h3>2. Banner de Download de App</h3>
+                        <div class="preview-box">
+                            <div class="cta-card">
+                                <div class="cta-content">
+                                    <h2 class="section-title">Baixe o App</h2>
+                                    <p class="text-inverse-muted">Disponível
+                                        para iOS e Android.</p>
+                                </div>
+                                <div class="cta-buttons">
+                                    <button
+                                        class="btn btn-outline-white flex-1">
+                                        <i class="fa-brands fa-apple mr-sm"></i>
+                                        iOS
+                                    </button>
+                                    <button
+                                        class="btn btn-outline-white flex-1">
+                                        <i
+                                            class="fa-brands fa-google-play mr-sm"></i>
+                                        Android
+                                    </button>
+                                </div>
                             </div>
-
-                            <details class="accordion">
-                                <summary>Qual é a política de reembolso?</summary>
-                                <div class="accordion-body">
-                                    Oferecemos garantia de reembolso de 30 dias sem perguntas. Basta entrar em contato
-                                    com o suporte.
-                                </div>
-                            </details>
-                            <details class="accordion">
-                                <summary>Posso cancelar a qualquer momento?</summary>
-                                <div class="accordion-body">
-                                    Sim, você pode cancelar sua assinatura a qualquer momento através do painel de
-                                    controle. Seu acesso continuará até o fim do período pago.
-                                </div>
-                            </details>
-                            <details class="accordion">
-                                <summary>Existe suporte para equipes?</summary>
-                                <div class="accordion-body">
-                                    Sim, o plano Enterprise oferece ferramentas de gestão de equipe, SSO e faturamento
-                                    centralizado.
-                                </div>
-                            </details>
                         </div>
-                    </div>
-                    <div class="code-block">
-                        &lt;!-- Seção FAQ --&gt;
-                        &lt;div style="max-width: 800px; margin: auto;"&gt;
-                        &lt;h2 style="text-align: center;"&gt;FAQ&lt;/h2&gt;
-                        &lt;details class="accordion"&gt;
-                        &lt;summary&gt;Pergunta 1&lt;/summary&gt;
-                        &lt;div class="accordion-body"&gt;Resposta...&lt;/div&gt;
-                        &lt;/details&gt;
-                        &lt;!-- Mais accordions... --&gt;
-                        &lt;/div&gt;</div>
 
-                    <!-- EXEMPLO 6: UPLOAD CARD (NOVO) -->
-                    <h3 style="margin-top: 50px;">6. Status de Upload</h3>
-                    <p>Demonstração de feedback de estado usando progress bars e spinners.</p>
+                        <!-- EXEMPLO 3: PAINEL DE PERFIL -->
+                        <h3 class="mt-section">3. Painel de Configurações
+                            (Perfil)</h3>
+                        <p>Uma composição completa simulando uma página de
+                            edição de perfil.</p>
 
-                    <div class="preview-box" style="background: #f0f0f8; display: flex; justify-content: center;">
-                        <div class="card" style="width: 100%; max-width: 450px;">
-                            <div class="card-body">
-                                <div
-                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                                    <h4 style="margin: 0;">Enviando Arquivos</h4>
-                                    <span class="badge badge-info">2 de 3</span>
-                                </div>
-
-                                <!-- Item 1: Concluído -->
-                                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
-                                    <div
-                                        style="width: 40px; height: 40px; background: #ecfdf5; color: var(--success); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                        <i class="fa-solid fa-check"></i>
+                        <div class="preview-box bg-white">
+                            <div class="card max-w-800 mx-auto">
+                                <div class="card-body">
+                                    <div class="profile-header">
+                                        <h3 class="mb-0">Editar Perfil</h3>
+                                        <span class="badge badge-success">Conta
+                                            Pro</span>
                                     </div>
-                                    <div style="flex-grow: 1;">
-                                        <div style="font-size: 0.9rem; font-weight: 600;">apresentacao_vFinal.pdf
+
+                                    <div class="profile-layout">
+                                        <!-- Coluna Avatar -->
+                                        <div class="profile-avatar-col">
+                                            <div class="avatar avatar-xl mb-md">
+                                                <img
+                                                    src="https://i.pravatar.cc/150?img=57"
+                                                    alt="Profile">
+                                            </div>
+                                            <button
+                                                class="btn btn-sm btn-outline-info">Alterar
+                                                Foto</button>
                                         </div>
-                                        <div style="font-size: 0.8rem; color: var(--success);">Concluído</div>
-                                    </div>
-                                </div>
 
-                                <!-- Item 2: Em Progresso -->
-                                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
-                                    <div
-                                        style="width: 40px; height: 40px; background: #eff6ff; color: var(--info); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                        <div class="spinner-border"
-                                            style="width: 1rem; height: 1rem; border-width: 2px;"></div>
-                                    </div>
-                                    <div style="flex-grow: 1;">
-                                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                                            <div style="font-size: 0.9rem; font-weight: 600;">video_demo.mp4</div>
-                                            <div style="font-size: 0.8rem; color: var(--txt-sec);">45%</div>
-                                        </div>
-                                        <div class="progress" style="height: 6px; margin-bottom: 0;">
-                                            <div class="progress-bar bg-info progress-bar-striped" style="width: 45%">
+                                        <!-- Coluna Formulário -->
+                                        <div class="profile-form-col">
+                                            <!-- Grid corrigida sem style inline -->
+                                            <div
+                                                class="grid-responsive gap-20 mb-0 mt-0 profile-form-grid">
+                                                <div class="form-group">
+                                                    <label
+                                                        class="form-label">Nome</label>
+                                                    <input type="text"
+                                                        class="form-input"
+                                                        value="Enrico">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label
+                                                        class="form-label">Sobrenome</label>
+                                                    <input type="text"
+                                                        class="form-input"
+                                                        value="Silva">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label
+                                                    class="form-label">Email</label>
+                                                <input type="email"
+                                                    class="form-input"
+                                                    value="enrico.s@skynet.com">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label
+                                                    class="form-label">Bio</label>
+                                                <textarea class="form-input"
+                                                    rows="3">Líder de resistência e especialista em segurança cibernética.</textarea>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="form-check">
+                                                    <input type="checkbox"
+                                                        class="form-check-input"
+                                                        checked>
+                                                    <span
+                                                        class="form-check-label">Receber
+                                                        notificações por
+                                                        email</span>
+                                                </label>
+                                                <label class="form-check">
+                                                    <input type="checkbox"
+                                                        class="form-check-input">
+                                                    <span
+                                                        class="form-check-label">Tornar
+                                                        perfil público</span>
+                                                </label>
+                                            </div>
+
+                                            <!-- Botões de ação com nova classe profile-actions -->
+                                            <div
+                                                class="profile-actions flex-center justify-start gap-10 mt-md">
+                                                <button
+                                                    class="btn btn-outline-info">Salvar
+                                                    Alterações</button>
+                                                <button
+                                                    class="btn btn-outline-danger">Cancelar</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="code-block">
+                            &lt;!-- Estrutura do Painel de Perfil --&gt;
+                            &lt;div class="card"&gt;
+                            &lt;div class="card-body"&gt;
+                            &lt;!-- Header --&gt;
+                            &lt;div
+                            style="display: flex; justify-content: space-between;"&gt;...&lt;/div&gt;
 
-                                <!-- Item 3: Aguardando -->
-                                <div style="display: flex; align-items: center; gap: 15px;">
-                                    <div
-                                        style="width: 40px; height: 40px; background: #f1f5f9; color: var(--txt-sec); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                        <i class="fa-regular fa-file"></i>
+                            &lt;div class="profile-layout"&gt;
+                            &lt;!-- Avatar --&gt;
+                            &lt;div
+                            class="profile-avatar-col"&gt;...&lt;/div&gt;
+
+                            &lt;!-- Form --&gt;
+                            &lt;div class="profile-form-col"&gt;...&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;/div&gt;</div>
+
+                        <!-- EXEMPLO 4: CHECKOUT -->
+                        <h3 class="mt-section">4. Widget de Checkout</h3>
+                        <p>Combinação de alertas, formulários em grid e resumo
+                            de pedido.</p>
+
+                        <div class="preview-box bg-offset">
+                            <div class="grid-checkout">
+
+                                <!-- Coluna da Esquerda: Form -->
+                                <div>
+                                    <h4 class="mb-md">Endereço de Entrega</h4>
+
+                                    <div class="alert alert-info mb-md">
+                                        <i
+                                            class="fa-solid fa-truck-fast alert-icon"></i>
+                                        <div>
+                                            <span class="alert-heading">Frete
+                                                Grátis</span>
+                                            Aplicado para compras acima de R$
+                                            100.
+                                        </div>
                                     </div>
-                                    <div style="flex-grow: 1;">
-                                        <div style="font-size: 0.9rem; font-weight: 600; color: var(--txt-sec);">
-                                            dados_brutos.csv</div>
-                                        <div style="font-size: 0.8rem; color: var(--txt-sec);">Aguardando...</div>
+
+                                    <form>
+                                        <div class="form-group">
+                                            <label
+                                                class="form-label">Endereço</label>
+                                            <input type="text"
+                                                class="form-input"
+                                                placeholder="Rua, número...">
+                                        </div>
+                                        <div
+                                            class="grid-responsive gap-20 mb-0 mt-0 profile-form-grid">
+                                            <div class="form-group mb-0">
+                                                <label
+                                                    class="form-label">Cidade</label>
+                                                <input type="text"
+                                                    class="form-input">
+                                            </div>
+                                            <div class="form-group mb-0">
+                                                <label
+                                                    class="form-label">Estado</label>
+                                                <select class="form-input">
+                                                    <option>Selecione...</option>
+                                                    <option>SP</option>
+                                                    <option>RJ</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- Coluna da Direita: Resumo -->
+                                <div>
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h3
+                                                class="checkout-summary-title">Resumo
+                                                do Pedido</h3>
+
+                                            <div class="checkout-item">
+                                                <span>Fóton Framework Pro</span>
+                                                <strong>R$ 49,00</strong>
+                                            </div>
+                                            <div class="checkout-item">
+                                                <span>Template Pack</span>
+                                                <strong>R$ 29,00</strong>
+                                            </div>
+
+                                            <div class="input-group my-md">
+                                                <input type="text"
+                                                    class="input-field"
+                                                    placeholder="Cupom de desconto">
+                                                <button class="btn btn-dark"
+                                                    style="height: 44px; margin: 3px;">Aplicar</button>
+                                            </div>
+
+                                            <div class="checkout-total">
+                                                <span
+                                                    class="fw-700">Total</span>
+                                                <span class="total-price">R$
+                                                    78,00</span>
+                                            </div>
+
+                                            <button
+                                                class="btn btn-success btn-block mt-md">Finalizar
+                                                Compra</button>
+                                        </div>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
+                        <div class="code-block">
+                            &lt;!-- Grid Layout para Checkout --&gt;
+                            &lt;div class="grid-checkout"&gt;
+                            &lt;!-- Coluna 1 --&gt;
+                            &lt;div&gt;...&lt;/div&gt;
+                            &lt;!-- Coluna 2 --&gt;
+                            &lt;div&gt;...&lt;/div&gt;
+                            &lt;/div&gt;</div>
+
+                        <!-- EXEMPLO 5: FAQ -->
+                        <h3 class="mt-section">5. Seção de FAQ</h3>
+                        <p>Uma seção limpa de perguntas frequentes utilizando
+                            acordeões nativos.</p>
+
+                        <div class="preview-box bg-white">
+                            <div class="max-w-800 mx-auto">
+                                <div class="text-center mb-lg">
+                                    <h2>Dúvidas Frequentes</h2>
+                                    <p class="text-sec">Tudo o que você precisa
+                                        saber sobre o produto.</p>
+                                </div>
+
+                                <details class="accordion">
+                                    <summary>Qual é a política de
+                                        reembolso?</summary>
+                                    <div class="accordion-body">
+                                        Oferecemos garantia de reembolso de 30
+                                        dias sem perguntas. Basta entrar em
+                                        contato com o suporte.
+                                    </div>
+                                </details>
+                                <details class="accordion">
+                                    <summary>Posso cancelar a qualquer
+                                        momento?</summary>
+                                    <div class="accordion-body">
+                                        Sim, você pode cancelar sua assinatura a
+                                        qualquer momento através do painel de
+                                        controle. Seu acesso continuará até o
+                                        fim do período pago.
+                                    </div>
+                                </details>
+                                <details class="accordion">
+                                    <summary>Existe suporte para
+                                        equipes?</summary>
+                                    <div class="accordion-body">
+                                        Sim, o plano Enterprise oferece
+                                        ferramentas de gestão de equipe, SSO e
+                                        faturamento centralizado.
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+
+                        <!-- EXEMPLO 6: UPLOAD CARD -->
+                        <h3 class="mt-section">6. Status de Upload</h3>
+                        <p>Demonstração de feedback de estado.</p>
+
+                        <div class="preview-box bg-offset flex-center">
+                            <div class="card max-w-500 w-100">
+                                <div class="card-body">
+                                    <div
+                                        class="flex-center justify-between mb-md">
+                                        <h4 class="mb-0">Enviando Arquivos</h4>
+                                        <span class="badge badge-info">2 de
+                                            3</span>
+                                    </div>
+
+                                    <!-- Item 1: Concluído -->
+                                    <div class="upload-item mb-md">
+                                        <div
+                                            class="upload-icon bg-success-soft text-success">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div
+                                                class="upload-filename">apresentacao_vFinal.pdf</div>
+                                            <div
+                                                class="upload-status text-success">Concluído</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Item 2: Em Progresso -->
+                                    <div class="upload-item mb-md">
+                                        <div
+                                            class="upload-icon bg-info-soft text-info">
+                                            <div
+                                                class="spinner-border spinner-sm"></div>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div
+                                                class="flex-center justify-between mb-sm">
+                                                <div
+                                                    class="upload-filename">video_demo.mp4</div>
+                                                <div
+                                                    class="upload-percent text-sec">45%</div>
+                                            </div>
+                                            <div class="progress h-sm mb-0">
+                                                <div
+                                                    class="progress-bar bg-info progress-bar-striped"
+                                                    style="width: 45%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Item 3: Aguardando -->
+                                    <div class="upload-item">
+                                        <div
+                                            class="upload-icon bg-neutral-soft text-sec">
+                                            <i class="fa-regular fa-file"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div
+                                                class="upload-filename text-sec">dados_brutos.csv</div>
+                                            <div
+                                                class="upload-status text-sec">Aguardando...</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="code-block">
-                        &lt;!-- Card de Upload --&gt;
-                        &lt;div class="card"&gt;
-                        &lt;div class="card-body"&gt;
-                        &lt;h4&gt;Enviando Arquivos&lt;/h4&gt;
+                </main>
 
-                        &lt;!-- Item com Progresso --&gt;
-                        &lt;div class="progress"&gt;
-                        &lt;div class="progress-bar bg-info" style="width: 45%"&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;/div&gt;</div>
+                <!-- RODAPÉ DA DOCUMENTAÇÃO -->
+                <footer class="docs-footer">
+                    <div class="docs-footer-inner">
+                        <!-- Social Links -->
+                        <div class="docs-social-wrapper">
+                            <a
+                                href="https://www.linkedin.com/in/ramondantaspolicarpo/"
+                                target="_blank" class="docs-social-link">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/RamonDantasPolicarpo"
+                                target="_blank" class="docs-social-link">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/ramo0n.36/"
+                                target="_blank" class="docs-social-link">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
 
-                </div>
-            </main>
-
-            <!-- RODAPÉ DA DOCUMENTAÇÃO -->
-            <footer class="docs-footer">
-                <div
-                    style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center;">
-
-                    <!-- Social Links -->
-                    <div style="display: flex; gap: 1.5rem; font-size: 1.4rem;">
-                        <a href="https://www.linkedin.com/in/ramondantaspolicarpo/" target="_blank"
-                            style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                            onmouseover="this.style.color='var(--primary)'"
-                            onmouseout="this.style.color='var(--txt-primary)'">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/RamonDantasPolicarpo" target="_blank"
-                            style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                            onmouseover="this.style.color='var(--primary)'"
-                            onmouseout="this.style.color='var(--txt-primary)'">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://www.instagram.com/ramo0n.36/" target="_blank"
-                            style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                            onmouseover="this.style.color='var(--primary)'"
-                            onmouseout="this.style.color='var(--txt-primary)'">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
+                        <!-- Copyright -->
+                        <p class="mb-0">
+                            &copy; 2025 Fóton Framework. Todos os direitos
+                            reservados a <strong>Ramon Dantas</strong>.
+                        </p>
                     </div>
+                </footer>
 
-                    <!-- Copyright -->
-                    <p style="margin: 0;">
-                        &copy; 2025 Fóton Framework. Todos os direitos reservados a <strong>Ramon Dantas</strong>.
-                    </p>
-                </div>
-            </footer>
-
+            </div>
         </div>
-    </div>
 
-    <script src="foton_scripts.js"></script>
-</body>
+        <script src="foton_scripts.js"></script>
+    </body>
 
 </html>
