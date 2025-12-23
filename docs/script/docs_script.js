@@ -20,7 +20,7 @@ async function loadIncludes() {
         try {
             // Ajuste o caminho conforme sua estrutura de pastas. 
             // Se o HTML estiver na raiz 'docs/', o caminho é 'includes/sidebar.html'
-            const response = await fetch('includes/sidebar.html');
+            const response = await fetch('docs/includes/sidebar.html');
 
             if (response.ok) {
                 const html = await response.text();
