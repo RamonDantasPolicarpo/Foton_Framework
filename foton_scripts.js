@@ -1,102 +1,16 @@
 /**
- * FÓTON FRAMEWORK SCRIPTS
- * Funcionalidades interativas para componentes UI.
- * Atualizado com melhorias de Acessibilidade e UX.
+ * FÓTON FRAMEWORK SCRIPTS (CORE)
+ * Funcionalidades essenciais para os componentes UI do framework.
+ * Inclui: Alertas, Popovers, Accordions e Toasts.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initMobileMenu();
     initAlerts();
     initPopovers();
     initAccordions();
-    initThemeToggle();
 });
 
-// --- Dark Mode Toggle ---
-function initThemeToggle() {
-    const toggleInput = document.getElementById('darkModeSwitch');
-
-    // 1. Verificar preferência salva
-    const savedTheme = localStorage.getItem('foton-theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        document.body.classList.add('dark-mode');
-        if (toggleInput) toggleInput.checked = true;
-    }
-
-    // 2. Ouvir mudanças
-    if (toggleInput) {
-        toggleInput.addEventListener('change', () => {
-            if (toggleInput.checked) {
-                document.body.classList.add('dark-mode');
-                localStorage.setItem('foton-theme', 'dark');
-            } else {
-                document.body.classList.remove('dark-mode');
-                localStorage.setItem('foton-theme', 'light');
-            }
-        });
-    }
-}
-
-// --- 1. Menu Mobile (Acessibilidade Melhorada) ---
-function initMobileMenu() {
-    const sidebar = document.getElementById('docsSidebar');
-    const overlay = document.getElementById('mobileOverlay');
-    const toggleBtn = document.getElementById('mobileToggle');
-
-    if (toggleBtn && sidebar) {
-        // Inicialização ARIA
-        toggleBtn.setAttribute('aria-controls', 'docsSidebar');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        toggleBtn.setAttribute('aria-label', 'Abrir menu de navegação');
-
-        toggleBtn.addEventListener('click', () => {
-            toggleSidebar(sidebar, overlay, toggleBtn);
-        });
-    }
-
-    if (overlay) {
-        overlay.addEventListener('click', () => {
-            closeMobileMenu(sidebar, overlay, toggleBtn);
-        });
-    }
-}
-
-function toggleSidebar(sidebar, overlay, btn) {
-    const isOpen = sidebar.classList.toggle('open');
-    overlay.classList.toggle('open');
-
-    // Atualiza estado ARIA
-    btn.setAttribute('aria-expanded', isOpen);
-    btn.setAttribute('aria-label', isOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
-
-    const icon = btn.querySelector('i');
-    if (isOpen) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    }
-}
-
-function closeMobileMenu(sidebar, overlay, btn) {
-    if (sidebar.classList.contains('open')) {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('open');
-
-        // Reset ARIA
-        if (btn) {
-            btn.setAttribute('aria-expanded', 'false');
-            btn.setAttribute('aria-label', 'Abrir menu de navegação');
-            btn.querySelector('i').classList.remove('fa-times');
-            btn.querySelector('i').classList.add('fa-bars');
-        }
-    }
-}
-
-// --- 2. Alertas (Fechar) ---
+// --- 1. Alertas (Fechar) ---
 function initAlerts() {
     document.addEventListener('click', (e) => {
         const closeBtn = e.target.closest('.alert-close');
@@ -115,7 +29,7 @@ function initAlerts() {
     });
 }
 
-// --- 3. Popovers & Dropdowns (Acessibilidade Melhorada) ---
+// --- 2. Popovers & Dropdowns (Acessibilidade Melhorada) ---
 function initPopovers() {
     // Inicializa atributos ARIA em todos os gatilhos existentes
     const triggers = document.querySelectorAll('[data-toggle="popover"]');
@@ -172,7 +86,7 @@ function closeAllPopovers(exceptContent = null) {
     });
 }
 
-// --- 4. Accordions (Animação Suave) ---
+// --- 3. Accordions (Animação Suave) ---
 function initAccordions() {
     const accordions = document.querySelectorAll('details.accordion');
 
@@ -219,40 +133,9 @@ function initAccordions() {
     });
 }
 
-// --- 5. Utilitários (Copy & Toast Stack) ---
-function copyColor(color) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(color).then(() => {
-            showToast(`Cor copiada: ${color}`);
-        }).catch(err => {
-            console.error('Erro ao copiar: ', err);
-            fallbackCopyTextToClipboard(color);
-        });
-    } else {
-        fallbackCopyTextToClipboard(color);
-    }
-}
-
-function fallbackCopyTextToClipboard(text) {
-    var textArea = document.createElement("textarea");
-    textArea.value = text;
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-
-    try {
-        var successful = document.execCommand('copy');
-        if (successful) showToast(`Cor copiada: ${text}`);
-    } catch (err) {
-        console.error('Fallback: Erro ao copiar', err);
-    }
-
-    document.body.removeChild(textArea);
-}
-
 /**
- * Sistema de Toasts Empilháveis
- * Cria um container fixo e gerencia múltiplos toasts simultâneos.
+ * Sistema de Toasts (Utilitário Global)
+ * Pode ser usado por scripts externos (como o da documentação) ou pelo usuário.
  */
 function showToast(message) {
     // 1. Garante que o container existe
@@ -321,25 +204,4 @@ function showToast(message) {
             }
         }, 300);
     }, 3000);
-}
-
-// --- 6. Download Direto (Sem Fetch) ---
-function downloadCSS() {
-    try {
-        const link = document.createElement('a');
-        link.href = 'foton_framework.css'; // Caminho relativo direto
-        link.download = 'foton_framework.css'; // Nome sugerido para salvar
-
-        // Adiciona ao DOM temporariamente para funcionar no Firefox
-        document.body.appendChild(link);
-
-        link.click();
-
-        // Limpeza
-        document.body.removeChild(link);
-        showToast('Download iniciado!');
-    } catch (err) {
-        console.error('Erro no download:', err);
-        showToast('Erro ao iniciar download.');
-    }
 }
