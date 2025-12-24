@@ -30,7 +30,7 @@ Tipografia Premium: Combinação curada de Manrope (Títulos) e Poppins (Corpo) 
 
 Variáveis CSS: Design System completo controlado por variáveis nativas (:root), facilitando temas (incluindo Dark Mode).
 
-Semântico: Classes com nomes intuitivos como .btn, .card, .hero, .navbar.
+Semântico: Classes com nomes intuitivos como .btn, .card, .ft-hero, .ft-navbar.
 
 🚀 Como Usar
 

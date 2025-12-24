@@ -21,7 +21,7 @@
     transition: transform 0.3s ease-in-out, background-color 0.3s ease;
 }
 
-.docs-logo {
+.docs-ft-logo {
     font-family: 'Manrope', sans-serif;
     font-size: 1.6rem;
     font-weight: 800;
@@ -35,7 +35,7 @@
     text-decoration: none;
 }
 
-.docs-logo svg {
+.docs-ft-logo svg {
     height: 28px;
     width: auto;
 }
@@ -411,11 +411,11 @@
 }
 
 /* Logo Hero Animation */
-.hero-logo-wrapper {
+.hero-ft-logo-wrapper {
     position: relative;
 }
 
-.hero-logo-img {
+.hero-ft-logo-img {
     filter: drop-shadow(0 20px 40px rgba(64, 170, 84, 0.3));
     transform: rotate(-10deg);
 }
@@ -497,7 +497,7 @@
     scroll-behavior: smooth;
 }
 
-.demo-container .navbar {
+.demo-container .ft-navbar {
     position: sticky;
     top: 0;
     width: 100%;
@@ -1002,7 +1002,7 @@
         font-size: 2.5rem;
     }
 
-    .hero-logo-wrapper {
+    .hero-ft-logo-wrapper {
         display: none;
     }
 
