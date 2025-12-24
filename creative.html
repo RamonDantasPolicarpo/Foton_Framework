@@ -4,32 +4,35 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fóton Framework - Criativos</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
+        <title>Fóton - Composições</title>
+
+        <!-- Fontes -->
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
         <!-- Inicializador do tema -->
         <script src="docs/script/theme_init.js"></script>
 
+        <!-- CSS -->
         <link rel="stylesheet" href="/dist/foton_framework.css">
         <link rel="stylesheet" href="/docs/style/docs_style.css">
     </head>
 
     <body>
-
+        <!-- Mobile UI -->
         <div class="mobile-overlay" id="mobileOverlay"></div>
-        <button class="mobile-menu-toggle" id="mobileToggle"><i
-                class="fa-solid fa-bars"></i></button>
+        <button class="mobile-menu-toggle" id="mobileToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
+        <!-- Layout Principal -->
         <div class="docs-layout-wrapper">
+            <!-- Sidebar (Carregada via JS) -->
+            <nav class="docs-sidebar" id="docsSidebar"></nav>
 
-            <nav class="docs-sidebar" id="docsSidebar">
-            </nav>
-
-            <!-- WRAPPER DA COLUNA DIREITA -->
+            <!-- Wrapper de Conteúdo -->
             <div class="docs-main-wrapper">
 
                 <main class="docs-content">
@@ -100,14 +103,16 @@
                                 <div class="ft-card-body">
                                     <div class="profile-header">
                                         <h3 class="mb-0">Editar Perfil</h3>
-                                        <span class="ft-badge ft-badge-success">Conta
+                                        <span
+                                            class="ft-badge ft-badge-success">Conta
                                             Pro</span>
                                     </div>
 
                                     <div class="profile-layout">
                                         <!-- Coluna Avatar -->
                                         <div class="profile-avatar-col">
-                                            <div class="ft-avatar ft-avatar-xl mb-md">
+                                            <div
+                                                class="ft-avatar ft-avatar-xl mb-md">
                                                 <img
                                                     src="https://i.pravatar.cc/150?img=57"
                                                     alt="Profile">
@@ -207,7 +212,8 @@
 
                         <!-- EXEMPLO 4: CHECKOUT -->
                         <h3 class="mt-section">4. Widget de Checkout</h3>
-                        <p>Combinação de ft-alertas, formulários em grid e resumo
+                        <p>Combinação de ft-alertas, formulários em grid e
+                            resumo
                             de pedido.</p>
 
                         <div class="preview-box bg-offset">
@@ -278,7 +284,8 @@
                                                 <input type="text"
                                                     class="ft-input-field"
                                                     placeholder="Cupom de desconto">
-                                                <button class="ft-btn ft-btn-dark"
+                                                <button
+                                                    class="ft-btn ft-btn-dark"
                                                     style="height: 44px; margin: 3px;">Aplicar</button>
                                             </div>
 
@@ -361,7 +368,8 @@
                                     <div
                                         class="flex-center justify-between mb-md">
                                         <h4 class="mb-0">Enviando Arquivos</h4>
-                                        <span class="ft-badge ft-badge-info">2 de
+                                        <span class="ft-badge ft-badge-info">2
+                                            de
                                             3</span>
                                     </div>
 
@@ -423,37 +431,13 @@
                     </div>
                 </main>
 
-                <!-- RODAPÉ DA DOCUMENTAÇÃO -->
-                <footer class="docs-footer">
-                    <div class="docs-footer-inner">
-                        <!-- Social Links -->
-                        <div class="docs-social-wrapper">
-                            <a
-                                href="https://www.linkedin.com/in/ramondantaspolicarpo/"
-                                target="_blank" class="docs-social-link">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/RamonDantasPolicarpo"
-                                target="_blank" class="docs-social-link">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://www.instagram.com/ramo0n.36/"
-                                target="_blank" class="docs-social-link">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </div>
-
-                        <!-- Copyright -->
-                        <p class="mb-0">
-                            &copy; 2025 Fóton Framework. Todos os direitos
-                            reservados a <strong>Ramon Dantas</strong>.
-                        </p>
-                    </div>
-                </footer>
+                <!-- Rodapé Carregado via JS -->
+                <footer class="docs-footer" id="docsFooter"></footer>
 
             </div>
         </div>
 
+        <!-- Scripts -->
         <script src="/dist/foton_scripts.js"></script>
         <script src="/docs/script/docs_script.js"></script>
     </body>

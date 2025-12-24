@@ -4,57 +4,37 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fóton Framework - Início</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
+        <title>Fóton - [Nome da Página]</title>
+
+        <!-- Fontes -->
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
         <!-- Inicializador do tema -->
         <script src="docs/script/theme_init.js"></script>
 
-        <!-- Framework e Estilos da Doc -->
+        <!-- CSS -->
         <link rel="stylesheet" href="/dist/foton_framework.css">
         <link rel="stylesheet" href="/docs/style/docs_style.css">
-
-        <style>
-        /* Ajustes específicos para a DEMO funcionar dentro da caixa */
-        .demo-container {
-            position: relative;
-            height: 650px;
-            overflow-y: auto;
-            background: var(--bg-page);
-            scroll-behavior: smooth;
-        }
-
-        /* Sobrescreve o fixed da ft-navbar apenas na demo para ela ficar presa na caixa */
-        .demo-container .ft-navbar {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-        }
-    </style>
     </head>
 
     <body>
-
+        <!-- Mobile UI -->
         <div class="mobile-overlay" id="mobileOverlay"></div>
         <button class="mobile-menu-toggle" id="mobileToggle">
             <i class="fa-solid fa-bars"></i>
         </button>
 
+        <!-- Layout Principal -->
         <div class="docs-layout-wrapper">
+            <!-- Sidebar (Carregada via JS) -->
+            <nav class="docs-sidebar" id="docsSidebar"></nav>
 
-            <!-- MENU LATERAL -->
-            <nav class="docs-sidebar" id="docsSidebar">
-            </nav>
-
-            <!-- WRAPPER DA COLUNA DIREITA (Conteúdo + Footer) -->
+            <!-- Wrapper de Conteúdo -->
             <div class="docs-main-wrapper">
 
-                <!-- ÁREA PRINCIPAL -->
                 <main class="docs-content">
                     <div class="page-fade-in">
 
@@ -179,7 +159,8 @@
                                 <!-- 3. Hero Section -->
                                 <section class="ft-hero demo-ft-hero">
                                     <div class="ft-hero-content">
-                                        <span class="demo-ft-hero-title">Escale seu
+                                        <span class="demo-ft-hero-title">Escale
+                                            seu
                                             negócio <br>com design
                                             inteligente.</span>
                                         <p class="text-sec">A plataforma
@@ -192,7 +173,8 @@
                                                 <input type="email"
                                                     class="ft-input-field"
                                                     placeholder="Digite seu e-mail profissional">
-                                                <button class="ft-btn ft-btn-gradient"
+                                                <button
+                                                    class="ft-btn ft-btn-gradient"
                                                     style="margin: 4px;">Começar</button>
                                             </div>
                                             <div class="text-muted-small"
@@ -267,7 +249,8 @@
                                 <!-- 5. Dark Section (Pricing Preview) -->
                                 <section
                                     class="ft-section-dark demo-pricing-section">
-                                    <div class="section-header text-center mb-lg">
+                                    <div
+                                        class="section-header text-center mb-lg">
                                         <span
                                             class="ft-badge ft-badge-pill ft-badge-primary">Planos
                                             Flexíveis</span>
@@ -277,7 +260,7 @@
                                     </div>
 
                                     <div class="ft-flex-container gap-30"
-                                    style="align-items: stretch;">
+                                        style="align-items: stretch;">
                                         <!-- Pricing Card 1 -->
                                         <div class="ft-card">
                                             <div class="ft-card-body">
@@ -354,7 +337,8 @@
                                     <details class="ft-accordion">
                                         <summary>Preciso saber
                                             programar?</summary>
-                                        <div class="ft-accordion-body">Não! Nossa
+                                        <div class="ft-accordion-body">Não!
+                                            Nossa
                                             plataforma é low-code, permitindo
                                             que você construa tudo visualmente,
                                             mas com acesso ao código se
@@ -363,7 +347,8 @@
                                     <details class="ft-accordion">
                                         <summary>Posso cancelar quando
                                             quiser?</summary>
-                                        <div class="ft-accordion-body">Sim, não há
+                                        <div class="ft-accordion-body">Sim, não
+                                            há
                                             fidelidade. Você pode cancelar sua
                                             assinatura a qualquer momento
                                             diretamente no painel.</div>
@@ -456,40 +441,15 @@
                         </div>
 
                     </div>
-
                 </main>
 
-                <!-- RODAPÉ DA DOCUMENTAÇÃO -->
-                <footer class="docs-footer">
-                    <div class="docs-footer-inner">
-                        <!-- Social Links -->
-                        <div class="docs-social-wrapper">
-                            <a
-                                href="https://www.linkedin.com/in/ramondantaspolicarpo/"
-                                target="_blank" class="docs-social-link">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/RamonDantasPolicarpo"
-                                target="_blank" class="docs-social-link">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://www.instagram.com/ramo0n.36/"
-                                target="_blank" class="docs-social-link">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </div>
-
-                        <!-- Copyright -->
-                        <p class="mb-0">
-                            &copy; 2025 Fóton Framework. Todos os direitos
-                            reservados a <strong>Ramon Dantas</strong>.
-                        </p>
-                    </div>
-                </footer>
+                <!-- Rodapé Carregado via JS -->
+                <footer class="docs-footer" id="docsFooter"></footer>
 
             </div>
         </div>
 
+        <!-- Scripts -->
         <script src="/dist/foton_scripts.js"></script>
         <script src="/docs/script/docs_script.js"></script>
     </body>

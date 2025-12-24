@@ -591,6 +591,11 @@ textarea.ft-input {
     color: #cbd5e1;
 }
 
+.ft-input-group button {
+    margin: 3px;
+    height: 44px;
+}
+
 /* Checks & Radios */
 .ft-check {
     display: flex;
@@ -2008,7 +2013,7 @@ details.ft-accordion[open] summary::after {
     /* Estado inicial: escondido e transparente */
     display: none;
     opacity: 0;
-    transition: opacity 0.2s ease; 
+    transition: opacity 0.2s ease;
 }
 
 /* Posições Base (Injetadas via JS se necessário) */

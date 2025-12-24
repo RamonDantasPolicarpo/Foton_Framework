@@ -4,131 +4,108 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fóton Framework - Introdução</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
+        <title>Fóton - Introdução</title>
+
+        <!-- Fontes -->
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
         <!-- Inicializador do tema -->
         <script src="docs/script/theme_init.js"></script>
-        
+
+        <!-- CSS -->
         <link rel="stylesheet" href="/dist/foton_framework.css">
         <link rel="stylesheet" href="/docs/style/docs_style.css">
     </head>
 
     <body>
-
+        <!-- Mobile UI -->
         <div class="mobile-overlay" id="mobileOverlay"></div>
-        <button class="mobile-menu-toggle" id="mobileToggle"><i
-                class="fa-solid fa-bars"></i></button>
+        <button class="mobile-menu-toggle" id="mobileToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
+        <!-- Layout Principal -->
         <div class="docs-layout-wrapper">
+            <!-- Sidebar (Carregada via JS) -->
+            <nav class="docs-sidebar" id="docsSidebar"></nav>
 
-            <nav class="docs-sidebar" id="docsSidebar">
-            </nav>
+            <!-- Wrapper de Conteúdo -->
+            <div class="docs-main-wrapper">
 
-            <!-- WRAPPER DA COLUNA DIREITA (Conteúdo + Footer) -->
-            <div style="display: flex; flex-direction: column; min-width: 0;">
-
-                <main class="docs-content" style="flex: 1;">
+                <main class="docs-content">
                     <div id="tab-intro" class="tab-view page-fade-in">
                         <h1 class="doc-title">Bem-vindo ao Fóton</h1>
-                        <p class="doc-subtitle">O framework CSS essencial para
-                            desenvolvedores que buscam performance e
-                            estética.</p>
+                        <p class="doc-subtitle">
+                            O framework CSS essencial para desenvolvedores que buscam performance e estética.
+                        </p>
 
                         <!-- Seção de Filosofia -->
-                        <div style="margin-bottom: 3rem;">
-                            <p
-                                style="font-size: 1.1rem; line-height: 1.8; color: var(--txt-primary);">
-                                O <strong>Fóton Framework</strong> não é apenas
-                                mais uma biblioteca CSS. Ele foi projetado
-                                para ser a base invisível de interfaces de alta
-                                conversão. Enquanto outros frameworks focam
-                                em ter milhares de componentes que você nunca
-                                vai usar, o Fóton foca no essencial:
-                                <strong>tipografia perfeita, espaçamento rítmico
-                                    e componentes que vendem.</strong>
+                        <div class="mb-md">
+                            <p>
+                                O <strong>Fóton Framework</strong> não é apenas mais uma biblioteca CSS. Ele foi projetado para ser a base invisível de interfaces de alta conversão. Enquanto outros frameworks focam em ter milhares de componentes que você nunca vai usar, o Fóton foca no essencial: <strong>tipografia perfeita, espaçamento rítmico e componentes que vendem.</strong>
                             </p>
                         </div>
 
                         <!-- Grid de Diferenciais -->
-                        <h3 style="margin-bottom: 1.5rem;">Por que escolher o
-                            Fóton?</h3>
+                        <h3>Por que escolher o Fóton?</h3>
                         <div class="ft-grid"
                             style="gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 4rem;">
 
-                            <div class="ft-card" style="padding: 1.5rem;">
-                                <div
-                                    style="margin-bottom: 1rem; color: var(--primary); font-size: 24px;">
-                                    <i class="fa-solid fa-bolt"></i>
-                                </div>
-                                <h4 style="margin-bottom: 0.5rem;">Ultra
-                                    Leve</h4>
-                                <p
-                                    style="font-size: 0.9rem; color: var(--txt-sec); margin: 0;">Sem
-                                    JavaScript pesado. Sem
-                                    dependências. Apenas CSS moderno e otimizado
-                                    que carrega instantaneamente.</p>
+                            <!-- Card 1 -->
+                            <div class="ft-card">
+                                    <i class="fa-solid fa-bolt" 
+                                        style="margin-bottom: 1rem; color: var(--primary); font-size: 24px;"></i>
+                                <h4>Ultra Leve</h4>
+                                <p style="color: var(--txt-sec);">
+                                    Sem JavaScript pesado. Sem dependências. Apenas CSS moderno e otimizado que carrega instantaneamente.
+                                </p>
                             </div>
 
-                            <div class="ft-card" style="padding: 1.5rem;">
-                                <div
-                                    style="margin-bottom: 1rem; color: var(--info); font-size: 24px;">
-                                    <i class="fa-solid fa-mobile-screen"></i>
-                                </div>
-                                <h4 style="margin-bottom: 0.5rem;">Layout
-                                    Adaptável</h4>
-                                <p
-                                    style="font-size: 0.9rem; color: var(--txt-sec); margin: 0;">Esqueça
-                                    media queries
-                                    complexas. Nosso Grid System inteligente se
-                                    adapta a qualquer tela automaticamente.</p>
+                            <!-- Card 2 -->
+                            <div class="ft-card">
+                                    <i class="fa-solid fa-mobile-screen" 
+                                        style="margin-bottom: 1rem; color: var(--info); font-size: 24px;"></i>
+                                <h4>Layout Adaptável</h4>
+                                <p style="color: var(--txt-sec);">
+                                    Esqueça media queries complexas. Nosso Grid System inteligente se adapta a qualquer tela automaticamente.
+                                </p>
                             </div>
 
-                            <div class="ft-card" style="padding: 1.5rem;">
-                                <div
-                                    style="margin-bottom: 1rem; color: var(--warning); font-size: 24px;">
-                                    <i
-                                        class="fa-solid fa-wand-magic-sparkles"></i>
-                                </div>
-                                <h4 style="margin-bottom: 0.5rem;">Focado em
-                                    Design</h4>
-                                <p
-                                    style="font-size: 0.9rem; color: var(--txt-sec); margin: 0;">Variáveis
-                                    CSS globais
-                                    permitem que você mude a identidade visual
-                                    inteira alterando apenas algumas cores.</p>
+                            <!-- Card 3 -->
+                            <div class="ft-card">
+                                    <i class="fa-solid fa-wand-magic-sparkles" 
+                                        style="margin-bottom: 1rem; color: var(--warning); font-size: 24px;"></i>
+                                <h4>Focado em Design</h4>
+                                <p style="color: var(--txt-sec);">
+                                    Variáveis CSS globais permitem que você mude a identidade visual inteira alterando apenas algumas cores.
+                                </p>
                             </div>
-
                         </div>
 
                         <!-- Seção de Instalação -->
-                        <h3
-                            style="border-top: 1px solid #eee; padding-top: 2rem; margin-top: 2rem;">Começando
-                            Agora</h3>
-                        <p>Integrar o Fóton ao seu projeto é simples. Você só
-                            precisa de dois passos.</p>
+                        <h3 style="border-top: 1px solid #eee; padding-top: 2rem; margin-top: 2rem;">
+                            Começando Agora
+                        </h3>
+                        <p class="mb-md">
+                            Integrar o Fóton ao seu projeto é simples. Você só precisa de dois passos.
+                        </p>
 
-                        <div class="ft-alert ft-alert-info"
-                            style="margin-top: 1.5rem;">
+                        <div class="ft-alert ft-alert-info">
                             <i class="fa-solid fa-circle-info ft-alert-icon"></i>
                             <div>
-                                <strong>Dica:</strong> Certifique-se de baixar a
-                                última versão do arquivo
-                                <code>foton_framework.css</code> na aba <a
+                                <strong>Dica:</strong> Certifique-se de baixar a última versão do arquivo <code>foton_framework.css</code> na aba <a
                                     href="download.html"
                                     style="text-decoration: underline;">Download</a>.
                             </div>
                         </div>
 
                         <h4>1. Estrutura Básica</h4>
-                        <p>Copie o template abaixo para iniciar seu projeto com
-                            todas as configurações necessárias,
-                            incluindo
-                            as fontes Manrope e Poppins.</p>
+                        <p>
+                            Copie o template abaixo para iniciar seu projeto com todas as configurações necessárias, incluindo as fontes Manrope e Poppins.
+                        </p>
 
                         <div class="code-block">
                             &lt;!DOCTYPE html&gt;
@@ -176,9 +153,9 @@
                             &lt;/html&gt;</div>
 
                         <h4>2. Customização Rápida</h4>
-                        <p>Para deixar o framework com a cara da sua marca, abra
-                            o arquivo CSS e edite as variáveis no topo
-                            (<code>:root</code>).</p>
+                        <p>
+                            Para deixar o framework com a cara da sua marca, abra o arquivo CSS e edite as variáveis no topo (<code>:root</code>).
+                        </p>
                         <div class="code-block">
                             :root {
                             /* Mude a cor principal aqui */
@@ -186,54 +163,18 @@
 
                             /* Ajuste o modo escuro */
                             --dark: #1d1e25;
-                            }</div>
-
+                            }
+                        </div>
                     </div>
                 </main>
 
-                <!-- RODAPÉ DA DOCUMENTAÇÃO -->
-                <footer class="docs-footer">
-                    <div
-                        style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center;">
-
-                        <!-- Social Links -->
-                        <div
-                            style="display: flex; gap: 1.5rem; font-size: 1.4rem;">
-                            <a
-                                href="https://www.linkedin.com/in/ramondantaspolicarpo/"
-                                target="_blank"
-                                style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                                onmouseover="this.style.color='var(--primary)'"
-                                onmouseout="this.style.color='var(--txt-primary)'">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/RamonDantasPolicarpo"
-                                target="_blank"
-                                style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                                onmouseover="this.style.color='var(--primary)'"
-                                onmouseout="this.style.color='var(--txt-primary)'">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://www.instagram.com/ramo0n.36/"
-                                target="_blank"
-                                style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                                onmouseover="this.style.color='var(--primary)'"
-                                onmouseout="this.style.color='var(--txt-primary)'">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </div>
-
-                        <!-- Copyright -->
-                        <p style="margin: 0;">
-                            &copy; 2025 Fóton Framework. Todos os direitos
-                            reservados a <strong>Ramon Dantas</strong>.
-                        </p>
-                    </div>
-                </footer>
+                <!-- Rodapé Carregado via JS -->
+                <footer class="docs-footer" id="docsFooter"></footer>
 
             </div>
         </div>
 
+        <!-- Scripts -->
         <script src="/dist/foton_scripts.js"></script>
         <script src="/docs/script/docs_script.js"></script>
     </body>

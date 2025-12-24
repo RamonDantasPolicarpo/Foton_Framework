@@ -4,68 +4,77 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fóton Framework - Formulários</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
+        <title>Fóton - Formulários</title>
+
+        <!-- Fontes -->
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
         <!-- Inicializador do tema -->
         <script src="docs/script/theme_init.js"></script>
-        
+
+        <!-- CSS -->
         <link rel="stylesheet" href="/dist/foton_framework.css">
         <link rel="stylesheet" href="/docs/style/docs_style.css">
     </head>
 
     <body>
-
+        <!-- Mobile UI -->
         <div class="mobile-overlay" id="mobileOverlay"></div>
-        <button class="mobile-menu-toggle" id="mobileToggle"><i
-                class="fa-solid fa-bars"></i></button>
+        <button class="mobile-menu-toggle" id="mobileToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
+        <!-- Layout Principal -->
         <div class="docs-layout-wrapper">
+            <!-- Sidebar (Carregada via JS) -->
+            <nav class="docs-sidebar" id="docsSidebar"></nav>
 
-            <nav class="docs-sidebar" id="docsSidebar">
-            </nav>
+            <!-- Wrapper de Conteúdo -->
+            <div class="docs-main-wrapper">
 
-            <!-- WRAPPER DA COLUNA DIREITA (Conteúdo + Footer) -->
-            <div style="display: flex; flex-direction: column; min-width: 0;">
-
-                <main class="docs-content" style="flex: 1;">
+                <main class="docs-content">
                     <div id="tab-forms" class="tab-view page-fade-in">
                         <h1 class="doc-title">Formulários</h1>
-                        <p class="doc-subtitle">Componentes de input e
-                            busca.</p>
+                        <p class="doc-subtitle">
+                            Componentes de input e busca.
+                        </p>
 
                         <!-- BARRA DE PESQUISA -->
                         <h3>Barra de Busca</h3>
-                        <p>O <code>.input-group</code> ocupa 100% do container
-                            pai por padrão. Ajuste a largura usando CSS
-                            inline ou classes utilitárias se precisar.</p>
+                        <p>
+                            O <code>.input-group</code> ocupa 100% do container
+                            pai por padrão. Ajuste a largura usando CSS inline
+                            ou classes utilitárias se precisar.
+                        </p>
                         <div class="preview-box">
                             <!-- Default Full Width -->
-                            <p
-                                style="font-size: 12px; color: #999; margin-bottom: 5px;">Padrão
-                                (100%)</p>
+                            <p class="ft-text-muted"
+                                style="font-size: 0.8em;">
+                                Padrão (100%)
+                            </p>
                             <div class="ft-input-group">
                                 <i class="fa-solid fa-magnifying-glass"
                                     style="margin-left: 15px; color: var(--txt-sec);"></i>
                                 <input type="text" class="ft-input-field"
                                     placeholder="Digite sua busca...">
-                                <button class="ft-btn ft-btn-gradient"
-                                    style="margin: 3px; height: 44px; padding: 0 25px;">Pesquisar</button>
+                                <button
+                                    class="ft-btn ft-btn-gradient">Pesquisar</button>
                             </div>
 
                             <!-- Custom Width -->
-                            <p
-                                style="font-size: 12px; color: #999; margin-bottom: 5px; margin-top: 20px;">Largura
-                                Personalizada (ex: 400px)</p>
-                            <div class="ft-input-group" style="max-width: 400px;">
+                            <p class="ft-text-muted mt-sm"
+                                style="font-size: 0.8em;">
+                                Largura Personalizada (ex: 400px)
+                            </p>
+                            <div class="ft-input-group"
+                                style="max-width: 400px;">
                                 <input type="text" class="ft-input-field"
                                     placeholder="Buscar...">
-                                <button class="ft-btn ft-btn-primary"
-                                    style="margin: 3px; height: 44px;">Go</button>
+                                <button
+                                    class="ft-btn ft-btn-primary">Go</button>
                             </div>
                         </div>
                         <div class="code-block">
@@ -77,13 +86,16 @@
                             placeholder="Buscar..."&gt;
                             &lt;button
                             class="ft-btn ft-btn-gradient"&gt;Pesquisar&lt;/button&gt;
-                            &lt;/div&gt;</div>
+                            &lt;/div&gt;
+                        </div>
 
                         <!-- INPUTS BÁSICOS -->
                         <h3>Inputs Básicos</h3>
-                        <p>Campos de texto padrão, email e senha. Utilize a
+                        <p>
+                            Campos de texto padrão, email e senha. Utilize a
                             classe <code>.ft-input</code> para expandir e
-                            estilizar.</p>
+                            estilizar.
+                        </p>
                         <div class="preview-box">
                             <div class="ft-form-group">
                                 <label class="ft-label">Nome Completo</label>
@@ -102,11 +114,13 @@
                             &lt;label class="ft-label"&gt;Email&lt;/label&gt;
                             &lt;input type="email" class="ft-input"
                             placeholder="..."&gt;
-                            &lt;/div&gt;</div>
+                            &lt;/div&gt;
+                        </div>
 
                         <!-- SELEÇÃO E OPÇÕES -->
                         <h3>Seleção e Opções</h3>
-                        <p>Selects, checkboxes e radio buttons customizados. A
+                        <p>
+                            Selects, checkboxes e radio buttons customizados. A
                             fonte das opções agora herda corretamente.
                         </p>
                         <div class="preview-box">
@@ -139,14 +153,12 @@
                                 <label class="ft-check">
                                     <input type="radio" name="radioDemo"
                                         class="ft-check-input" checked>
-                                    <span class="ft-check-label">Opção
-                                        A</span>
+                                    <span class="ft-check-label">Opção A</span>
                                 </label>
                                 <label class="ft-check">
                                     <input type="radio" name="radioDemo"
                                         class="ft-check-input">
-                                    <span class="ft-check-label">Opção
-                                        B</span>
+                                    <span class="ft-check-label">Opção B</span>
                                 </label>
                             </div>
                         </div>
@@ -171,7 +183,8 @@
                             class="ft-check-input"&gt;
                             &lt;span
                             class="ft-check-label"&gt;Opção&lt;/span&gt;
-                            &lt;/label&gt;</div>
+                            &lt;/label&gt;
+                        </div>
 
                         <!-- TEXTAREAS -->
                         <h3>Áreas de Texto</h3>
@@ -179,7 +192,8 @@
                             <div class="ft-form-group">
                                 <label class="ft-label">Mensagem</label>
                                 <textarea class="ft-input"
-                                    placeholder="Escreva sua mensagem aqui..."></textarea>
+                                    placeholder="Escreva sua mensagem aqui...">
+                                </textarea>
                             </div>
                         </div>
                         <div class="code-block">
@@ -188,21 +202,19 @@
                             class="ft-label"&gt;Mensagem&lt;/label&gt;
                             &lt;textarea class="ft-input"
                             rows="4"&gt;&lt;/textarea&gt;
-                            &lt;/div&gt;</div>
+                            &lt;/div&gt;
+                        </div>
 
-                        <h3
-                            style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px;">Exemplos
-                            Completos
-                        </h3>
+                        <h3 class="mt-md"
+                            style="border-top: solid var(--border-color); padding-top: 2em;">Exemplos
+                            Completos</h3>
 
                         <!-- LOGIN CARD -->
                         <h4>Login Card</h4>
-                        <div class="preview-box"
-                            style="display: flex; justify-content: center; background: #f0f0f8;">
-                            <div class=""
-                                style="width: 100%; max-width: 400px;">
-                                <h2
-                                    style="text-align: center; margin-bottom: 1.5rem; color: var(--txt-primary);">Login</h2>
+                        <div class="preview-box ft-flex-container">
+                            <div>
+                                <h2 class="mb-md"
+                                    style="text-align: center;">Login</h2>
                                 <div class="ft-form-group">
                                     <label class="ft-label">Email</label>
                                     <input type="email" class="ft-input">
@@ -219,8 +231,8 @@
                                             de mim</span>
                                     </label>
                                 </div>
-                                <button class="ft-btn ft-btn-gradient"
-                                    style="width: 100%;">Entrar</button>
+                                <button
+                                    class="ft-btn ft-btn-gradient ft-btn-block">Entrar</button>
                             </div>
                         </div>
                         <div class="code-block">
@@ -237,13 +249,13 @@
                             &lt;/div&gt;
                             &lt;button
                             class="ft-btn ft-btn-gradient ft-btn-block"&gt;Entrar&lt;/button&gt;
-                            &lt;/div&gt;</div>
+                            &lt;/div&gt;
+                        </div>
 
                         <!-- CONTATO -->
                         <h4>Formulário de Contato</h4>
-                        <div class="preview-box">
-                            <div
-                                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <div class="preview-box ">
+                            <div class="form-contato">
                                 <div class="ft-form-group">
                                     <label class="ft-label">Nome</label>
                                     <input type="text" class="ft-input">
@@ -292,20 +304,18 @@
                             &lt;/div&gt;
                             &lt;button
                             class="ft-btn ft-btn-gradient"&gt;Enviar&lt;/button&gt;
-                            &lt;/form&gt;</div>
+                            &lt;/form&gt;
+                        </div>
 
-                        <!-- NOVOS EXEMPLOS -->
+                        <!-- MAIS EXEMPLOS -->
                         <h3
                             style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px;">Mais
-                            Layouts de
-                            Formulário</h3>
+                            Layouts de Formulário</h3>
 
                         <h4>Newsletter Inline</h4>
                         <div class="preview-box">
-                            <div
-                                style="display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap;">
-                                <div class="ft-form-group"
-                                    style="margin-bottom: 0; flex-grow: 1; min-width: 250px;">
+                            <div>
+                                <div class="ft-form-group mb-sm">
                                     <label class="ft-label">Receba
                                         novidades</label>
                                     <input type="email" class="ft-input"
@@ -329,22 +339,18 @@
 
                         <h4>Checkout / Endereço</h4>
                         <div class="preview-box">
-                            <div style="display: grid; gap: 20px;">
-                                <div class="ft-form-group"
-                                    style="margin-bottom: 0;">
+                            <div>
+                                <div class="ft-form-group mb-sm">
                                     <label class="ft-label">Endereço</label>
                                     <input type="text" class="ft-input"
                                         placeholder="Rua, número...">
                                 </div>
-                                <div
-                                    style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
-                                    <div class="ft-form-group"
-                                        style="margin-bottom: 0;">
+                                <div class="form-checkout">
+                                    <div class="ft-form-group mb-sm">
                                         <label class="ft-label">Cidade</label>
                                         <input type="text" class="ft-input">
                                     </div>
-                                    <div class="ft-form-group"
-                                        style="margin-bottom: 0;">
+                                    <div class="ft-form-group mb-sm">
                                         <label class="ft-label">Estado</label>
                                         <select class="ft-input">
                                             <option>SP</option>
@@ -352,8 +358,7 @@
                                             <option>MG</option>
                                         </select>
                                     </div>
-                                    <div class="ft-form-group"
-                                        style="margin-bottom: 0;">
+                                    <div class="ft-form-group mb-sm">
                                         <label class="ft-label">CEP</label>
                                         <input type="text" class="ft-input">
                                     </div>
@@ -379,54 +384,18 @@
                             &lt;input type="text" class="ft-input"
                             placeholder="CEP"&gt;
                             &lt;/div&gt;
-                            &lt;/div&gt;</div>
+                            &lt;/div&gt;
+                        </div>
 
                     </div>
                 </main>
 
-                <!-- RODAPÉ DA DOCUMENTAÇÃO -->
-                <footer class="docs-footer">
-                    <div
-                        style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center;">
-
-                        <!-- Social Links -->
-                        <div
-                            style="display: flex; gap: 1.5rem; font-size: 1.4rem;">
-                            <a
-                                href="https://www.linkedin.com/in/ramondantaspolicarpo/"
-                                target="_blank"
-                                style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                                onmouseover="this.style.color='var(--primary)'"
-                                onmouseout="this.style.color='var(--txt-primary)'">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/RamonDantasPolicarpo"
-                                target="_blank"
-                                style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                                onmouseover="this.style.color='var(--primary)'"
-                                onmouseout="this.style.color='var(--txt-primary)'">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://www.instagram.com/ramo0n.36/"
-                                target="_blank"
-                                style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                                onmouseover="this.style.color='var(--primary)'"
-                                onmouseout="this.style.color='var(--txt-primary)'">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </div>
-
-                        <!-- Copyright -->
-                        <p style="margin: 0;">
-                            &copy; 2025 Fóton Framework. Todos os direitos
-                            reservados a <strong>Ramon Dantas</strong>.
-                        </p>
-                    </div>
-                </footer>
-
+                <!-- Rodapé Carregado via JS -->
+                <footer class="docs-footer" id="docsFooter"></footer>
             </div>
         </div>
 
+        <!-- Scripts -->
         <script src="/dist/foton_scripts.js"></script>
         <script src="/docs/script/docs_script.js"></script>
     </body>

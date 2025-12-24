@@ -324,6 +324,7 @@
     border-radius: 16px;
     background: var(--bg-surface);
     overflow: hidden;
+    margin-top: 0.3em;
     margin-bottom: 1.5rem;
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
     padding: 2rem;
@@ -355,6 +356,37 @@
 .preview-box.overflow-visible {
     overflow: visible;
     padding-bottom: 80px;
+}
+
+.form-contato {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.form-checkout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.item-grid-ex {
+    background: #f0f0f8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px dashed #bcbcbc;
+}
+
+.item-flex-ex {
+    width: 150px;
+    height: 100px;
+    background: #e3f2fd;
+    border: 1px solid #90caf9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
 }
 
 /* Home Demo Elements (Hero Section) */

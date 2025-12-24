@@ -4,60 +4,58 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fóton Framework - Layout & Grid</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
+        <title>Fóton - Layout & Grid</title>
+
+        <!-- Fontes -->
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
         <!-- Inicializador do tema -->
         <script src="docs/script/theme_init.js"></script>
-        
+
+        <!-- CSS -->
         <link rel="stylesheet" href="/dist/foton_framework.css">
         <link rel="stylesheet" href="/docs/style/docs_style.css">
     </head>
 
     <body>
-
+        <!-- Mobile UI -->
         <div class="mobile-overlay" id="mobileOverlay"></div>
-        <button class="mobile-menu-toggle" id="mobileToggle"><i
-                class="fa-solid fa-bars"></i></button>
+        <button class="mobile-menu-toggle" id="mobileToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
+        <!-- Layout Principal -->
         <div class="docs-layout-wrapper">
+            <!-- Sidebar (Carregada via JS) -->
+            <nav class="docs-sidebar" id="docsSidebar"></nav>
 
-            <nav class="docs-sidebar" id="docsSidebar">
-            </nav>
+            <!-- Wrapper de Conteúdo -->
+            <div class="docs-main-wrapper">
 
-            <!-- WRAPPER DA COLUNA DIREITA (Conteúdo + Footer) -->
-            <div style="display: flex; flex-direction: column; min-width: 0;">
-
-                <main class="docs-content" style="flex: 1;">
+                <main class="docs-content">
                     <div id="tab-layout" class="tab-view page-fade-in">
                         <h1 class="doc-title">Layout & Grid</h1>
-                        <p class="doc-subtitle">Classes utilitárias para
-                            estruturação de conteúdo responsivo.</p>
+                        <p class="doc-subtitle">
+                            Classes utilitárias para estruturação de conteúdo responsivo.
+                        </p>
 
                         <!-- GRID RESPONSIVO -->
                         <h3>Grid Automático</h3>
-                        <p>A classe <code>.grid-responsive</code> utiliza CSS
-                            Grid com <code>auto-fit</code> e
-                            <code>minmax</code> para criar colunas que se
-                            adaptam automaticamente ao espaço disponível, sem
-                            necessidade de Media Queries manuais.
+                        <p>
+                            A classe <code>.grid-responsive</code> utiliza CSS Grid com <code>auto-fit</code> e <code>minmax</code> para criar colunas que se adaptam automaticamente ao espaço disponível, sem necessidade de Media Queries manuais.
                         </p>
 
                         <div class="preview-box">
                             <div class="ft-grid"
                                 style="margin: 0; color: var(--txt-black);">
-                                <div
-                                    style="background: #f0f0f8; padding: 20px; border-radius: 10px; text-align: center; border: 1px dashed #ccc;">
+                                <div class="item-grid-ex">
                                     Coluna 1</div>
-                                <div
-                                    style="background: #f0f0f8; padding: 20px; border-radius: 10px; text-align: center; border: 1px dashed #ccc;">
+                                <div class="item-grid-ex">
                                     Coluna 2</div>
-                                <div
-                                    style="background: #f0f0f8; padding: 20px; border-radius: 10px; text-align: center; border: 1px dashed #ccc;">
+                                <div class="item-grid-ex">
                                     Coluna 3</div>
                             </div>
                         </div>
@@ -67,26 +65,23 @@
                             &lt;div&gt;Conteúdo 1&lt;/div&gt;
                             &lt;div&gt;Conteúdo 2&lt;/div&gt;
                             &lt;div&gt;Conteúdo 3&lt;/div&gt;
-                            &lt;/div&gt;</div>
+                            &lt;/div&gt;
+                        </div>
 
                         <!-- FLEX CONTAINER -->
-                        <h3 style="margin-top: 40px;">Flex Container</h3>
+                        <h3>Flex Container</h3>
                         <p>A classe <code>.flex-container</code> utiliza Flexbox
-                            com wrap, ideal para listas de itens
-                            centralizados, galerias de ícones ou cards de
-                            funcionalidades.</p>
+                            com wrap, ideal para listas de itens centralizados, galerias de ícones ou cards de funcionalidades.
+                        </p>
 
                         <div class="preview-box">
                             <div class="ft-flex-container"
                                 style="margin: 0; color: var(--txt-black);">
-                                <div
-                                    style="width: 150px; height: 100px; background: #e3f2fd; border: 1px solid #90caf9; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                                <div class="item-flex-ex">
                                     Flex Item</div>
-                                <div
-                                    style="width: 150px; height: 100px; background: #e3f2fd; border: 1px solid #90caf9; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                                <div class="item-flex-ex">
                                     Flex Item</div>
-                                <div
-                                    style="width: 150px; height: 100px; background: #e3f2fd; border: 1px solid #90caf9; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                                <div class="item-flex-ex">
                                     Flex Item</div>
                             </div>
                         </div>
@@ -96,15 +91,14 @@
                             &lt;!-- Seus elementos com largura definida --&gt;
                             &lt;div style="width: 200px;"&gt;Item 1&lt;/div&gt;
                             &lt;div style="width: 200px;"&gt;Item 2&lt;/div&gt;
-                            &lt;/div&gt;</div>
+                            &lt;/div&gt;
+                        </div>
 
                         <!-- SECTION DARK -->
-                        <h3 style="margin-top: 40px;">Seções de Destaque</h3>
-                        <p>A classe <code>.section-dark</code> cria um container
-                            escuro com bordas arredondadas e padding
-                            generoso, ideal para quebrar o ritmo da página ou
-                            destacar features importantes. Ela já
-                            centraliza o conteúdo e limita a largura.</p>
+                        <h3>Seções de Destaque</h3>
+                        <p>
+                            A classe <code>.section-dark</code> cria um container escuro com bordas arredondadas e padding generoso, ideal para quebrar o ritmo da página ou destacar features importantes. Ela já centraliza o conteúdo e limita a largura.
+                        </p>
 
                         <div class="preview-box">
                             <section class="section-dark" style="margin: 0;">
@@ -127,22 +121,17 @@
                             &lt;/section&gt;</div>
 
                         <!-- FORM LAYOUTS (NOVA SEÇÃO DIDÁTICA) -->
-                        <h2
-                            style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee;">Layout
-                            de Formulários
+                        <h2 style="padding-top: 2em; border-top: 1px solid var(--border-color);">
+                            Layout de Formulários
                         </h2>
-                        <p class="doc-subtitle">Aprenda a estruturar seus
-                            formulários utilizando CSS Grid e Flexbox nativos
-                            junto com as classes do framework.</p>
+                        <p class="doc-subtitle">
+                            Aprenda a estruturar seus formulários utilizando CSS Grid e Flexbox nativos junto com as classes do framework.
+                        </p>
 
                         <!-- Layout 1: Vertical -->
-                        <h4 style="margin-top: 30px;">1. Pilha Vertical
-                            (Padrão)</h4>
-                        <p>Os elementos de input nativos possuem largura
-                            automática. Ao adicionar a classe
-                            <code>.ft-input</code>, eles expandem para
-                            <strong>100% da largura</strong> do container pai,
-                            ideal para layouts móveis ou empilhados.
+                        <h4>1. Pilha Vertical (Padrão)</h4>
+                        <p>
+                            Os elementos de input nativos possuem largura automática. Ao adicionar a classe <code>.ft-input</code>, eles expandem para <strong>100% da largura</strong> do container pai, ideal para layouts móveis ou empilhados.
                         </p>
                         <div class="preview-box">
                             <form>
@@ -157,20 +146,20 @@
                             </form>
                         </div>
                         <div class="code-block">
-                            &lt;!-- Container .ft-form-group agrupa label e input
+                            &lt;!-- Container .ft-form-group agrupa label e
+                            input
                             --&gt;
                             &lt;div class="ft-form-group"&gt;
                             &lt;label class="ft-label"&gt;Email&lt;/label&gt;
                             &lt;input type="email" class="ft-input"&gt;
-                            &lt;/div&gt;</div>
+                            &lt;/div&gt;
+                        </div>
 
                         <!-- Layout 2: Grid -->
-                        <h4 style="margin-top: 40px;">2. Grid de Colunas (Lado a
+                        <h4>2. Grid de Colunas (Lado a
                             Lado)</h4>
-                        <p>Para colocar campos lado a lado (ex: Nome e
-                            Sobrenome), envolva-os em uma <code>div</code> com
-                            <code>display: grid</code>. Você pode definir as
-                            colunas manualmente.
+                        <p>
+                            Para colocar campos lado a lado (ex: Nome e Sobrenome), envolva-os em uma <code>div</code> com <code>display: grid</code>. Você pode definir as colunas manualmente.
                         </p>
                         <div class="preview-box">
                             <div
@@ -195,8 +184,9 @@
                             &lt;div class="ft-form-group"&gt;...&lt;/div&gt;
                             &lt;/div&gt;</div>
 
+
                         <!-- Layout 3: Inline Flex -->
-                        <h4 style="margin-top: 40px;">3. Layout Inline (Botão ao
+                        <h4>3. Layout Inline (Botão ao
                             lado)</h4>
                         <p>Use <code>display: flex</code> para alinhar um campo
                             de input com um botão. Use
@@ -212,13 +202,15 @@
                                         Desconto</label>
                                     <input type="text" class="ft-input">
                                 </div>
-                                <button class="ft-btn ft-btn-dark">Aplicar</button>
+                                <button
+                                    class="ft-btn ft-btn-dark">Aplicar</button>
                             </div>
                         </div>
                         <div class="code-block">
                             &lt;div
                             style="display: flex; gap: 10px; align-items: flex-end;"&gt;
-                            &lt;div class="ft-form-group" style="flex-grow: 1;"&gt;
+                            &lt;div class="ft-form-group"
+                            style="flex-grow: 1;"&gt;
                             &lt;label class="ft-label"&gt;Cupom&lt;/label&gt;
                             &lt;input type="text" class="ft-input"&gt;
                             &lt;/div&gt;
@@ -229,49 +221,13 @@
                     </div>
                 </main>
 
-                <!-- RODAPÉ DA DOCUMENTAÇÃO -->
-                <footer class="docs-footer">
-                    <div
-                        style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center;">
-
-                        <!-- Social Links -->
-                        <div
-                            style="display: flex; gap: 1.5rem; font-size: 1.4rem;">
-                            <a
-                                href="https://www.linkedin.com/in/ramondantaspolicarpo/"
-                                target="_blank"
-                                style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                                onmouseover="this.style.color='var(--primary)'"
-                                onmouseout="this.style.color='var(--txt-primary)'">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/RamonDantasPolicarpo"
-                                target="_blank"
-                                style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                                onmouseover="this.style.color='var(--primary)'"
-                                onmouseout="this.style.color='var(--txt-primary)'">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://www.instagram.com/ramo0n.36/"
-                                target="_blank"
-                                style="color: var(--txt-primary); transition: color 0.2s; cursor: pointer;"
-                                onmouseover="this.style.color='var(--primary)'"
-                                onmouseout="this.style.color='var(--txt-primary)'">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </div>
-
-                        <!-- Copyright -->
-                        <p style="margin: 0;">
-                            &copy; 2025 Fóton Framework. Todos os direitos
-                            reservados a <strong>Ramon Dantas</strong>.
-                        </p>
-                    </div>
-                </footer>
+                <!-- Rodapé Carregado via JS -->
+                <footer class="docs-footer" id="docsFooter"></footer>
 
             </div>
         </div>
 
+        <!-- Scripts -->
         <script src="/dist/foton_scripts.js"></script>
         <script src="/docs/script/docs_script.js"></script>
     </body>

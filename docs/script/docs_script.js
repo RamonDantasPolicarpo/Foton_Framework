@@ -7,12 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     loadIncludes();
 });
 
-// --- 1. Carregador de Sidebar (AJAX) ---
+// --- 1. Carregador de Sidebar e footer (AJAX) ---
 async function loadIncludes() {
     const sidebarContainer = document.getElementById('docsSidebar');
     if (sidebarContainer) {
         try {
-            // AJUSTE 1: Use caminho absoluto (começando com /) para funcionar em qualquer subpasta
             const response = await fetch('/docs/includes/sidebar.html');
 
             if (response.ok) {
@@ -25,6 +24,20 @@ async function loadIncludes() {
             }
         } catch (error) {
             console.error('Erro ao carregar sidebar:', error);
+        }
+    }
+
+    const footerContainer = document.getElementById('docsFooter');
+    if (footerContainer) {
+        try {
+            const response = await fetch('/docs/includes/footer.html');
+
+            if (response.ok) {
+                const html = await response.text();
+                footerContainer.innerHTML = html;
+            }
+        } catch (error) {
+            console.error('Erro ao carregar footer:', error);
         }
     }
 }
@@ -87,7 +100,7 @@ function initThemeToggle() {
     newInput.addEventListener('change', () => {
         const theme = newInput.checked ? 'dark' : 'light';
         html.setAttribute('data-theme', theme);
-        localStorage.setItem('foton-theme', theme); 
+        localStorage.setItem('foton-theme', theme);
     });
 }
 
