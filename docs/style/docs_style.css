@@ -443,11 +443,12 @@
 }
 
 /* Logo Hero Animation */
-.hero-ft-logo-wrapper {
+.hero-logo-wrapper {
+    margin-right: 3em;
     position: relative;
 }
 
-.hero-ft-logo-img {
+.hero-logo-img {
     filter: drop-shadow(0 20px 40px rgba(64, 170, 84, 0.3));
     transform: rotate(-10deg);
 }
@@ -1034,7 +1035,7 @@
         font-size: 2.5rem;
     }
 
-    .hero-ft-logo-wrapper {
+    .hero-logo-wrapper {
         display: none;
     }
 
