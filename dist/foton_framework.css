@@ -367,7 +367,7 @@ footer {
     display: block;
     width: 100%;
     background: var(--bg-page);
-    padding: 0;
+    padding: 1em;
     position: relative;
     z-index: 10;
 }
