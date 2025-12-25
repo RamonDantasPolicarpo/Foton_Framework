@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FÓTON FRAMEWORK v2.0 (Refactored)
+    FÓTON FRAMEWORK v2.0 (Refactored)
    ========================================================================== */
 
 /* --- VARIÁVEIS GLOBAIS --- */
@@ -11,6 +11,10 @@
     /* 2. Backgrounds */
     --bg-page: #f0f0f8;
     --bg-surface: #ffffff;
+    --bg-white: #f0f0f8;
+    --bg-white-alt: #ffffff;
+    --bg-dark: #121212;
+    --bg-dark-alt: #1e1e24;
     --dark: #1d1e25;
     --hero-bg: radial-gradient(#eef 1px, transparent 1px), linear-gradient(180deg, #f9f9ff 0%, #fff 100%);
 
@@ -23,6 +27,8 @@
     --txt-black-sec: #60697b;
 
     --border-color: #e2e8f0;
+    --btn-border-dark: rgba(0, 0, 0, 0.300);
+    --btn-border-light: rgba(255, 255, 255, 0.200);
 
     /* 4. Cores Semânticas */
     --info: #3b82f6;
@@ -46,7 +52,11 @@
     --grad-urban: linear-gradient(135deg, #40aa54, #64748b);
     --grad-blue: linear-gradient(135deg, #3b82f6, #94a3b8);
 
-    /* 7. Fontes */
+    /* 7. Botões */
+    --btn-gray-bg: #e9e9ed;
+    --btn-gray-hover-bg: #bebec2;
+
+    /* 8. Fontes */
     --font-primary: 'Manrope', sans-serif;
     --font-secondary: 'Poppins', sans-serif;
 }
@@ -198,12 +208,13 @@ h6 {
     align-items: center;
     padding: 1em;
     margin: auto;
-    position: fixed;
+    position: sticky;
+    top: 0;
     z-index: 100;
     width: 100%;
     flex-direction: column;
     backdrop-filter: blur(10px);
-    background: var(--bg-surface);
+    background: rgba(255, 255, 255, 0.9);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -508,6 +519,10 @@ select.ft-input {
     padding-right: 2.5rem;
 }
 
+[data-theme="dark"] select.ft-input {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
 .ft-input:focus {
     outline: none;
     border-color: var(--primary);
@@ -715,81 +730,73 @@ textarea.ft-input {
 }
 
 .ft-btn-primary {
-    background-color: #e9e9ed;
-    color: var(--txt-black-sec);
-    border: 2px solid #d1d1d1;
+    background-color: var(--btn-gray-bg);
+    color: var(--bg-dark);
+    border: 2px solid var(--btn-border-dark);
 }
 
 .ft-btn-primary:hover {
-    background-color: #d5d5d5;
-    color: var(--txt-black);
+    background-color: var(--btn-gray-hover-bg);
     transform: translateY(-2px);
-    border-color: #bababa;
 }
 
 .ft-btn-dark {
     background: var(--dark);
     color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.159);
+    border: 2px solid var(--btn-border-light);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .ft-btn-dark:hover {
     background: #2a2b35;
-    border-color: rgba(255, 255, 255, 0.159);
     transform: translateY(-2px);
-    color: #fff;
 }
 
 .ft-btn-danger {
     background: var(--danger);
     color: #fff;
-    border: 2px solid rgba(0, 0, 0, 0.159);
+    border: 2px solid var(--btn-border-dark);
     box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
 }
 
 .ft-btn-danger:hover {
     background: #dc2626;
-    border-color: rgba(0, 0, 0, 0.159);
     transform: translateY(-2px);
 }
 
 .ft-btn-success {
     background: var(--success);
     color: #fff;
-    border: 2px solid rgba(0, 0, 0, 0.159);
+    border: 2px solid var(--btn-border-dark);
     box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
 }
 
 .ft-btn-success:hover {
     background: #059669;
-    border-color: rgba(0, 0, 0, 0.159);
     transform: translateY(-2px);
 }
 
 .ft-btn-warning {
     background: var(--warning);
     color: #fff;
-    border: 2px solid rgba(0, 0, 0, 0.159);
+    border: 2px solid var(--btn-border-dark);
     box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
 }
 
 .ft-btn-warning:hover {
     background: #d97706;
-    border-color: rgba(0, 0, 0, 0.159);
     transform: translateY(-2px);
 }
 
 .ft-btn-info {
     background: var(--info);
     color: #fff;
-    border: 2px solid rgba(0, 0, 0, 0.159);
+    border: 2px solid var(--btn-border-dark);
     box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
 }
 
 .ft-btn-info:hover {
     background: #2563eb;
-    border-color: rgba(0, 0, 0, 0.159);
     transform: translateY(-2px);
 }
 

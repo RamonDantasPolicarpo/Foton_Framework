@@ -78,25 +78,22 @@ function initMobileMenu() {
     }
 }
 
-// --- 3. Dark Mode Toggle (Correção do Clone) ---
+// --- 3. Dark Mode Toggle ---
 function initThemeToggle() {
     const toggleInput = document.getElementById('darkModeSwitch');
     const html = document.documentElement;
 
     if (!toggleInput) return;
 
-    // AJUSTE 2: Clona PRIMEIRO para limpar listeners antigos
     const newInput = toggleInput.cloneNode(true);
     toggleInput.parentNode.replaceChild(newInput, toggleInput);
 
-    // Agora define o estado visual no NOVO elemento
     if (html.getAttribute('data-theme') === 'dark') {
         newInput.checked = true;
     } else {
         newInput.checked = false;
     }
 
-    // Adiciona o listener no NOVO elemento
     newInput.addEventListener('change', () => {
         const theme = newInput.checked ? 'dark' : 'light';
         html.setAttribute('data-theme', theme);
@@ -104,10 +101,16 @@ function initThemeToggle() {
     });
 }
 
-// --- 4. Utilitários ---
+// --- 4. Utilitários (Atualizado para usar Foton.showToast) ---
 function copyColor(color) {
     navigator.clipboard.writeText(color).then(() => {
-        if (typeof showToast === 'function') showToast(`Copiado: ${color}`);
+        // Verifica se o namespace e a função existem
+        if (typeof Foton !== 'undefined' && typeof Foton.showToast === 'function') {
+            Foton.showToast(`Copiado: ${color}`);
+        } else if (typeof showToast === 'function') {
+            // Fallback para versão antiga caso o cache não tenha atualizado
+            showToast(`Copiado: ${color}`);
+        }
     });
 }
 
@@ -118,5 +121,11 @@ function downloadCSS() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    if (typeof showToast === 'function') showToast('Download iniciado!');
+
+    // Verifica se o namespace e a função existem
+    if (typeof Foton !== 'undefined' && typeof Foton.showToast === 'function') {
+        Foton.showToast('Download iniciado!');
+    } else if (typeof showToast === 'function') {
+        showToast('Download iniciado!');
+    }
 }
