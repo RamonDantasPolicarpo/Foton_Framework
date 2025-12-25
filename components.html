@@ -11,6 +11,10 @@
             href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Prism.js para Highlighting Código -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+            rel="stylesheet" />
 
         <!-- Inicializador do tema -->
         <script src="docs/script/theme_init.js"></script>
@@ -49,9 +53,8 @@
                             modificador de estilo. A tag pode ser
                             <code>&lt;button&gt;</code> ou
                             <code>&lt;a&gt;</code>. Os botões possuem transições
-                            suaves,
-                            estados
-                            de hover automáticos e reset de estilos nativos.
+                            suaves, estados de hover automáticos e reset de
+                            estilos nativos.
                         </p>
 
                         <div class="preview-box"
@@ -63,20 +66,16 @@
                             <button
                                 class="ft-btn ft-btn-dark">.ft-btn-dark</button>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Botão com gradiente da marca (Destaque
-                            Principal) --&gt;
-                            &lt;button class="ft-btn ft-btn-gradient"&gt;Ação
-                            Principal&lt;/button&gt;
 
-                            &lt;!-- Botão secundário/neutro (Fundo cinza claro)
-                            --&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-primary"&gt;Cancelar&lt;/button&gt;
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Botão com gradiente da marca (Destaque Principal) --&gt;
+&lt;button class="ft-btn ft-btn-gradient"&gt;Ação Principal&lt;/button&gt;
 
-                            &lt;!-- Botão sólido escuro (Contraste alto) --&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-dark"&gt;Dark&lt;/button&gt;</div>
+&lt;!-- Botão secundário/neutro (Fundo cinza claro) --&gt;
+&lt;button class="ft-btn ft-btn-primary"&gt;Cancelar&lt;/button&gt;
+
+&lt;!-- Botão sólido escuro (Contraste alto) --&gt;
+&lt;button class="ft-btn ft-btn-dark"&gt;Dark&lt;/button&gt;</code></pre>
 
                         <h4>Botões Semânticos</h4>
                         <p>Use cores semânticas para indicar o feedback ou
@@ -92,16 +91,13 @@
                             <button class="ft-btn ft-btn-danger">Danger</button>
                             <button class="ft-btn ft-btn-info">Info</button>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Classes Semânticas --&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-success"&gt;Success&lt;/button&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-warning"&gt;Warning&lt;/button&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-danger"&gt;Danger&lt;/button&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-info"&gt;Info&lt;/button&gt;</div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Classes Semânticas --&gt;
+&lt;button class="ft-btn ft-btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="ft-btn ft-btn-warning"&gt;Warning&lt;/button&gt;
+&lt;button class="ft-btn ft-btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="ft-btn ft-btn-info"&gt;Info&lt;/button&gt;</code></pre>
 
                         <h4>Botões Outline (Borda)</h4>
                         <p>Para interfaces mais leves e secundárias, use as
@@ -133,32 +129,23 @@
                                     Translucent</button>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Outlines Coloridos --&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-outline-success"&gt;Success&lt;/button&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-outline-warning"&gt;Warning&lt;/button&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-outline-danger"&gt;Danger&lt;/button&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-outline-info"&gt;Info&lt;/button&gt;
 
-                            &lt;!-- Translúcidos (Fundo Transparente) --&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-outline-dark"&gt;Dark
-                            Outline&lt;/button&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-outline-white"&gt;White
-                            Outline&lt;/button&gt;</div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Outlines Coloridos --&gt;
+&lt;button class="ft-btn ft-btn-outline-success"&gt;Success&lt;/button&gt;
+&lt;button class="ft-btn ft-btn-outline-warning"&gt;Warning&lt;/button&gt;
+&lt;button class="ft-btn ft-btn-outline-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="ft-btn ft-btn-outline-info"&gt;Info&lt;/button&gt;
+
+&lt;!-- Translúcidos (Fundo Transparente) --&gt;
+&lt;button class="ft-btn ft-btn-outline-dark"&gt;Dark Outline&lt;/button&gt;
+&lt;button class="ft-btn ft-btn-outline-white"&gt;White Outline&lt;/button&gt;</code></pre>
 
                         <h4>Links e Tamanhos</h4>
                         <p>Adicione <code>.ft-btn-sm</code> para botões
-                            compactos
-                            (padding reduzido e fonte menor) ou
+                            compactos (padding reduzido e fonte menor) ou
                             <code>.ft-btn-block</code> para ocupar 100% da
-                            largura
-                            do container pai (display flex). Para links
+                            largura do container pai (display flex). Para links
                             que
                             parecem texto mas têm comportamento de botão, use
                             <code>.ft-btn-link</code>.
@@ -175,21 +162,17 @@
                                 class="ft-btn ft-btn-block ft-btn-primary">Botão
                                 Bloco (.ft-btn-block)</a>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Tamanhos --&gt;
-                            &lt;a href="#"
-                            class="ft-btn ft-btn-sm ft-btn-dark"&gt;Pequeno&lt;/a&gt;
-                            &lt;a href="#" class="ft-btn ft-btn-link"&gt;Estilo
-                            Link&lt;/a&gt;
 
-                            &lt;!-- Bloco (Full Width) --&gt;
-                            &lt;a href="#"
-                            class="ft-btn ft-btn-block ft-btn-primary"&gt;Botão
-                            de
-                            Bloco&lt;/a&gt;</div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Tamanhos --&gt;
+&lt;a href="#" class="ft-btn ft-btn-sm ft-btn-dark"&gt;Pequeno&lt;/a&gt;
+&lt;a href="#" class="ft-btn ft-btn-link"&gt;Estilo Link&lt;/a&gt;
+
+&lt;!-- Bloco (Full Width) --&gt;
+&lt;a href="#" class="ft-btn ft-btn-block ft-btn-primary"&gt;Botão de Bloco&lt;/a&gt;</code></pre>
 
                         <!-- =========================================
-                     DROPDOWNS (MOVIDO)
+                     DROPDOWNS
                      ========================================= -->
                         <h3 id="ft-dropdowns"
                             style="margin-top: 4rem;">Dropdowns</h3>
@@ -224,37 +207,31 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;div class="ft-dropdown"&gt;
-                            &lt;!-- Gatilho com ícone --&gt;
-                            &lt;button class="ft-btn ft-btn-primary"
-                            data-toggle="ft-popover"&gt;
-                            Menu &lt;i
-                            class="fa-solid fa-chevron-down"&gt;&lt;/i&gt;
-                            &lt;/button&gt;
 
-                            &lt;!-- Lista de Itens --&gt;
-                            &lt;ul class="ft-dropdown-menu"&gt;
-                            &lt;li&gt;&lt;a class="ft-dropdown-item"
-                            href="#"&gt;Item 1&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a class="ft-dropdown-item"
-                            href="#"&gt;Item 2&lt;/a&gt;&lt;/li&gt;
-                            &lt;!-- Divisor --&gt;
-                            &lt;li class="ft-dropdown-div"&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a class="ft-dropdown-item"
-                            href="#"&gt;Sair&lt;/a&gt;&lt;/li&gt;
-                            &lt;/ul&gt;
-                            &lt;/div&gt;</div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="ft-dropdown"&gt;
+    &lt;!-- Gatilho com ícone --&gt;
+    &lt;button class="ft-btn ft-btn-primary" data-toggle="ft-popover"&gt;
+        Menu &lt;i class="fa-solid fa-chevron-down"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+
+    &lt;!-- Lista de Itens --&gt;
+    &lt;ul class="ft-dropdown-menu"&gt;
+        &lt;li&gt;&lt;a class="ft-dropdown-item" href="#"&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="ft-dropdown-item" href="#"&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+        &lt;!-- Divisor --&gt;
+        &lt;li class="ft-dropdown-div"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="ft-dropdown-item" href="#"&gt;Sair&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- =========================================
-                        POPOVERS & TOOLTIPS (MOVIDO)
+                        POPOVERS & TOOLTIPS
                         ========================================= -->
                         <h3 id="ft-popovers" style="margin-top: 4rem;">Popovers
-                            &
-                            Tooltips</h3>
+                            & Tooltips</h3>
                         <p>Elementos flutuantes para informações contextuais.
-                            <strong>Tooltips</strong> são ativados via
-                            hover e
+                            <strong>Tooltips</strong> são ativados via hover e
                             implementados com CSS puro usando o atributo
                             <code>data-tooltip</code>.
                             <strong>Popovers</strong>
@@ -262,13 +239,11 @@
                             completa e o atributo
                             <code>data-toggle="ft-popover"</code> no botão para
                             que
-                            o JavaScript gerencie a abertura e o
-                            fechamento
+                            o JavaScript gerencie a abertura e o fechamento
                             ao clicar fora.
                         </p>
 
-                        <div class="preview-box"
-                            style="overflow: visible;">
+                        <div class="preview-box" style="overflow: visible;">
                             <!-- Tooltip -->
                             <h2>Teste de Tooltip</h2>
                             <p class="ft-text-muted">
@@ -310,12 +285,10 @@
                             </p>
 
                             <div class="ft-flex-container">
-
                                 <!-- Popover Esquerda -->
                                 <div class="ft-popover-container">
                                     <button class="ft-btn ft-btn-info"
-                                        data-toggle="popover"
-                                        data-pos="left">
+                                        data-toggle="popover" data-pos="left">
                                         Popover Esquerda
                                     </button>
                                     <div class="ft-popover-content">
@@ -331,8 +304,7 @@
                                 <!-- Popover Topo -->
                                 <div class="ft-popover-container">
                                     <button class="ft-btn ft-btn-primary"
-                                        data-toggle="popover"
-                                        data-pos="top">
+                                        data-toggle="popover" data-pos="top">
                                         Popover Topo
                                     </button>
                                     <div class="ft-popover-content">
@@ -348,8 +320,7 @@
                                 <!-- Popover Baixo -->
                                 <div class="ft-popover-container">
                                     <button class="ft-btn ft-btn-success"
-                                        data-toggle="popover"
-                                        data-pos="bottom">
+                                        data-toggle="popover" data-pos="bottom">
                                         Popover Baixo
                                     </button>
                                     <div class="ft-popover-content">
@@ -363,8 +334,7 @@
                                 <!-- Popover Direita -->
                                 <div class="ft-popover-container">
                                     <button class="ft-btn ft-btn-dark"
-                                        data-toggle="popover"
-                                        data-pos="right">
+                                        data-toggle="popover" data-pos="right">
                                         Popover Direita
                                     </button>
                                     <div class="ft-popover-content">
@@ -376,25 +346,21 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Tooltip (CSS Puro) --&gt;
-                            &lt;button
-                            data-tooltip="Texto..."&gt;Hover&lt;/button&gt;
 
-                            &lt;!-- Popover (Requer container relativo) --&gt;
-                            &lt;div class="ft-popover-container"&gt;
-                            &lt;button
-                            data-toggle="ft-popover"&gt;Clique&lt;/button&gt;
-                            &lt;div class="ft-popover-content"&gt;
-                            &lt;span
-                            class="ft-popover-header"&gt;Título&lt;/span&gt;
-                            &lt;div class="ft-popover-body"&gt;Conteúdo do
-                            ft-popover...&lt;/div&gt;
-                            &lt;/div&gt;
-                            &lt;/div&gt;</div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Tooltip (CSS Puro) --&gt;
+&lt;button data-tooltip="Texto..."&gt;Hover&lt;/button&gt;
+
+&lt;!-- Popover (Requer container relativo) --&gt;
+&lt;div class="ft-popover-container"&gt;
+    &lt;button data-toggle="ft-popover"&gt;Clique&lt;/button&gt;
+    &lt;div class="ft-popover-content"&gt;
+        &lt;span class="ft-popover-header"&gt;Título&lt;/span&gt;
+        &lt;div class="ft-popover-body"&gt;Conteúdo do ft-popover...&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- TOGGLE SWITCH -->
                         <h3 id="toggle" style="margin-top: 4rem;">Toggle
@@ -414,16 +380,16 @@
                                     Notificações</span>
                             </label>
                         </div>
-                        <div class="code-block">
-                            &lt;label class="ft-toggle"&gt;
-                            &lt;input type="checkbox"&gt;
-                            &lt;div
-                            class="ft-toggle-track"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
-                            &lt;span&gt;Label do Switch&lt;/span&gt;
-                            &lt;/label&gt;</div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;label class="ft-toggle"&gt;
+    &lt;input type="checkbox"&gt;
+    &lt;div class="ft-toggle-track"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;span&gt;Label do Switch&lt;/span&gt;
+&lt;/label&gt;</code></pre>
 
                         <!-- =========================================
-                        NOTIFICAÇÕES (NOVO)
+                        NOTIFICAÇÕES
                         ========================================= -->
                         <h3 id="notifications"
                             style="margin-top: 4rem;">Notificações</h3>
@@ -468,22 +434,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Card de Notificação --&gt;
-                            &lt;div class="ft-notification-card"&gt;
-                            &lt;div class="icon-box"&gt;&lt;i
-                            class="fa-solid fa-envelope"&gt;&lt;/i&gt;&lt;/div&gt;
-                            &lt;div&gt;
-                            &lt;div&gt;Título&lt;/div&gt;
-                            &lt;div&gt;Descrição...&lt;/div&gt;
-                            &lt;/div&gt;
-                            &lt;/div&gt;
 
-                            &lt;!-- Toast Flutuante --&gt;
-                            &lt;div class="ft-toast"&gt;
-                            &lt;span class="dot success"&gt;&lt;/span&gt;
-                            &lt;span&gt;Mensagem&lt;/span&gt;
-                            &lt;/div&gt;</div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Card de Notificação --&gt;
+&lt;div class="ft-notification-card"&gt;
+    &lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-envelope"&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div&gt;
+        &lt;div&gt;Título&lt;/div&gt;
+        &lt;div&gt;Descrição...&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Toast Flutuante --&gt;
+&lt;div class="ft-toast"&gt;
+    &lt;span class="dot success"&gt;&lt;/span&gt;
+    &lt;span&gt;Mensagem&lt;/span&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- =========================================
                         ALERTAS
@@ -497,8 +463,7 @@
                             <code>.ft-alert-warning</code>). O botão de fechar
                             requer a classe
                             <code>.ft-alert-close</code> e a funcionalidade de
-                            "dismiss" é gerenciada automaticamente pelo
-                            script
+                            "dismiss" é gerenciada automaticamente pelo script
                             <code>foton_scripts.js</code>.
                         </p>
 
@@ -544,23 +509,21 @@
                                     ft-alert-neutral.</div>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;div class="ft-alert ft-alert-primary"&gt;
-                            &lt;!-- Ícone opcional --&gt;
-                            &lt;i
-                            class="fa-solid fa-check ft-alert-icon"&gt;&lt;/i&gt;
 
-                            &lt;!-- Conteúdo --&gt;
-                            &lt;div&gt;
-                            &lt;span
-                            class="ft-alert-heading"&gt;Título&lt;/span&gt;
-                            Mensagem de corpo.
-                            &lt;/div&gt;
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="ft-alert ft-alert-primary"&gt;
+    &lt;!-- Ícone opcional --&gt;
+    &lt;i class="fa-solid fa-check ft-alert-icon"&gt;&lt;/i&gt;
 
-                            &lt;!-- Botão de fechar (JS automático) --&gt;
-                            &lt;button class="ft-alert-close"&gt;&lt;i
-                            class="fa-solid fa-xmark"&gt;&lt;/i&gt;&lt;/button&gt;
-                            &lt;/div&gt;</div>
+    &lt;!-- Conteúdo --&gt;
+    &lt;div&gt;
+        &lt;span class="ft-alert-heading"&gt;Título&lt;/span&gt;
+        Mensagem de corpo.
+    &lt;/div&gt;
+
+    &lt;!-- Botão de fechar (JS automático) --&gt;
+    &lt;button class="ft-alert-close"&gt;&lt;i class="fa-solid fa-xmark"&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- =========================================
                         BADGES
@@ -570,8 +533,7 @@
                             categorias. A classe base <code>.ft-badge</code>
                             aplica
                             padding e alinhamento. Combine com cores contextuais
-                            (ex: <code>.ft-badge-success</code>) para
-                            alterar
+                            (ex: <code>.ft-badge-success</code>) para alterar
                             o fundo e a cor do texto. Adicione
                             <code>.ft-badge-pill</code> para bordas totalmente
                             arredondadas
@@ -609,29 +571,25 @@
                                     class="ft-badge ft-badge-pill ft-badge-neutral">Neutral</span>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Estilo Padrão (Canto levemente arredondado)
-                            --&gt;
-                            &lt;span
-                            class="ft-badge ft-badge-primary"&gt;Texto&lt;/span&gt;
 
-                            &lt;!-- Estilo Pill (Totalmente arredondado) --&gt;
-                            &lt;span
-                            class="ft-badge ft-badge-pill ft-badge-success"&gt;Arredondado&lt;/span&gt;</div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Estilo Padrão (Canto levemente arredondado) --&gt;
+&lt;span class="ft-badge ft-badge-primary"&gt;Texto&lt;/span&gt;
+
+&lt;!-- Estilo Pill (Totalmente arredondado) --&gt;
+&lt;span class="ft-badge ft-badge-pill ft-badge-success"&gt;Arredondado&lt;/span&gt;</code></pre>
 
                         <!-- =========================================
                         AVATARES
                         ========================================= -->
                         <h3 id="avatars" style="margin-top: 4rem;">Avatares</h3>
                         <p>Componente para imagens de perfil. A classe base
-                            <code>.ft-avatar</code> cria um círculo com
-                            overflow
+                            <code>.ft-avatar</code> cria um círculo com overflow
                             hidden. Use as classes de tamanho para ajustar as
                             dimensões: <code>.ft-avatar-sm</code> (32px),
                             <code>.ft-avatar-md</code> (48px),
                             <code>.ft-avatar-lg</code> (64px) ou
-                            <code>.ft-avatar-xl</code>
-                            (96px).
+                            <code>.ft-avatar-xl</code> (96px).
                             Para agrupar ft-avatares, envolva-os em um container
                             <code>.ft-avatar-group</code>.
                         </p>
@@ -659,24 +617,21 @@
                                         src="https://i.pravatar.cc/150?img=56"
                                         alt="User"></div>
                                 <div class="ft-avatar ft-avatar-md"
-                                    style="background: #e2e8f0; font-size: 12px; font-weight: 700;">+3
-                                </div>
+                                    style="background: #e2e8f0; font-size: 12px; font-weight: 700;">+3</div>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Avatar com Imagem --&gt;
-                            &lt;div class="ft-avatar ft-avatar-md"&gt;
-                            &lt;img src="foto.jpg" alt="Alt text"&gt;
-                            &lt;/div&gt;
 
-                            &lt;!-- Grupo Sobreposto (Hover animation inclusa)
-                            --&gt;
-                            &lt;div class="ft-avatar-group"&gt;
-                            &lt;div
-                            class="ft-avatar ft-avatar-md"&gt;...&lt;/div&gt;
-                            &lt;div
-                            class="ft-avatar ft-avatar-md"&gt;...&lt;/div&gt;
-                            &lt;/div&gt;</div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Avatar com Imagem --&gt;
+&lt;div class="ft-avatar ft-avatar-md"&gt;
+    &lt;img src="foto.jpg" alt="Alt text"&gt;
+&lt;/div&gt;
+
+&lt;!-- Grupo Sobreposto (Hover animation inclusa) --&gt;
+&lt;div class="ft-avatar-group"&gt;
+    &lt;div class="ft-avatar ft-avatar-md"&gt;...&lt;/div&gt;
+    &lt;div class="ft-avatar ft-avatar-md"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- =========================================
                         TABELAS
@@ -701,10 +656,10 @@
                                     style="margin-bottom: 0;">
                                     <thead>
                                         <tr>
-                                            <th
+                                            <th scope="col"
                                                 style="padding-left: 2rem;">Projeto</th>
-                                            <th>Status</th>
-                                            <th
+                                            <th scope="col">Status</th>
+                                            <th scope="col"
                                                 style="text-align: right; padding-right: 2rem;">Ações</th>
                                         </tr>
                                     </thead>
@@ -736,23 +691,24 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;div class="ft-table-responsive"&gt;
-                            &lt;table class="ft-table table-hover"&gt;
-                            &lt;thead&gt;
-                            &lt;tr&gt;
-                            &lt;th&gt;Cabeçalho&lt;/th&gt;
-                            &lt;th&gt;...&lt;/th&gt;
-                            &lt;/tr&gt;
-                            &lt;/thead&gt;
-                            &lt;tbody&gt;
-                            &lt;tr&gt;
-                            &lt;td&gt;Dado&lt;/td&gt;
-                            &lt;td&gt;...&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;/tbody&gt;
-                            &lt;/table&gt;
-                            &lt;/div&gt;</div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="ft-table-responsive"&gt;
+    &lt;table class="ft-table table-hover"&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th scope="col"&gt;Cabeçalho&lt;/th&gt;
+                &lt;th scope="col"&gt;...&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Dado&lt;/td&gt;
+                &lt;td&gt;...&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- =========================================
                         NAVEGAÇÃO
@@ -775,24 +731,23 @@
                                 </ol>
                             </nav>
                         </div>
-                        <div class="code-block">
-                            &lt;nav aria-label="ft-breadcrumb"&gt;
-                            &lt;ol class="ft-breadcrumb"&gt;
-                            &lt;li class="ft-breadcrumb-item"&gt;&lt;a
-                            href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-                            &lt;li
-                            class="ft-breadcrumb-item active"&gt;Atual&lt;/li&gt;
-                            &lt;/ol&gt;
-                            &lt;/nav&gt;</div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;nav aria-label="ft-breadcrumb"&gt;
+    &lt;ol class="ft-breadcrumb"&gt;
+        &lt;li class="ft-breadcrumb-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="ft-breadcrumb-item active"&gt;Atual&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
 
                         <!-- =========================================
                         CARDS
                         ========================================= -->
                         <h3 style="margin-top: 4rem;">Cards</h3>
                         <p>Container flexível e extensível com borda, sombra
-                            suave e padding padrão. Use <code>.</code>
-                            como
-                            wrapper principal e <code>.-body</code> para o
+                            suave e padding padrão. Use <code>.ft-card</code>
+                            como wrapper principal e <code>.ft-card-body</code>
+                            para o
                             conteúdo interno, garantindo espaçamento
                             consistente.</p>
 
@@ -800,7 +755,6 @@
                         <div class="preview-box" style="background: #f8f9fa;">
                             <div class="ft-grid"
                                 style="gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-
                                 <!-- Card Padrão -->
                                 <div class="ft-card">
                                     <div class="ft-card-body">
@@ -815,8 +769,8 @@
                                 <div class="ft-card ft-card-highlight">
                                     <div class="ft-card-body">
                                         <h3>Destaque</h3>
-                                        <p>Use <code>.-highlight</code> para
-                                            bordas coloridas e tag
+                                        <p>Use <code>.ft-card-highlight</code>
+                                            para bordas coloridas e tag
                                             "Popular".</p>
                                         <a href="#"
                                             class="ft-btn ft-btn-sm ft-btn-gradient">Ação</a>
@@ -824,37 +778,35 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Card Simples --&gt;
-                            &lt;div class=""&gt;
-                            &lt;div class="ft-card-body"&gt;
-                            &lt;h3&gt;Título&lt;/h3&gt;
-                            &lt;p&gt;Conteúdo...&lt;/p&gt;
-                            &lt;/div&gt;
-                            &lt;/div&gt;
 
-                            &lt;!-- Card Destacado (Borda colorida + Tag
-                            Popular) --&gt;
-                            &lt;div class=" -highlight"&gt;
-                            &lt;div class="ft-card-body"&gt;...&lt;/div&gt;
-                            &lt;/div&gt;</div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Card Simples --&gt;
+&lt;div class="ft-card"&gt;
+    &lt;div class="ft-card-body"&gt;
+        &lt;h3&gt;Título&lt;/h3&gt;
+        &lt;p&gt;Conteúdo...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Card Destacado (Borda colorida + Tag Popular) --&gt;
+&lt;div class="ft-card ft-card-highlight"&gt;
+    &lt;div class="ft-card-body"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
                         <h4>2. Variações Específicas</h4>
                         <p>Classes auxiliares para casos de uso comuns que
                             alteram o layout do card:</p>
                         <ul
                             style="margin-bottom: 20px; padding-left: 20px; color: var(--txt-sec);">
-                            <li><strong>.ft-card ft-card-blog:</strong> Remove o
-                                padding do
-                                topo para permitir imagens "full-width"
-                                (largura total) no cabeçalho.</li>
-                            <li><strong>.ft-card ft-card-profile:</strong>
-                                Centraliza todo
-                                o conteúdo e adiciona espaçamentos ideais
-                                para
+                            <li><strong>.ft-card-blog:</strong> Remove o padding
+                                do
+                                topo para permitir imagens "full-width" (largura
+                                total) no cabeçalho.</li>
+                            <li><strong>.ft-card-profile:</strong> Centraliza
+                                todo
+                                o conteúdo e adiciona espaçamentos ideais para
                                 avatares e nomes.</li>
-                            <li><strong>.ft-card ft-card-feature-row:</strong>
-                                Altera o
+                            <li><strong>.ft-card-feature-row:</strong> Altera o
                                 layout para horizontal (flex-row), ideal para
                                 listar funcionalidades com ícones à
                                 esquerda.</li>
@@ -862,27 +814,24 @@
 
                         <div class="preview-box" style="background: #f8f9fa;">
                             <div class="section-card-var">
-
                                 <!-- Card Blog -->
                                 <div class="ft-card ft-card-blog"
                                     style="width: 600px;">
                                     <img
                                         src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                        class="-img-top" alt="Cover">
+                                        class="ft-card-img-top" alt="Cover">
                                     <div class="ft-card-body">
                                         <h4>Card Blog</h4>
                                         <p
                                             style="font-size: 0.9rem; color: #666;">A
-                                            classe <code>.ft-card
-                                                ft-card-blog</code>
-                                            remove o
-                                            padding superior para imagens
-                                            full-width.</p>
+                                            classe <code>.ft-card-blog</code>
+                                            remove o padding superior para
+                                            imagens full-width.</p>
                                     </div>
                                 </div>
 
                                 <!-- Card Profile -->
-                                <div class=" ft-card ft-card-profile"
+                                <div class="ft-card ft-card-profile"
                                     style="width: 600px;">
                                     <div class="ft-avatar ft-avatar-xl">
                                         <img
@@ -896,7 +845,7 @@
                                 </div>
 
                                 <!-- Card Feature Row -->
-                                <div class=" ft-card ft-card-feature-row"
+                                <div class="ft-card ft-card-feature-row"
                                     style="width: 600px;">
                                     <span
                                         style="color: var(--primary); font-size: 24px;"><i
@@ -907,29 +856,27 @@
                                             texto.</p>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Card Blog (Imagem no topo) --&gt;
-                            &lt;div class=" ft-card ft-card-blog"&gt;
-                            &lt;img src="..." class="-img-top"&gt;
-                            &lt;div class="ft-card-body"&gt;...&lt;/div&gt;
-                            &lt;/div&gt;
 
-                            &lt;!-- Card Perfil (Centralizado) --&gt;
-                            &lt;div
-                            class=" ft-card ft-card-profile"&gt;...&lt;/div&gt;
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Card Blog (Imagem no topo) --&gt;
+&lt;div class="ft-card ft-card-blog"&gt;
+    &lt;img src="..." class="ft-card-img-top"&gt;
+    &lt;div class="ft-card-body"&gt;...&lt;/div&gt;
+&lt;/div&gt;
 
-                            &lt;!-- Feature Horizontal --&gt;
-                            &lt;div class=" ft-card ft-card-feature-row"&gt;
-                            &lt;span&gt;&lt;i
-                            class="icon"&gt;&lt;/i&gt;&lt;/span&gt;
-                            &lt;div&gt;
-                            &lt;h4&gt;Título&lt;/h4&gt;
-                            &lt;p&gt;Descrição&lt;/p&gt;
-                            &lt;/div&gt;
-                            &lt;/div&gt;</div>
+&lt;!-- Card Perfil (Centralizado) --&gt;
+&lt;div class="ft-card ft-card-profile"&gt;...&lt;/div&gt;
+
+&lt;!-- Feature Horizontal --&gt;
+&lt;div class="ft-card ft-card-feature-row"&gt;
+    &lt;span&gt;&lt;i class="icon"&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;div&gt;
+        &lt;h4&gt;Título&lt;/h4&gt;
+        &lt;p&gt;Descrição&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- =========================================
                         ACORDEÕES
@@ -964,23 +911,22 @@
                                 </div>
                             </details>
                         </div>
-                        <div class="code-block">
-                            &lt;details class="ft-accordion"&gt;
-                            &lt;summary&gt;Pergunta ou Título&lt;/summary&gt;
-                            &lt;div class="ft-accordion-body"&gt;
-                            Conteúdo oculto que será expandido...
-                            &lt;/div&gt;
-                            &lt;/details&gt;</div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;details class="ft-accordion"&gt;
+    &lt;summary&gt;Pergunta ou Título&lt;/summary&gt;
+    &lt;div class="ft-accordion-body"&gt;
+        Conteúdo oculto que será expandido...
+    &lt;/div&gt;
+&lt;/details&gt;</code></pre>
 
                         <!-- =========================================
                      PROGRESSO & SPINNERS
                      ========================================= -->
                         <h3 id="ft-progress" style="margin-top: 4rem;">Progresso
-                            &
-                            Carregamento</h3>
+                            & Carregamento</h3>
                         <p>Indicadores visuais de estado. As barras de
-                            ft-progresso
-                            suportam larguras percentuais e cores
+                            ft-progresso suportam larguras percentuais e cores
                             contextuais. Os ft-spinners são puramente CSS e
                             ideais
                             para indicar carregamento de dados ou ações
@@ -1011,33 +957,101 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Barra de Progresso --&gt;
-                            &lt;div class="ft-progress"&gt;
-                            &lt;div class="ft-progress-bar bg-success"
-                            style="width: 50%"&gt;50%&lt;/div&gt;
-                            &lt;/div&gt;
 
-                            &lt;!-- Spinners --&gt;
-                            &lt;div class="ft-spinner-border"&gt;&lt;/div&gt;
-                            &lt;div class="ft-spinner-pulse"&gt;&lt;/div&gt;
-                            &lt;div
-                            class="ft-spinner-dots"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Barra de Progresso --&gt;
+&lt;div class="ft-progress"&gt;
+    &lt;div class="ft-progress-bar bg-success" style="width: 50%"&gt;50%&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Spinners --&gt;
+&lt;div class="ft-spinner-border"&gt;&lt;/div&gt;
+&lt;div class="ft-spinner-pulse"&gt;&lt;/div&gt;
+&lt;div class="ft-spinner-dots"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;</code></pre>
+
+                        <!-- =========================================
+                         MODAIS
+                         ========================================= -->
+                        <h3 id="modals" style="margin-top: 4rem;">Modais</h3>
+                        <p>Janelas de sobreposição para conteúdo focado. Requer
+                            estrutura específica e atributos de data para
+                            funcionamento via JavaScript.</p>
+
+                        <div class="preview-box">
+                            <button class="ft-btn ft-btn-primary"
+                                data-toggle="modal"
+                                data-target="demoModal">Abrir Modal
+                                Exemplo</button>
+
+                            <!-- Estrutura do Modal (Injetada aqui para Demo) -->
+                            <div class="ft-modal" id="demoModal">
+                                <div class="ft-modal-dialog">
+                                    <div class="ft-modal-content">
+                                        <div class="ft-modal-header">
+                                            <h4 class="ft-modal-title">Título do
+                                                Modal</h4>
+                                            <button class="ft-close"
+                                                data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="ft-modal-body">
+                                            <p>Este é o conteúdo do corpo do
+                                                modal. Você pode colocar texto,
+                                                formulários ou qualquer outro
+                                                elemento HTML aqui.</p>
+                                        </div>
+                                        <div class="ft-modal-footer">
+                                            <button
+                                                class="ft-btn ft-btn-sm ft-btn-primary"
+                                                data-dismiss="modal">Fechar</button>
+                                            <button
+                                                class="ft-btn ft-btn-sm ft-btn-gradient">Salvar
+                                                Alterações</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Botão Gatilho (data-target deve corresponder ao ID) --&gt;
+&lt;button class="ft-btn" data-toggle="modal" data-target="meuModal"&gt;
+    Abrir Modal
+&lt;/button&gt;
+
+&lt;!-- Estrutura do Modal --&gt;
+&lt;div class="ft-modal" id="meuModal"&gt;
+  &lt;div class="ft-modal-dialog"&gt;
+    &lt;div class="ft-modal-content"&gt;
+    
+      &lt;div class="ft-modal-header"&gt;
+        &lt;h4 class="ft-modal-title"&gt;Título do Modal&lt;/h4&gt;
+        &lt;button class="ft-close" data-dismiss="modal"&gt;&times;&lt;/button&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="ft-modal-body"&gt;
+        &lt;p&gt;Conteúdo do modal aqui...&lt;/p&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="ft-modal-footer"&gt;
+        &lt;button class="ft-btn ft-btn-sm" data-dismiss="modal"&gt;Fechar&lt;/button&gt;
+        &lt;button class="ft-btn ft-btn-sm ft-btn-primary"&gt;Salvar&lt;/button&gt;
+      &lt;/div&gt;
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- =========================================
                      ESTRUTURA DE PÁGINA (NAVBAR, HERO, FOOTER)
                      ========================================= -->
-                        <h2>Estrutura de Página
-                        </h2>
+                        <h2>Estrutura de Página</h2>
                         <p class="doc-subtitle">Componentes estruturais para
                             montar o layout macro do seu site.</p>
 
                         <!-- NAVBAR -->
                         <h3 id="ft-navbar">Navbar (Menu Superior)</h3>
                         <p>A barra de navegação é fixa no topo por padrão
-                            (<code>position: fixed</code> no CSS do
-                            framework).
+                            (<code>position: fixed</code> no CSS do framework).
                             Utilize um container flex interno para alinhar o
                             ft-logo e os links. O exemplo abaixo simula a
                             visualização.</p>
@@ -1062,29 +1076,23 @@
                                 </div>
                             </nav>
                         </div>
-                        <div class="code-block">
-                            &lt;nav class="ft-navbar"&gt;
-                            &lt;div style="display: flex; justify-content:
-                            space-between; align-items: center; width: 100%;
-                            max-width: 1200px; margin: auto; padding: 0
-                            20px;"&gt;
 
-                            &lt;!-- Logo --&gt;
-                            &lt;a href="#"
-                            class="ft-logo"&gt;Minha&lt;span&gt;Marca&lt;/span&gt;&lt;/a&gt;
+                        <pre
+                            class="code-block"><code class="language-html">&lt;nav class="ft-navbar"&gt;
+    &lt;div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: auto; padding: 0 20px;"&gt;
 
-                            &lt;!-- Menu Links --&gt;
-                            &lt;ul class="ft-navbar-menu"&gt;
-                            &lt;li&gt;&lt;a
-                            href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a
-                            href="#"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a href="#"
-                            class="ft-btn ft-btn-sm ft-btn-primary"&gt;Login&lt;/a&gt;&lt;/li&gt;
-                            &lt;/ul&gt;
+        &lt;!-- Logo --&gt;
+        &lt;a href="#" class="ft-logo"&gt;Minha&lt;span&gt;Marca&lt;/span&gt;&lt;/a&gt;
 
-                            &lt;/div&gt;
-                            &lt;/nav&gt;</div>
+        &lt;!-- Menu Links --&gt;
+        &lt;ul class="ft-navbar-menu"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="ft-btn ft-btn-sm ft-btn-primary"&gt;Login&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
 
                         <!-- TOP BAR -->
                         <h3 id="topbar">Top Bar</h3>
@@ -1101,12 +1109,12 @@
                                     class="ft-btn ft-btn-sm ft-btn-outline-white">Aproveitar</a>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;div class="ft-top-bar"&gt;
-                            Texto do anúncio...
-                            &lt;a href="#"
-                            class="ft-btn ft-btn-sm ft-btn-link"&gt;Link&lt;/a&gt;
-                            &lt;/div&gt;</div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="ft-top-bar"&gt;
+    Texto do anúncio...
+    &lt;a href="#" class="ft-btn ft-btn-sm ft-btn-link"&gt;Link&lt;/a&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- HERO SECTION -->
                         <h3 id="ft-hero" style="margin-top: 3rem;">Hero
@@ -1122,23 +1130,21 @@
                                 <div class="ft-hero-content">
                                     <span>Título de Impacto</span>
                                     <p>Subtítulo explicativo curto para engajar
-                                        o
-                                        usuário.</p>
+                                        o usuário.</p>
                                     <button class="ft-btn ft-btn-gradient">Call
-                                        to
-                                        Action</button>
+                                        to Action</button>
                                 </div>
                             </section>
                         </div>
-                        <div class="code-block">
-                            &lt;section class="ft-hero"&gt;
-                            &lt;div class="ft-hero-content"&gt;
-                            &lt;span&gt;Título Principal&lt;/span&gt;
-                            &lt;p&gt;Descrição...&lt;/p&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-gradient"&gt;Ação&lt;/button&gt;
-                            &lt;/div&gt;
-                            &lt;/section&gt;</div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;section class="ft-hero"&gt;
+    &lt;div class="ft-hero-content"&gt;
+        &lt;span&gt;Título Principal&lt;/span&gt;
+        &lt;p&gt;Descrição...&lt;/p&gt;
+        &lt;button class="ft-btn ft-btn-gradient"&gt;Ação&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
 
                         <!-- FOOTER -->
                         <h3 id="footer" style="margin-top: 3rem;">Footer</h3>
@@ -1157,19 +1163,17 @@
                                 </div>
                             </footer>
                         </div>
-                        <div class="code-block">
-                            &lt;footer
-                            style="padding: 3rem 0; background: #fff;"&gt;
-                            &lt;div class="container"
-                            style="text-align: center;"&gt;
-                            &lt;p&gt;© 2025 Todos os direitos
-                            reservados.&lt;/p&gt;
-                            &lt;div&gt;
-                            &lt;a href="#"&gt;Link 1&lt;/a&gt;
-                            &lt;a href="#"&gt;Link 2&lt;/a&gt;
-                            &lt;/div&gt;
-                            &lt;/div&gt;
-                            &lt;/footer&gt;</div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;footer style="padding: 3rem 0; background: #fff;"&gt;
+    &lt;div class="container" style="text-align: center;"&gt;
+        &lt;p&gt;© 2025 Todos os direitos reservados.&lt;/p&gt;
+        &lt;div&gt;
+            &lt;a href="#"&gt;Link 1&lt;/a&gt;
+            &lt;a href="#"&gt;Link 2&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
 
                     </div>
                 </main>
@@ -1183,6 +1187,9 @@
         <!-- Scripts -->
         <script src="/dist/foton_scripts.js"></script>
         <script src="/docs/script/docs_script.js"></script>
+        <!-- Script Prism.js -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     </body>
 
 </html>

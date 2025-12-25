@@ -11,6 +11,10 @@
             href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <!-- Prism.js Highlighting de Código -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+            rel="stylesheet" />
 
         <!-- Inicializador do tema -->
         <script src="docs/script/theme_init.js"></script>
@@ -39,13 +43,18 @@
                     <div id="tab-layout" class="tab-view page-fade-in">
                         <h1 class="doc-title">Layout & Grid</h1>
                         <p class="doc-subtitle">
-                            Classes utilitárias para estruturação de conteúdo responsivo.
+                            Classes utilitárias para estruturação de conteúdo
+                            responsivo.
                         </p>
 
                         <!-- GRID RESPONSIVO -->
                         <h3>Grid Automático</h3>
                         <p>
-                            A classe <code>.grid-responsive</code> utiliza CSS Grid com <code>auto-fit</code> e <code>minmax</code> para criar colunas que se adaptam automaticamente ao espaço disponível, sem necessidade de Media Queries manuais.
+                            A classe <code>.ft-grid</code> utiliza CSS Grid com
+                            <code>auto-fit</code> e <code>minmax</code> para
+                            criar colunas que se adaptam automaticamente ao
+                            espaço disponível, sem necessidade de Media Queries
+                            manuais.
                         </p>
 
                         <div class="preview-box">
@@ -60,18 +69,19 @@
                             </div>
                         </div>
 
-                        <div class="code-block">
-                            &lt;div class="grid-responsive"&gt;
-                            &lt;div&gt;Conteúdo 1&lt;/div&gt;
-                            &lt;div&gt;Conteúdo 2&lt;/div&gt;
-                            &lt;div&gt;Conteúdo 3&lt;/div&gt;
-                            &lt;/div&gt;
-                        </div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="ft-grid"&gt;
+    &lt;div&gt;Conteúdo 1&lt;/div&gt;
+    &lt;div&gt;Conteúdo 2&lt;/div&gt;
+    &lt;div&gt;Conteúdo 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- FLEX CONTAINER -->
                         <h3>Flex Container</h3>
-                        <p>A classe <code>.flex-container</code> utiliza Flexbox
-                            com wrap, ideal para listas de itens centralizados, galerias de ícones ou cards de funcionalidades.
+                        <p>A classe <code>.ft-flex-container</code> utiliza
+                            Flexbox
+                            com wrap, ideal para listas de itens centralizados,
+                            galerias de ícones ou cards de funcionalidades.
                         </p>
 
                         <div class="preview-box">
@@ -86,23 +96,26 @@
                             </div>
                         </div>
 
-                        <div class="code-block">
-                            &lt;div class="flex-container"&gt;
-                            &lt;!-- Seus elementos com largura definida --&gt;
-                            &lt;div style="width: 200px;"&gt;Item 1&lt;/div&gt;
-                            &lt;div style="width: 200px;"&gt;Item 2&lt;/div&gt;
-                            &lt;/div&gt;
-                        </div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="ft-flex-container"&gt;
+    &lt;!-- Seus elementos com largura definida --&gt;
+    &lt;div style="width: 200px;"&gt;Item 1&lt;/div&gt;
+    &lt;div style="width: 200px;"&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- SECTION DARK -->
                         <h3>Seções de Destaque</h3>
                         <p>
-                            A classe <code>.section-dark</code> cria um container escuro com bordas arredondadas e padding generoso, ideal para quebrar o ritmo da página ou destacar features importantes. Ela já centraliza o conteúdo e limita a largura.
+                            A classe <code>.ft-section-dark</code> cria um
+                            container escuro com bordas arredondadas e padding
+                            generoso, ideal para quebrar o ritmo da página ou
+                            destacar features importantes. Ela já centraliza o
+                            conteúdo e limita a largura.
                         </p>
 
                         <div class="preview-box">
-                            <section class="section-dark" style="margin: 0;">
-                                <div class="section-header"
+                            <section class="ft-section-dark" style="margin: 0;">
+                                <div class="ft-section-header"
                                     style="text-align: center; margin-bottom: 0;">
                                     <h2>Título da Seção</h2>
                                     <p style="margin-bottom: 0;">Subtítulo
@@ -111,27 +124,34 @@
                             </section>
                         </div>
 
-                        <div class="code-block">
-                            &lt;section class="section-dark"&gt;
-                            &lt;div class="section-header"&gt;
-                            &lt;h2&gt;Título&lt;/h2&gt;
-                            &lt;p&gt;Descrição...&lt;/p&gt;
-                            &lt;/div&gt;
-                            &lt;!-- Conteúdo da seção --&gt;
-                            &lt;/section&gt;</div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;section class="ft-section-dark"&gt;
+    &lt;div class="ft-section-header"&gt;
+        &lt;h2&gt;Título&lt;/h2&gt;
+        &lt;p&gt;Descrição...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- Conteúdo da seção --&gt;
+&lt;/section&gt;</code></pre>
 
                         <!-- FORM LAYOUTS (NOVA SEÇÃO DIDÁTICA) -->
-                        <h2 style="padding-top: 2em; border-top: 1px solid var(--border-color);">
+                        <h2
+                            style="padding-top: 2em; border-top: 1px solid var(--border-color);">
                             Layout de Formulários
                         </h2>
                         <p class="doc-subtitle">
-                            Aprenda a estruturar seus formulários utilizando CSS Grid e Flexbox nativos junto com as classes do framework.
+                            Aprenda a estruturar seus formulários utilizando CSS
+                            Grid e Flexbox nativos junto com as classes do
+                            framework.
                         </p>
 
                         <!-- Layout 1: Vertical -->
                         <h4>1. Pilha Vertical (Padrão)</h4>
                         <p>
-                            Os elementos de input nativos possuem largura automática. Ao adicionar a classe <code>.ft-input</code>, eles expandem para <strong>100% da largura</strong> do container pai, ideal para layouts móveis ou empilhados.
+                            Os elementos de input nativos possuem largura
+                            automática. Ao adicionar a classe
+                            <code>.ft-input</code>, eles expandem para
+                            <strong>100% da largura</strong> do container pai,
+                            ideal para layouts móveis ou empilhados.
                         </p>
                         <div class="preview-box">
                             <form>
@@ -145,21 +165,20 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Container .ft-form-group agrupa label e
-                            input
-                            --&gt;
-                            &lt;div class="ft-form-group"&gt;
-                            &lt;label class="ft-label"&gt;Email&lt;/label&gt;
-                            &lt;input type="email" class="ft-input"&gt;
-                            &lt;/div&gt;
-                        </div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Container .ft-form-group agrupa label e input --&gt;
+&lt;div class="ft-form-group"&gt;
+    &lt;label class="ft-label"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="ft-input"&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- Layout 2: Grid -->
-                        <h4>2. Grid de Colunas (Lado a
-                            Lado)</h4>
+                        <h4>2. Grid de Colunas (Lado a Lado)</h4>
                         <p>
-                            Para colocar campos lado a lado (ex: Nome e Sobrenome), envolva-os em uma <code>div</code> com <code>display: grid</code>. Você pode definir as colunas manualmente.
+                            Para colocar campos lado a lado (ex: Nome e
+                            Sobrenome), envolva-os em uma <code>div</code> com
+                            <code>display: grid</code>. Você pode definir as
+                            colunas manualmente.
                         </p>
                         <div class="preview-box">
                             <div
@@ -176,18 +195,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Grid de 2 colunas iguais --&gt;
-                            &lt;div
-                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"&gt;
-                            &lt;div class="ft-form-group"&gt;...&lt;/div&gt;
-                            &lt;div class="ft-form-group"&gt;...&lt;/div&gt;
-                            &lt;/div&gt;</div>
-
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Grid de 2 colunas iguais --&gt;
+&lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"&gt;
+    &lt;div class="ft-form-group"&gt;...&lt;/div&gt;
+    &lt;div class="ft-form-group"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- Layout 3: Inline Flex -->
-                        <h4>3. Layout Inline (Botão ao
-                            lado)</h4>
+                        <h4>3. Layout Inline (Botão ao lado)</h4>
                         <p>Use <code>display: flex</code> para alinhar um campo
                             de input com um botão. Use
                             <code>align-items: flex-end</code> para alinhar o
@@ -206,17 +222,14 @@
                                     class="ft-btn ft-btn-dark">Aplicar</button>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;div
-                            style="display: flex; gap: 10px; align-items: flex-end;"&gt;
-                            &lt;div class="ft-form-group"
-                            style="flex-grow: 1;"&gt;
-                            &lt;label class="ft-label"&gt;Cupom&lt;/label&gt;
-                            &lt;input type="text" class="ft-input"&gt;
-                            &lt;/div&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-dark"&gt;Aplicar&lt;/button&gt;
-                            &lt;/div&gt;</div>
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div style="display: flex; gap: 10px; align-items: flex-end;"&gt;
+    &lt;div class="ft-form-group" style="flex-grow: 1;"&gt;
+        &lt;label class="ft-label"&gt;Cupom&lt;/label&gt;
+        &lt;input type="text" class="ft-input"&gt;
+    &lt;/div&gt;
+    &lt;button class="ft-btn ft-btn-dark"&gt;Aplicar&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 
                     </div>
                 </main>
@@ -230,6 +243,8 @@
         <!-- Scripts -->
         <script src="/dist/foton_scripts.js"></script>
         <script src="/docs/script/docs_script.js"></script>
+        <!-- Prism.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     </body>
 
 </html>

@@ -11,6 +11,9 @@
             href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+            rel="stylesheet" />
 
         <!-- Inicializador do tema -->
         <script src="docs/script/theme_init.js"></script>
@@ -44,7 +47,7 @@
                         <!-- EXEMPLO 1 -->
                         <h3>1. Card de Newsletter</h3>
                         <div class="preview-box bg-offset flex-center">
-                            <div class=" -newsletter">
+                            <div class="card-newsletter">
                                 <div class="ft-card-body">
                                     <h3>Newsletter</h3>
                                     <p class="text-sec mb-md">Receba as
@@ -58,14 +61,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;div class=""
-                            style="align-items: center; text-align: center;"&gt;
-                            &lt;div class="ft-card-body"&gt;
-                            &lt;h3&gt;Newsletter&lt;/h3&gt;
-                            &lt;/div&gt;
-                            &lt;div class="ft-input-group"&gt;...&lt;/div&gt;
-                            &lt;/div&gt;</div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="card-newsletter"&gt;
+    &lt;div class="ft-card-body"&gt;
+        &lt;h3&gt;Newsletter&lt;/h3&gt;
+        &lt;p class="text-sec"&gt;Receba as novidades semanalmente.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="ft-input-group w-100"&gt;
+        &lt;input type="text" class="ft-input-field" placeholder="Seu melhor e-mail"&gt;
+        &lt;button class="ft-btn ft-btn-gradient"&gt;Assinar&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- EXEMPLO 2 -->
                         <h3>2. Banner de Download de App</h3>
@@ -92,6 +99,22 @@
                             </div>
                         </div>
 
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="cta-card"&gt;
+    &lt;div class="cta-content"&gt;
+        &lt;h2 class="section-title"&gt;Baixe o App&lt;/h2&gt;
+        &lt;p class="text-inverse-muted"&gt;Disponível para iOS e Android.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="cta-buttons"&gt;
+        &lt;button class="ft-btn ft-btn-outline-white flex-1"&gt;
+            &lt;i class="fa-brands fa-apple mr-sm"&gt;&lt;/i&gt; iOS
+        &lt;/button&gt;
+        &lt;button class="ft-btn ft-btn-outline-white flex-1"&gt;
+            &lt;i class="fa-brands fa-google-play mr-sm"&gt;&lt;/i&gt; Android
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
                         <!-- EXEMPLO 3: PAINEL DE PERFIL -->
                         <h3 class="mt-section">3. Painel de Configurações
                             (Perfil)</h3>
@@ -99,7 +122,7 @@
                             edição de perfil.</p>
 
                         <div class="preview-box bg-white">
-                            <div class=" max-w-800 mx-auto">
+                            <div class="max-w-800 mx-auto">
                                 <div class="ft-card-body">
                                     <div class="profile-header">
                                         <h3 class="mb-0">Editar Perfil</h3>
@@ -191,24 +214,45 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Estrutura do Painel de Perfil --&gt;
-                            &lt;div class=""&gt;
-                            &lt;div class="ft-card-body"&gt;
-                            &lt;!-- Header --&gt;
-                            &lt;div
-                            style="display: flex; justify-content: space-between;"&gt;...&lt;/div&gt;
 
-                            &lt;div class="profile-layout"&gt;
-                            &lt;!-- Avatar --&gt;
-                            &lt;div
-                            class="profile-ft-avatar-col"&gt;...&lt;/div&gt;
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="ft-card-body"&gt;
+    &lt;div class="profile-header"&gt;
+        &lt;h3&gt;Editar Perfil&lt;/h3&gt;
+        &lt;span class="ft-badge ft-badge-success"&gt;Conta Pro&lt;/span&gt;
+    &lt;/div&gt;
 
-                            &lt;!-- Form --&gt;
-                            &lt;div class="profile-form-col"&gt;...&lt;/div&gt;
-                            &lt;/div&gt;
-                            &lt;/div&gt;
-                            &lt;/div&gt;</div>
+    &lt;div class="profile-layout"&gt;
+        &lt;!-- Coluna Avatar --&gt;
+        &lt;div class="profile-avatar-col"&gt;
+            &lt;div class="ft-avatar ft-avatar-xl mb-md"&gt;
+                &lt;img src="..." alt="Profile"&gt;
+            &lt;/div&gt;
+            &lt;button class="ft-btn ft-btn-sm ft-btn-outline-info"&gt;Alterar&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Coluna Formulário --&gt;
+        &lt;div class="profile-form-col"&gt;
+            &lt;div class="grid-responsive gap-20 profile-form-grid"&gt;
+                &lt;div class="ft-form-group"&gt;
+                    &lt;label class="ft-label"&gt;Nome&lt;/label&gt;
+                    &lt;input type="text" class="ft-input" value="Enrico"&gt;
+                &lt;/div&gt;
+                &lt;div class="ft-form-group"&gt;
+                    &lt;label class="ft-label"&gt;Sobrenome&lt;/label&gt;
+                    &lt;input type="text" class="ft-input" value="Silva"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;!-- Outros campos... --&gt;
+            
+            &lt;div class="profile-actions"&gt;
+                &lt;button class="ft-btn ft-btn-outline-info"&gt;Salvar&lt;/button&gt;
+                &lt;button class="ft-btn ft-btn-outline-danger"&gt;Cancelar&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- EXEMPLO 4: CHECKOUT -->
                         <h3 class="mt-section">4. Widget de Checkout</h3>
@@ -305,14 +349,39 @@
 
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Grid Layout para Checkout --&gt;
-                            &lt;div class="grid-checkout"&gt;
-                            &lt;!-- Coluna 1 --&gt;
-                            &lt;div&gt;...&lt;/div&gt;
-                            &lt;!-- Coluna 2 --&gt;
-                            &lt;div&gt;...&lt;/div&gt;
-                            &lt;/div&gt;</div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="grid-checkout"&gt;
+    &lt;!-- Coluna Esquerda: Form --&gt;
+    &lt;div&gt;
+        &lt;h4&gt;Endereço&lt;/h4&gt;
+        &lt;div class="ft-alert ft-alert-info"&gt;...&lt;/div&gt;
+        &lt;form&gt;
+            &lt;!-- Inputs... --&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Coluna Direita: Resumo --&gt;
+    &lt;div&gt;
+        &lt;div class="ft-card-body"&gt;
+            &lt;h3 class="checkout-summary-title"&gt;Resumo&lt;/h3&gt;
+            
+            &lt;div class="checkout-item"&gt;
+                &lt;span&gt;Item&lt;/span&gt;
+                &lt;strong&gt;R$ 49,00&lt;/strong&gt;
+            &lt;/div&gt;
+
+            &lt;div class="ft-input-group"&gt;...&lt;/div&gt;
+
+            &lt;div class="checkout-total"&gt;
+                &lt;span&gt;Total&lt;/span&gt;
+                &lt;span class="total-price"&gt;R$ 78,00&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;button class="ft-btn ft-btn-success ft-btn-block"&gt;Finalizar&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- EXEMPLO 5: FAQ -->
                         <h3 class="mt-section">5. Seção de FAQ</h3>
@@ -358,12 +427,29 @@
                             </div>
                         </div>
 
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="max-w-800 mx-auto"&gt;
+    &lt;div class="text-center mb-lg"&gt;
+        &lt;h2&gt;Dúvidas Frequentes&lt;/h2&gt;
+    &lt;/div&gt;
+
+    &lt;details class="ft-accordion"&gt;
+        &lt;summary&gt;Pergunta 1?&lt;/summary&gt;
+        &lt;div class="ft-accordion-body"&gt;Resposta...&lt;/div&gt;
+    &lt;/details&gt;
+
+    &lt;details class="ft-accordion"&gt;
+        &lt;summary&gt;Pergunta 2?&lt;/summary&gt;
+        &lt;div class="ft-accordion-body"&gt;Resposta...&lt;/div&gt;
+    &lt;/details&gt;
+&lt;/div&gt;</code></pre>
+
                         <!-- EXEMPLO 6: UPLOAD CARD -->
                         <h3 class="mt-section">6. Status de Upload</h3>
                         <p>Demonstração de feedback de estado.</p>
 
                         <div class="preview-box bg-offset flex-center">
-                            <div class=" max-w-500 w-100">
+                            <div class="max-w-500 w-100">
                                 <div class="ft-card-body">
                                     <div
                                         class="flex-center justify-between mb-md">
@@ -428,6 +514,34 @@
                             </div>
                         </div>
 
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Item de Upload (Concluído) --&gt;
+&lt;div class="upload-item"&gt;
+    &lt;div class="upload-icon bg-success-soft text-success"&gt;
+        &lt;i class="fa-solid fa-check"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-1"&gt;
+        &lt;div class="upload-filename"&gt;arquivo.pdf&lt;/div&gt;
+        &lt;div class="upload-status text-success"&gt;Concluído&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Item de Upload (Em Progresso) --&gt;
+&lt;div class="upload-item"&gt;
+    &lt;div class="upload-icon bg-info-soft text-info"&gt;
+        &lt;div class="ft-spinner-border ft-spinner-sm"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-1"&gt;
+        &lt;div class="flex-center justify-between"&gt;
+            &lt;div class="upload-filename"&gt;video.mp4&lt;/div&gt;
+            &lt;div class="upload-percent"&gt;45%&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ft-progress h-sm"&gt;
+            &lt;div class="ft-progress-bar bg-info" style="width: 45%"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
                     </div>
                 </main>
 
@@ -440,6 +554,9 @@
         <!-- Scripts -->
         <script src="/dist/foton_scripts.js"></script>
         <script src="/docs/script/docs_script.js"></script>
+        <!-- Script Prism.js -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     </body>
 
 </html>

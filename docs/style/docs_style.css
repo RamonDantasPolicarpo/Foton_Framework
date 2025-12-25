@@ -184,6 +184,10 @@
     margin-right: 0.5rem;
 }
 
+.ml-sm {
+    margin-left: 0.5rem;
+}
+
 .text-center {
     text-align: center;
 }

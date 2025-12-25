@@ -11,7 +11,10 @@
             href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+        <!-- Prism.js Highlighting de Código -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+            rel="stylesheet" />
         <!-- Inicializador do tema -->
         <script src="docs/script/theme_init.js"></script>
 
@@ -45,7 +48,8 @@
                         <!-- BARRA DE PESQUISA -->
                         <h3>Barra de Busca</h3>
                         <p>
-                            O <code>.input-group</code> ocupa 100% do container
+                            O <code>.ft-input-group</code> ocupa 100% do
+                            container
                             pai por padrão. Ajuste a largura usando CSS inline
                             ou classes utilitárias se precisar.
                         </p>
@@ -77,17 +81,14 @@
                                     class="ft-btn ft-btn-primary">Go</button>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Input Group --&gt;
-                            &lt;div class="ft-input-group"&gt;
-                            &lt;i class="fa-solid fa-search"
-                            style="margin-left: 15px;"&gt;&lt;/i&gt;
-                            &lt;input type="text" class="ft-input-field"
-                            placeholder="Buscar..."&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-gradient"&gt;Pesquisar&lt;/button&gt;
-                            &lt;/div&gt;
-                        </div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Input Group --&gt;
+&lt;div class="ft-input-group"&gt;
+    &lt;i class="fa-solid fa-magnifying-glass" style="margin-left: 15px; color: var(--txt-sec);"&gt;&lt;/i&gt;
+    &lt;input type="text" class="ft-input-field" placeholder="Buscar..."&gt;
+    &lt;button class="ft-btn ft-btn-gradient"&gt;Pesquisar&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- INPUTS BÁSICOS -->
                         <h3>Inputs Básicos</h3>
@@ -109,13 +110,12 @@
                                     placeholder="nome@exemplo.com">
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;div class="ft-form-group"&gt;
-                            &lt;label class="ft-label"&gt;Email&lt;/label&gt;
-                            &lt;input type="email" class="ft-input"
-                            placeholder="..."&gt;
-                            &lt;/div&gt;
-                        </div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="ft-form-group"&gt;
+    &lt;label class="ft-label"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="ft-input" placeholder="..."&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- SELEÇÃO E OPÇÕES -->
                         <h3>Seleção e Opções</h3>
@@ -162,29 +162,25 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;!-- Select --&gt;
-                            &lt;select class="ft-input"&gt;
-                            &lt;option&gt;Opção 1&lt;/option&gt;
-                            &lt;option&gt;Opção 2&lt;/option&gt;
-                            &lt;/select&gt;
 
-                            &lt;!-- Checkbox --&gt;
-                            &lt;label class="ft-check"&gt;
-                            &lt;input type="checkbox"
-                            class="ft-check-input"&gt;
-                            &lt;span
-                            class="ft-check-label"&gt;Texto&lt;/span&gt;
-                            &lt;/label&gt;
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Select --&gt;
+&lt;select class="ft-input"&gt;
+    &lt;option&gt;Opção 1&lt;/option&gt;
+    &lt;option&gt;Opção 2&lt;/option&gt;
+&lt;/select&gt;
 
-                            &lt;!-- Radio --&gt;
-                            &lt;label class="ft-check"&gt;
-                            &lt;input type="radio" name="radioName"
-                            class="ft-check-input"&gt;
-                            &lt;span
-                            class="ft-check-label"&gt;Opção&lt;/span&gt;
-                            &lt;/label&gt;
-                        </div>
+&lt;!-- Checkbox --&gt;
+&lt;label class="ft-check"&gt;
+    &lt;input type="checkbox" class="ft-check-input"&gt;
+    &lt;span class="ft-check-label"&gt;Texto&lt;/span&gt;
+&lt;/label&gt;
+
+&lt;!-- Radio --&gt;
+&lt;label class="ft-check"&gt;
+    &lt;input type="radio" name="radioName" class="ft-check-input"&gt;
+    &lt;span class="ft-check-label"&gt;Opção&lt;/span&gt;
+&lt;/label&gt;</code></pre>
 
                         <!-- TEXTAREAS -->
                         <h3>Áreas de Texto</h3>
@@ -196,14 +192,12 @@
                                 </textarea>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;div class="ft-form-group"&gt;
-                            &lt;label
-                            class="ft-label"&gt;Mensagem&lt;/label&gt;
-                            &lt;textarea class="ft-input"
-                            rows="4"&gt;&lt;/textarea&gt;
-                            &lt;/div&gt;
-                        </div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="ft-form-group"&gt;
+    &lt;label class="ft-label"&gt;Mensagem&lt;/label&gt;
+    &lt;textarea class="ft-input" rows="4"&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
 
                         <h3 class="mt-md"
                             style="border-top: solid var(--border-color); padding-top: 2em;">Exemplos
@@ -212,7 +206,7 @@
                         <!-- LOGIN CARD -->
                         <h4>Login Card</h4>
                         <div class="preview-box ft-flex-container">
-                            <div>
+                            <div style="max-width: 350px; width: 100%;">
                                 <h2 class="mb-md"
                                     style="text-align: center;">Login</h2>
                                 <div class="ft-form-group">
@@ -235,22 +229,20 @@
                                     class="ft-btn ft-btn-gradient ft-btn-block">Entrar</button>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;div class=""
-                            style="max-width: 400px; margin: auto;"&gt;
-                            &lt;h2&gt;Login&lt;/h2&gt;
-                            &lt;div class="ft-form-group"&gt;
-                            &lt;label class="ft-label"&gt;Email&lt;/label&gt;
-                            &lt;input type="email" class="ft-input"&gt;
-                            &lt;/div&gt;
-                            &lt;div class="ft-form-group"&gt;
-                            &lt;label class="ft-label"&gt;Senha&lt;/label&gt;
-                            &lt;input type="password" class="ft-input"&gt;
-                            &lt;/div&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-gradient ft-btn-block"&gt;Entrar&lt;/button&gt;
-                            &lt;/div&gt;
-                        </div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div style="max-width: 400px; margin: auto;"&gt;
+    &lt;h2&gt;Login&lt;/h2&gt;
+    &lt;div class="ft-form-group"&gt;
+        &lt;label class="ft-label"&gt;Email&lt;/label&gt;
+        &lt;input type="email" class="ft-input"&gt;
+    &lt;/div&gt;
+    &lt;div class="ft-form-group"&gt;
+        &lt;label class="ft-label"&gt;Senha&lt;/label&gt;
+        &lt;input type="password" class="ft-input"&gt;
+    &lt;/div&gt;
+    &lt;button class="ft-btn ft-btn-gradient ft-btn-block"&gt;Entrar&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 
                         <!-- CONTATO -->
                         <h4>Formulário de Contato</h4>
@@ -284,28 +276,25 @@
                             <button class="ft-btn ft-btn-gradient">Enviar
                                 Mensagem</button>
                         </div>
-                        <div class="code-block">
-                            &lt;form&gt;
-                            &lt;div
-                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"&gt;
-                            &lt;div class="ft-form-group"&gt;
-                            &lt;label class="ft-label"&gt;Nome&lt;/label&gt;
-                            &lt;input type="text" class="ft-input"&gt;
-                            &lt;/div&gt;
-                            &lt;div class="ft-form-group"&gt;
-                            &lt;label
-                            class="ft-label"&gt;Sobrenome&lt;/label&gt;
-                            &lt;input type="text" class="ft-input"&gt;
-                            &lt;/div&gt;
-                            &lt;/div&gt;
-                            &lt;div class="ft-form-group"&gt;
-                            &lt;label class="ft-label"&gt;Email&lt;/label&gt;
-                            &lt;input type="email" class="ft-input"&gt;
-                            &lt;/div&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-gradient"&gt;Enviar&lt;/button&gt;
-                            &lt;/form&gt;
-                        </div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;form&gt;
+    &lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"&gt;
+        &lt;div class="ft-form-group"&gt;
+            &lt;label class="ft-label"&gt;Nome&lt;/label&gt;
+            &lt;input type="text" class="ft-input"&gt;
+        &lt;/div&gt;
+        &lt;div class="ft-form-group"&gt;
+            &lt;label class="ft-label"&gt;Sobrenome&lt;/label&gt;
+            &lt;input type="text" class="ft-input"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="ft-form-group"&gt;
+        &lt;label class="ft-label"&gt;Email&lt;/label&gt;
+        &lt;input type="email" class="ft-input"&gt;
+    &lt;/div&gt;
+    &lt;button class="ft-btn ft-btn-gradient"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
 
                         <!-- MAIS EXEMPLOS -->
                         <h3
@@ -314,8 +303,10 @@
 
                         <h4>Newsletter Inline</h4>
                         <div class="preview-box">
-                            <div>
-                                <div class="ft-form-group mb-sm">
+                            <div
+                                style="display: flex; gap: 10px; align-items: flex-end;">
+                                <div class="ft-form-group"
+                                    style="margin-bottom: 0; flex-grow: 1;">
                                     <label class="ft-label">Receba
                                         novidades</label>
                                     <input type="email" class="ft-input"
@@ -325,17 +316,15 @@
                                     class="ft-btn ft-btn-primary">Inscrever-se</button>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;div
-                            style="display: flex; gap: 10px; align-items: flex-end;"&gt;
-                            &lt;div class="ft-form-group"
-                            style="margin-bottom: 0; flex-grow: 1;"&gt;
-                            &lt;label class="ft-label"&gt;Email&lt;/label&gt;
-                            &lt;input type="email" class="ft-input"&gt;
-                            &lt;/div&gt;
-                            &lt;button
-                            class="ft-btn ft-btn-primary"&gt;Inscrever&lt;/button&gt;
-                            &lt;/div&gt;</div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div style="display: flex; gap: 10px; align-items: flex-end;"&gt;
+    &lt;div class="ft-form-group" style="margin-bottom: 0; flex-grow: 1;"&gt;
+        &lt;label class="ft-label"&gt;Email&lt;/label&gt;
+        &lt;input type="email" class="ft-input"&gt;
+    &lt;/div&gt;
+    &lt;button class="ft-btn ft-btn-primary"&gt;Inscrever&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 
                         <h4>Checkout / Endereço</h4>
                         <div class="preview-box">
@@ -365,27 +354,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="code-block">
-                            &lt;div class="ft-form-group"&gt;
-                            &lt;label
-                            class="ft-label"&gt;Endereço&lt;/label&gt;
-                            &lt;input type="text" class="ft-input"&gt;
-                            &lt;/div&gt;
-                            &lt;div
-                            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;"&gt;
-                            &lt;div class="ft-form-group"&gt;
-                            &lt;label class="ft-label"&gt;Cidade&lt;/label&gt;
-                            &lt;input type="text" class="ft-input"&gt;
-                            &lt;/div&gt;
-                            &lt;div class="ft-form-group"&gt;
-                            &lt;select class="ft-input"&gt;...&lt;/select&gt;
-                            &lt;/div&gt;
-                            &lt;div class="ft-form-group"&gt;
-                            &lt;input type="text" class="ft-input"
-                            placeholder="CEP"&gt;
-                            &lt;/div&gt;
-                            &lt;/div&gt;
-                        </div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;div class="ft-form-group"&gt;
+    &lt;label class="ft-label"&gt;Endereço&lt;/label&gt;
+    &lt;input type="text" class="ft-input"&gt;
+&lt;/div&gt;
+&lt;div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;"&gt;
+    &lt;div class="ft-form-group"&gt;
+        &lt;label class="ft-label"&gt;Cidade&lt;/label&gt;
+        &lt;input type="text" class="ft-input"&gt;
+    &lt;/div&gt;
+    &lt;div class="ft-form-group"&gt;
+        &lt;select class="ft-input"&gt;...&lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class="ft-form-group"&gt;
+        &lt;input type="text" class="ft-input" placeholder="CEP"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
                     </div>
                 </main>
@@ -398,6 +384,9 @@
         <!-- Scripts -->
         <script src="/dist/foton_scripts.js"></script>
         <script src="/docs/script/docs_script.js"></script>
+        <!-- Prism.js -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     </body>
 
 </html>

@@ -1,120 +1,93 @@
 <div align="center">
-<img src="vector/Logo.svg" alt="Fóton Framework Logo" width="120" />
+<img src="/assets/vector/Logo.svg" alt="Fóton Framework Logo" width="120" />
 <h1>Fóton Framework</h1>
-<p><strong>A base invisível para interfaces modernas.</strong></p>
+<p>
+<strong>Biblioteca CSS minimalista para interfaces web.</strong>
+
+
+
+
+Foco em simplicidade, performance e estética consistente.
+</p>
 
 <p>
-<a href="#recursos">Recursos</a> •
-<a href="#como-usar">Como Usar</a> •
-<a href="#customização">Customização</a> •
+<a href="#sobre">Sobre</a> •
+<a href="#instalação">Instalação</a> •
+<a href="#personalização">Personalização</a> •
 <a href="#componentes">Componentes</a>
 </p>
 
 </div>
 
-⚡ Sobre
+📄 Sobre
 
-O Fóton Framework é uma biblioteca CSS agnóstica desenvolvida para criar layouts de alta conversão com o mínimo de esforço. Diferente de frameworks massivos que exigem configurações complexas, o Fóton foca no essencial: tipografia sólida, espaçamento rítmico e componentes prontos para produção.
+O Fóton Framework é uma solução de estilização agnóstica desenvolvida para oferecer uma interface visual polida com configuração zero.
 
-O objetivo é fornecer uma base leve que não brigue com o seu código, permitindo prototipagem rápida e escalabilidade fácil.
+Diferente de frameworks utilitários que exigem construção bloco a bloco, o Fóton entrega componentes prontos e uma tipografia ajustada (Manrope + Poppins) para garantir legibilidade e harmonia visual imediata. É ideal para prototipagem rápida, painéis administrativos e projetos onde a agilidade de implementação é prioritária.
 
-✨ Vantagens
+Principais Características
 
-Ultra Leve: O núcleo é puramente CSS, otimizado para carregar instantaneamente.
+Plug & Play: Não requer bundlers (Webpack, Vite) ou pré-processadores. Apenas HTML e CSS.
 
-Zero Dependências: Funciona sem jQuery, sem compiladores obrigatórios, apenas HTML e CSS.
+Semântica: Classes nomeadas de forma intuitiva (.ft-btn, .ft-card, .ft-hero, .ft-grid).
 
-Grid Inteligente: Layouts responsivos automáticos usando CSS Grid e Flexbox modernos.
+Design System: Espaçamentos, cores e tipografia definidos para manter a consistência.
 
-Tipografia Premium: Combinação curada de Manrope (Títulos) e Poppins (Corpo) nativa.
+Leveza: Focado apenas no essencial, sem scripts bloqueantes ou CSS não utilizado.
 
-Variáveis CSS: Design System completo controlado por variáveis nativas (:root), facilitando temas (incluindo Dark Mode).
+🚀 Instalação
 
-Semântico: Classes com nomes intuitivos como .btn, .card, .ft-hero, .ft-navbar.
+Para utilizar o Fóton, adicione as referências de fonte e o arquivo CSS ao <head> do seu projeto.
 
-🚀 Como Usar
+Via CDN (Recomendado)
 
-Instalação Rápida
+<!-- 1. Fontes (Manrope & Poppins) -->
+<link href="[https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap](https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap)" rel="stylesheet">
 
-Basta adicionar o arquivo CSS e as fontes ao <head> do seu projeto.
+<!-- 2. Ícones (Opcional - FontAwesome) -->
+<link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- 1. Fontes Google (Obrigatório) -->
-    <link href="[https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap](https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap)" rel="stylesheet">
-    
-    <!-- 2. Ícones (Opcional - FontAwesome) -->
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+<!-- 3. Fóton Framework CSS -->
+<link rel="stylesheet" href="dist/foton_framework.css">
 
-    <!-- 3. Fóton Framework -->
-    <link rel="stylesheet" href="foton_framework.css">
-</head>
-<body>
-    <!-- Seu conteúdo aqui -->
-</body>
-</html>
+<!-- 4. Fóton Scripts (Opcional para interatividade) -->
+<script src="dist/foton_scripts.js" defer></script>
 
 
-🎨 Customização
+🎨 Personalização
 
-O Fóton é construído sobre variáveis CSS nativas. Para alterar a identidade visual do seu projeto, basta sobrescrever as variáveis no seu arquivo CSS ou diretamente na tag <style>.
+O framework utiliza CSS Custom Properties (Variáveis) nativas. Você pode alterar o tema globalmente sobrescrevendo as variáveis no seletor :root.
 
 :root {
-    /* Cor Principal */
-    --primary: #7c3aed;       /* Roxo */
-    --primary-soft: #f5f3ff;
+    /* Cores Principais */
+    --primary: #40aa54;       /* Cor de destaque */
+    --primary-soft: #ebf7ee;  /* Variação suave para fundos */
     
-    /* Backgrounds */
-    --bg-page: #ffffff;
-    --dark: #111827;
+    /* Tipografia */
+    --font-heading: 'Manrope', sans-serif;
+    --font-body: 'Poppins', sans-serif;
 
-    /* Gradientes */
-    --grad-primary: linear-gradient(135deg, #7c3aed, #4c1d95);
+    /* Tema Escuro (Opcional) */
+    --dark: #1d1e25;
 }
 
 
-🧩 Componentes Incluídos
+📦 Componentes
 
-Categoria
+O Fóton oferece um conjunto de classes prontas para uso:
 
-Elementos
+Estrutura: ft-navbar, ft-hero, ft-footer, ft-section-dark
 
-Estrutura
+Layout: ft-grid, flex-container, container
 
-Navbar, Hero, Footer, Grid Responsivo, Flex Container
+Elementos UI: * ft-btn (Botões com variantes gradient, outline, etc)
 
-Ações
+ft-card (Cartões de conteúdo)
 
-Botões (Solid, Outline, Ghost), Links, Toggles
+ft-input, ft-select (Formulários estilizados)
 
-Feedback
-
-Alertas, Badges, Toasts, Progress Bars, Spinners
-
-Conteúdo
-
-Cards (Blog, Profile, Pricing), Tabelas, Acordeões
-
-Formulários
-
-Inputs, Selects, Checkboxes, Radios, Input Groups
-
-Overlays
-
-Popovers, Tooltips (CSS Puro)
-
-📂 Estrutura de Arquivos
-
-foton_framework.css - O núcleo do framework (use este em produção).
-
-docs_style.css - Estilos específicos apenas para a documentação.
-
-foton_scripts.js - Scripts opcionais para interatividade (Menu Mobile, Fechar Alertas, etc).
+ft-badge, ft-alert (Feedback visual)
 
 <div align="center">
-<p>Desenvolvido por <a href="https://github.com/RamonDantasPolicarpo">Ramon Dantas</a></p>
+<p>Mantido por <a href="https://github.com/RamonDantasPolicarpo">Ramon Dantas</a></p>
 </div>

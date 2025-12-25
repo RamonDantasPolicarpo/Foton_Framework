@@ -11,6 +11,10 @@
             href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Prism.js Highlighting de Código -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+            rel="stylesheet" />
 
         <!-- Inicializador do tema -->
         <script src="docs/script/theme_init.js"></script>
@@ -39,132 +43,196 @@
                     <div id="tab-intro" class="tab-view page-fade-in">
                         <h1 class="doc-title">Bem-vindo ao Fóton</h1>
                         <p class="doc-subtitle">
-                            O framework CSS essencial para desenvolvedores que buscam performance e estética.
+                            Uma base sólida e elegante para o desenvolvimento de
+                            interfaces modernas.
                         </p>
 
                         <!-- Seção de Filosofia -->
                         <div class="mb-md">
                             <p>
-                                O <strong>Fóton Framework</strong> não é apenas mais uma biblioteca CSS. Ele foi projetado para ser a base invisível de interfaces de alta conversão. Enquanto outros frameworks focam em ter milhares de componentes que você nunca vai usar, o Fóton foca no essencial: <strong>tipografia perfeita, espaçamento rítmico e componentes que vendem.</strong>
+                                O <strong>Fóton Framework</strong> foi
+                                desenvolvido para ser a
+                                camada visual eficiente dos seus projetos.
+                                Focamos em entregar componentes polidos,
+                                tipografia ajustada e um grid responsivo
+                                automático, permitindo que você tenha uma
+                                interface consistente desde o primeiro momento.
+                                <br>
+                                Nossa proposta é oferecer um design system limpo
+                                e organizado, que não exige configurações
+                                complexas. É uma ferramenta prática, desenhada
+                                para se integrar ao seu fluxo de trabalho de
+                                maneira natural e invisível.
+
                             </p>
                         </div>
 
                         <!-- Grid de Diferenciais -->
-                        <h3>Por que escolher o Fóton?</h3>
+                        <h3>Pilares do Fóton Framework</h3>
                         <div class="ft-grid"
                             style="gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 4rem;">
 
                             <!-- Card 1 -->
                             <div class="ft-card">
-                                    <i class="fa-solid fa-bolt" 
-                                        style="margin-bottom: 1rem; color: var(--primary); font-size: 24px;"></i>
-                                <h4>Ultra Leve</h4>
+                                <i class="fa-solid fa-feather"
+                                    style="margin-bottom: 1rem; color: var(--primary); font-size: 24px;"></i>
+                                <h4>Leveza</h4>
                                 <p style="color: var(--txt-sec);">
-                                    Sem JavaScript pesado. Sem dependências. Apenas CSS moderno e otimizado que carrega instantaneamente.
+                                    Arquitetura otimizada para carregamento
+                                    rápido e renderização eficiente, sem excesso
+                                    de código.
                                 </p>
                             </div>
 
                             <!-- Card 2 -->
                             <div class="ft-card">
-                                    <i class="fa-solid fa-mobile-screen" 
-                                        style="margin-bottom: 1rem; color: var(--info); font-size: 24px;"></i>
-                                <h4>Layout Adaptável</h4>
+                                <i class="fa-solid fa-code"
+                                    style="margin-bottom: 1rem; color: var(--info); font-size: 24px;"></i>
+                                <h4>Semântica</h4>
                                 <p style="color: var(--txt-sec);">
-                                    Esqueça media queries complexas. Nosso Grid System inteligente se adapta a qualquer tela automaticamente.
+                                    Classes nomeadas de forma lógica e intuitiva
+                                    (<code>.ft-btn</code>,
+                                    <code>.ft-card</code>), facilitando a
+                                    leitura e manutenção.
                                 </p>
                             </div>
 
                             <!-- Card 3 -->
                             <div class="ft-card">
-                                    <i class="fa-solid fa-wand-magic-sparkles" 
-                                        style="margin-bottom: 1rem; color: var(--warning); font-size: 24px;"></i>
-                                <h4>Focado em Design</h4>
+                                <i class="fa-solid fa-palette"
+                                    style="margin-bottom: 1rem; color: var(--warning); font-size: 24px;"></i>
+                                <h4>Estética</h4>
                                 <p style="color: var(--txt-sec);">
-                                    Variáveis CSS globais permitem que você mude a identidade visual inteira alterando apenas algumas cores.
+                                    Um visual contemporâneo e profissional, com
+                                    tipografia e espaçamentos calibrados para
+                                    harmonia visual.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Seção de Instalação -->
-                        <h3 style="border-top: 1px solid var(--border-color); padding-top: 2em;">
-                            Começando Agora
+                        <h3
+                            style="border-top: 1px solid var(--border-color); padding-top: 2em;">
+                            Como Utilizar
                         </h3>
                         <p class="mb-md">
-                            Integrar o Fóton ao seu projeto é simples. Você só precisa de dois passos.
+                            A integração é modular. O CSS é obrigatório para o
+                            visual, e o JS é opcional para comportamentos
+                            dinâmicos.
                         </p>
 
+                        <!-- Alerta de Download -->
                         <div class="ft-alert ft-alert-info">
-                            <i class="fa-solid fa-circle-info ft-alert-icon"></i>
+                            <i
+                                class="fa-solid fa-circle-info ft-alert-icon"></i>
                             <div>
-                                <strong>Dica:</strong> Certifique-se de baixar a última versão do arquivo <code>foton_framework.css</code> na aba <a
+                                <strong>Arquivos:</strong> Acesse a aba <a
                                     href="download.html"
-                                    style="text-decoration: underline;">Download</a>.
+                                    style="text-decoration: underline;">Download</a>
+                                para baixar o pacote completo (CSS + JS).
                             </div>
                         </div>
 
-                        <h4>1. Estrutura Básica</h4>
+                        <h4>1. Estrutura Recomendada</h4>
                         <p>
-                            Copie o template abaixo para iniciar seu projeto com todas as configurações necessárias, incluindo as fontes Manrope e Poppins.
+                            Utilize o modelo abaixo. Ele já inclui as fontes
+                            <strong>Manrope</strong> e <strong>Poppins</strong>,
+                            além do script opcional para interatividade.
                         </p>
 
-                        <div class="code-block">
-                            &lt;!DOCTYPE html&gt;
-                            &lt;html lang="pt-br"&gt;
-                            &lt;head&gt;
-                            &lt;meta charset="UTF-8"&gt;
-                            &lt;meta name="viewport"
-                            content="width=device-width, initial-scale=1.0"&gt;
-                            &lt;title&gt;Meu Projeto Fóton&lt;/title&gt;
+                        <!-- Exemplo com Prism.js -->
+                        <pre class="code-block">
+                            <code class="language-html">
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Projeto Fóton&lt;/title&gt;
 
-                            &lt;!-- 1. Fontes Google (Manrope + Poppins) --&gt;
-                            &lt;link
-                            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-                            rel="stylesheet"&gt;
+        &lt;!-- 1. Tipografia (Google Fonts) --&gt;
+        &lt;link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"&gt;
 
-                            &lt;!-- 2. Ícones (Opcional - FontAwesome) --&gt;
-                            &lt;link rel="stylesheet"
-                            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;
+        &lt;!-- 2. Ícones (Opcional - FontAwesome) --&gt;
+        &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;
 
-                            &lt;!-- 3. Fóton Framework CSS --&gt;
-                            &lt;link rel="stylesheet"
-                            href="foton_framework.css"&gt;
-                            &lt;/head&gt;
-                            &lt;body&gt;
+        &lt;!-- 3. Fóton Framework CSS --&gt;
+        &lt;link rel="stylesheet" href="foton_framework.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
 
-                            &lt;nav class="ft-navbar"&gt;
-                            &lt;div class="container"&gt;
-                            &lt;a href="#"
-                            class="ft-logo"&gt;Meu&lt;span&gt;App&lt;/span&gt;&lt;/a&gt;
-                            &lt;/div&gt;
-                            &lt;/nav&gt;
+        &lt;nav class="ft-navbar"&gt;
+            &lt;div class="container"&gt;
+                &lt;a href="#" class="ft-logo"&gt;Fóton&lt;span&gt;App&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
 
-                            &lt;main class="ft-hero"&gt;
-                            &lt;div class="ft-hero-content"&gt;
-                            &lt;span&gt;Olá, Mundo!&lt;/span&gt;
-                            &lt;p&gt;Seu projeto Fóton está rodando.&lt;/p&gt;
-                            &lt;button class="ft-btn ft-btn-gradient"&gt;Vamos
-                            lá&lt;/button&gt;
-                            &lt;/div&gt;
-                            &lt;/main&gt;
+        &lt;main class="ft-hero"&gt;
+            &lt;div class="ft-hero-content"&gt;
+                &lt;span&gt;Bem-vindo&lt;/span&gt;
+                &lt;p&gt;Sua nova interface começa aqui.&lt;/p&gt;
+                &lt;button class="ft-btn ft-btn-gradient"&gt;Saiba Mais&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
 
-                            &lt;!-- Scripts de Interatividade (Opcional) --&gt;
-                            &lt;script src="foton_scripts.js"&gt;&lt;/script&gt;
-                            &lt;/body&gt;
-                            &lt;/html&gt;</div>
+        &lt;!-- 4. Fóton Scripts (Opcional) --&gt;
+        &lt;!-- Adiciona interatividade: fechar alertas, menu mobile, etc --&gt;
+        &lt;script src="foton_scripts.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+                            </code>
+                        </pre>
 
-                        <h4>2. Customização Rápida</h4>
+                        <h4>2. Interatividade (JavaScript)</h4>
                         <p>
-                            Para deixar o framework com a cara da sua marca, abra o arquivo CSS e edite as variáveis no topo (<code>:root</code>).
+                            O arquivo <code>foton_scripts.js</code> é opcional,
+                            mas recomendado para uma experiência completa. Ele
+                            ativa automaticamente:
                         </p>
-                        <div class="code-block">
-                            :root {
-                            /* Mude a cor principal aqui */
-                            --primary: #40aa54;
+                        <ul class="my-md ml-sm"
+                            style="list-style: none; color: var(--txt-sec);">
+                            <li style="margin-bottom: 8px;"><i
+                                    class="fa-solid fa-check text-success"
+                                    style="margin-right: 10px;"></i> Botões de
+                                fechar em Alertas</li>
+                            <li style="margin-bottom: 8px;"><i
+                                    class="fa-solid fa-check text-success"
+                                    style="margin-right: 10px;"></i> Menu Mobile
+                                (Hamburger)</li>
+                            <li style="margin-bottom: 8px;"><i
+                                    class="fa-solid fa-check text-success"
+                                    style="margin-right: 10px;"></i> Modais e
+                                Dropdowns</li>
+                            <li style="margin-bottom: 8px;"><i
+                                    class="fa-solid fa-check text-success"
+                                    style="margin-right: 10px;"></i> Animações
+                                suaves em Acordeões</li>
+                            <li class="mb-lg"><i
+                                    class="fa-solid fa-check text-success"
+                                    style="margin-right: 10px;"></i> Popover e
+                                Tooltips</li>
+                        </ul>
 
-                            /* Ajuste o modo escuro */
-                            --dark: #1d1e25;
-                            }
-                        </div>
+                        <h4>3. Personalização</h4>
+                        <p>
+                            O Fóton utiliza <strong>Variáveis CSS</strong>
+                            nativas. Para adaptar o tema, defina os valores no
+                            seletor <code>:root</code> do seu arquivo de estilo:
+                        </p>
+                        <pre class="code-block">
+                            <code class="language-css">
+    :root {
+        /* Cor Principal */
+        --primary: #820ad1; 
+        
+        /* Fundo Suave */
+        --primary-soft: #f5eafe; 
+        
+        /* Tema Escuro */
+        --dark: #111111;
+    }
+                            </code>
+                        </pre>
                     </div>
                 </main>
 
@@ -177,6 +245,9 @@
         <!-- Scripts -->
         <script src="/dist/foton_scripts.js"></script>
         <script src="/docs/script/docs_script.js"></script>
+        <!-- Prism.js -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     </body>
 
 </html>
