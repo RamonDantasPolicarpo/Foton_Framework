@@ -1112,8 +1112,8 @@ textarea.ft-input {
     position: relative;
 }
 
-.ft-card-highlight::before {
-    content: 'Popular';
+.ft-card-highlight[txt-badge]:not([txt-badge=""])::before {
+    content: attr(txt-badge);
     position: absolute;
     top: -15px;
     left: 50%;
