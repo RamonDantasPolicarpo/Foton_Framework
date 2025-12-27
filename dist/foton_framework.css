@@ -764,65 +764,48 @@ textarea.ft-input {
     font-size: 15px;
     line-height: 1.5;
     box-sizing: border-box;
-    /* Necessário para posicionar o glow interno */
     position: relative;
-    z-index: 1;
+    z-index: 1; 
 }
 
-/* BOTÃO GRADIENTE (JS DRIVEN) */
+/* BOTÃO GRADIENTE */
 .ft-btn-gradient {
-    /* Define a variável local com um valor padrão */
     --btn-grad: var(--grad-primary);
-
     background: var(--dark);
     color: #fff;
     border: none;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    /* Permite que o brilho (glow) vaze para fora do botão */
-    overflow: visible;
+    overflow: visible; 
+}
+
+.ft-btn-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    border-radius: 50px;
+    z-index: -1; 
+    background-image: var(--btn-grad);
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(5px) scale(0.9);
 }
 
 .ft-btn-gradient:hover {
-    /* O próprio botão assume o gradiente no hover para ficar nítido */
     background-image: var(--btn-grad);
     transform: translateY(-2px);
     color: #fff;
-    box-shadow: none;
-    /* Remove sombra padrão */
+    box-shadow: none; 
 }
 
-/* Classe para o elemento de brilho que será injetado pelo JS */
-.ft-btn-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    z-index: -1;
-    /* Fica atrás do texto do botão */
-
-    /* Mágica: Herda a variável definida no pai (.ft-btn-gradient) */
-    background-image: var(--btn-grad);
-
-    /* Efeito de desfoque */
-    filter: blur(15px);
-
-    /* Estado inicial (invisível) */
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    pointer-events: none;
-    /* Não interfere no clique */
-}
-
-/* Quando passar o mouse no botão, o elemento glow (filho) aparece */
-.ft-btn-gradient:hover .ft-btn-glow {
+.ft-btn-gradient:hover::before {
     opacity: 0.6;
-    transform: translateY(8px) scale(0.95);
-    /* Desce um pouco para simular sombra */
+    transform: translateY(8px) scale(1);
 }
 
-/* Ajuste Dark Mode */
 [data-theme="dark"] .ft-btn-gradient {
     box-shadow: none;
 }

@@ -1,12 +1,11 @@
 /**
- * FÓTON FRAMEWORK SCRIPTS (CORE) v2.1
+ * FÓTON FRAMEWORK SCRIPTS (CORE) v2.5
  * Namespace pattern applied to prevent global scope pollution.
  */
 
 const Foton = {
     /**
      * Inicializador Mestre
-     * Dispara todos os módulos do framework.
      */
     init: function () {
         this.initAlerts();
@@ -15,12 +14,11 @@ const Foton = {
         this.initKeyboardFocus();
         this.initNavbar();
         this.initModals();
-        this.initGradientButtons();
+        // initGradientButtons removido: agora é 100% CSS!
     },
 
     /**
      * Utilitário: Detecção de Foco por Teclado
-     * Adiciona classe ao body para estilizar focus apenas quando usando teclado.
      */
     initKeyboardFocus: function () {
         document.body.addEventListener('keydown', (e) => {
@@ -36,7 +34,6 @@ const Foton = {
 
     /**
      * Módulo: Alertas
-     * Gerencia o fechamento de alertas.
      */
     initAlerts: function () {
         document.addEventListener('click', (e) => {
@@ -55,26 +52,7 @@ const Foton = {
     },
 
     /**
-     * Módulo: Botões Gradiente
-     */
-    initGradientButtons: function () {
-        const buttons = document.querySelectorAll('.ft-btn-gradient');
-        
-        buttons.forEach(btn => {
-            // Verifica se já não foi injetado (para evitar duplicação)
-            if (!btn.querySelector('.ft-btn-glow')) {
-                const glowElement = document.createElement('div');
-                glowElement.className = 'ft-btn-glow';
-                // O elemento é inserido dentro do botão.
-                // Como ele usa position: absolute e z-index: -1, fica atrás do texto.
-                btn.appendChild(glowElement);
-            }
-        });
-    },
-
-    /**
      * Módulo: Popovers & Dropdowns
-     * Gerencia abertura, fechamento e posicionamento.
      */
     initPopovers: function () {
         const triggers = document.querySelectorAll('[data-toggle="popover"], .ft-dropdown > a, .ft-dropdown > button');
@@ -101,24 +79,17 @@ const Foton = {
 
             if (e.key === 'Escape') {
                 Foton.closeAllPopovers();
-
-                // Fecha Modais
                 const openModal = document.querySelector('.ft-modal.show');
                 if (openModal) Foton.toggleModal(openModal.id, false);
-
-                // Fecha Navbar Mobile (Procura qualquer uma ativa)
                 const activeNavMenu = document.querySelector('.ft-navbar-menu.active');
                 if (activeNavMenu) {
-                    // Encontra o toggle associado a este menu
                     const navbar = activeNavMenu.closest('.ft-navbar');
                     const toggle = navbar ? navbar.querySelector('.ft-navbar-toggle') : null;
-
                     Foton.closeNavbar(activeNavMenu, toggle);
                 }
                 return;
             }
 
-            // Dropdowns & Popovers
             const isTrigger = activeEl.matches('[data-toggle="popover"]') || (activeEl.parentElement && activeEl.parentElement.classList.contains('ft-dropdown'));
 
             if (isTrigger && (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ')) {
@@ -127,7 +98,6 @@ const Foton = {
                 return;
             }
 
-            // Navegação Interna Dropdown
             const activeDropdown = document.querySelector('.ft-dropdown-menu.show, .ft-popover-content.show');
             if (activeDropdown && activeDropdown.contains(activeEl)) {
                 const focusableItems = Array.from(activeDropdown.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])'));
@@ -170,10 +140,7 @@ const Foton = {
 
         Foton.closeAllPopovers(content);
 
-        // Remove classes antigas
         content.classList.remove('pos-top', 'pos-bottom', 'pos-left', 'pos-right', 'visible');
-
-        // Adiciona .show para display:block, mas ainda opacity:0
         content.classList.add('show');
         trigger.setAttribute('aria-expanded', 'true');
 
@@ -196,7 +163,6 @@ const Foton = {
 
     updatePopoverPosition: function (trigger, content) {
         const preferredPos = trigger.getAttribute('data-pos') || 'right';
-
         const triggerRect = trigger.getBoundingClientRect();
         const contentRect = content.getBoundingClientRect();
         const windowWidth = window.innerWidth;
@@ -250,7 +216,6 @@ const Foton = {
 
     /**
      * Módulo: Accordions
-     * Animação suave para detalhes/resumo.
      */
     initAccordions: function () {
         const accordions = document.querySelectorAll('details.ft-accordion');
@@ -299,8 +264,7 @@ const Foton = {
     },
 
     /**
-     * Módulo: Navbar Mobile (MELHORADO)
-     * Agora suporta múltiplas navbars na mesma página e fecha ao clicar fora.
+     * Módulo: Navbar Mobile
      */
     initNavbar: function () {
         const navbars = document.querySelectorAll('.ft-navbar');
@@ -310,11 +274,9 @@ const Foton = {
             const menu = navbar.querySelector('.ft-navbar-menu');
 
             if (toggle && menu) {
-                // Toggle via botão
                 toggle.addEventListener('click', (e) => {
                     e.stopPropagation();
                     const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-
                     if (isExpanded) {
                         Foton.closeNavbar(menu, toggle);
                     } else {
@@ -322,7 +284,6 @@ const Foton = {
                     }
                 });
 
-                // Fechar ao clicar em links (comportamento mobile)
                 menu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
                         if (window.innerWidth <= 900) {
@@ -331,7 +292,6 @@ const Foton = {
                     });
                 });
 
-                // Fechar ao clicar fora (Click Outside)
                 document.addEventListener('click', (e) => {
                     if (window.innerWidth <= 900 && menu.classList.contains('active')) {
                         if (!menu.contains(e.target) && !toggle.contains(e.target)) {
@@ -344,18 +304,16 @@ const Foton = {
     },
 
     openNavbar: function (menu, toggle) {
+        if (menu.classList.contains('closing')) return;
         menu.classList.add('active');
         toggle.setAttribute('aria-expanded', 'true');
-        // A classe .active já dispara a animação slideDown definida no CSS
     },
 
     closeNavbar: function (menu, toggle) {
-        // Adiciona classe de fechamento para animar a saída
+        if (!menu.classList.contains('active')) return;
         menu.classList.add('closing');
-        menu.classList.remove('active'); // Remove active para iniciar reverso se configurado ou manter visível via 'closing'
-        toggle.setAttribute('aria-expanded', 'false');
-
-        // Aguarda a animação terminar (300ms correspondente ao CSS slideDown/Up)
+        menu.classList.remove('active');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
         setTimeout(() => {
             menu.classList.remove('closing');
         }, 300);
@@ -365,7 +323,6 @@ const Foton = {
      * Módulo: Modais
      */
     initModals: function () {
-        // Abrir
         document.querySelectorAll('[data-toggle="modal"]').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -374,7 +331,6 @@ const Foton = {
             });
         });
 
-        // Fechar
         document.querySelectorAll('[data-dismiss="modal"]').forEach(btn => {
             btn.addEventListener('click', () => {
                 const modal = btn.closest('.ft-modal');
@@ -382,7 +338,6 @@ const Foton = {
             });
         });
 
-        // Backdrop
         window.addEventListener('click', (e) => {
             if (e.target.classList.contains('ft-modal')) {
                 Foton.toggleModal(e.target.id, false);
@@ -409,7 +364,6 @@ const Foton = {
 
     /**
      * Módulo: Toasts
-     * Exibe notificações flutuantes.
      */
     showToast: function (message) {
         let container = document.querySelector('.foton-toast-container');
@@ -469,7 +423,7 @@ const Foton = {
     }
 };
 
-// Inicialização automática ao carregar o DOM
+// Inicialização automática
 document.addEventListener('DOMContentLoaded', () => {
     Foton.init();
 });
