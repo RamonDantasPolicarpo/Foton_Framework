@@ -1,25 +1,22 @@
 /**
  * FÓTON FRAMEWORK SCRIPTS (CORE) v2.5
- * Namespace pattern applied to prevent global scope pollution.
  */
 
 const Foton = {
-    /**
-     * Inicializador Mestre
-     */
+
+    /* ==========================================================================
+        1. CORE & INICIALIZAÇÃO
+       ========================================================================== */
+
     init: function () {
-        this.initAlerts();
-        this.initPopovers();
-        this.initAccordions();
         this.initKeyboardFocus();
         this.initNavbar();
         this.initModals();
-        // initGradientButtons removido: agora é 100% CSS!
+        this.initPopovers();
+        this.initAccordions();
+        this.initAlerts();
     },
 
-    /**
-     * Utilitário: Detecção de Foco por Teclado
-     */
     initKeyboardFocus: function () {
         document.body.addEventListener('keydown', (e) => {
             if (e.key === 'Tab' || e.key.startsWith('Arrow')) {
@@ -32,28 +29,114 @@ const Foton = {
         });
     },
 
-    /**
-     * Módulo: Alertas
-     */
-    initAlerts: function () {
-        document.addEventListener('click', (e) => {
-            const closeBtn = e.target.closest('.ft-alert-close');
-            if (closeBtn) {
-                const alert = closeBtn.closest('.ft-alert');
-                if (alert) {
-                    alert.style.transition = 'opacity 0.3s ease';
-                    alert.style.opacity = '0';
-                    setTimeout(() => {
-                        alert.remove();
-                    }, 300);
-                }
+
+    /* ==========================================================================
+        2. NAVEGAÇÃO (Navbar Mobile)
+       ========================================================================== */
+
+    initNavbar: function () {
+        const navbars = document.querySelectorAll('.ft-navbar');
+
+        navbars.forEach(navbar => {
+            const toggle = navbar.querySelector('.ft-navbar-toggle');
+            const menu = navbar.querySelector('.ft-navbar-menu');
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                    if (isExpanded) {
+                        Foton.closeNavbar(menu, toggle);
+                    } else {
+                        Foton.openNavbar(menu, toggle);
+                    }
+                });
+
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth <= 900) {
+                            Foton.closeNavbar(menu, toggle);
+                        }
+                    });
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 900 && menu.classList.contains('active')) {
+                        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                            Foton.closeNavbar(menu, toggle);
+                        }
+                    }
+                });
             }
         });
     },
 
-    /**
-     * Módulo: Popovers & Dropdowns
-     */
+    openNavbar: function (menu, toggle) {
+        if (menu.classList.contains('closing')) return;
+        menu.classList.add('active');
+        toggle.setAttribute('aria-expanded', 'true');
+    },
+
+    closeNavbar: function (menu, toggle) {
+        if (!menu.classList.contains('active')) return;
+        menu.classList.add('closing');
+        menu.classList.remove('active');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        setTimeout(() => {
+            menu.classList.remove('closing');
+        }, 300);
+    },
+
+
+    /* ==========================================================================
+        3. MODAIS
+       ========================================================================== */
+
+    initModals: function () {
+        document.querySelectorAll('[data-toggle="modal"]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = btn.getAttribute('data-target');
+                if (targetId) Foton.toggleModal(targetId, true);
+            });
+        });
+
+        document.querySelectorAll('[data-dismiss="modal"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modal = btn.closest('.ft-modal');
+                if (modal) Foton.toggleModal(modal.id, false);
+            });
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('ft-modal')) {
+                Foton.toggleModal(e.target.id, false);
+            }
+        });
+    },
+
+    toggleModal: function (modalId, show) {
+        const modal = document.getElementById(modalId);
+        if (!modal) return;
+
+        if (show) {
+            modal.style.display = 'block';
+            setTimeout(() => modal.classList.add('show'), 10);
+            document.body.style.overflow = 'hidden';
+        } else {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    },
+
+
+    /* ==========================================================================
+        4. POPOVERS & DROPDOWNS
+       ========================================================================== */
+
     initPopovers: function () {
         const triggers = document.querySelectorAll('[data-toggle="popover"], .ft-dropdown > a, .ft-dropdown > button');
         triggers.forEach(trigger => {
@@ -73,7 +156,7 @@ const Foton = {
             }
         });
 
-        // Handler de Teclado
+        // Handler de Teclado (Acessibilidade)
         document.addEventListener('keydown', (e) => {
             const activeEl = document.activeElement;
 
@@ -214,9 +297,11 @@ const Foton = {
         });
     },
 
-    /**
-     * Módulo: Accordions
-     */
+
+    /* ==========================================================================
+        5. COMPONENTES DE CONTEÚDO (Accordions)
+       ========================================================================== */
+
     initAccordions: function () {
         const accordions = document.querySelectorAll('details.ft-accordion');
 
@@ -263,108 +348,27 @@ const Foton = {
         });
     },
 
-    /**
-     * Módulo: Navbar Mobile
-     */
-    initNavbar: function () {
-        const navbars = document.querySelectorAll('.ft-navbar');
 
-        navbars.forEach(navbar => {
-            const toggle = navbar.querySelector('.ft-navbar-toggle');
-            const menu = navbar.querySelector('.ft-navbar-menu');
+    /* ==========================================================================
+        6. FEEDBACK & NOTIFICAÇÕES (Alerts & Toasts)
+       ========================================================================== */
 
-            if (toggle && menu) {
-                toggle.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-                    if (isExpanded) {
-                        Foton.closeNavbar(menu, toggle);
-                    } else {
-                        Foton.openNavbar(menu, toggle);
-                    }
-                });
-
-                menu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        if (window.innerWidth <= 900) {
-                            Foton.closeNavbar(menu, toggle);
-                        }
-                    });
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 900 && menu.classList.contains('active')) {
-                        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-                            Foton.closeNavbar(menu, toggle);
-                        }
-                    }
-                });
+    initAlerts: function () {
+        document.addEventListener('click', (e) => {
+            const closeBtn = e.target.closest('.ft-alert-close');
+            if (closeBtn) {
+                const alert = closeBtn.closest('.ft-alert');
+                if (alert) {
+                    alert.style.transition = 'opacity 0.3s ease';
+                    alert.style.opacity = '0';
+                    setTimeout(() => {
+                        alert.remove();
+                    }, 300);
+                }
             }
         });
     },
 
-    openNavbar: function (menu, toggle) {
-        if (menu.classList.contains('closing')) return;
-        menu.classList.add('active');
-        toggle.setAttribute('aria-expanded', 'true');
-    },
-
-    closeNavbar: function (menu, toggle) {
-        if (!menu.classList.contains('active')) return;
-        menu.classList.add('closing');
-        menu.classList.remove('active');
-        if (toggle) toggle.setAttribute('aria-expanded', 'false');
-        setTimeout(() => {
-            menu.classList.remove('closing');
-        }, 300);
-    },
-
-    /**
-     * Módulo: Modais
-     */
-    initModals: function () {
-        document.querySelectorAll('[data-toggle="modal"]').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = btn.getAttribute('data-target');
-                if (targetId) Foton.toggleModal(targetId, true);
-            });
-        });
-
-        document.querySelectorAll('[data-dismiss="modal"]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const modal = btn.closest('.ft-modal');
-                if (modal) Foton.toggleModal(modal.id, false);
-            });
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target.classList.contains('ft-modal')) {
-                Foton.toggleModal(e.target.id, false);
-            }
-        });
-    },
-
-    toggleModal: function (modalId, show) {
-        const modal = document.getElementById(modalId);
-        if (!modal) return;
-
-        if (show) {
-            modal.style.display = 'block';
-            setTimeout(() => modal.classList.add('show'), 10);
-            document.body.style.overflow = 'hidden';
-        } else {
-            modal.classList.remove('show');
-            setTimeout(() => {
-                modal.style.display = 'none';
-                document.body.style.overflow = '';
-            }, 300);
-        }
-    },
-
-    /**
-     * Módulo: Toasts
-     */
     showToast: function (message) {
         let container = document.querySelector('.foton-toast-container');
         if (!container) {
@@ -423,7 +427,10 @@ const Foton = {
     }
 };
 
-// Inicialização automática
+/* ==========================================================================
+    AUTO-INIT
+   ========================================================================== */
+
 document.addEventListener('DOMContentLoaded', () => {
     Foton.init();
 });

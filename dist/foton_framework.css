@@ -1,14 +1,17 @@
 /* ==========================================================================
-    FÓTON FRAMEWORK v2.0 (Refactored)
+   FÓTON FRAMEWORK v2.0 
    ========================================================================== */
 
-/* --- VARIÁVEIS GLOBAIS --- */
+/* ==========================================================================
+   1. VARIÁVEIS GLOBAIS (:root & Themes)
+   ========================================================================== */
+
 :root {
-    /* 1. Marca & Identidade */
+    /* Marca & Identidade */
     --primary: #40aa54;
     --primary-soft: #ebf7ee;
 
-    /* 2. Backgrounds */
+    /* Backgrounds */
     --bg-page: #f0f0f8;
     --bg-surface: #ffffff;
     --bg-white: #f0f0f8;
@@ -19,7 +22,7 @@
     --hero-bg: radial-gradient(#eef 1px, transparent 1px), linear-gradient(180deg, #f9f9ff 0%, #fff 100%);
     --nav-bg: rgba(255, 255, 255, 0.7);
 
-    /* 3. Texto */
+    /* Texto */
     --txt-primary: #343f52;
     --txt-sec: #60697b;
     --txt-white: #f1f5f9;
@@ -31,7 +34,7 @@
     --btn-border-dark: rgba(0, 0, 0, 0.300);
     --btn-border-light: rgba(255, 255, 255, 0.200);
 
-    /* 4. Cores Semânticas */
+    /* Cores Semânticas */
     --info: #3b82f6;
     --info-soft: #eff6ff;
     --info-pastel: #e3f2fd;
@@ -48,40 +51,26 @@
     --neutral-soft: #f1f5f9;
     --neutral-pastel: #e2e8f0;
 
-    /* 5. Acentos */
+    /* Acentos */
     --accent-1: #0cc27e;
     --accent-2: #45c4a0;
 
-    /* 6. Gradientes */
+    /* Gradientes */
     --grad-primary: linear-gradient(135deg, #40aa54, #2d8a3e);
-
-    /* Vibrantes */
     --grad-neon: linear-gradient(90deg, #ff00cc, #333399);
     --grad-hype: linear-gradient(to right, #ec4899, #8b5cf6);
     --grad-eletric: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
     --grad-social: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-
-    /* Quentes */
     --grad-fire: linear-gradient(to right, #f59e0b, #ef4444);
     --grad-mango: linear-gradient(to right, #ffe259, #ffa751);
     --grad-cherry: linear-gradient(to right, #eb3349, #f45c43);
     --grad-gold: linear-gradient(to right, #BF953F, #FCF6BA, #B38728);
-
-    /* Frescos */
     --grad-mint: linear-gradient(to right, #34d399, #059669);
     --grad-ocean: linear-gradient(to right, #1CB5E0, #000851);
     --grad-boreal: linear-gradient(to right, #A770EF, #CF8BF3, #FDB99B);
+    --grad-dark: linear-gradient(30deg, #434343 0%, #363636 25%, #262626 50%, #141414 75%, #000000 100%);
 
-    /* Dark (Mais camadas e profundidade) */
-    --grad-dark: linear-gradient(30deg,
-            #434343 0%,
-            #363636 25%,
-            #262626 50%,
-            #141414 75%,
-            #000000 100%);
-
-
-    /* 7. Botões */
+    /* Botões */
     --btn-primary-bg: #40aa54;
     --btn-primary-hover-bg: #358f45;
     --btn-secondary-bg: #475569;
@@ -91,23 +80,22 @@
     --btn-dark-bg: #1d1e25;
     --btn-dark-hover-bg: #2a2b35;
 
-    /* 9. Tabelas */
+    /* Tabelas */
     --table-head-bg: var(--bg-page);
-    --table-stripe-bg: rgba(0, 0, 0, 0.02); 
-    --table-hover-bg: rgba(64, 170, 84, 0.08); 
+    --table-stripe-bg: rgba(0, 0, 0, 0.02);
+    --table-hover-bg: rgba(64, 170, 84, 0.08);
 
-    /* 8. Fontes */
+    /* Fontes */
     --font-primary: 'Manrope', sans-serif;
     --font-secondary: 'Poppins', sans-serif;
 }
 
-/* --- MODO ESCURO --- */
+/* Modo Escuro */
 [data-theme="dark"] {
     color-scheme: dark;
 
     --bg-page: #121212;
     --bg-surface: #1e1e24;
-
     --hero-bg: radial-gradient(#32384a 1px, transparent 1px), linear-gradient(180deg, #181c26 0%, #14161f 100%);
     --nav-bg: rgba(18, 18, 18, 0.7);
     --txt-primary: #e2e8f0;
@@ -121,10 +109,8 @@
     --neutral-soft: #1f2937;
 
     --border-color: #2d2d3a;
-
     --table-head-bg: #16161c;
     --table-stripe-bg: rgba(255, 255, 255, 0.03);
-    
 }
 
 [data-theme="dark"] .ft-card,
@@ -173,23 +159,16 @@
     background-color: #16161c !important;
 }
 
-/* --- RESET & BASE --- */
+
+/* ==========================================================================
+   2. RESET & BASE (Tipografia e Globais)
+   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-}
-
-.ft-list-unstyled {
-    list-style: none;
-    padding-left: 0;
-}
-
-a {
-    text-decoration: none;
-    color: var(--txt-primary);
-    transition: all 0.2s ease;
 }
 
 body {
@@ -222,9 +201,30 @@ h6 {
     letter-spacing: -.01rem;
 }
 
+a {
+    text-decoration: none;
+    color: var(--txt-primary);
+    transition: all 0.2s ease;
+}
+
 ::selection {
     color: #ffffff;
     background-color: var(--primary);
+}
+
+/* Utilitários de Lista e Foco */
+.ft-list-unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+body.user-is-tabbing :focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
 /* Classes Utilitárias de Texto */
@@ -244,7 +244,44 @@ h6 {
     color: var(--txt-white-sec);
 }
 
-/* --- COMPONENTES ESTRUTURAIS --- */
+
+/* ==========================================================================
+   3. LAYOUT & GRID
+   ========================================================================== */
+
+.ft-flex-container {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.ft-grid {
+    margin-block: 2rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.ft-grid-sm {
+    margin-block: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.ft-grid-lg {
+    margin-block: 2rem;
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+
+/* ==========================================================================
+   4. ESTRUTURA (Navbar, Hero, Footer, Seções)
+   ========================================================================== */
 
 /* Navbar */
 .ft-navbar {
@@ -327,6 +364,7 @@ h6 {
     transition: all 0.3s;
 }
 
+/* Navbar Responsiva */
 @media (max-width: 900px) {
     .ft-navbar-container {
         flex-wrap: wrap;
@@ -347,16 +385,13 @@ h6 {
         margin-top: 1rem;
     }
 
-    /* Estado Ativo (Abrindo) */
     .ft-navbar-menu.active {
         display: flex;
         animation: slideDown 0.3s ease forwards;
     }
 
-    /* Estado Fechando (Adicionado para animação de saída) */
     .ft-navbar-menu.closing {
         display: flex;
-        /* Mantém visível para animar */
         animation: slideUp 0.3s ease forwards;
     }
 
@@ -392,7 +427,7 @@ h6 {
     }
 }
 
-/* Hero */
+/* Hero Section */
 .ft-hero {
     position: relative;
     padding-top: 8.25rem;
@@ -437,7 +472,7 @@ h6 {
     margin-bottom: 25px;
 }
 
-/* Footer */
+/* Footer & Top Bar */
 footer {
     display: block;
     width: 100%;
@@ -447,7 +482,6 @@ footer {
     z-index: 10;
 }
 
-/* Top Bar */
 .ft-top-bar {
     --bg-top-bar: var(--grad-social);
     width: 100%;
@@ -487,37 +521,273 @@ footer {
     margin-bottom: 2rem;
 }
 
-/* --- LAYOUT & GRID --- */
-.ft-flex-container {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+
+/* ==========================================================================
+   5. BOTÕES
+   ========================================================================== */
+
+.ft-btn {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    padding: 0 30px;
+    height: 50px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-decoration: none !important;
+    font-size: 15px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
 }
 
-.ft-grid {
-    margin-block: 2rem;
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* Gradiente */
+.ft-btn-gradient {
+    --btn-grad: var(--grad-primary);
+    background: var(--dark);
+    color: #fff;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: visible;
 }
 
-.ft-grid-sm {
-    margin-block: 2rem;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.ft-btn-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    z-index: -1;
+    background-image: var(--btn-grad);
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(5px) scale(0.9);
 }
 
-.ft-grid-lg {
-    margin-block: 2rem;
-    display: grid;
-    gap: 2.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+.ft-btn-gradient:hover {
+    background-image: var(--btn-grad);
+    transform: translateY(-2px);
+    color: #fff;
+    box-shadow: none;
 }
 
-/* --- FORMULÁRIOS --- */
+.ft-btn-gradient:hover::before {
+    opacity: 0.6;
+    transform: translateY(8px) scale(1);
+}
+
+/* Variantes Sólidas */
+.ft-btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: white;
+    border: 2px solid var(--btn-border-dark);
+    box-shadow: 0 5px 15px rgba(64, 170, 84, 0.2);
+}
+
+.ft-btn-primary:hover {
+    background-color: var(--btn-primary-hover-bg);
+    border-color: var(--btn-border-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(64, 170, 84, 0.3);
+}
+
+.ft-btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: white;
+    border: 2px solid var(--btn-border-dark);
+}
+
+.ft-btn-secondary:hover {
+    background-color: var(--btn-secondary-hover-bg);
+    transform: translateY(-2px);
+}
+
+.ft-btn-white {
+    background-color: var(--btn-white-bg);
+    color: var(--btn-white-text);
+    border: 2px solid var(--btn-border-dark);
+}
+
+.ft-btn-white:hover {
+    background-color: var(--btn-white-hover-bg);
+    transform: translateY(-2px);
+}
+
+.ft-btn-dark {
+    background: var(--btn-dark-bg);
+    color: #fff;
+    border: 2px solid var(--btn-border-light);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ft-btn-dark:hover {
+    background: #2a2b35;
+    transform: translateY(-2px);
+}
+
+.ft-btn-danger {
+    background: var(--danger);
+    color: #fff;
+    border: 2px solid var(--btn-border-dark);
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+}
+
+.ft-btn-danger:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+.ft-btn-success {
+    background: var(--success);
+    color: #fff;
+    border: 2px solid var(--btn-border-dark);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+}
+
+.ft-btn-success:hover {
+    background: #059669;
+    transform: translateY(-2px);
+}
+
+.ft-btn-warning {
+    background: var(--warning);
+    color: #fff;
+    border: 2px solid var(--btn-border-dark);
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+}
+
+.ft-btn-warning:hover {
+    background: #d97706;
+    transform: translateY(-2px);
+}
+
+.ft-btn-info {
+    background: var(--info);
+    color: #fff;
+    border: 2px solid var(--btn-border-dark);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.ft-btn-info:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.ft-btn-sm {
+    padding: 6px 20px;
+    font-size: 13px;
+    height: auto;
+    border-width: 2px;
+}
+
+.ft-btn-block {
+    width: 100%;
+    display: flex;
+}
+
+.ft-btn-link {
+    background: transparent;
+    color: var(--txt-primary);
+    border-color: #e0e0e0;
+}
+
+.ft-btn-link:hover {
+    background: #fff;
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Variantes Outline */
+.ft-btn-outline-danger {
+    background: transparent;
+    color: var(--danger);
+    border: 2px solid var(--danger);
+}
+
+.ft-btn-outline-danger:hover {
+    background: var(--danger);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.2);
+}
+
+.ft-btn-outline-success {
+    background: transparent;
+    color: var(--success);
+    border: 2px solid var(--success);
+}
+
+.ft-btn-outline-success:hover {
+    background: var(--success);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.2);
+}
+
+.ft-btn-outline-warning {
+    background: transparent;
+    color: var(--warning);
+    border: 2px solid var(--warning);
+}
+
+.ft-btn-outline-warning:hover {
+    background: var(--warning);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.2);
+}
+
+.ft-btn-outline-info {
+    background: transparent;
+    color: var(--info);
+    border: 2px solid var(--info);
+}
+
+.ft-btn-outline-info:hover {
+    background: var(--info);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+}
+
+.ft-btn-outline-dark {
+    background: transparent;
+    color: rgba(29, 30, 37, 0.9);
+    border: 2px solid rgba(29, 30, 37, 0.4);
+}
+
+.ft-btn-outline-dark:hover {
+    background: rgba(29, 30, 37, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ft-btn-outline-white {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.ft-btn-outline-white:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+
+/* ==========================================================================
+   6. FORMULÁRIOS
+   ========================================================================== */
+
 input,
 button,
 select,
@@ -590,7 +860,7 @@ textarea.ft-input {
     min-height: 100px;
 }
 
-/* Validação de Formulário */
+/* Validação */
 .ft-input.is-valid {
     border-color: var(--success);
     padding-right: calc(1.5em + 0.75rem);
@@ -747,268 +1017,12 @@ textarea.ft-input {
     transform: translateX(100%);
 }
 
-/* --- BOTÕES --- */
-.ft-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 30px;
-    height: 50px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: 2px solid transparent;
-    text-decoration: none !important;
-    font-size: 15px;
-    line-height: 1.5;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1; 
-}
 
-/* BOTÃO GRADIENTE */
-.ft-btn-gradient {
-    --btn-grad: var(--grad-primary);
-    background: var(--dark);
-    color: #fff;
-    border: none;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    overflow: visible; 
-}
+/* ==========================================================================
+   7. CARDS & WIDGETS
+   ========================================================================== */
 
-.ft-btn-gradient::before {
-    content: '';
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    border-radius: 50px;
-    z-index: -1; 
-    background-image: var(--btn-grad);
-    filter: blur(15px);
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    transform: translateY(5px) scale(0.9);
-}
-
-.ft-btn-gradient:hover {
-    background-image: var(--btn-grad);
-    transform: translateY(-2px);
-    color: #fff;
-    box-shadow: none; 
-}
-
-.ft-btn-gradient:hover::before {
-    opacity: 0.6;
-    transform: translateY(8px) scale(1);
-}
-
-[data-theme="dark"] .ft-btn-gradient {
-    box-shadow: none;
-}
-
-.ft-btn-secondary {
-    background-color: var(--btn-secondary-bg);
-    color: white;
-    border: 2px solid var(--btn-border-dark);
-}
-
-.ft-btn-secondary:hover {
-    background-color: var(--btn-secondary-hover-bg);
-    transform: translateY(-2px);
-}
-
-.ft-btn-primary {
-    background-color: var(--btn-primary-bg);
-    color: white;
-    border: 2px solid var(--btn-border-dark);
-    box-shadow: 0 5px 15px rgba(64, 170, 84, 0.2);
-}
-
-.ft-btn-primary:hover {
-    background-color: var(--btn-primary-hover-bg);
-    border-color: var(--btn-border-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(64, 170, 84, 0.3);
-}
-
-.ft-btn-white {
-    background-color: var(--btn-white-bg);
-    color: var(--btn-white-text);
-    border: 2px solid var(--btn-border-dark);
-}
-
-.ft-btn-white:hover {
-    background-color: var(--btn-white-hover-bg);
-    transform: translateY(-2px);
-}
-
-.ft-btn-dark {
-    background: var(--btn-dark-bg);
-    color: #fff;
-    border: 2px solid var(--btn-border-light);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.ft-btn-dark:hover {
-    background: #2a2b35;
-    transform: translateY(-2px);
-}
-
-.ft-btn-danger {
-    background: var(--danger);
-    color: #fff;
-    border: 2px solid var(--btn-border-dark);
-    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
-}
-
-.ft-btn-danger:hover {
-    background: #dc2626;
-    transform: translateY(-2px);
-}
-
-.ft-btn-success {
-    background: var(--success);
-    color: #fff;
-    border: 2px solid var(--btn-border-dark);
-    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
-}
-
-.ft-btn-success:hover {
-    background: #059669;
-    transform: translateY(-2px);
-}
-
-.ft-btn-warning {
-    background: var(--warning);
-    color: #fff;
-    border: 2px solid var(--btn-border-dark);
-    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
-}
-
-.ft-btn-warning:hover {
-    background: #d97706;
-    transform: translateY(-2px);
-}
-
-.ft-btn-info {
-    background: var(--info);
-    color: #fff;
-    border: 2px solid var(--btn-border-dark);
-    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
-}
-
-.ft-btn-info:hover {
-    background: #2563eb;
-    transform: translateY(-2px);
-}
-
-.ft-btn-sm {
-    padding: 6px 20px;
-    font-size: 13px;
-    height: auto;
-    border-width: 2px;
-}
-
-.ft-btn-block {
-    width: 100%;
-    display: flex;
-}
-
-.ft-btn-link {
-    background: transparent;
-    color: var(--txt-primary);
-    border-color: #e0e0e0;
-}
-
-.ft-btn-link:hover {
-    background: #fff;
-    color: var(--primary);
-    border-color: var(--primary);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-/* Outlines */
-.ft-btn-outline-danger {
-    background: transparent;
-    color: var(--danger);
-    border: 2px solid var(--danger);
-}
-
-.ft-btn-outline-danger:hover {
-    background: var(--danger);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.2);
-}
-
-.ft-btn-outline-success {
-    background: transparent;
-    color: var(--success);
-    border: 2px solid var(--success);
-}
-
-.ft-btn-outline-success:hover {
-    background: var(--success);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.2);
-}
-
-.ft-btn-outline-warning {
-    background: transparent;
-    color: var(--warning);
-    border: 2px solid var(--warning);
-}
-
-.ft-btn-outline-warning:hover {
-    background: var(--warning);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.2);
-}
-
-.ft-btn-outline-info {
-    background: transparent;
-    color: var(--info);
-    border: 2px solid var(--info);
-}
-
-.ft-btn-outline-info:hover {
-    background: var(--info);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
-}
-
-.ft-btn-outline-dark {
-    background: transparent;
-    color: rgba(29, 30, 37, 0.9);
-    border: 2px solid rgba(29, 30, 37, 0.4);
-}
-
-.ft-btn-outline-dark:hover {
-    background: rgba(29, 30, 37, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.ft-btn-outline-white {
-    background: transparent;
-    color: rgba(255, 255, 255, 0.9);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-}
-
-.ft-btn-outline-white:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-}
-
-/* --- CARDS & WIDGETS --- */
+/* Card Padrão */
 .ft-card {
     padding: 2rem;
     box-shadow: 2px 0 24px rgba(64, 170, 84, 0.1);
@@ -1088,6 +1102,7 @@ textarea.ft-input {
     font-weight: 500;
 }
 
+/* Card Feature */
 .ft-card-feature {
     display: flex;
     flex-direction: column;
@@ -1141,6 +1156,36 @@ textarea.ft-input {
     border-radius: 50%;
 }
 
+.ft-card-feature-row {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding: 1.5rem;
+    width: 100%;
+    min-height: auto;
+    gap: 15px;
+}
+
+.ft-card-feature-row span {
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.ft-card-feature-row div {
+    flex-grow: 1;
+}
+
+.ft-card-feature-row h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.ft-card-feature-row p {
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+/* Outros Cards */
 .ft-card-blog {
     padding: 0;
     overflow: hidden;
@@ -1179,35 +1224,6 @@ textarea.ft-input {
     color: var(--txt-sec);
     font-size: 0.9rem;
     margin-bottom: 1rem;
-}
-
-.ft-card-feature-row {
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-    padding: 1.5rem;
-    width: 100%;
-    min-height: auto;
-    gap: 15px;
-}
-
-.ft-card-feature-row span {
-    margin-bottom: 0;
-    flex-shrink: 0;
-}
-
-.ft-card-feature-row div {
-    flex-grow: 1;
-}
-
-.ft-card-feature-row h1 {
-    font-size: 1.1rem;
-    margin-bottom: 0.2rem;
-}
-
-.ft-card-feature-row p {
-    text-align: left;
-    font-size: 0.9rem;
 }
 
 .ft-card-highlight {
@@ -1269,7 +1285,12 @@ textarea.ft-input {
     font-size: 16px;
 }
 
-/* --- UI ELEMENTS (Alerts, Badges, Tables, etc) --- */
+
+/* ==========================================================================
+   8. COMPONENTES UI (Data Display & Feedback)
+   ========================================================================== */
+
+/* Alerts */
 .ft-alert {
     position: relative;
     padding: 1rem 1.25rem;
@@ -1361,6 +1382,7 @@ textarea.ft-input {
     color: var(--neutral);
 }
 
+/* Badges */
 .ft-badge {
     display: inline-flex;
     align-items: center;
@@ -1423,6 +1445,7 @@ textarea.ft-input {
     border: 2px solid rgba(100, 116, 139, 0.2);
 }
 
+/* Notifications / Toasts */
 .ft-notification-card {
     position: relative;
     width: 320px;
@@ -1533,6 +1556,7 @@ textarea.ft-input {
     outline-color: var(--info-soft);
 }
 
+/* Avatars */
 .ft-avatar {
     position: relative;
     display: inline-flex;
@@ -1596,13 +1620,14 @@ textarea.ft-input {
     z-index: 2;
 }
 
+/* Tables */
 .ft-table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    background-color: var(--bg-surface); /* Garante fundo correto */
+    background-color: var(--bg-surface);
 }
 
 .ft-table {
@@ -1613,7 +1638,7 @@ textarea.ft-input {
     text-align: left;
 }
 
-.ft-table th, 
+.ft-table th,
 .ft-table td {
     padding: 1rem;
     vertical-align: middle;
@@ -1633,7 +1658,6 @@ textarea.ft-input {
     border-bottom: none;
 }
 
-/* Listrada (Striped) */
 .ft-table-striped tbody tr:nth-of-type(odd) {
     background-color: var(--table-stripe-bg);
 }
@@ -1643,12 +1667,12 @@ textarea.ft-input {
     transition: background-color 0.2s ease;
 }
 
-/* Células dentro do hover (caso tenham bg próprio, o que é raro, mas previne) */
-.ft-table-hover tbody tr:hover > td,
-.ft-table-hover tbody tr:hover > th {
+.ft-table-hover tbody tr:hover>td,
+.ft-table-hover tbody tr:hover>th {
     background-color: var(--table-hover-bg) !important;
 }
 
+/* Breadcrumb */
 .ft-breadcrumb {
     display: flex;
     flex-wrap: wrap;
@@ -1691,6 +1715,55 @@ textarea.ft-input {
     cursor: default;
 }
 
+/* Progress Bar */
+.ft-progress {
+    display: flex;
+    height: 0.75rem;
+    overflow: hidden;
+    font-size: 0.75rem;
+    background-color: #e2e8f0;
+    border-radius: 50rem;
+    margin-bottom: 1rem;
+}
+
+.ft-progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: var(--primary);
+    transition: width 0.6s ease;
+}
+
+.ft-progress-bar.bg-success {
+    background-color: var(--success);
+}
+
+.ft-progress-bar.bg-info {
+    background-color: var(--info);
+}
+
+.ft-progress-bar.bg-warning {
+    background-color: var(--warning);
+}
+
+.ft-progress-bar.bg-danger {
+    background-color: var(--danger);
+}
+
+.ft-progress-bar.bg-dark {
+    background-color: var(--dark);
+}
+
+.ft-progress-bar-striped {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-size: 1rem 1rem;
+}
+
+/* Spinners */
 .ft-spinner-border {
     display: inline-block;
     width: 1.5rem;
@@ -1760,15 +1833,6 @@ textarea.ft-input {
     animation-delay: -0.16s;
 }
 
-:focus:not(:focus-visible) {
-    outline: none;
-}
-
-body.user-is-tabbing :focus {
-    outline: 2px solid var(--primary);
-    outline-offset: 2px;
-}
-
 @keyframes ft-bounce {
 
     0%,
@@ -1782,7 +1846,12 @@ body.user-is-tabbing :focus {
     }
 }
 
-/* --- MODAIS --- */
+
+/* ==========================================================================
+   9. INTERATIVIDADE & OVERLAYS (Modals, Dropdowns, Tooltips)
+   ========================================================================== */
+
+/* Modais */
 .ft-modal {
     position: fixed;
     top: 0;
@@ -1888,6 +1957,7 @@ body.user-is-tabbing :focus {
     opacity: .75;
 }
 
+/* Dropdowns */
 .ft-dropdown {
     position: relative;
     display: inline-block;
@@ -1924,10 +1994,7 @@ body.user-is-tabbing :focus {
     background: transparent;
 }
 
-.ft-dropdown:hover .ft-dropdown-menu {
-    display: block;
-}
-
+.ft-dropdown:hover .ft-dropdown-menu,
 .ft-dropdown-menu.show {
     display: block;
 }
@@ -1960,6 +2027,7 @@ body.user-is-tabbing :focus {
     margin: 5px 0;
 }
 
+/* Accordion */
 details.ft-accordion {
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -2011,60 +2079,12 @@ details.ft-accordion[open] summary::after {
     background: var(--bg-surface);
 }
 
-.ft-progress {
-    display: flex;
-    height: 0.75rem;
-    overflow: hidden;
-    font-size: 0.75rem;
-    background-color: #e2e8f0;
-    border-radius: 50rem;
-    margin-bottom: 1rem;
-}
-
-.ft-progress-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    background-color: var(--primary);
-    transition: width 0.6s ease;
-}
-
-.ft-progress-bar.bg-success {
-    background-color: var(--success);
-}
-
-.ft-progress-bar.bg-info {
-    background-color: var(--info);
-}
-
-.ft-progress-bar.bg-warning {
-    background-color: var(--warning);
-}
-
-.ft-progress-bar.bg-danger {
-    background-color: var(--danger);
-}
-
-.ft-progress-bar.bg-dark {
-    background-color: var(--dark);
-}
-
-.ft-progress-bar-striped {
-    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
-    background-size: 1rem 1rem;
-}
-
-/* --- TOOLTIPS (Posicionáveis) --- */
+/* Tooltips */
 [data-tooltip] {
     position: relative;
     cursor: pointer;
 }
 
-/* Elemento Base do Tooltip */
 [data-tooltip]::before {
     content: attr(data-tooltip);
     position: absolute;
@@ -2081,7 +2101,6 @@ details.ft-accordion[open] summary::after {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Seta Base */
 [data-tooltip]::after {
     content: '';
     position: absolute;
@@ -2091,7 +2110,7 @@ details.ft-accordion[open] summary::after {
     pointer-events: none;
 }
 
-/* -- Posição: Top (Padrão) -- */
+/* Tooltip Positions */
 [data-tooltip]:not([data-tooltip-pos])::before,
 [data-tooltip-pos="top"]::before {
     bottom: 100%;
@@ -2117,7 +2136,6 @@ details.ft-accordion[open] summary::after {
     transform: translateX(-50%) translateY(-5px);
 }
 
-/* -- Posição: Bottom -- */
 [data-tooltip-pos="bottom"]::before {
     top: 100%;
     left: 50%;
@@ -2139,7 +2157,6 @@ details.ft-accordion[open] summary::after {
     transform: translateX(-50%) translateY(5px);
 }
 
-/* -- Posição: Left -- */
 [data-tooltip-pos="left"]::before {
     top: 50%;
     right: 100%;
@@ -2161,7 +2178,6 @@ details.ft-accordion[open] summary::after {
     transform: translateY(-50%) translateX(-5px);
 }
 
-/* -- Posição: Right -- */
 [data-tooltip-pos="right"]::before {
     top: 50%;
     left: 100%;
@@ -2183,7 +2199,7 @@ details.ft-accordion[open] summary::after {
     transform: translateY(-50%) translateX(5px);
 }
 
-/* --- POPOVERS (Posicionáveis via JS) --- */
+/* Popovers */
 .ft-popover-container {
     position: relative;
     display: inline-block;
@@ -2198,14 +2214,11 @@ details.ft-accordion[open] summary::after {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1060;
-
-    /* Estado inicial: escondido e transparente */
     display: none;
     opacity: 0;
     transition: opacity 0.2s ease;
 }
 
-/* Posições Base (Injetadas via JS se necessário) */
 .ft-popover-content.pos-right {
     top: 0;
     left: calc(100% + 10px);
@@ -2232,37 +2245,24 @@ details.ft-accordion[open] summary::after {
     top: auto;
 }
 
-/* Default fallback */
 .ft-popover-content:not([class*="pos-"]) {
     top: 0;
     left: calc(100% + 10px);
 }
 
-/* Estado visível */
 .ft-popover-content.show {
     display: block;
-    /* A opacidade será controlada via JS ou classe auxiliar para evitar o glitch */
 }
 
-/* Classe auxiliar que o JS adiciona DEPOIS de calcular a posição */
 .ft-popover-content.show.visible {
     opacity: 1;
-    /* Reset transform para posição final */
     transform: translateX(0) translateY(0);
-    /* Ajuste fino dependendo da posição se necessário, mas geralmente translateX(0) resolve se o base tiver offset */
-}
-
-/* Ajuste dos transforms finais baseados na posição para animação correta */
-.ft-popover-content.pos-right.show.visible,
-.ft-popover-content.pos-left.show.visible {
-    transform: translateY(0);
 }
 
 .ft-popover-content.pos-bottom.show.visible,
 .ft-popover-content.pos-top.show.visible {
     transform: translateX(-50%);
 }
-
 
 .ft-popover-header {
     font-weight: 700;
