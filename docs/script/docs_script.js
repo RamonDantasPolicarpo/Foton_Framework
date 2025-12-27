@@ -124,8 +124,24 @@ function downloadCSS() {
 
     // Verifica se o namespace e a função existem
     if (typeof Foton !== 'undefined' && typeof Foton.showToast === 'function') {
-        Foton.showToast('Download iniciado!');
+        Foton.showToast('Download CSS iniciado!');
     } else if (typeof showToast === 'function') {
-        showToast('Download iniciado!');
+        showToast('Download CSS iniciado!');
+    }
+}
+
+function downloadJS() {
+    const link = document.createElement('a');
+    link.href = '/dist/foton_scripts.js';
+    link.download = 'foton_scripts.js';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Verifica se o namespace e a função existem
+    if (typeof Foton !== 'undefined' && typeof Foton.showToast === 'function') {
+        Foton.showToast('Download JS iniciado!');
+    } else if (typeof showToast === 'function') {
+        showToast('Download JS iniciado!');
     }
 }

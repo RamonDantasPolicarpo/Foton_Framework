@@ -17,6 +17,7 @@
     --bg-dark-alt: #1e1e24;
     --dark: #1d1e25;
     --hero-bg: radial-gradient(#eef 1px, transparent 1px), linear-gradient(180deg, #f9f9ff 0%, #fff 100%);
+    --nav-bg: rgba(255, 255, 255, 0.7);
 
     /* 3. Texto */
     --txt-primary: #343f52;
@@ -33,14 +34,19 @@
     /* 4. Cores Semânticas */
     --info: #3b82f6;
     --info-soft: #eff6ff;
+    --info-pastel: #e3f2fd;
     --danger: #ef4444;
     --danger-soft: #fef2f2;
+    --danger-pastel: #ffebee;
     --warning: #f59e0b;
     --warning-soft: #fffbeb;
+    --warning-pastel: #fff3e0;
     --success: #10b981;
     --success-soft: #ecfdf5;
+    --success-pastel: #e8f5e9;
     --neutral: #64748b;
     --neutral-soft: #f1f5f9;
+    --neutral-pastel: #e2e8f0;
 
     /* 5. Acentos */
     --accent-1: #0cc27e;
@@ -48,13 +54,47 @@
 
     /* 6. Gradientes */
     --grad-primary: linear-gradient(135deg, #40aa54, #2d8a3e);
-    --grad-social: linear-gradient(135deg, #6559ca, #e33f5f);
-    --grad-urban: linear-gradient(135deg, #40aa54, #64748b);
-    --grad-blue: linear-gradient(135deg, #3b82f6, #94a3b8);
+
+    /* Vibrantes */
+    --grad-neon: linear-gradient(90deg, #ff00cc, #333399);
+    --grad-hype: linear-gradient(to right, #ec4899, #8b5cf6);
+    --grad-eletric: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    --grad-social: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+
+    /* Quentes */
+    --grad-fire: linear-gradient(to right, #f59e0b, #ef4444);
+    --grad-mango: linear-gradient(to right, #ffe259, #ffa751);
+    --grad-cherry: linear-gradient(to right, #eb3349, #f45c43);
+    --grad-gold: linear-gradient(to right, #BF953F, #FCF6BA, #B38728);
+
+    /* Frescos */
+    --grad-mint: linear-gradient(to right, #34d399, #059669);
+    --grad-ocean: linear-gradient(to right, #1CB5E0, #000851);
+    --grad-boreal: linear-gradient(to right, #A770EF, #CF8BF3, #FDB99B);
+
+    /* Dark (Mais camadas e profundidade) */
+    --grad-dark: linear-gradient(30deg,
+            #434343 0%,
+            #363636 25%,
+            #262626 50%,
+            #141414 75%,
+            #000000 100%);
+
 
     /* 7. Botões */
-    --btn-gray-bg: #e9e9ed;
-    --btn-gray-hover-bg: #bebec2;
+    --btn-primary-bg: #40aa54;
+    --btn-primary-hover-bg: #358f45;
+    --btn-secondary-bg: #475569;
+    --btn-secondary-hover-bg: #334155;
+    --btn-white-bg: #e9e9ed;
+    --btn-white-hover-bg: #d4d4d8;
+    --btn-dark-bg: #1d1e25;
+    --btn-dark-hover-bg: #2a2b35;
+
+    /* 9. Tabelas */
+    --table-head-bg: var(--bg-page);
+    --table-stripe-bg: rgba(0, 0, 0, 0.02); 
+    --table-hover-bg: rgba(64, 170, 84, 0.08); 
 
     /* 8. Fontes */
     --font-primary: 'Manrope', sans-serif;
@@ -69,6 +109,7 @@
     --bg-surface: #1e1e24;
 
     --hero-bg: radial-gradient(#32384a 1px, transparent 1px), linear-gradient(180deg, #181c26 0%, #14161f 100%);
+    --nav-bg: rgba(18, 18, 18, 0.7);
     --txt-primary: #e2e8f0;
     --txt-sec: #94a3b8;
 
@@ -80,10 +121,13 @@
     --neutral-soft: #1f2937;
 
     --border-color: #2d2d3a;
+
+    --table-head-bg: #16161c;
+    --table-stripe-bg: rgba(255, 255, 255, 0.03);
+    
 }
 
 [data-theme="dark"] .ft-card,
-[data-theme="dark"] .ft-navbar,
 [data-theme="dark"] .docs-sidebar,
 [data-theme="dark"] .ft-input-group,
 [data-theme="dark"] .ft-input,
@@ -120,9 +164,9 @@
 }
 
 [data-theme="dark"] .ft-btn-gradient:hover {
-    background-image: var(--grad-primary);
+    background-image: var(--btn-grad);
     color: #fff;
-    box-shadow: 0 15px 30px rgba(64, 170, 84, 0.4);
+    box-shadow: none;
 }
 
 [data-theme="dark"] .preview-box {
@@ -214,7 +258,7 @@ h6 {
     width: 100%;
     flex-direction: column;
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--nav-bg);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -303,9 +347,17 @@ h6 {
         margin-top: 1rem;
     }
 
+    /* Estado Ativo (Abrindo) */
     .ft-navbar-menu.active {
         display: flex;
         animation: slideDown 0.3s ease forwards;
+    }
+
+    /* Estado Fechando (Adicionado para animação de saída) */
+    .ft-navbar-menu.closing {
+        display: flex;
+        /* Mantém visível para animar */
+        animation: slideUp 0.3s ease forwards;
     }
 
     .ft-navbar-menu li a {
@@ -325,6 +377,18 @@ h6 {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
     }
 }
 
@@ -385,29 +449,17 @@ footer {
 
 /* Top Bar */
 .ft-top-bar {
+    --bg-top-bar: var(--grad-social);
     width: 100%;
     display: flex;
     gap: 1em;
     align-items: center;
     justify-content: center;
     padding: 12px 15px;
-    color: #fff;
-    background: var(--grad-social);
+    color: white;
+    background: var(--bg-top-bar);
     font-weight: 600;
     font-size: 14px;
-}
-
-.ft-top-bar .ft-btn-link {
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.4);
-    text-decoration: none;
-}
-
-.ft-top-bar .ft-btn-link:hover {
-    background: #fff;
-    color: var(--primary);
-    border-color: #fff;
-    text-decoration: none;
 }
 
 /* Section Dark */
@@ -712,36 +764,107 @@ textarea.ft-input {
     font-size: 15px;
     line-height: 1.5;
     box-sizing: border-box;
+    /* Necessário para posicionar o glow interno */
+    position: relative;
+    z-index: 1;
 }
 
+/* BOTÃO GRADIENTE (JS DRIVEN) */
 .ft-btn-gradient {
+    /* Define a variável local com um valor padrão */
+    --btn-grad: var(--grad-primary);
+
     background: var(--dark);
     color: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* Permite que o brilho (glow) vaze para fora do botão */
+    overflow: visible;
 }
 
 .ft-btn-gradient:hover {
-    background-image: var(--grad-primary);
+    /* O próprio botão assume o gradiente no hover para ficar nítido */
+    background-image: var(--btn-grad);
     transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(64, 170, 84, 0.4);
     color: #fff;
-    border-color: transparent;
+    box-shadow: none;
+    /* Remove sombra padrão */
 }
 
-.ft-btn-primary {
-    background-color: var(--btn-gray-bg);
-    color: var(--bg-dark);
+/* Classe para o elemento de brilho que será injetado pelo JS */
+.ft-btn-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    z-index: -1;
+    /* Fica atrás do texto do botão */
+
+    /* Mágica: Herda a variável definida no pai (.ft-btn-gradient) */
+    background-image: var(--btn-grad);
+
+    /* Efeito de desfoque */
+    filter: blur(15px);
+
+    /* Estado inicial (invisível) */
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+    /* Não interfere no clique */
+}
+
+/* Quando passar o mouse no botão, o elemento glow (filho) aparece */
+.ft-btn-gradient:hover .ft-btn-glow {
+    opacity: 0.6;
+    transform: translateY(8px) scale(0.95);
+    /* Desce um pouco para simular sombra */
+}
+
+/* Ajuste Dark Mode */
+[data-theme="dark"] .ft-btn-gradient {
+    box-shadow: none;
+}
+
+.ft-btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: white;
     border: 2px solid var(--btn-border-dark);
 }
 
+.ft-btn-secondary:hover {
+    background-color: var(--btn-secondary-hover-bg);
+    transform: translateY(-2px);
+}
+
+.ft-btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: white;
+    border: 2px solid var(--btn-border-dark);
+    box-shadow: 0 5px 15px rgba(64, 170, 84, 0.2);
+}
+
 .ft-btn-primary:hover {
-    background-color: var(--btn-gray-hover-bg);
+    background-color: var(--btn-primary-hover-bg);
+    border-color: var(--btn-border-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(64, 170, 84, 0.3);
+}
+
+.ft-btn-white {
+    background-color: var(--btn-white-bg);
+    color: var(--btn-white-text);
+    border: 2px solid var(--btn-border-dark);
+}
+
+.ft-btn-white:hover {
+    background-color: var(--btn-white-hover-bg);
     transform: translateY(-2px);
 }
 
 .ft-btn-dark {
-    background: var(--dark);
+    background: var(--btn-dark-bg);
     color: #fff;
     border: 2px solid var(--btn-border-light);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -1205,13 +1328,13 @@ textarea.ft-input {
     opacity: 1;
 }
 
-.ft-alert-primary {
+.ft-alert-success {
     background-color: var(--success-soft);
     color: var(--success);
     border-color: rgba(16, 185, 129, 0.2);
 }
 
-.ft-alert-primary .ft-alert-icon {
+.ft-alert-success .ft-alert-icon {
     color: var(--success);
 }
 
@@ -1319,19 +1442,66 @@ textarea.ft-input {
 
 .ft-notification-card {
     position: relative;
-    width: max-content;
-    min-width: 320px;
+    width: 320px;
     padding: 1rem;
     background: var(--bg-surface);
     border-radius: 16px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     display: flex;
-    align-items: center;
     gap: 15px;
     margin-bottom: 15px;
     opacity: 1;
     border: 1px solid rgba(0, 0, 0, 0.02);
     transition: transform 0.2s;
+}
+
+.ft-notification-card .title {
+    font-weight: 700;
+    font-size: 1em;
+    color: var(--txt-primary);
+}
+
+.ft-notification-card .text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-wrap: break-word;
+    font-size: 0.9em;
+    color: var(--txt-sec);
+}
+
+.ft-notification-card .icon-box {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2em;
+    background: var(--neutral-pastel);
+    color: var(--neutral);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ft-notification-card .icon-box.success {
+    background: var(--success-pastel);
+    color: var(--success);
+}
+
+.ft-notification-card .icon-box.warning {
+    background: var(--warning-pastel);
+    color: var(--warning);
+}
+
+.ft-notification-card .icon-box.danger {
+    background: var(--danger-pastel);
+    color: var(--danger);
+}
+
+.ft-notification-card .icon-box.info {
+    background: var(--info-pastel);
+    color: var(--info);
 }
 
 .ft-notification-card:hover {
@@ -1353,19 +1523,31 @@ textarea.ft-input {
 }
 
 .ft-toast .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+    background: var(--neutral);
+    outline: solid 4px var(--neutral-soft);
+    width: 12px;
+    height: 12px;
+    border-radius: 7px;
 }
 
 .ft-toast .dot.success {
     background: var(--success);
-    box-shadow: 0 0 0 3px var(--success-soft);
+    outline-color: var(--success-soft);
 }
 
 .ft-toast .dot.danger {
     background: var(--danger);
-    box-shadow: 0 0 0 3px var(--danger-soft);
+    outline-color: var(--danger-soft);
+}
+
+.ft-toast .dot.warning {
+    background: var(--warning);
+    outline-color: var(--warning-soft);
+}
+
+.ft-toast .dot.info {
+    background: var(--info);
+    outline-color: var(--info-soft);
 }
 
 .ft-avatar {
@@ -1436,7 +1618,8 @@ textarea.ft-input {
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
     border-radius: 8px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-surface); /* Garante fundo correto */
 }
 
 .ft-table {
@@ -1447,33 +1630,40 @@ textarea.ft-input {
     text-align: left;
 }
 
-.ft-table th,
+.ft-table th, 
 .ft-table td {
     padding: 1rem;
     vertical-align: middle;
     border-bottom: 1px solid var(--border-color);
-    color: var(--txt-primary);
 }
 
 .ft-table th {
-    background-color: var(--bg-page);
+    background-color: var(--table-head-bg);
     font-weight: 600;
-    color: var(--txt-sec);
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    border-top: none;
 }
 
 .ft-table tr:last-child td {
     border-bottom: none;
 }
 
-.ft-table-hover tbody tr:hover {
-    background-color: var(--bg-page);
+/* Listrada (Striped) */
+.ft-table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--table-stripe-bg);
 }
 
-.ft-table-striped tbody tr:nth-of-type(odd) {
-    background-color: var(--bg-page);
+.ft-table-hover tbody tr:hover {
+    background-color: var(--table-hover-bg) !important;
+    transition: background-color 0.2s ease;
+}
+
+/* Células dentro do hover (caso tenham bg próprio, o que é raro, mas previne) */
+.ft-table-hover tbody tr:hover > td,
+.ft-table-hover tbody tr:hover > th {
+    background-color: var(--table-hover-bg) !important;
 }
 
 .ft-breadcrumb {
@@ -1585,6 +1775,15 @@ textarea.ft-input {
 
 .ft-spinner-dots span:nth-child(2) {
     animation-delay: -0.16s;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+body.user-is-tabbing :focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
 @keyframes ft-bounce {
@@ -1715,7 +1914,7 @@ textarea.ft-input {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1000;
+    z-index: 1060;
     display: none;
     min-width: 10rem;
     padding: 0.5rem 0;
@@ -2015,7 +2214,7 @@ details.ft-accordion[open] summary::after {
     border: 1px solid var(--border-color);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    z-index: 10;
+    z-index: 1060;
 
     /* Estado inicial: escondido e transparente */
     display: none;

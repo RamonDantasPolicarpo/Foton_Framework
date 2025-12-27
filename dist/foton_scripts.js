@@ -1,5 +1,5 @@
 /**
- * FÓTON FRAMEWORK SCRIPTS (CORE) v2.0
+ * FÓTON FRAMEWORK SCRIPTS (CORE) v2.1
  * Namespace pattern applied to prevent global scope pollution.
  */
 
@@ -15,6 +15,7 @@ const Foton = {
         this.initKeyboardFocus();
         this.initNavbar();
         this.initModals();
+        this.initGradientButtons();
     },
 
     /**
@@ -54,6 +55,24 @@ const Foton = {
     },
 
     /**
+     * Módulo: Botões Gradiente
+     */
+    initGradientButtons: function () {
+        const buttons = document.querySelectorAll('.ft-btn-gradient');
+        
+        buttons.forEach(btn => {
+            // Verifica se já não foi injetado (para evitar duplicação)
+            if (!btn.querySelector('.ft-btn-glow')) {
+                const glowElement = document.createElement('div');
+                glowElement.className = 'ft-btn-glow';
+                // O elemento é inserido dentro do botão.
+                // Como ele usa position: absolute e z-index: -1, fica atrás do texto.
+                btn.appendChild(glowElement);
+            }
+        });
+    },
+
+    /**
      * Módulo: Popovers & Dropdowns
      * Gerencia abertura, fechamento e posicionamento.
      */
@@ -87,12 +106,14 @@ const Foton = {
                 const openModal = document.querySelector('.ft-modal.show');
                 if (openModal) Foton.toggleModal(openModal.id, false);
 
-                // Fecha Navbar Mobile
-                const navMenu = document.querySelector('.ft-navbar-menu.active');
-                if (navMenu) {
-                    const navToggle = document.querySelector('.ft-navbar-toggle');
-                    navMenu.classList.remove('active');
-                    if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+                // Fecha Navbar Mobile (Procura qualquer uma ativa)
+                const activeNavMenu = document.querySelector('.ft-navbar-menu.active');
+                if (activeNavMenu) {
+                    // Encontra o toggle associado a este menu
+                    const navbar = activeNavMenu.closest('.ft-navbar');
+                    const toggle = navbar ? navbar.querySelector('.ft-navbar-toggle') : null;
+
+                    Foton.closeNavbar(activeNavMenu, toggle);
                 }
                 return;
             }
@@ -278,28 +299,66 @@ const Foton = {
     },
 
     /**
-     * Módulo: Navbar Mobile
+     * Módulo: Navbar Mobile (MELHORADO)
+     * Agora suporta múltiplas navbars na mesma página e fecha ao clicar fora.
      */
     initNavbar: function () {
-        const toggle = document.querySelector('.ft-navbar-toggle');
-        const menu = document.querySelector('.ft-navbar-menu');
+        const navbars = document.querySelectorAll('.ft-navbar');
 
-        if (toggle && menu) {
-            toggle.addEventListener('click', () => {
-                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-                toggle.setAttribute('aria-expanded', !isExpanded);
-                menu.classList.toggle('active');
-            });
+        navbars.forEach(navbar => {
+            const toggle = navbar.querySelector('.ft-navbar-toggle');
+            const menu = navbar.querySelector('.ft-navbar-menu');
 
-            menu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 900) {
-                        menu.classList.remove('active');
-                        toggle.setAttribute('aria-expanded', 'false');
+            if (toggle && menu) {
+                // Toggle via botão
+                toggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+                    if (isExpanded) {
+                        Foton.closeNavbar(menu, toggle);
+                    } else {
+                        Foton.openNavbar(menu, toggle);
                     }
                 });
-            });
-        }
+
+                // Fechar ao clicar em links (comportamento mobile)
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth <= 900) {
+                            Foton.closeNavbar(menu, toggle);
+                        }
+                    });
+                });
+
+                // Fechar ao clicar fora (Click Outside)
+                document.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 900 && menu.classList.contains('active')) {
+                        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                            Foton.closeNavbar(menu, toggle);
+                        }
+                    }
+                });
+            }
+        });
+    },
+
+    openNavbar: function (menu, toggle) {
+        menu.classList.add('active');
+        toggle.setAttribute('aria-expanded', 'true');
+        // A classe .active já dispara a animação slideDown definida no CSS
+    },
+
+    closeNavbar: function (menu, toggle) {
+        // Adiciona classe de fechamento para animar a saída
+        menu.classList.add('closing');
+        menu.classList.remove('active'); // Remove active para iniciar reverso se configurado ou manter visível via 'closing'
+        toggle.setAttribute('aria-expanded', 'false');
+
+        // Aguarda a animação terminar (300ms correspondente ao CSS slideDown/Up)
+        setTimeout(() => {
+            menu.classList.remove('closing');
+        }, 300);
     },
 
     /**

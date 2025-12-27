@@ -60,9 +60,9 @@
                         <div class="preview-box"
                             style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
                             <button
-                                class="ft-btn ft-btn-gradient">.ft-btn-gradient</button>
-                            <button
                                 class="ft-btn ft-btn-primary">.ft-btn-primary</button>
+                            <button
+                                class="ft-btn ft-btn-secondary">.ft-btn-secondary</button>
                             <button
                                 class="ft-btn ft-btn-dark">.ft-btn-dark</button>
                         </div>
@@ -72,10 +72,69 @@
 &lt;button class="ft-btn ft-btn-gradient"&gt;Ação Principal&lt;/button&gt;
 
 &lt;!-- Botão secundário/neutro (Fundo cinza claro) --&gt;
-&lt;button class="ft-btn ft-btn-primary"&gt;Cancelar&lt;/button&gt;
+&lt;button class="ft-btn ft-btn-secondary"&gt;Cancelar&lt;/button&gt;
 
 &lt;!-- Botão sólido escuro (Contraste alto) --&gt;
 &lt;button class="ft-btn ft-btn-dark"&gt;Dark&lt;/button&gt;</code></pre>
+
+                        <h3>Botão Gradiente Personalizável</h3>
+                        <p>
+                            O componente <code>.ft-btn-gradient</code> suporta
+                            personalização dinâmica através de variáveis CSS
+                            locais.
+                            Você pode alterar o gradiente diretamente no HTML
+                            sem criar novas classes, mantendo a consistência
+                            visual do hover e sombras.
+                        </p>
+
+                        <div class="preview-box"
+                            style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+                            <!-- Padrão (Verde) -->
+                            <button class="ft-btn ft-btn-gradient">
+                                Padrão (Brand)
+                            </button>
+
+                            <!-- Personalizado: Roxo/Rosa -->
+                            <button class="ft-btn ft-btn-gradient"
+                                style="--btn-grad: linear-gradient(135deg, #6559ca, #e33f5f);">
+                                Personalizado (Roxo)
+                            </button>
+
+                            <!-- Personalizado: Azul (Usando variável global existente) -->
+                            <button class="ft-btn ft-btn-gradient"
+                                style="--btn-grad: var(--grad-eletric);">
+                                Variação (Azul)
+                            </button>
+
+                            <!-- Personalizado: Dark/Urban -->
+                            <button class="ft-btn ft-btn-gradient"
+                                style="--btn-grad: var(--grad-dark)">
+                                Variação (Verde)
+                            </button>
+                        </div>
+
+                        <pre
+                            class="code-block"><code class="language-html">&lt;!-- Gradiente Padrão (Usa --grad-primary) --&gt;
+&lt;button class="ft-btn ft-btn-gradient"&gt;Padrão&lt;/button&gt;
+
+&lt;!-- Gradiente Personalizado (CSS Inline) --&gt;
+&lt;button class="ft-btn ft-btn-gradient" style="--btn-grad: linear-gradient(135deg, #6559ca, #e33f5f);"&gt;Personalizado&lt;/button&gt;
+
+&lt;!-- Usando uma variável global do framework --&gt;
+&lt;button class="ft-btn ft-btn-gradient" style="--btn-grad: var(--grad-blue);"&gt;Azul&lt;/button&gt;</code></pre>
+
+                        <div class="ft-alert ft-alert-info mt-md">
+                            <i
+                                class="fa-solid fa-circle-info ft-alert-icon"></i>
+                            <div>
+                                <span class="ft-alert-heading">Dica Pro</span>
+                                A variável <code>--btn-grad</code> controla
+                                apenas o estado de <strong>hover</strong> e a
+                                borda/sombra ativa. O estado normal do botão
+                                gradiente é sempre escuro (ou branco no dark
+                                mode) para manter a consistência visual.
+                            </div>
+                        </div>
 
                         <h4>Botões Semânticos</h4>
                         <p>Use cores semânticas para indicar o feedback ou
@@ -156,10 +215,10 @@
                                 class="ft-btn ft-btn-sm ft-btn-link">Link
                                 (.ft-btn-link)</a>
                             <a href="#"
-                                class="ft-btn ft-btn-sm ft-btn-primary">Botão
+                                class="ft-btn ft-btn-sm ft-btn-secondary">Botão
                                 Pequeno (.ft-btn-sm)</a>
                             <a href="#"
-                                class="ft-btn ft-btn-block ft-btn-primary">Botão
+                                class="ft-btn ft-btn-block ft-btn-secondary">Botão
                                 Bloco (.ft-btn-block)</a>
                         </div>
 
@@ -169,7 +228,7 @@
 &lt;a href="#" class="ft-btn ft-btn-link"&gt;Estilo Link&lt;/a&gt;
 
 &lt;!-- Bloco (Full Width) --&gt;
-&lt;a href="#" class="ft-btn ft-btn-block ft-btn-primary"&gt;Botão de Bloco&lt;/a&gt;</code></pre>
+&lt;a href="#" class="ft-btn ft-btn-block ft-btn-secondary"&gt;Botão de Bloco&lt;/a&gt;</code></pre>
 
                         <!-- =========================================
                      DROPDOWNS
@@ -191,7 +250,7 @@
                         <div class="preview-box"
                             style="overflow: visible; padding-bottom: 80px;">
                             <div class="ft-dropdown">
-                                <button class="ft-btn ft-btn-primary"
+                                <button class="ft-btn ft-btn-secondary"
                                     data-toggle="ft-popover">
                                     Opções <i class="fa-solid fa-chevron-down"
                                         style="margin-left: 8px; font-size: 12px;"></i>
@@ -211,7 +270,7 @@
                         <pre
                             class="code-block"><code class="language-html">&lt;div class="ft-dropdown"&gt;
     &lt;!-- Gatilho com ícone --&gt;
-    &lt;button class="ft-btn ft-btn-primary" data-toggle="ft-popover"&gt;
+    &lt;button class="ft-btn ft-btn-secondary" data-toggle="ft-popover"&gt;
         Menu &lt;i class="fa-solid fa-chevron-down"&gt;&lt;/i&gt;
     &lt;/button&gt;
 
@@ -257,7 +316,7 @@
                                     Hover Esquerda
                                 </button>
 
-                                <button class="ft-btn ft-btn-primary"
+                                <button class="ft-btn ft-btn-secondary"
                                     data-tooltip="Tooltip no Topo!"
                                     data-tooltip-pos="top">
                                     Hover Topo
@@ -303,7 +362,7 @@
 
                                 <!-- Popover Topo -->
                                 <div class="ft-popover-container">
-                                    <button class="ft-btn ft-btn-primary"
+                                    <button class="ft-btn ft-btn-secondary"
                                         data-toggle="popover" data-pos="top">
                                         Popover Topo
                                     </button>
@@ -404,27 +463,20 @@
                         <div class="preview-box">
                             <!-- Notification Card -->
                             <div class="ft-notification-card">
-                                <div
-                                    style="width: 40px; height: 40px; background: #e3f2fd; color: #2196f3; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
+                                <div class="icon-box info"><i
+                                        class="fa-solid fa-envelope"></i></div>
                                 <div>
-                                    <div
-                                        style="font-weight: 700; font-size: 14px;">Nova
-                                        Mensagem</div>
-                                    <div
-                                        style="font-size: 12px; color: #666;">Você
-                                        recebeu um e-mail de suporte.</div>
+                                    <div class="title">Nova Mensagem</div>
+                                    <div class="text">Você recebeu um e-mail de
+                                        suporte.</div>
                                 </div>
                             </div>
 
                             <!-- Notification Toast -->
                             <div class="section-n-toast">
-                                <p
-                                    style="font-size: 12px; color: #999; margin-bottom: 10px;">Toast
+                                <p class="text-muted-small">Toast
                                     Style (Pílula)</p>
-                                <div class="ft-toast"
-                                    style="margin-right: 10px;">
+                                <div class="ft-toast">
                                     <span class="dot success"></span>
                                     <span>Alterações salvas com sucesso</span>
                                 </div>
@@ -438,10 +490,10 @@
                         <pre
                             class="code-block"><code class="language-html">&lt;!-- Card de Notificação --&gt;
 &lt;div class="ft-notification-card"&gt;
-    &lt;div class="icon-box"&gt;&lt;i class="fa-solid fa-envelope"&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class="icon-box info"&gt;&lt;i class="fa-solid fa-envelope"&gt;&lt;/i&gt;&lt;/div&gt;
     &lt;div&gt;
-        &lt;div&gt;Título&lt;/div&gt;
-        &lt;div&gt;Descrição...&lt;/div&gt;
+        &lt;div class="title"&gt;Título&lt;/div&gt;
+        &lt;div class="text"&gt;Descrição...&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
@@ -468,7 +520,7 @@
                         </p>
 
                         <div class="preview-box">
-                            <div class="ft-alert ft-alert-primary">
+                            <div class="ft-alert ft-alert-success">
                                 <i
                                     class="fa-solid fa-circle-check ft-alert-icon"></i>
                                 <div style="flex-grow: 1;">
@@ -511,7 +563,7 @@
                         </div>
 
                         <pre
-                            class="code-block"><code class="language-html">&lt;div class="ft-alert ft-alert-primary"&gt;
+                            class="code-block"><code class="language-html">&lt;div class="ft-alert ft-alert-success"&gt;
     &lt;!-- Ícone opcional --&gt;
     &lt;i class="fa-solid fa-check ft-alert-icon"&gt;&lt;/i&gt;
 
@@ -651,8 +703,8 @@
                         <div class="preview-box"
                             style="padding: 0; overflow: hidden;">
                             <div class="ft-table-responsive"
-                                style="margin-bottom: 0; border: none;">
-                                <table class="ft-table table-hover"
+                                style="margin: 0; border: none;">
+                                <table class="ft-table ft-table-hover"
                                     style="margin-bottom: 0;">
                                     <thead>
                                         <tr>
@@ -694,7 +746,7 @@
 
                         <pre
                             class="code-block"><code class="language-html">&lt;div class="ft-table-responsive"&gt;
-    &lt;table class="ft-table table-hover"&gt;
+    &lt;table class="ft-table ft-table-hover"&gt;
         &lt;thead&gt;
             &lt;tr&gt;
                 &lt;th scope="col"&gt;Cabeçalho&lt;/th&gt;
@@ -761,12 +813,13 @@
                                         <h3>Padrão</h3>
                                         <p>Card básico com sombra suave.</p>
                                         <a href="#"
-                                            class="ft-btn ft-btn-sm ft-btn-primary">Ação</a>
+                                            class="ft-btn ft-btn-sm ft-btn-secondary">Ação</a>
                                     </div>
                                 </div>
 
                                 <!-- Card Highlight -->
-                                <div class="ft-card ft-card-highlight" txt-badge="Popular">
+                                <div class="ft-card ft-card-highlight"
+                                    txt-badge="Popular">
                                     <div class="ft-card-body">
                                         <h3>Destaque</h3>
                                         <p>Use <code>.ft-card-highlight</code>
@@ -978,7 +1031,7 @@
                             funcionamento via JavaScript.</p>
 
                         <div class="preview-box">
-                            <button class="ft-btn ft-btn-primary"
+                            <button class="ft-btn ft-btn-secondary"
                                 data-toggle="modal"
                                 data-target="demoModal">Abrir Modal
                                 Exemplo</button>
@@ -1001,7 +1054,7 @@
                                         </div>
                                         <div class="ft-modal-footer">
                                             <button
-                                                class="ft-btn ft-btn-sm ft-btn-primary"
+                                                class="ft-btn ft-btn-sm ft-btn-secondary"
                                                 data-dismiss="modal">Fechar</button>
                                             <button
                                                 class="ft-btn ft-btn-sm ft-btn-gradient">Salvar
@@ -1034,7 +1087,7 @@
       
       &lt;div class="ft-modal-footer"&gt;
         &lt;button class="ft-btn ft-btn-sm" data-dismiss="modal"&gt;Fechar&lt;/button&gt;
-        &lt;button class="ft-btn ft-btn-sm ft-btn-primary"&gt;Salvar&lt;/button&gt;
+        &lt;button class="ft-btn ft-btn-sm ft-btn-secondary"&gt;Salvar&lt;/button&gt;
       &lt;/div&gt;
       
     &lt;/div&gt;
@@ -1056,14 +1109,21 @@
                             ft-logo e os links. O exemplo abaixo simula a
                             visualização.</p>
                         <div class="preview-box"
-                            style="position: relative; height: 120px; background: #eee; overflow: hidden; padding: 0;">
+                            style="position: relative; height: max-content; min-height: 120px; background: #eee; overflow: hidden; padding: 0;">
                             <!-- Simulando Navbar fixa dentro do preview -->
-                            <nav class="ft-navbar"
-                                style="position: absolute; top: 0; left: 0; width: 100%;">
-                                <div
-                                    style="display:flex; justify-content:space-between; align-items: center; width:100%; max-width: 1000px; padding: 0 20px;">
+                            <nav class="ft-navbar">
+                                <div class="ft-navbar-container">
                                     <a href="#"
                                         class="ft-logo">Logo<span>Type</span></a>
+
+                                    <button class="ft-navbar-toggle"
+                                        aria-expanded="false"
+                                        aria-label="Abrir menu">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+
                                     <ul class="ft-navbar-menu"
                                         style="margin-bottom: 0;">
                                         <li class="demo-nav-item"><a
@@ -1088,7 +1148,7 @@
         &lt;ul class="ft-navbar-menu"&gt;
             &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="#"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#" class="ft-btn ft-btn-sm ft-btn-primary"&gt;Login&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="ft-btn ft-btn-sm ft-btn-secondary"&gt;Login&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
 
     &lt;/div&gt;

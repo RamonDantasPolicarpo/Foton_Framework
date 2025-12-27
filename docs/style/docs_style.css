@@ -541,22 +541,6 @@
     z-index: 100;
 }
 
-.demo-nav-inner {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1100px;
-    padding: 0 2rem;
-}
-
-.demo-nav-item {
-    display: block;
-}
-
-.demo-nav-btn {
-    margin-left: 10px;
-}
-
 .demo-hero {
     min-height: 500px;
     padding-top: 4rem;
@@ -1045,20 +1029,6 @@
 
     .preview-label {
         display: none;
-    }
-
-    /* Demo Navbar Mobile */
-    .demo-nav-inner {
-        padding: 0 1rem;
-    }
-
-    .demo-nav-item {
-        display: none;
-        /* Esconde links no mobile da demo */
-    }
-
-    .demo-nav-btn {
-        margin-left: 0;
     }
 }
 

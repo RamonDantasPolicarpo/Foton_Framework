@@ -40,17 +40,44 @@
                     <div id="tab-download" class="tab-view page-fade-in">
                         <h1 class="doc-title">Download</h1>
                         <p class="doc-subtitle">
-                            Obtenha a última versão do arquivo de estilos.
+                            Obtenha a última versão dos arquivos compilados.
                         </p>
-                        <div class="preview-box" style="text-align: center;">
-                            <i class="fa-solid fa-file-code mb-sm"
-                                style="font-size: 40px; color: var(--primary);"></i>
-                            <h3>foton_framework.css</h3>
-                            <p class="mb-sm">v1.0.0 • Minificado</p>
-                            <button class="ft-btn ft-btn-gradient"
-                                onclick="downloadCSS()">
-                                Baixar Arquivo .CSS
-                            </button>
+
+                        <div class="ft-grid"
+                            style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                            
+                            <!-- Card CSS -->
+                            <div class="preview-box" style="text-align: center; margin: 0;">
+                                <i class="fa-solid fa-file-code mb-sm"
+                                    style="font-size: 40px; color: var(--primary);"></i>
+                                <h3>foton_framework.css</h3>
+                                <p class="mb-sm">Estilos Visuais • v1.0.0</p>
+                                <button class="ft-btn ft-btn-gradient"
+                                    onclick="downloadCSS()">
+                                    Baixar Arquivo .CSS
+                                </button>
+                            </div>
+
+                            <!-- Card JS -->
+                            <div class="preview-box" style="text-align: center; margin: 0;">
+                                <i class="fa-brands fa-js mb-sm"
+                                    style="font-size: 40px; color: var(--warning);"></i>
+                                <h3>foton_scripts.js</h3>
+                                <p class="mb-sm">Interatividade • v1.0.0</p>
+                                <button class="ft-btn ft-btn-gradient"
+                                    onclick="downloadJS()">
+                                    Baixar Arquivo .JS
+                                </button>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="ft-alert ft-alert-info mt-md">
+                            <i class="fa-solid fa-circle-info ft-alert-icon"></i>
+                            <div>
+                                <span class="ft-alert-heading">Nota</span>
+                                O arquivo CSS é obrigatório para o visual. O arquivo JS é opcional, mas necessário para funcionalidades como modais, alertas e menu mobile.
+                            </div>
                         </div>
                     </div>
                 </main>
